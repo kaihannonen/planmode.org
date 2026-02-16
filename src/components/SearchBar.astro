@@ -24,11 +24,6 @@ const packagesJson = JSON.stringify(registryData.packages);
       class="w-full pl-10 pr-4 py-2.5 bg-black-card border border-grey-border/30 rounded-lg text-sm text-white placeholder-grey-text focus:outline-none focus:border-red-accent/50 transition-colors"
     />
   </div>
-  <div
-    id="search-results"
-    class="hidden absolute top-full left-0 right-0 mt-2 bg-black-card border border-grey-border/30 rounded-lg overflow-hidden shadow-xl z-50"
-  >
-  </div>
 </div>
 
 <script define:vars={{ packagesJson }}>
@@ -42,45 +37,18 @@ const packagesJson = JSON.stringify(registryData.packages);
     });
 
     const input = document.getElementById("search-input");
-    const results = document.getElementById("search-results");
-    if (!input || !results) return;
+    if (!input) return;
 
     input.addEventListener("input", (e) => {
-      const query = (e.target).value.trim();
+      const query = e.target.value.trim();
       if (!query) {
-        results.classList.add("hidden");
-        results.innerHTML = "";
+        window.dispatchEvent(new CustomEvent("search-filter", { detail: { matches: null } }));
         return;
       }
 
-      const matches = fuse.search(query, { limit: 6 });
-      if (matches.length === 0) {
-        results.innerHTML = '<div class="px-4 py-3 text-sm text-grey-text">No packages found</div>';
-        results.classList.remove("hidden");
-        return;
-      }
-
-      results.innerHTML = matches
-        .map(
-          ({ item }) => `
-          <a href="/packages/${item.name}" class="block px-4 py-3 hover:bg-white/5 transition-colors border-b border-grey-border/10 last:border-0">
-            <div class="flex items-center gap-2">
-              <span class="text-sm font-medium text-white">${item.name}</span>
-              <span class="text-xs text-grey-text">${item.type}</span>
-            </div>
-            <p class="text-xs text-grey-text mt-0.5 truncate">${item.description}</p>
-          </a>
-        `
-        )
-        .join("");
-      results.classList.remove("hidden");
-    });
-
-    document.addEventListener("click", (e) => {
-      const container = document.getElementById("search-container");
-      if (container && !container.contains(e.target)) {
-        results.classList.add("hidden");
-      }
+      const matches = fuse.search(query);
+      const matchedNames = new Set(matches.map(({ item }) => item.name));
+      window.dispatchEvent(new CustomEvent("search-filter", { detail: { matches: matchedNames } }));
     });
   }
 
