@@ -57,16 +57,19 @@ const packagesJson = JSON.stringify(packages);
 <script>
   let activeCategory = "all";
   let activeType = "all";
+  let searchMatches: Set<string> | null = null;
 
   function filterPackages() {
     const items = document.querySelectorAll(".package-item") as NodeListOf<HTMLElement>;
     let visibleCount = 0;
     items.forEach((item) => {
+      const name = item.dataset.name;
       const cat = item.dataset.category;
       const type = item.dataset.type;
       const catMatch = activeCategory === "all" || cat === activeCategory;
       const typeMatch = activeType === "all" || type === activeType;
-      const visible = catMatch && typeMatch;
+      const searchMatch = searchMatches === null || (name && searchMatches.has(name));
+      const visible = catMatch && typeMatch && searchMatch;
       item.style.display = visible ? "" : "none";
       if (visible) visibleCount++;
     });
@@ -75,6 +78,11 @@ const packagesJson = JSON.stringify(packages);
       noResults.classList.toggle("hidden", visibleCount > 0);
     }
   }
+
+  window.addEventListener("search-filter", ((e: CustomEvent) => {
+    searchMatches = e.detail.matches;
+    filterPackages();
+  }) as EventListener);
 
   document.querySelectorAll(".category-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
