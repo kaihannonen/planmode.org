@@ -4,7 +4,7 @@ The open source package manager for AI plans, rules, and prompts.
 
 **Website:** planmode.org
 **License:** MIT
-**Repository:** github.com/planmode/planmode
+**Repository:** github.com/kaihannonen/planmode.org
 
 ## The problem
 
