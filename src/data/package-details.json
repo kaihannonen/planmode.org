@@ -71,7 +71,7 @@
   "prisma-setup": {
     "name": "prisma-setup",
     "description": "Set up Prisma ORM with PostgreSQL, migrations, and seed data",
-    "author": "dbtools",
+    "author": "planmode",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
     "category": "database",
@@ -99,7 +99,7 @@
   "docker-compose-stack": {
     "name": "docker-compose-stack",
     "description": "Production-ready Docker Compose setup with Nginx, app server, and database",
-    "author": "devopskit",
+    "author": "planmode",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
     "category": "devops",
@@ -131,7 +131,7 @@
   "rest-api-generator": {
     "name": "rest-api-generator",
     "description": "Generate a complete REST API with CRUD endpoints, validation, and error handling",
-    "author": "apigen",
+    "author": "planmode",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
     "category": "backend",
@@ -162,7 +162,7 @@
   "vitest-setup": {
     "name": "vitest-setup",
     "description": "Configure Vitest with TypeScript, coverage, and sensible defaults",
-    "author": "testkit",
+    "author": "planmode",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
     "category": "testing",
@@ -179,7 +179,7 @@
   "add-authentication": {
     "name": "add-authentication",
     "description": "Add authentication to any web framework with NextAuth, Clerk, or Lucia",
-    "author": "authkit",
+    "author": "planmode",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
     "category": "backend",
@@ -215,7 +215,7 @@
   "github-actions-ci": {
     "name": "github-actions-ci",
     "description": "Set up GitHub Actions CI/CD pipeline with testing, linting, and deployment",
-    "author": "devopskit",
+    "author": "planmode",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
     "category": "devops",
@@ -232,7 +232,7 @@
   "weather-image": {
     "name": "weather-image",
     "description": "Generate weather-themed images for any city with dynamic data injection",
-    "author": "creative",
+    "author": "planmode",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
     "category": "ai-ml",
@@ -264,7 +264,7 @@
   "python-fastapi": {
     "name": "python-fastapi",
     "description": "Scaffold a FastAPI project with SQLAlchemy, Alembic, and Docker",
-    "author": "pydev",
+    "author": "planmode",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
     "category": "backend",
@@ -284,7 +284,7 @@
   "security-headers": {
     "name": "security-headers",
     "description": "Enforce security headers, CSP, and HTTPS best practices in web applications",
-    "author": "secteam",
+    "author": "planmode",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
     "category": "security",

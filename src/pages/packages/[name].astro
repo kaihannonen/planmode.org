@@ -15,8 +15,8 @@ const pkg = (packageDetails as Record<string, PackageMetadata>)[name!];
 
 const typeColors: Record<string, string> = {
   plan: "bg-red-accent/15 text-red-accent",
-  rule: "bg-blue-500/15 text-blue-400",
-  prompt: "bg-green-500/15 text-green-400",
+  rule: "bg-blue-badge-bg text-blue-badge",
+  prompt: "bg-green-badge-bg text-green-badge",
 };
 
 const installLocation: Record<string, string> = {
@@ -181,7 +181,7 @@ const installLocation: Record<string, string> = {
           )}
           {pkg.repository && (
             <a
-              href={`https://${pkg.repository}`}
+              href={`https://${pkg.repository}/tree/main/registry/packages/${pkg.name}`}
               class="block text-sm text-red-accent hover:text-red-hover transition-colors pt-2"
               target="_blank"
               rel="noopener noreferrer"

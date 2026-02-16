@@ -7,8 +7,6 @@ export const categories: Category[] = [
   { id: "devops", label: "DevOps" },
   { id: "database", label: "Database" },
   { id: "testing", label: "Testing" },
-  { id: "mobile", label: "Mobile" },
   { id: "ai-ml", label: "AI/ML" },
   { id: "security", label: "Security" },
-  { id: "other", label: "Other" },
 ];
