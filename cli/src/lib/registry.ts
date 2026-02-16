@@ -18,12 +18,13 @@ function getHeaders(): Record<string, string> {
 }
 
 function registryRawUrl(registryUrl: string, filePath: string): string {
-  // Convert github.com/org/repo to raw.githubusercontent.com URL
-  const match = registryUrl.match(/^github\.com\/([^/]+)\/([^/]+)$/);
+  // Convert github.com/org/repo[/subpath] to raw.githubusercontent.com URL
+  const match = registryUrl.match(/^github\.com\/([^/]+)\/([^/]+)(?:\/(.+))?$/);
   if (!match) {
     throw new Error(`Invalid registry URL: ${registryUrl}`);
   }
-  return `https://raw.githubusercontent.com/${match[1]}/${match[2]}/main/${filePath}`;
+  const subpath = match[3] ? `${match[3]}/` : "";
+  return `https://raw.githubusercontent.com/${match[1]}/${match[2]}/main/${subpath}${filePath}`;
 }
 
 function resolveRegistry(packageName: string): string {

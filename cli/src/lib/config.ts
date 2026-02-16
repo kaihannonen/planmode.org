@@ -52,7 +52,7 @@ export function setGitHubToken(token: string): void {
 export function getRegistries(): Record<string, string> {
   const config = readConfig();
   return {
-    default: "github.com/planmode/registry",
+    default: "github.com/kaihannonen/planmode.org/registry",
     ...config.registries,
   };
 }
