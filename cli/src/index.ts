@@ -15,7 +15,7 @@ const program = new Command();
 program
   .name("planmode")
   .description("The open source package manager for AI plans, rules, and prompts.")
-  .version("0.1.2");
+  .version("0.1.3");
 
 program.addCommand(installCommand);
 program.addCommand(uninstallCommand);
