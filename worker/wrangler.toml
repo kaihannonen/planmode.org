@@ -8,7 +8,3 @@ compatibility_date = "2025-02-14"
 binding = "STATS"
 id = "1b29eecd020d4ce1a0d653e4a5c66919"
 preview_id = "1b29eecd020d4ce1a0d653e4a5c66919"
-
-routes = [
-  { pattern = "api.planmode.org", custom_domain = true }
-]
