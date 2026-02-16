@@ -1,0 +1,32 @@
+name: docker-compose-stack
+version: 1.0.0
+type: plan
+
+description: "Production-ready Docker Compose setup with Nginx, app server, and database"
+author: devopskit
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - gpt-4o
+tags:
+  - docker
+  - nginx
+  - deployment
+category: devops
+
+variables:
+  app_port:
+    description: "Application port"
+    type: number
+    required: false
+    default: 3000
+  db_type:
+    description: "Database type"
+    type: enum
+    options: [postgres, mysql, mongodb]
+    required: true
+    default: postgres
+
+content_file: plan.md

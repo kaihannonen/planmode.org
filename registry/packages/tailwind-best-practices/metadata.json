@@ -3,7 +3,7 @@
   "description": "Tailwind CSS coding standards: utility-first patterns, component extraction, responsive design",
   "author": "planmode",
   "license": "MIT",
-  "repository": "github.com/planmode/tailwind-best-practices",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "frontend",
   "tags": ["tailwind", "css", "best-practices"],
   "type": "rule",

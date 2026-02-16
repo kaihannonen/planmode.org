@@ -1,0 +1,20 @@
+name: github-actions-ci
+version: 1.1.0
+type: plan
+
+description: "Set up GitHub Actions CI/CD pipeline with testing, linting, and deployment"
+author: devopskit
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - claude-3.5
+tags:
+  - github-actions
+  - ci-cd
+  - deployment
+  - testing
+category: devops
+
+content_file: plan.md

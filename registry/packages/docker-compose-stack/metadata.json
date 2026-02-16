@@ -3,7 +3,7 @@
   "description": "Production-ready Docker Compose setup with Nginx, app server, and database",
   "author": "devopskit",
   "license": "MIT",
-  "repository": "github.com/devopskit/docker-compose-stack",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "devops",
   "tags": ["docker", "nginx", "deployment"],
   "type": "plan",

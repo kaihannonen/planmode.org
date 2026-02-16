@@ -3,7 +3,7 @@
   "description": "Set up Prisma ORM with PostgreSQL, migrations, and seed data",
   "author": "dbtools",
   "license": "MIT",
-  "repository": "github.com/dbtools/prisma-setup",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "database",
   "tags": ["prisma", "postgresql", "orm", "database"],
   "type": "plan",

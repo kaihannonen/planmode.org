@@ -1,0 +1,34 @@
+name: weather-image
+version: 1.0.0
+type: prompt
+
+description: "Generate weather-themed images for any city with dynamic data injection"
+author: creative
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - gpt-4o
+  - dall-e-3
+tags:
+  - image
+  - weather
+  - creative
+  - templating
+category: ai-ml
+
+variables:
+  location:
+    description: "City name"
+    type: string
+    required: true
+    default: "Helsinki"
+  style:
+    description: "Image style"
+    type: enum
+    options: [realistic, watercolor, pixel-art, sketch]
+    required: false
+    default: realistic
+
+content_file: prompt.md

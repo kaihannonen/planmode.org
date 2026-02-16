@@ -1,0 +1,39 @@
+name: add-authentication
+version: 2.1.0
+type: plan
+
+description: "Add authentication to any web framework with NextAuth, Clerk, or Lucia"
+author: authkit
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - claude-3.5
+  - gpt-4o
+tags:
+  - auth
+  - nextauth
+  - clerk
+  - lucia
+category: backend
+
+dependencies:
+  rules:
+    - security-headers
+
+variables:
+  framework:
+    description: "Target framework"
+    type: enum
+    options: [nextjs, remix, express, fastapi]
+    required: true
+    default: nextjs
+  auth_provider:
+    description: "Authentication provider"
+    type: enum
+    options: [nextauth, clerk, lucia, custom]
+    required: true
+    default: nextauth
+
+content_file: plan.md

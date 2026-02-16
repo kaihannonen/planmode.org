@@ -1,0 +1,40 @@
+name: nextjs-tailwind-starter
+version: 1.1.0
+type: plan
+
+description: "Full-stack Next.js starter with Tailwind, Prisma, and auth"
+author: planmode
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - claude-3.5
+  - gpt-4o
+tags:
+  - nextjs
+  - tailwind
+  - prisma
+  - auth
+category: frontend
+
+dependencies:
+  rules:
+    - tailwind-best-practices
+    - typescript-strict@^1.0.0
+  plans:
+    - prisma-setup@~2.0.0
+
+variables:
+  project_name:
+    description: "Your project name"
+    type: string
+    required: true
+  auth_provider:
+    description: "Authentication provider"
+    type: enum
+    options: [nextauth, clerk, lucia]
+    required: false
+    default: nextauth
+
+content_file: plan.md

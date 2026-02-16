@@ -3,7 +3,7 @@
   "description": "Enforce security headers, CSP, and HTTPS best practices in web applications",
   "author": "secteam",
   "license": "MIT",
-  "repository": "github.com/secteam/security-headers",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "security",
   "tags": ["security", "headers", "csp", "https"],
   "type": "rule",

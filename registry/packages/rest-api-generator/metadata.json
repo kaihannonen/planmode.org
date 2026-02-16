@@ -3,7 +3,7 @@
   "description": "Generate a complete REST API with CRUD endpoints, validation, and error handling",
   "author": "apigen",
   "license": "MIT",
-  "repository": "github.com/apigen/rest-api-generator",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "backend",
   "tags": ["api", "rest", "crud", "generator"],
   "type": "prompt",

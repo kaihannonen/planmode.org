@@ -3,7 +3,7 @@
   "description": "Scaffold a FastAPI project with SQLAlchemy, Alembic, and Docker",
   "author": "pydev",
   "license": "MIT",
-  "repository": "github.com/pydev/python-fastapi",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "backend",
   "tags": ["python", "fastapi", "sqlalchemy", "docker"],
   "type": "plan",

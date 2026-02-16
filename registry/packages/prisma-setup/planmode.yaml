@@ -1,0 +1,31 @@
+name: prisma-setup
+version: 2.0.1
+type: plan
+
+description: "Set up Prisma ORM with PostgreSQL, migrations, and seed data"
+author: dbtools
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - claude-3.5
+tags:
+  - prisma
+  - postgresql
+  - orm
+  - database
+category: database
+
+dependencies:
+  rules:
+    - typescript-strict@^1.0.0
+
+variables:
+  database_url:
+    description: "PostgreSQL connection string"
+    type: string
+    required: true
+    default: "postgresql://user:password@localhost:5432/mydb"
+
+content_file: plan.md

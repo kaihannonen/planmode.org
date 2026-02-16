@@ -1,0 +1,24 @@
+name: python-fastapi
+version: 1.0.0
+type: plan
+
+description: "Scaffold a FastAPI project with SQLAlchemy, Alembic, and Docker"
+author: pydev
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - claude-3.5
+tags:
+  - python
+  - fastapi
+  - sqlalchemy
+  - docker
+category: backend
+
+dependencies:
+  plans:
+    - docker-compose-stack@^1.0.0
+
+content_file: plan.md

@@ -1,0 +1,33 @@
+name: rest-api-generator
+version: 1.3.0
+type: prompt
+
+description: "Generate a complete REST API with CRUD endpoints, validation, and error handling"
+author: apigen
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - claude-3.5
+  - gpt-4o
+tags:
+  - api
+  - rest
+  - crud
+  - generator
+category: backend
+
+variables:
+  resource:
+    description: "Resource name (e.g., 'users', 'posts')"
+    type: string
+    required: true
+  framework:
+    description: "Target framework"
+    type: enum
+    options: [express, fastify, hono, fastapi]
+    required: true
+    default: express
+
+content_file: prompt.md

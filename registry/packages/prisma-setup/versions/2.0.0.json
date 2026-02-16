@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "published_at": "2026-02-03T11:00:00Z",
   "source": {
-    "repository": "github.com/dbtools/prisma-setup",
+    "repository": "github.com/kaihannonen/planmode.org",
     "tag": "v2.0.0",
     "sha": "b6c2d8e9f0a1b314"
   },

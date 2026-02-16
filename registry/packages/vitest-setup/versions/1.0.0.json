@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "published_at": "2026-01-22T08:00:00Z",
   "source": {
-    "repository": "github.com/testkit/vitest-setup",
+    "repository": "github.com/kaihannonen/planmode.org",
     "tag": "v1.0.0",
     "sha": "c3d9e5f6a7b8c021"
   },

@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "published_at": "2026-01-20T08:00:00Z",
   "source": {
-    "repository": "github.com/devopskit/docker-compose-stack",
+    "repository": "github.com/kaihannonen/planmode.org",
     "tag": "v1.0.0",
     "sha": "d8e4f0a1b2c3d516"
   },

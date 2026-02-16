@@ -3,7 +3,7 @@
   "description": "Set up GitHub Actions CI/CD pipeline with testing, linting, and deployment",
   "author": "devopskit",
   "license": "MIT",
-  "repository": "github.com/devopskit/github-actions-ci",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "devops",
   "tags": ["github-actions", "ci-cd", "deployment", "testing"],
   "type": "plan",

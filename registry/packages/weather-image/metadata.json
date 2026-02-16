@@ -3,7 +3,7 @@
   "description": "Generate weather-themed images for any city with dynamic data injection",
   "author": "creative",
   "license": "MIT",
-  "repository": "github.com/creative/weather-image",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "ai-ml",
   "tags": ["image", "weather", "creative", "templating"],
   "type": "prompt",

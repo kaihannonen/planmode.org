@@ -1,0 +1,21 @@
+name: security-headers
+version: 1.0.0
+type: rule
+
+description: "Enforce security headers, CSP, and HTTPS best practices in web applications"
+author: secteam
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - claude-3.5
+  - gpt-4o
+tags:
+  - security
+  - headers
+  - csp
+  - https
+category: security
+
+content_file: rule.md

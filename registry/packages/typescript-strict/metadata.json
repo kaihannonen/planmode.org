@@ -3,7 +3,7 @@
   "description": "Strict TypeScript configuration rules for safer, more maintainable code",
   "author": "planmode",
   "license": "MIT",
-  "repository": "github.com/planmode/typescript-strict",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "frontend",
   "tags": ["typescript", "linting", "best-practices"],
   "type": "rule",

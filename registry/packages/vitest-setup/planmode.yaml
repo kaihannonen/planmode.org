@@ -1,0 +1,20 @@
+name: vitest-setup
+version: 1.0.0
+type: plan
+
+description: "Configure Vitest with TypeScript, coverage, and sensible defaults"
+author: testkit
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - claude-3.5
+tags:
+  - vitest
+  - testing
+  - typescript
+  - coverage
+category: testing
+
+content_file: plan.md

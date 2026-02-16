@@ -1,0 +1,20 @@
+name: typescript-strict
+version: 1.2.0
+type: rule
+
+description: "Strict TypeScript configuration rules for safer, more maintainable code"
+author: planmode
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - claude-3.5
+  - gpt-4o
+tags:
+  - typescript
+  - linting
+  - best-practices
+category: frontend
+
+content_file: rule.md

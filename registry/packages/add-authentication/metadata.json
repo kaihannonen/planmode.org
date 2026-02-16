@@ -3,7 +3,7 @@
   "description": "Add authentication to any web framework with NextAuth, Clerk, or Lucia",
   "author": "authkit",
   "license": "MIT",
-  "repository": "github.com/authkit/add-authentication",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "backend",
   "tags": ["auth", "nextauth", "clerk", "lucia"],
   "type": "plan",

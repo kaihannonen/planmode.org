@@ -1,0 +1,19 @@
+name: tailwind-best-practices
+version: 1.0.0
+type: rule
+
+description: "Tailwind CSS coding standards: utility-first patterns, component extraction, responsive design"
+author: planmode
+license: MIT
+
+repository: github.com/kaihannonen/planmode.org
+models:
+  - claude-4
+  - claude-3.5
+tags:
+  - tailwind
+  - css
+  - best-practices
+category: frontend
+
+content_file: rule.md

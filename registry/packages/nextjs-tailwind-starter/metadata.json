@@ -3,7 +3,7 @@
   "description": "Full-stack Next.js starter with Tailwind, Prisma, and auth",
   "author": "planmode",
   "license": "MIT",
-  "repository": "github.com/planmode/nextjs-tailwind-starter",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "frontend",
   "tags": ["nextjs", "tailwind", "prisma", "auth"],
   "type": "plan",

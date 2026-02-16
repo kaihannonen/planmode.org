@@ -3,7 +3,7 @@
   "description": "Configure Vitest with TypeScript, coverage, and sensible defaults",
   "author": "testkit",
   "license": "MIT",
-  "repository": "github.com/testkit/vitest-setup",
+  "repository": "github.com/kaihannonen/planmode.org",
   "category": "testing",
   "tags": ["vitest", "testing", "typescript", "coverage"],
   "type": "plan",
