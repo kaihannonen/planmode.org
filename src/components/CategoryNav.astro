@@ -1,0 +1,25 @@
+---
+import { categories } from "../data/categories";
+
+interface Props {
+  active?: string;
+}
+
+const { active = "all" } = Astro.props;
+---
+
+<div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+  {categories.map((cat) => (
+    <button
+      data-category={cat.id}
+      class:list={[
+        "category-btn whitespace-nowrap px-3 py-1.5 rounded-full text-sm font-medium transition-colors shrink-0",
+        cat.id === active
+          ? "bg-red-accent text-white"
+          : "bg-black-card text-grey-text border border-grey-border/20 hover:border-grey-border/40",
+      ]}
+    >
+      {cat.label}
+    </button>
+  ))}
+</div>

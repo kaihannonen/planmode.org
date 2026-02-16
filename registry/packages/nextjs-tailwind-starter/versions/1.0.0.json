@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-01-15T08:00:00Z",
+  "source": {
+    "repository": "github.com/planmode/nextjs-tailwind-starter",
+    "tag": "v1.0.0",
+    "sha": "a3f7b2c91d4e6f08"
+  },
+  "files": ["planmode.yaml", "plan.md"],
+  "content_hash": "sha256:e4a1c7d83f5b209648c1e7a3d5f0b8264e9c1d7a"
+}

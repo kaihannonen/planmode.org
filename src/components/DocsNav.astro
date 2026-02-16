@@ -1,0 +1,45 @@
+---
+const pathname = Astro.url.pathname;
+
+const sections = [
+  {
+    title: "Guide",
+    links: [
+      { href: "/docs", label: "Getting Started" },
+      { href: "/docs/cli", label: "CLI Reference" },
+      { href: "/docs/publishing", label: "Publishing" },
+    ],
+  },
+  {
+    title: "Reference",
+    links: [
+      { href: "/docs/spec", label: "Spec Reference" },
+    ],
+  },
+];
+---
+
+<nav class="md:sticky md:top-24">
+  {sections.map((section) => (
+    <div class="mb-6">
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-grey-text mb-3">{section.title}</h4>
+      <ul class="space-y-1">
+        {section.links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                "block text-sm py-1.5 px-3 rounded-md transition-colors",
+                pathname === link.href || (pathname === link.href + "/")
+                  ? "bg-red-accent/10 text-red-accent font-medium"
+                  : "text-grey-text hover:text-white",
+              ]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</nav>

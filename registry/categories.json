@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "categories": {
+    "frontend": {
+      "label": "Frontend",
+      "packages": ["nextjs-tailwind-starter", "typescript-strict", "tailwind-best-practices"]
+    },
+    "backend": {
+      "label": "Backend",
+      "packages": ["rest-api-generator", "add-authentication", "python-fastapi"]
+    },
+    "devops": {
+      "label": "DevOps",
+      "packages": ["docker-compose-stack", "github-actions-ci"]
+    },
+    "database": {
+      "label": "Database",
+      "packages": ["prisma-setup"]
+    },
+    "testing": {
+      "label": "Testing",
+      "packages": ["vitest-setup"]
+    },
+    "ai-ml": {
+      "label": "AI/ML",
+      "packages": ["weather-image"]
+    },
+    "security": {
+      "label": "Security",
+      "packages": ["security-headers"]
+    }
+  }
+}

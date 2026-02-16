@@ -1,0 +1,146 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout title="CLI Reference — Planmode" description="Complete reference for all Planmode CLI commands.">
+  <h1 class="text-3xl font-bold mb-8">CLI Reference</h1>
+
+  <div class="prose-custom">
+    <h2 id="install">planmode install</h2>
+    <pre><code>planmode install &lt;package&gt; [--version &lt;ver&gt;] [--rule] [--no-input]</code></pre>
+    <p>Install a package into the current project.</p>
+    <h3>Arguments</h3>
+    <ul>
+      <li><code>&lt;package&gt;</code> — package name (e.g., <code>nextjs-tailwind-starter</code> or <code>@mycompany/deploy</code>)</li>
+      <li><code>--version &lt;ver&gt;</code> / <code>-v &lt;ver&gt;</code> — install specific version (default: latest)</li>
+      <li><code>--rule</code> — force install as a rule to <code>.claude/rules/</code></li>
+      <li><code>--no-input</code> — fail if any required variable is missing (no interactive prompts)</li>
+    </ul>
+    <h3>File placement</h3>
+    <ul>
+      <li><code>rule</code> &rarr; <code>.claude/rules/&lt;name&gt;.md</code></li>
+      <li><code>plan</code> &rarr; <code>plans/&lt;name&gt;.md</code> + <code>@import</code> in CLAUDE.md</li>
+      <li><code>prompt</code> &rarr; <code>prompts/&lt;name&gt;.md</code></li>
+    </ul>
+    <h3>Example</h3>
+    <pre><code>planmode install nextjs-tailwind-starter
+planmode install typescript-strict@^1.0.0
+planmode install @mycompany/deploy-playbook -v 2.0.0</code></pre>
+
+    <h2 id="uninstall">planmode uninstall</h2>
+    <pre><code>planmode uninstall &lt;package&gt;</code></pre>
+    <p>Remove an installed package. Removes the file, updates <code>CLAUDE.md</code> and <code>planmode.lock</code>. Dependencies shared with other packages are kept.</p>
+
+    <h2 id="search">planmode search</h2>
+    <pre><code>planmode search &lt;query&gt; [--type &lt;type&gt;] [--category &lt;cat&gt;] [--json]</code></pre>
+    <p>Search the registry by name, description, tags, or author.</p>
+    <h3>Flags</h3>
+    <ul>
+      <li><code>--type &lt;type&gt;</code> — filter by type: <code>prompt</code>, <code>rule</code>, <code>plan</code></li>
+      <li><code>--category &lt;cat&gt;</code> — filter by category</li>
+      <li><code>--json</code> — output as JSON</li>
+    </ul>
+    <h3>Example</h3>
+    <pre><code>planmode search nextjs
+planmode search auth --type plan
+planmode search docker --category devops --json</code></pre>
+
+    <h2 id="run">planmode run</h2>
+    <pre><code>planmode run &lt;prompt&gt; [--var value...] [--no-input] [--json]</code></pre>
+    <p>Render a templated prompt and output to stdout.</p>
+    <h3>Flags</h3>
+    <ul>
+      <li><code>--no-input</code> — fail if any required variable is missing</li>
+      <li><code>--json</code> — output as JSON</li>
+    </ul>
+    <h3>Example</h3>
+    <pre><code># Render and print to stdout
+planmode run weather-image --location "Tokyo" --style watercolor
+
+# Pipe into Claude Code
+planmode run rest-api-generator --resource users | claude
+
+# Interactive — prompts for missing variables
+planmode run weather-image</code></pre>
+
+    <h2 id="publish">planmode publish</h2>
+    <pre><code>planmode publish</code></pre>
+    <p>
+      Publish the current directory as a package. Reads <code>planmode.yaml</code>, validates it,
+      creates a git tag, forks the registry repo, and opens a PR.
+    </p>
+    <h3>Requirements</h3>
+    <ul>
+      <li>GitHub auth configured (<code>planmode login</code>)</li>
+      <li>Current directory is a git repo with a remote</li>
+      <li><code>planmode.yaml</code> is present and valid</li>
+    </ul>
+
+    <h2 id="update">planmode update</h2>
+    <pre><code>planmode update [package]</code></pre>
+    <p>Update installed packages to the latest compatible versions. If no package is specified, updates all.</p>
+
+    <h2 id="list">planmode list</h2>
+    <pre><code>planmode list</code></pre>
+    <p>List all installed packages from <code>planmode.lock</code> with their type, version, and file location.</p>
+
+    <h2 id="info">planmode info</h2>
+    <pre><code>planmode info &lt;package&gt;</code></pre>
+    <p>Show detailed metadata for a package: description, author, license, versions, dependencies, variables, and download count.</p>
+
+    <h2 id="init">planmode init</h2>
+    <pre><code>planmode init</code></pre>
+    <p>
+      Initialize a new package in the current directory. Interactively prompts for name, type, description,
+      author, license, tags, and category. Creates <code>planmode.yaml</code> and a stub content file.
+    </p>
+
+    <h2 id="login">planmode login</h2>
+    <pre><code>planmode login [--token &lt;token&gt;] [--gh]</code></pre>
+    <p>Configure GitHub authentication for publishing and private packages.</p>
+    <h3>Flags</h3>
+    <ul>
+      <li><code>--token &lt;token&gt;</code> — store the token directly</li>
+      <li><code>--gh</code> — read token from <code>gh auth token</code> (GitHub CLI)</li>
+    </ul>
+    <p>Tokens are stored in <code>~/.planmode/config</code>. You can also set the <code>PLANMODE_GITHUB_TOKEN</code> environment variable.</p>
+  </div>
+</DocsLayout>
+
+<style>
+  @reference "../../styles/global.css";
+
+  .prose-custom {
+    @apply text-grey-light leading-relaxed;
+  }
+  .prose-custom h2 {
+    @apply text-xl font-semibold text-white mt-10 mb-4 pt-4 border-t border-grey-border/20 first:border-0 first:pt-0;
+  }
+  .prose-custom h3 {
+    @apply text-base font-semibold text-white mt-6 mb-3;
+  }
+  .prose-custom p {
+    @apply mb-4 text-sm;
+  }
+  .prose-custom ul {
+    @apply mb-4 list-disc list-inside text-sm space-y-1;
+  }
+  .prose-custom li {
+    @apply text-grey-text;
+  }
+  .prose-custom code {
+    @apply text-xs bg-black-card px-1.5 py-0.5 rounded font-mono text-red-accent;
+  }
+  .prose-custom pre {
+    @apply bg-black-card border border-grey-border/20 rounded-lg p-4 mb-4 overflow-x-auto;
+  }
+  .prose-custom pre code {
+    @apply bg-transparent px-0 py-0 text-grey-light text-sm;
+  }
+  .prose-custom a {
+    @apply text-red-accent hover:text-red-hover transition-colors underline;
+  }
+  .prose-custom strong {
+    @apply text-white font-semibold;
+  }
+</style>

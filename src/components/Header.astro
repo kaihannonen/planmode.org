@@ -1,0 +1,97 @@
+---
+const pathname = Astro.url.pathname;
+
+const navLinks = [
+  { href: "/packages", label: "Packages" },
+  { href: "/docs", label: "Docs" },
+];
+---
+
+<header class="border-b border-grey-border/20 sticky top-0 z-50 bg-black-primary/95 backdrop-blur-sm">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold tracking-tight">
+      <span class="text-red-accent">plan</span><span class="text-white">mode</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            "text-sm font-medium transition-colors",
+            pathname.startsWith(link.href)
+              ? "text-white"
+              : "text-grey-text hover:text-white",
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="https://github.com/kaihannonen/planmode.org"
+        class="text-sm font-medium text-grey-text hover:text-white transition-colors"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+    </nav>
+
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-grey-text hover:text-white transition-colors"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-grey-border/20">
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-4">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            "text-sm font-medium transition-colors",
+            pathname.startsWith(link.href)
+              ? "text-white"
+              : "text-grey-text hover:text-white",
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="https://github.com/kaihannonen/planmode.org"
+        class="text-sm font-medium text-grey-text hover:text-white transition-colors"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const icon = document.getElementById("menu-icon");
+
+  btn?.addEventListener("click", () => {
+    const expanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!expanded));
+    menu?.classList.toggle("hidden");
+    if (icon) {
+      icon.setAttribute(
+        "d",
+        expanded
+          ? "M4 6h16M4 12h16M4 18h16"
+          : "M6 18L18 6M6 6l12 12"
+      );
+    }
+  });
+</script>

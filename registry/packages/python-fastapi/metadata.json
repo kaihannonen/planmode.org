@@ -1,0 +1,19 @@
+{
+  "name": "python-fastapi",
+  "description": "Scaffold a FastAPI project with SQLAlchemy, Alembic, and Docker",
+  "author": "pydev",
+  "license": "MIT",
+  "repository": "github.com/pydev/python-fastapi",
+  "category": "backend",
+  "tags": ["python", "fastapi", "sqlalchemy", "docker"],
+  "type": "plan",
+  "models": ["claude-4", "claude-3.5"],
+  "latest_version": "1.0.0",
+  "versions": ["1.0.0"],
+  "downloads": 267,
+  "created_at": "2026-01-25T08:00:00Z",
+  "updated_at": "2026-02-03T15:00:00Z",
+  "dependencies": {
+    "plans": ["docker-compose-stack@^1.0.0"]
+  }
+}

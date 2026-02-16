@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-01-20T08:00:00Z",
+  "source": {
+    "repository": "github.com/devopskit/docker-compose-stack",
+    "tag": "v1.0.0",
+    "sha": "d8e4f0a1b2c3d516"
+  },
+  "files": ["planmode.yaml", "plan.md"],
+  "content_hash": "sha256:b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7"
+}

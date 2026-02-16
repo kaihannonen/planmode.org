@@ -1,0 +1,35 @@
+{
+  "name": "add-authentication",
+  "description": "Add authentication to any web framework with NextAuth, Clerk, or Lucia",
+  "author": "authkit",
+  "license": "MIT",
+  "repository": "github.com/authkit/add-authentication",
+  "category": "backend",
+  "tags": ["auth", "nextauth", "clerk", "lucia"],
+  "type": "plan",
+  "models": ["claude-4", "claude-3.5", "gpt-4o"],
+  "latest_version": "2.1.0",
+  "versions": ["1.0.0", "2.0.0", "2.1.0"],
+  "downloads": 678,
+  "created_at": "2026-01-05T08:00:00Z",
+  "updated_at": "2026-02-14T09:00:00Z",
+  "dependencies": {
+    "rules": ["security-headers"]
+  },
+  "variables": {
+    "framework": {
+      "description": "Target framework",
+      "type": "enum",
+      "options": ["nextjs", "remix", "express", "fastapi"],
+      "required": true,
+      "default": "nextjs"
+    },
+    "auth_provider": {
+      "description": "Authentication provider",
+      "type": "enum",
+      "options": ["nextauth", "clerk", "lucia", "custom"],
+      "required": true,
+      "default": "nextauth"
+    }
+  }
+}

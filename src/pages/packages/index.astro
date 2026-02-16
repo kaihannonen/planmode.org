@@ -1,0 +1,104 @@
+---
+import Base from "../../layouts/Base.astro";
+import SearchBar from "../../components/SearchBar.astro";
+import CategoryNav from "../../components/CategoryNav.astro";
+import PackageCard from "../../components/PackageCard.astro";
+import registryData from "../../data/packages.json";
+import type { PackageSummary } from "../../types";
+
+const packages = (registryData.packages as PackageSummary[]).sort(
+  (a, b) => b.downloads - a.downloads,
+);
+const packagesJson = JSON.stringify(packages);
+---
+
+<Base title="Packages — Planmode" description="Browse and search AI plans, rules, and prompts.">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold mb-2">Packages</h1>
+    <p class="text-grey-text mb-8">Browse and search AI plans, rules, and prompts.</p>
+
+    <div class="mb-6 max-w-md">
+      <SearchBar />
+    </div>
+
+    <div class="mb-6">
+      <CategoryNav />
+    </div>
+
+    <div class="flex gap-2 mb-8">
+      <button data-type="all" class="type-btn px-3 py-1.5 rounded-md text-sm font-medium bg-red-accent text-white transition-colors">
+        All
+      </button>
+      <button data-type="plan" class="type-btn px-3 py-1.5 rounded-md text-sm font-medium text-grey-text hover:text-white transition-colors">
+        Plans
+      </button>
+      <button data-type="rule" class="type-btn px-3 py-1.5 rounded-md text-sm font-medium text-grey-text hover:text-white transition-colors">
+        Rules
+      </button>
+      <button data-type="prompt" class="type-btn px-3 py-1.5 rounded-md text-sm font-medium text-grey-text hover:text-white transition-colors">
+        Prompts
+      </button>
+    </div>
+
+    <div id="package-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {packages.map((pkg) => (
+        <div data-name={pkg.name} data-type={pkg.type} data-category={pkg.category} class="package-item">
+          <PackageCard pkg={pkg} />
+        </div>
+      ))}
+    </div>
+
+    <p id="no-results" class="hidden text-center text-grey-text py-12">
+      No packages match your filters.
+    </p>
+  </div>
+</Base>
+
+<script>
+  let activeCategory = "all";
+  let activeType = "all";
+
+  function filterPackages() {
+    const items = document.querySelectorAll(".package-item") as NodeListOf<HTMLElement>;
+    let visibleCount = 0;
+    items.forEach((item) => {
+      const cat = item.dataset.category;
+      const type = item.dataset.type;
+      const catMatch = activeCategory === "all" || cat === activeCategory;
+      const typeMatch = activeType === "all" || type === activeType;
+      const visible = catMatch && typeMatch;
+      item.style.display = visible ? "" : "none";
+      if (visible) visibleCount++;
+    });
+    const noResults = document.getElementById("no-results");
+    if (noResults) {
+      noResults.classList.toggle("hidden", visibleCount > 0);
+    }
+  }
+
+  document.querySelectorAll(".category-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      activeCategory = (btn as HTMLElement).dataset.category ?? "all";
+      document.querySelectorAll(".category-btn").forEach((b) => {
+        b.classList.remove("bg-red-accent", "text-white");
+        b.classList.add("bg-black-card", "text-grey-text", "border", "border-grey-border/20");
+      });
+      btn.classList.add("bg-red-accent", "text-white");
+      btn.classList.remove("bg-black-card", "text-grey-text", "border", "border-grey-border/20");
+      filterPackages();
+    });
+  });
+
+  document.querySelectorAll(".type-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      activeType = (btn as HTMLElement).dataset.type ?? "all";
+      document.querySelectorAll(".type-btn").forEach((b) => {
+        b.classList.remove("bg-red-accent", "text-white");
+        b.classList.add("text-grey-text");
+      });
+      btn.classList.add("bg-red-accent", "text-white");
+      btn.classList.remove("text-grey-text");
+      filterPackages();
+    });
+  });
+</script>

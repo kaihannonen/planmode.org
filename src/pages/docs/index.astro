@@ -1,0 +1,124 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout title="Getting Started — Planmode" description="Learn how to install and use Planmode.">
+  <h1 class="text-3xl font-bold mb-8">Getting Started</h1>
+
+  <div class="prose-custom">
+    <h2>What is Planmode?</h2>
+    <p>
+      Planmode is the open source package manager for AI plans, rules, and prompts. It lets you discover,
+      install, and share the instructions that drive AI-assisted development.
+    </p>
+    <p>
+      Think of it as <strong>npm for AI instructions</strong>. Developers share code through npm, pip, and cargo.
+      But AI instructions — the plans, rules, and prompts that drive AI-assisted development — have had
+      no equivalent. Until now.
+    </p>
+
+    <h2>Prerequisites</h2>
+    <ul>
+      <li><strong>Node.js 20+</strong> — Planmode is built on Node.js</li>
+      <li><strong>Claude Code</strong> — Planmode uses Claude Code's <code>CLAUDE.md</code> and <code>@import</code> system as its runtime</li>
+      <li><strong>Git</strong> — packages are fetched from Git repositories</li>
+    </ul>
+
+    <h2>Install the CLI</h2>
+    <pre><code>npm install -g planmode</code></pre>
+
+    <h2>Quick start</h2>
+
+    <h3>1. Search for a package</h3>
+    <pre><code>planmode search nextjs</code></pre>
+    <p>This searches the registry for packages matching "nextjs" and shows results in a table.</p>
+
+    <h3>2. Install a package</h3>
+    <pre><code>planmode install nextjs-tailwind-starter</code></pre>
+    <p>
+      This downloads the plan, places it in <code>plans/nextjs-tailwind-starter.md</code>, and adds
+      an <code>@import</code> line to your <code>CLAUDE.md</code>. Dependencies (like rules) are
+      installed automatically.
+    </p>
+
+    <h3>3. Use with Claude Code</h3>
+    <p>
+      That's it. Claude Code automatically picks up the installed plans and rules through its native
+      <code>@import</code> and <code>.claude/rules/</code> auto-discovery. Start a conversation and
+      the AI will follow the installed instructions.
+    </p>
+
+    <h3>4. Run a templated prompt</h3>
+    <pre><code>planmode run rest-api-generator --resource users --framework express</code></pre>
+    <p>
+      Templated prompts accept variables. The rendered output goes to stdout, so you can pipe it
+      into Claude Code: <code>planmode run rest-api-generator --resource users | claude</code>
+    </p>
+
+    <h2>Package types</h2>
+
+    <h3>Plans</h3>
+    <p>
+      Multi-step implementation guides. Active during a task, removed when done. Installed to
+      <code>plans/*.md</code> and referenced via <code>@import</code> in <code>CLAUDE.md</code>.
+    </p>
+
+    <h3>Rules</h3>
+    <p>
+      Always-on constraints that shape every AI interaction. Installed to <code>.claude/rules/*.md</code>
+      and auto-loaded by Claude Code.
+    </p>
+
+    <h3>Prompts</h3>
+    <p>
+      Standalone, single-use instructions with templating support. Rendered and output to stdout
+      via <code>planmode run</code>.
+    </p>
+
+    <h2>What's next</h2>
+    <ul>
+      <li><a href="/docs/cli">CLI Reference</a> — all commands and flags</li>
+      <li><a href="/docs/publishing">Publishing Guide</a> — share your own packages</li>
+      <li><a href="/docs/spec">Spec Reference</a> — the <code>planmode.yaml</code> schema</li>
+      <li><a href="/packages">Browse Packages</a> — explore the registry</li>
+    </ul>
+  </div>
+</DocsLayout>
+
+<style>
+  @reference "../../styles/global.css";
+
+  .prose-custom {
+    @apply text-grey-light leading-relaxed;
+  }
+  .prose-custom h2 {
+    @apply text-xl font-semibold text-white mt-10 mb-4;
+  }
+  .prose-custom h3 {
+    @apply text-base font-semibold text-white mt-6 mb-3;
+  }
+  .prose-custom p {
+    @apply mb-4 text-sm;
+  }
+  .prose-custom ul {
+    @apply mb-4 list-disc list-inside text-sm space-y-1;
+  }
+  .prose-custom li {
+    @apply text-grey-text;
+  }
+  .prose-custom code {
+    @apply text-xs bg-black-card px-1.5 py-0.5 rounded font-mono text-red-accent;
+  }
+  .prose-custom pre {
+    @apply bg-black-card border border-grey-border/20 rounded-lg p-4 mb-4 overflow-x-auto;
+  }
+  .prose-custom pre code {
+    @apply bg-transparent px-0 py-0 text-grey-light text-sm;
+  }
+  .prose-custom a {
+    @apply text-red-accent hover:text-red-hover transition-colors underline;
+  }
+  .prose-custom strong {
+    @apply text-white font-semibold;
+  }
+</style>

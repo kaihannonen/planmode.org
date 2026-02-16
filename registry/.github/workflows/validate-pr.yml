@@ -1,0 +1,115 @@
+name: Validate PR
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "packages/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate package entries
+        run: |
+          set -e
+
+          # Get changed package directories
+          CHANGED_DIRS=$(git diff --name-only origin/main...HEAD | grep '^packages/' | cut -d'/' -f1-2 | sort -u)
+
+          if [ -z "$CHANGED_DIRS" ]; then
+            echo "No package changes detected."
+            exit 0
+          fi
+
+          for dir in $CHANGED_DIRS; do
+            echo "Validating $dir..."
+
+            METADATA="$dir/metadata.json"
+
+            # Check metadata.json exists
+            if [ ! -f "$METADATA" ]; then
+              echo "ERROR: $METADATA not found"
+              exit 1
+            fi
+
+            # Validate JSON syntax
+            if ! python3 -c "import json; json.load(open('$METADATA'))"; then
+              echo "ERROR: $METADATA is not valid JSON"
+              exit 1
+            fi
+
+            # Check required fields
+            for field in name description author license type latest_version versions; do
+              if ! python3 -c "
+          import json, sys
+          data = json.load(open('$METADATA'))
+          if '$field' not in data or not data['$field']:
+              print(f'ERROR: Missing required field: $field')
+              sys.exit(1)
+          "; then
+                exit 1
+              fi
+            done
+
+            # Validate package name matches directory name
+            PKG_NAME=$(python3 -c "import json; print(json.load(open('$METADATA'))['name'])")
+            DIR_NAME=$(basename "$dir")
+            if [ "$PKG_NAME" != "$DIR_NAME" ]; then
+              echo "ERROR: Package name '$PKG_NAME' does not match directory name '$DIR_NAME'"
+              exit 1
+            fi
+
+            # Validate name format
+            if ! python3 -c "
+          import re, json, sys
+          name = json.load(open('$METADATA'))['name']
+          if not re.match(r'^(@[a-z0-9-]+/)?[a-z0-9][a-z0-9-]*$', name):
+              print(f'ERROR: Invalid package name: {name}')
+              sys.exit(1)
+          if len(name) > 100:
+              print('ERROR: Package name too long (max 100)')
+              sys.exit(1)
+          "; then
+              exit 1
+            fi
+
+            # Validate type
+            if ! python3 -c "
+          import json, sys
+          pkg_type = json.load(open('$METADATA'))['type']
+          if pkg_type not in ('prompt', 'rule', 'plan'):
+              print(f'ERROR: Invalid type: {pkg_type}')
+              sys.exit(1)
+          "; then
+              exit 1
+            fi
+
+            # Check version files exist for all listed versions
+            VERSIONS=$(python3 -c "import json; print(' '.join(json.load(open('$METADATA'))['versions']))")
+            for ver in $VERSIONS; do
+              VER_FILE="$dir/versions/$ver.json"
+              if [ ! -f "$VER_FILE" ]; then
+                echo "ERROR: Version file missing: $VER_FILE"
+                exit 1
+              fi
+              if ! python3 -c "import json; json.load(open('$VER_FILE'))"; then
+                echo "ERROR: $VER_FILE is not valid JSON"
+                exit 1
+              fi
+            done
+
+            # Check no duplicate with existing packages
+            LATEST=$(python3 -c "import json; print(json.load(open('$METADATA'))['latest_version'])")
+            echo "  ✓ $PKG_NAME@$LATEST is valid"
+          done
+
+          echo ""
+          echo "All packages validated successfully."

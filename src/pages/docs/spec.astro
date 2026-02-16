@@ -1,0 +1,290 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout title="Spec Reference — Planmode" description="Complete reference for planmode.yaml and registry schemas.">
+  <h1 class="text-3xl font-bold mb-8">Spec Reference</h1>
+
+  <div class="prose-custom">
+    <h2>planmode.yaml</h2>
+    <p>Every package has a <code>planmode.yaml</code> manifest file. Here's the complete schema:</p>
+
+    <pre><code># ── Required fields ──
+name: nextjs-tailwind-starter        # Unique, lowercase, hyphens only
+version: 1.0.0                       # Semver (major.minor.patch)
+type: plan                            # "prompt" | "rule" | "plan"
+
+# ── Required for publishing ──
+description: "Full-stack Next.js starter"  # Max 200 chars
+author: username                      # GitHub username
+license: MIT                          # SPDX identifier
+
+# ── Optional fields ──
+repository: github.com/username/repo
+models:                               # Compatible AI models
+  - claude-4
+  - claude-3.5
+  - gpt-4o
+tags:                                 # Max 10 tags
+  - nextjs
+  - tailwind
+category: frontend                    # Primary category
+
+# ── Dependencies (plans and rules only) ──
+dependencies:
+  rules:
+    - tailwind-best-practices
+    - typescript-strict@^1.0.0
+  plans:
+    - prisma-setup@~2.0.0
+
+# ── Variables (for templated packages) ──
+variables:
+  framework:
+    description: "Target framework"
+    type: enum
+    options: [nextjs, remix, express]
+    required: true
+    default: nextjs
+  project_name:
+    description: "Your project name"
+    type: string
+    required: true
+
+# ── Content ──
+# Option A: inline
+content: |
+  1. Create a new project...
+  2. Install dependencies...
+
+# Option B: separate file
+content_file: plan.md</code></pre>
+
+    <h2>Field validation</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border border-grey-border/20 rounded-lg overflow-hidden">
+        <thead>
+          <tr class="bg-black-card">
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Field</th>
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Rule</th>
+          </tr>
+        </thead>
+        <tbody class="text-grey-text">
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono text-red-accent">name</td>
+            <td class="px-4 py-2"><code>/^(@[a-z0-9-]+\/)?[a-z0-9][a-z0-9-]*$/</code>, max 100 chars</td>
+          </tr>
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono text-red-accent">version</td>
+            <td class="px-4 py-2">Valid semver (X.Y.Z)</td>
+          </tr>
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono text-red-accent">type</td>
+            <td class="px-4 py-2">One of: <code>prompt</code>, <code>rule</code>, <code>plan</code></td>
+          </tr>
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono text-red-accent">description</td>
+            <td class="px-4 py-2">Max 200 chars</td>
+          </tr>
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono text-red-accent">tags</td>
+            <td class="px-4 py-2">Max 10, lowercase alphanumeric + hyphens</td>
+          </tr>
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono text-red-accent">variables[].type</td>
+            <td class="px-4 py-2">One of: <code>string</code>, <code>number</code>, <code>boolean</code>, <code>enum</code>, <code>resolved</code></td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 font-mono text-red-accent">dependencies</td>
+            <td class="px-4 py-2">Only allowed for <code>plan</code> and <code>rule</code> types</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Version ranges</h2>
+    <p>Dependencies support npm-style version ranges:</p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border border-grey-border/20 rounded-lg overflow-hidden">
+        <thead>
+          <tr class="bg-black-card">
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Syntax</th>
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Meaning</th>
+          </tr>
+        </thead>
+        <tbody class="text-grey-text">
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono">1.2.3</td>
+            <td class="px-4 py-2">Exact version</td>
+          </tr>
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono">^1.2.3</td>
+            <td class="px-4 py-2">Compatible with 1.x.x (&gt;=1.2.3, &lt;2.0.0)</td>
+          </tr>
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono">~1.2.3</td>
+            <td class="px-4 py-2">Patch-level changes (&gt;=1.2.3, &lt;1.3.0)</td>
+          </tr>
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono">&gt;=1.0.0</td>
+            <td class="px-4 py-2">Any version &gt;= 1.0.0</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 font-mono">*</td>
+            <td class="px-4 py-2">Any version (latest)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Package types</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border border-grey-border/20 rounded-lg overflow-hidden">
+        <thead>
+          <tr class="bg-black-card">
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Type</th>
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Location</th>
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">How Claude loads it</th>
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Lifecycle</th>
+          </tr>
+        </thead>
+        <tbody class="text-grey-text">
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-medium text-red-accent">plan</td>
+            <td class="px-4 py-2 font-mono">plans/*.md</td>
+            <td class="px-4 py-2">@import in CLAUDE.md</td>
+            <td class="px-4 py-2">Active during task</td>
+          </tr>
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-medium text-blue-400">rule</td>
+            <td class="px-4 py-2 font-mono">.claude/rules/*.md</td>
+            <td class="px-4 py-2">Auto-loaded</td>
+            <td class="px-4 py-2">Permanent</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 font-medium text-green-400">prompt</td>
+            <td class="px-4 py-2 font-mono">prompts/*.md</td>
+            <td class="px-4 py-2">On demand via planmode run</td>
+            <td class="px-4 py-2">Fire once</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Categories</h2>
+    <p>Every package belongs to one primary category:</p>
+    <div class="flex flex-wrap gap-2 mb-4">
+      {["frontend", "backend", "devops", "database", "testing", "mobile", "ai-ml", "design", "security", "other"].map((cat) => (
+        <span class="text-xs bg-black-card border border-grey-border/20 px-3 py-1 rounded-md">{cat}</span>
+      ))}
+    </div>
+
+    <h2>Variable types</h2>
+
+    <h3>string</h3>
+    <p>Free-form text input.</p>
+    <pre><code>project_name:
+  type: string
+  required: true</code></pre>
+
+    <h3>number</h3>
+    <p>Numeric value.</p>
+    <pre><code>port:
+  type: number
+  default: 3000</code></pre>
+
+    <h3>boolean</h3>
+    <p>True or false.</p>
+    <pre><code>use_docker:
+  type: boolean
+  default: true</code></pre>
+
+    <h3>enum</h3>
+    <p>One of a fixed set of options.</p>
+    <pre><code>framework:
+  type: enum
+  options: [nextjs, remix, express]
+  default: nextjs</code></pre>
+
+    <h3>resolved</h3>
+    <p>Dynamic data fetched at render time. Used for live data injection into prompts.</p>
+    <pre><code>weather:
+  type: resolved
+  resolver: url
+  source: "https://wttr.in/&#123;&#123;location&#125;&#125;?format=j1"
+  extract: "current_condition[0].weatherDesc[0].value"</code></pre>
+
+    <h2>Lockfile</h2>
+    <p>
+      <code>planmode.lock</code> is created in the project root on first install. It tracks exact
+      installed versions:
+    </p>
+    <pre><code>lockfile_version: 1
+
+packages:
+  nextjs-tailwind-starter:
+    version: 1.1.0
+    type: plan
+    source: github.com/planmode/nextjs-tailwind-starter
+    tag: v1.1.0
+    sha: abc123def456
+    content_hash: sha256:abcdef1234567890
+    installed_to: plans/nextjs-tailwind-starter.md</code></pre>
+
+    <h2>Global config</h2>
+    <p>
+      Stored at <code>~/.planmode/config</code>:
+    </p>
+    <pre><code>auth:
+  github_token: ghp_xxxxx
+
+registries:
+  default: github.com/planmode/registry
+  mycompany: github.com/mycompany/planmode-packages
+
+cache:
+  dir: ~/.planmode/cache
+  ttl: 3600</code></pre>
+  </div>
+</DocsLayout>
+
+<style>
+  @reference "../../styles/global.css";
+
+  .prose-custom {
+    @apply text-grey-light leading-relaxed;
+  }
+  .prose-custom h2 {
+    @apply text-xl font-semibold text-white mt-10 mb-4;
+  }
+  .prose-custom h3 {
+    @apply text-base font-semibold text-white mt-6 mb-3;
+  }
+  .prose-custom p {
+    @apply mb-4 text-sm;
+  }
+  .prose-custom ul {
+    @apply mb-4 list-disc list-inside text-sm space-y-1;
+  }
+  .prose-custom li {
+    @apply text-grey-text;
+  }
+  .prose-custom code {
+    @apply text-xs bg-black-card px-1.5 py-0.5 rounded font-mono text-red-accent;
+  }
+  .prose-custom pre {
+    @apply bg-black-card border border-grey-border/20 rounded-lg p-4 mb-4 overflow-x-auto;
+  }
+  .prose-custom pre code {
+    @apply bg-transparent px-0 py-0 text-grey-light text-sm;
+  }
+  .prose-custom a {
+    @apply text-red-accent hover:text-red-hover transition-colors underline;
+  }
+  .prose-custom strong {
+    @apply text-white font-semibold;
+  }
+  .prose-custom table {
+    @apply mb-6;
+  }
+</style>

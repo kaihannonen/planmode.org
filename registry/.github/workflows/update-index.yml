@@ -1,0 +1,89 @@
+name: Update Index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "packages/**"
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Rebuild index.json and categories.json
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+
+          const packagesDir = './packages';
+          const packages = [];
+          const categories = {};
+
+          const dirs = fs.readdirSync(packagesDir).filter(d =>
+            fs.statSync(path.join(packagesDir, d)).isDirectory()
+          );
+
+          for (const dir of dirs) {
+            const metaPath = path.join(packagesDir, dir, 'metadata.json');
+            if (!fs.existsSync(metaPath)) continue;
+
+            const meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
+
+            // Add to index
+            packages.push({
+              name: meta.name,
+              version: meta.latest_version,
+              type: meta.type,
+              description: meta.description,
+              author: meta.author,
+              category: meta.category || 'other',
+              tags: meta.tags || [],
+              downloads: meta.downloads || 0,
+              created_at: meta.created_at,
+              updated_at: meta.updated_at,
+            });
+
+            // Add to categories
+            const cat = meta.category || 'other';
+            if (!categories[cat]) {
+              categories[cat] = { label: cat.charAt(0).toUpperCase() + cat.slice(1), packages: [] };
+            }
+            categories[cat].packages.push(meta.name);
+          }
+
+          // Sort by downloads
+          packages.sort((a, b) => b.downloads - a.downloads);
+
+          // Write index.json
+          const index = {
+            version: 1,
+            updated_at: new Date().toISOString(),
+            packages,
+          };
+          fs.writeFileSync('index.json', JSON.stringify(index, null, 2));
+          console.log('Updated index.json with ' + packages.length + ' packages');
+
+          // Write categories.json
+          const catsOutput = { version: 1, categories };
+          fs.writeFileSync('categories.json', JSON.stringify(catsOutput, null, 2));
+          console.log('Updated categories.json');
+          "
+
+      - name: Commit updated index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.json categories.json
+          git diff --staged --quiet || git commit -m "Update registry index [skip ci]"
+          git push

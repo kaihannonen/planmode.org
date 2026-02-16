@@ -1,0 +1,16 @@
+{
+  "name": "github-actions-ci",
+  "description": "Set up GitHub Actions CI/CD pipeline with testing, linting, and deployment",
+  "author": "devopskit",
+  "license": "MIT",
+  "repository": "github.com/devopskit/github-actions-ci",
+  "category": "devops",
+  "tags": ["github-actions", "ci-cd", "deployment", "testing"],
+  "type": "plan",
+  "models": ["claude-4", "claude-3.5"],
+  "latest_version": "1.1.0",
+  "versions": ["1.0.0", "1.1.0"],
+  "downloads": 423,
+  "created_at": "2026-01-14T08:00:00Z",
+  "updated_at": "2026-02-08T13:00:00Z"
+}

@@ -1,0 +1,196 @@
+---
+import Base from "../../layouts/Base.astro";
+import InstallButton from "../../components/InstallButton.astro";
+import packageDetails from "../../data/package-details.json";
+import type { PackageMetadata } from "../../types";
+
+export function getStaticPaths() {
+  return Object.keys(packageDetails).map((name) => ({
+    params: { name },
+  }));
+}
+
+const { name } = Astro.params;
+const pkg = (packageDetails as Record<string, PackageMetadata>)[name!];
+
+const typeColors: Record<string, string> = {
+  plan: "bg-red-accent/15 text-red-accent",
+  rule: "bg-blue-500/15 text-blue-400",
+  prompt: "bg-green-500/15 text-green-400",
+};
+
+const installLocation: Record<string, string> = {
+  plan: `plans/${pkg.name}.md`,
+  rule: `.claude/rules/${pkg.name}.md`,
+  prompt: `prompts/${pkg.name}.md`,
+};
+---
+
+<Base title={`${pkg.name} — Planmode`} description={pkg.description}>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <a href="/packages" class="text-sm text-grey-text hover:text-white transition-colors mb-6 inline-block">
+      &larr; Back to packages
+    </a>
+
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Main content -->
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start gap-3 mb-4">
+          <h1 class="text-2xl sm:text-3xl font-bold">{pkg.name}</h1>
+          <span class:list={["text-xs font-medium px-2 py-1 rounded-full mt-1.5 shrink-0", typeColors[pkg.type] ?? ""]}>
+            {pkg.type}
+          </span>
+        </div>
+        <p class="text-grey-text leading-relaxed mb-6">{pkg.description}</p>
+
+        <div class="mb-8 max-w-lg">
+          <InstallButton packageName={pkg.name} />
+        </div>
+
+        <!-- Content preview -->
+        {pkg.content && (
+          <div class="mb-8">
+            <h2 class="text-lg font-semibold mb-4">Content</h2>
+            <pre class="bg-black-card border border-grey-border/20 rounded-lg p-4 text-sm text-grey-light overflow-x-auto whitespace-pre-wrap leading-relaxed">{pkg.content}</pre>
+          </div>
+        )}
+
+        <!-- Dependencies -->
+        {pkg.dependencies && (Object.values(pkg.dependencies).some(d => d && d.length > 0)) && (
+          <div class="mb-8">
+            <h2 class="text-lg font-semibold mb-4">Dependencies</h2>
+            <div class="space-y-3">
+              {pkg.dependencies.rules && pkg.dependencies.rules.length > 0 && (
+                <div>
+                  <h3 class="text-sm font-medium text-grey-text mb-2">Rules</h3>
+                  <div class="flex flex-wrap gap-2">
+                    {pkg.dependencies.rules.map((dep: string) => (
+                      <span class="text-sm bg-black-card border border-grey-border/20 px-3 py-1 rounded-md font-mono">
+                        {dep}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {pkg.dependencies.plans && pkg.dependencies.plans.length > 0 && (
+                <div>
+                  <h3 class="text-sm font-medium text-grey-text mb-2">Plans</h3>
+                  <div class="flex flex-wrap gap-2">
+                    {pkg.dependencies.plans.map((dep: string) => (
+                      <span class="text-sm bg-black-card border border-grey-border/20 px-3 py-1 rounded-md font-mono">
+                        {dep}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        <!-- Variables -->
+        {pkg.variables && Object.keys(pkg.variables).length > 0 && (
+          <div class="mb-8">
+            <h2 class="text-lg font-semibold mb-4">Variables</h2>
+            <div class="bg-black-card border border-grey-border/20 rounded-lg overflow-hidden">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-grey-border/20">
+                    <th class="text-left px-4 py-3 font-medium text-grey-text">Name</th>
+                    <th class="text-left px-4 py-3 font-medium text-grey-text">Type</th>
+                    <th class="text-left px-4 py-3 font-medium text-grey-text hidden sm:table-cell">Default</th>
+                    <th class="text-left px-4 py-3 font-medium text-grey-text hidden md:table-cell">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {Object.entries(pkg.variables).map(([varName, varDef]) => (
+                    <tr class="border-b border-grey-border/10 last:border-0">
+                      <td class="px-4 py-3 font-mono text-red-accent">{varName}</td>
+                      <td class="px-4 py-3 text-grey-text">
+                        {varDef.type}
+                        {varDef.required && <span class="text-red-accent ml-1">*</span>}
+                      </td>
+                      <td class="px-4 py-3 text-grey-text hidden sm:table-cell font-mono">
+                        {varDef.default !== undefined ? String(varDef.default) : "—"}
+                      </td>
+                      <td class="px-4 py-3 text-grey-text hidden md:table-cell">{varDef.description}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="lg:w-72 shrink-0">
+        <div class="bg-black-card border border-grey-border/20 rounded-lg p-5 space-y-4 lg:sticky lg:top-24">
+          <div>
+            <h3 class="text-xs font-medium text-grey-text uppercase tracking-wider mb-1">Version</h3>
+            <p class="text-sm">{pkg.latest_version}</p>
+          </div>
+          <div>
+            <h3 class="text-xs font-medium text-grey-text uppercase tracking-wider mb-1">Author</h3>
+            <p class="text-sm">{pkg.author}</p>
+          </div>
+          <div>
+            <h3 class="text-xs font-medium text-grey-text uppercase tracking-wider mb-1">License</h3>
+            <p class="text-sm">{pkg.license}</p>
+          </div>
+          <div>
+            <h3 class="text-xs font-medium text-grey-text uppercase tracking-wider mb-1">Downloads</h3>
+            <p class="text-sm">{pkg.downloads.toLocaleString()}</p>
+          </div>
+          <div>
+            <h3 class="text-xs font-medium text-grey-text uppercase tracking-wider mb-1">Installs to</h3>
+            <p class="text-sm font-mono text-grey-text">{installLocation[pkg.type]}</p>
+          </div>
+          {pkg.models && pkg.models.length > 0 && (
+            <div>
+              <h3 class="text-xs font-medium text-grey-text uppercase tracking-wider mb-2">Models</h3>
+              <div class="flex flex-wrap gap-1.5">
+                {pkg.models.map((model: string) => (
+                  <span class="text-xs bg-black-primary px-2 py-0.5 rounded text-grey-text">{model}</span>
+                ))}
+              </div>
+            </div>
+          )}
+          {pkg.tags && pkg.tags.length > 0 && (
+            <div>
+              <h3 class="text-xs font-medium text-grey-text uppercase tracking-wider mb-2">Tags</h3>
+              <div class="flex flex-wrap gap-1.5">
+                {pkg.tags.map((tag: string) => (
+                  <span class="text-xs bg-black-primary px-2 py-0.5 rounded text-grey-text">{tag}</span>
+                ))}
+              </div>
+            </div>
+          )}
+          {pkg.versions && pkg.versions.length > 0 && (
+            <div>
+              <h3 class="text-xs font-medium text-grey-text uppercase tracking-wider mb-2">Versions</h3>
+              <div class="space-y-1">
+                {pkg.versions.slice().reverse().map((v: string) => (
+                  <p class="text-sm font-mono text-grey-text">
+                    {v}
+                    {v === pkg.latest_version && <span class="text-xs text-red-accent ml-2">latest</span>}
+                  </p>
+                ))}
+              </div>
+            </div>
+          )}
+          {pkg.repository && (
+            <a
+              href={`https://${pkg.repository}`}
+              class="block text-sm text-red-accent hover:text-red-hover transition-colors pt-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View source &rarr;
+            </a>
+          )}
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

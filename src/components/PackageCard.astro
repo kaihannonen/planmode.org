@@ -1,0 +1,33 @@
+---
+import type { PackageSummary } from "../types";
+
+interface Props {
+  pkg: PackageSummary;
+}
+
+const { pkg } = Astro.props;
+
+const typeColors: Record<string, string> = {
+  plan: "bg-red-accent/15 text-red-accent",
+  rule: "bg-blue-500/15 text-blue-400",
+  prompt: "bg-green-500/15 text-green-400",
+};
+---
+
+<a
+  href={`/packages/${pkg.name}`}
+  class="block bg-black-card border border-grey-border/20 rounded-lg p-5 hover:border-grey-border/40 transition-colors"
+>
+  <div class="flex items-start justify-between gap-3 mb-3">
+    <h3 class="font-semibold text-white text-sm truncate">{pkg.name}</h3>
+    <span class:list={["text-xs font-medium px-2 py-0.5 rounded-full shrink-0", typeColors[pkg.type] ?? ""]}>
+      {pkg.type}
+    </span>
+  </div>
+  <p class="text-sm text-grey-text leading-relaxed line-clamp-2 mb-4">{pkg.description}</p>
+  <div class="flex items-center gap-4 text-xs text-grey-text">
+    <span>v{pkg.version}</span>
+    <span>{pkg.author}</span>
+    <span class="ml-auto">{pkg.downloads.toLocaleString()} downloads</span>
+  </div>
+</a>

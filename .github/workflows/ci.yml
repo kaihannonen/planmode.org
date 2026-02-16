@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-website:
+    name: Build Website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+  build-cli:
+    name: Build CLI
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: cli
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: cli/package-lock.json
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+
+  validate-registry:
+    name: Validate Registry
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate all registry JSON
+        run: |
+          python3 -c "
+          import json, os, sys
+          errors = 0
+          count = 0
+          for root, dirs, files in os.walk('registry/packages'):
+              for f in files:
+                  if not f.endswith('.json'): continue
+                  path = os.path.join(root, f)
+                  count += 1
+                  try:
+                      data = json.load(open(path))
+                      if 'metadata' in f:
+                          for field in ['name','description','author','license','type','latest_version','versions']:
+                              if field not in data:
+                                  print(f'MISSING {field} in {path}')
+                                  errors += 1
+                  except Exception as e:
+                      print(f'INVALID JSON: {path}: {e}')
+                      errors += 1
+          print(f'Validated {count} files, {errors} errors')
+          if errors > 0:
+              sys.exit(1)
+          "

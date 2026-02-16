@@ -1,0 +1,11 @@
+{
+  "version": "2.0.1",
+  "published_at": "2026-02-10T12:30:00Z",
+  "source": {
+    "repository": "github.com/dbtools/prisma-setup",
+    "tag": "v2.0.1",
+    "sha": "c7d3e9f0a1b2c415"
+  },
+  "files": ["planmode.yaml", "plan.md"],
+  "content_hash": "sha256:a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6"
+}

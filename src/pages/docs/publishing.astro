@@ -1,0 +1,163 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout title="Publishing Guide — Planmode" description="Learn how to create and publish Planmode packages.">
+  <h1 class="text-3xl font-bold mb-8">Publishing Guide</h1>
+
+  <div class="prose-custom">
+    <p>
+      Share your plans, rules, and prompts with the community. Publishing a package makes it available
+      in the public registry for anyone to install.
+    </p>
+
+    <h2>1. Initialize your package</h2>
+    <pre><code>mkdir my-awesome-plan && cd my-awesome-plan
+git init
+planmode init</code></pre>
+    <p>
+      The <code>init</code> command prompts you for the package name, type, description, author, license,
+      tags, and category. It creates two files:
+    </p>
+    <ul>
+      <li><code>planmode.yaml</code> — the package manifest</li>
+      <li>A stub content file (<code>plan.md</code>, <code>rule.md</code>, or <code>prompt.md</code>)</li>
+    </ul>
+
+    <h2>2. Write your content</h2>
+    <p>
+      Edit the content file with your plan, rule, or prompt. For plans, write clear, ordered steps.
+      For rules, write concise guidelines. For prompts, use Handlebars templates for variables.
+    </p>
+
+    <h3>Plan example</h3>
+    <pre><code># Set Up Authentication
+
+1. Install NextAuth.js: `npm install next-auth`
+2. Create `app/api/auth/[...nextauth]/route.ts`
+3. Configure providers (Google, GitHub)
+4. Add session provider to root layout
+5. Create login/signup pages
+6. Add middleware for protected routes</code></pre>
+
+    <h3>Rule example</h3>
+    <pre><code>- Always use strict TypeScript mode
+- Prefer `unknown` over `any`
+- Use explicit return types on exported functions
+- Enable noUncheckedIndexedAccess</code></pre>
+
+    <h3>Templated prompt example</h3>
+    <pre><code>Generate a complete REST API for the &#123;&#123;resource&#125;&#125; resource
+using &#123;&#123;framework&#125;&#125;. Include CRUD endpoints, input validation,
+error handling, and TypeScript types.</code></pre>
+
+    <h2>3. Configure variables (optional)</h2>
+    <p>If your package uses templates, define variables in <code>planmode.yaml</code>:</p>
+    <pre><code>variables:
+  framework:
+    description: "Target framework"
+    type: enum
+    options: [nextjs, remix, express]
+    required: true
+    default: nextjs
+  project_name:
+    description: "Your project name"
+    type: string
+    required: true</code></pre>
+
+    <h2>4. Add dependencies (optional)</h2>
+    <p>Plans and rules can depend on other packages:</p>
+    <pre><code>dependencies:
+  rules:
+    - typescript-strict@^1.0.0
+    - tailwind-best-practices
+  plans:
+    - prisma-setup@~2.0.0</code></pre>
+
+    <h2>5. Authenticate</h2>
+    <pre><code># Option A: provide a token directly
+planmode login --token ghp_xxxxx
+
+# Option B: use the GitHub CLI
+planmode login --gh</code></pre>
+
+    <h2>6. Push to GitHub</h2>
+    <p>Create a GitHub repository and push your package:</p>
+    <pre><code>git add .
+git commit -m "Initial package"
+git remote add origin git@github.com:username/my-awesome-plan.git
+git push -u origin main</code></pre>
+
+    <h2>7. Publish</h2>
+    <pre><code>planmode publish</code></pre>
+    <p>This will:</p>
+    <ul>
+      <li>Validate your <code>planmode.yaml</code></li>
+      <li>Check that the version doesn't already exist</li>
+      <li>Create a git tag <code>v&lt;version&gt;</code></li>
+      <li>Fork the <code>planmode/registry</code> repo</li>
+      <li>Submit a PR with your package entry</li>
+    </ul>
+    <p>
+      Once the PR is reviewed and merged, your package will be available in the public registry.
+    </p>
+
+    <h2>Updating your package</h2>
+    <p>To publish a new version:</p>
+    <ul>
+      <li>Bump the <code>version</code> field in <code>planmode.yaml</code></li>
+      <li>Update your content</li>
+      <li>Commit, push, and run <code>planmode publish</code> again</li>
+    </ul>
+
+    <h2>Private packages</h2>
+    <p>
+      Not everything needs to be public. For private packages, push to a private GitHub repo and
+      configure it as a private registry source:
+    </p>
+    <pre><code>planmode registry add mycompany github.com/mycompany/planmode-packages
+planmode install @mycompany/deploy-playbook</code></pre>
+    <p>
+      Private registries use the same format as the public registry — a GitHub repo with
+      <code>index.json</code> and a <code>packages/</code> directory.
+    </p>
+  </div>
+</DocsLayout>
+
+<style>
+  @reference "../../styles/global.css";
+
+  .prose-custom {
+    @apply text-grey-light leading-relaxed;
+  }
+  .prose-custom h2 {
+    @apply text-xl font-semibold text-white mt-10 mb-4;
+  }
+  .prose-custom h3 {
+    @apply text-base font-semibold text-white mt-6 mb-3;
+  }
+  .prose-custom p {
+    @apply mb-4 text-sm;
+  }
+  .prose-custom ul {
+    @apply mb-4 list-disc list-inside text-sm space-y-1;
+  }
+  .prose-custom li {
+    @apply text-grey-text;
+  }
+  .prose-custom code {
+    @apply text-xs bg-black-card px-1.5 py-0.5 rounded font-mono text-red-accent;
+  }
+  .prose-custom pre {
+    @apply bg-black-card border border-grey-border/20 rounded-lg p-4 mb-4 overflow-x-auto;
+  }
+  .prose-custom pre code {
+    @apply bg-transparent px-0 py-0 text-grey-light text-sm;
+  }
+  .prose-custom a {
+    @apply text-red-accent hover:text-red-hover transition-colors underline;
+  }
+  .prose-custom strong {
+    @apply text-white font-semibold;
+  }
+</style>
