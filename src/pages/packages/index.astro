@@ -109,4 +109,17 @@ const packagesJson = JSON.stringify(packages);
       filterPackages();
     });
   });
+
+  // Hydrate live download counts
+  fetch("https://api.planmode.org/stats")
+    .then((r) => r.json())
+    .then((data: Record<string, { downloads: number; views: number }>) => {
+      document.querySelectorAll<HTMLElement>("[data-stat-downloads]").forEach((el) => {
+        const pkg = el.dataset.statDownloads;
+        if (pkg && data[pkg] && typeof data[pkg].downloads === "number") {
+          el.textContent = data[pkg].downloads.toLocaleString();
+        }
+      });
+    })
+    .catch(() => {});
 </script>

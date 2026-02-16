@@ -10,6 +10,7 @@ import { addImport, removeImport } from "./claude-md.js";
 import { parseManifest, readPackageContent } from "./manifest.js";
 import { renderTemplate, collectVariableValues } from "./template.js";
 import { logger } from "./logger.js";
+import { trackDownload } from "./analytics.js";
 
 function getInstallDir(type: PackageType): string {
   switch (type) {
@@ -116,6 +117,7 @@ export async function installPackage(
   fs.mkdirSync(path.dirname(fullPath), { recursive: true });
   fs.writeFileSync(fullPath, content, "utf-8");
   logger.success(`Installed ${packageName}@${version} → ${installPath}`);
+  trackDownload(packageName);
 
   // Update CLAUDE.md for plans
   if (type === "plan") {

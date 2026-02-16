@@ -140,7 +140,11 @@ const installLocation: Record<string, string> = {
           </div>
           <div>
             <h3 class="text-xs font-medium text-grey-text uppercase tracking-wider mb-1">Downloads</h3>
-            <p class="text-sm">{pkg.downloads.toLocaleString()}</p>
+            <p class="text-sm" data-stat="downloads">{pkg.downloads.toLocaleString()}</p>
+          </div>
+          <div>
+            <h3 class="text-xs font-medium text-grey-text uppercase tracking-wider mb-1">Views</h3>
+            <p class="text-sm" data-stat="views">0</p>
           </div>
           <div>
             <h3 class="text-xs font-medium text-grey-text uppercase tracking-wider mb-1">Installs to</h3>
@@ -194,3 +198,25 @@ const installLocation: Record<string, string> = {
     </div>
   </div>
 </Base>
+
+<script define:vars={{ packageName: pkg.name }}>
+  const API = "https://api.planmode.org";
+
+  // Track view (fire-and-forget)
+  fetch(`${API}/views/${encodeURIComponent(packageName)}`, { method: "POST" }).catch(() => {});
+
+  // Hydrate live counts
+  fetch(`${API}/stats/${encodeURIComponent(packageName)}`)
+    .then((r) => r.json())
+    .then((data) => {
+      const dlEl = document.querySelector('[data-stat="downloads"]');
+      const viewEl = document.querySelector('[data-stat="views"]');
+      if (dlEl && typeof data.downloads === "number") {
+        dlEl.textContent = data.downloads.toLocaleString();
+      }
+      if (viewEl && typeof data.views === "number") {
+        viewEl.textContent = data.views.toLocaleString();
+      }
+    })
+    .catch(() => {});
+</script>

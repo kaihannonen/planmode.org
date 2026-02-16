@@ -28,6 +28,6 @@ const typeColors: Record<string, string> = {
   <div class="flex items-center gap-4 text-xs text-grey-text">
     <span>v{pkg.version}</span>
     <span>{pkg.author}</span>
-    <span class="ml-auto">{pkg.downloads.toLocaleString()} downloads</span>
+    <span class="ml-auto"><span data-stat-downloads={pkg.name}>{pkg.downloads.toLocaleString()}</span> downloads</span>
   </div>
 </a>
