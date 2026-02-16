@@ -95,6 +95,7 @@ export interface VersionMetadata {
     repository: string;
     tag: string;
     sha: string;
+    path?: string;
   };
   files: string[];
   content_hash: string;

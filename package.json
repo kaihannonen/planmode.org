@@ -3,6 +3,16 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
+  "description": "The open source package manager for AI plans, rules, and prompts.",
+  "homepage": "https://planmode.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaihannonen/planmode.org"
+  },
+  "bugs": {
+    "url": "https://github.com/kaihannonen/planmode.org/issues"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

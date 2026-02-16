@@ -3,8 +3,9 @@
   "published_at": "2026-01-22T08:00:00Z",
   "source": {
     "repository": "github.com/kaihannonen/planmode.org",
-    "tag": "v1.0.0",
-    "sha": "c3d9e5f6a7b8c021"
+    "tag": "main",
+    "sha": "c3d9e5f6a7b8c021",
+    "path": "registry/packages/vitest-setup"
   },
   "files": ["planmode.yaml", "plan.md"],
   "content_hash": "sha256:a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2"

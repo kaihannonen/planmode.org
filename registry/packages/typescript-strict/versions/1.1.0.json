@@ -3,8 +3,9 @@
   "published_at": "2026-01-25T14:00:00Z",
   "source": {
     "repository": "github.com/kaihannonen/planmode.org",
-    "tag": "v1.1.0",
-    "sha": "d2e8f4a5b6c7d910"
+    "tag": "main",
+    "sha": "d2e8f4a5b6c7d910",
+    "path": "registry/packages/typescript-strict"
   },
   "files": ["planmode.yaml", "rule.md"],
   "content_hash": "sha256:b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1"

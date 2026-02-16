@@ -3,8 +3,9 @@
   "published_at": "2026-02-14T07:30:00Z",
   "source": {
     "repository": "github.com/kaihannonen/planmode.org",
-    "tag": "v2.1.0",
-    "sha": "f6a2b8c9d0e1f324"
+    "tag": "main",
+    "sha": "f6a2b8c9d0e1f324",
+    "path": "registry/packages/add-authentication"
   },
   "files": ["planmode.yaml", "plan.md"],
   "content_hash": "sha256:d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5"

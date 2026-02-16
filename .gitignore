@@ -2,3 +2,9 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+.env
+.env.local
+.env.*
+*.swp
+*.swo
+*~

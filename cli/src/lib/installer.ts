@@ -60,10 +60,11 @@ export async function installPackage(
 
   // Fetch manifest
   logger.info(`Fetching ${packageName}@${version}...`);
+  const basePath = versionMeta.source.path ? `${versionMeta.source.path}/` : "";
   const manifestRaw = await fetchFileAtTag(
     versionMeta.source.repository,
     versionMeta.source.tag,
-    "planmode.yaml",
+    `${basePath}planmode.yaml`,
   );
   const manifest = parseManifest(manifestRaw);
 
@@ -75,7 +76,7 @@ export async function installPackage(
     content = await fetchFileAtTag(
       versionMeta.source.repository,
       versionMeta.source.tag,
-      manifest.content_file,
+      `${basePath}${manifest.content_file}`,
     );
   } else {
     throw new Error("Package has no content or content_file");
