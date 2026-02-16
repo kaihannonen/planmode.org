@@ -65,7 +65,7 @@ export const publishCommand = new Command("publish")
       };
 
       // Fork the registry repo (idempotent)
-      await fetch("https://api.github.com/repos/planmode/registry/forks", {
+      await fetch("https://api.github.com/repos/kaihannonen/planmode.org/forks", {
         method: "POST",
         headers,
       });
@@ -123,7 +123,7 @@ export const publishCommand = new Command("publish")
 
       // Get main branch ref
       const refRes = await fetch(
-        `https://api.github.com/repos/${user.login}/registry/git/ref/heads/main`,
+        `https://api.github.com/repos/${user.login}/planmode.org/git/ref/heads/main`,
         { headers },
       );
 
@@ -136,7 +136,7 @@ export const publishCommand = new Command("publish")
       const baseSha = refData.object.sha;
 
       // Create branch
-      await fetch(`https://api.github.com/repos/${user.login}/registry/git/refs`, {
+      await fetch(`https://api.github.com/repos/${user.login}/planmode.org/git/refs`, {
         method: "POST",
         headers,
         body: JSON.stringify({
@@ -147,7 +147,7 @@ export const publishCommand = new Command("publish")
 
       // Create metadata.json
       await fetch(
-        `https://api.github.com/repos/${user.login}/registry/contents/packages/${manifest.name}/metadata.json`,
+        `https://api.github.com/repos/${user.login}/planmode.org/contents/registry/packages/${manifest.name}/metadata.json`,
         {
           method: "PUT",
           headers,
@@ -161,7 +161,7 @@ export const publishCommand = new Command("publish")
 
       // Create version file
       await fetch(
-        `https://api.github.com/repos/${user.login}/registry/contents/packages/${manifest.name}/versions/${manifest.version}.json`,
+        `https://api.github.com/repos/${user.login}/planmode.org/contents/registry/packages/${manifest.name}/versions/${manifest.version}.json`,
         {
           method: "PUT",
           headers,
@@ -174,7 +174,7 @@ export const publishCommand = new Command("publish")
       );
 
       // Create PR
-      const prRes = await fetch("https://api.github.com/repos/planmode/registry/pulls", {
+      const prRes = await fetch("https://api.github.com/repos/kaihannonen/planmode.org/pulls", {
         method: "POST",
         headers,
         body: JSON.stringify({

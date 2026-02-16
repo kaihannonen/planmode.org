@@ -112,15 +112,16 @@ git push -u origin main</code></pre>
 
     <h2>Private packages</h2>
     <p>
-      Not everything needs to be public. For private packages, push to a private GitHub repo and
-      configure it as a private registry source:
+      Not everything needs to be public. For private packages, push to a private GitHub repo
+      with the same format as the public registry — a <code>packages/</code> directory with
+      <code>planmode.yaml</code> and content files. Configure the private source in
+      <code>~/.planmode/config</code>:
     </p>
-    <pre><code>planmode registry add mycompany github.com/mycompany/planmode-packages
-planmode install @mycompany/deploy-playbook</code></pre>
-    <p>
-      Private registries use the same format as the public registry — a GitHub repo with
-      <code>index.json</code> and a <code>packages/</code> directory.
-    </p>
+    <pre><code># ~/.planmode/config
+registries:
+  mycompany: github.com/mycompany/planmode-packages</code></pre>
+    <p>Then install scoped packages from it:</p>
+    <pre><code>planmode install @mycompany/deploy-playbook</code></pre>
   </div>
 </DocsLayout>
 

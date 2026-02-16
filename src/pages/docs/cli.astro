@@ -7,7 +7,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
 
   <div class="prose-custom">
     <h2 id="install">planmode install</h2>
-    <pre><code>planmode install &lt;package&gt; [--version &lt;ver&gt;] [--rule] [--no-input]</code></pre>
+    <pre><code>planmode install &lt;package&gt; [--version &lt;ver&gt;] [--rule] [--no-input] [--set key=value...]</code></pre>
     <p>Install a package into the current project.</p>
     <h3>Arguments</h3>
     <ul>
@@ -15,6 +15,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       <li><code>--version &lt;ver&gt;</code> / <code>-v &lt;ver&gt;</code> — install specific version (default: latest)</li>
       <li><code>--rule</code> — force install as a rule to <code>.claude/rules/</code></li>
       <li><code>--no-input</code> — fail if any required variable is missing (no interactive prompts)</li>
+      <li><code>--set key=value</code> — set template variables (e.g., <code>--set project_name=myapp</code>)</li>
     </ul>
     <h3>File placement</h3>
     <ul>
@@ -24,6 +25,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
     </ul>
     <h3>Example</h3>
     <pre><code>planmode install nextjs-tailwind-starter
+planmode install nextjs-tailwind-starter --set project_name=myapp
 planmode install typescript-strict@^1.0.0
 planmode install @mycompany/deploy-playbook -v 2.0.0</code></pre>
 
