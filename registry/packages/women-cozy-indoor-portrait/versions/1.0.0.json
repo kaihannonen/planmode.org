@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "56926ab83fcbc396",
+    "path": "registry/packages/women-cozy-indoor-portrait"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:56926ab83fcbc396a872d6469907769d2dbbc7b2fa789092cacf9ea2c4bc28e9"
+}

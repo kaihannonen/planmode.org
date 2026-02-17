@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "0703f2be67784143",
+    "path": "registry/packages/instant-polaroid"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:0703f2be677841431a367670af217cfce16834d6e32015653a389b05744cf77c"
+}

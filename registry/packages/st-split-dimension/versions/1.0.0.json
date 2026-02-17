@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "9cab43e850fdfb5d",
+    "path": "registry/packages/st-split-dimension"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:9cab43e850fdfb5df6b1cc98dd479df86be034a40d1593206f69758e13f72536"
+}

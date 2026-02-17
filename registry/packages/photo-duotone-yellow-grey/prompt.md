@@ -1,0 +1,1 @@
+Duotone photography in yellow and grey tones, warm golden yellow highlights with cool grey shadows, energetic yet sophisticated two-tone palette, modern graphic design aesthetic, eye-catching color contrast

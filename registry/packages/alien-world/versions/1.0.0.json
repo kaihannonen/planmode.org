@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "a8bd288df2832af1",
+    "path": "registry/packages/alien-world"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:a8bd288df2832af14a78832c277d967b329c6fdb05b28a86f79edd704acc497a"
+}

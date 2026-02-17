@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "0e5c3008044da8e7",
+    "path": "registry/packages/men-cinematic-neon-portrait"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:0e5c3008044da8e7b9d839e81ea77be22a42feb0e5848f3818b7d11c0eeafd18"
+}

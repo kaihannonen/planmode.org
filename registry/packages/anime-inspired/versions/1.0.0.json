@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "e1e53ec9fe6304d6",
+    "path": "registry/packages/anime-inspired"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:e1e53ec9fe6304d600535ec241b63b7561a3c9842061ebd9880e5559aad5ee0f"
+}

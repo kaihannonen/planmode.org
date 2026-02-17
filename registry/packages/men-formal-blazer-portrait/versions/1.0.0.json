@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "daa8a7ac2058c732",
+    "path": "registry/packages/men-formal-blazer-portrait"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:daa8a7ac2058c732ec330df478f5d745c3fa44b3ab20b6eac74519d78a32c638"
+}

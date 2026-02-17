@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "0c987aba6a2518c1",
+    "path": "registry/packages/medieval-manuscript"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:0c987aba6a2518c1e95dd5e4fea3e7f6891717f99a58d98cba8b4907c5c234ba"
+}

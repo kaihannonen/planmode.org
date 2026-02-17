@@ -1,0 +1,27 @@
+{
+  "name": "droste-effect",
+  "description": "Droste effect recursive infinite loop image, the scene contains a smaller version of itself repeating inward, mind-bending recursive composition, mathematically precise spiral repetition",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "effects",
+    "editing"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/effects-recursive-droste-effect-640.png"
+}

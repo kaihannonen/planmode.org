@@ -1,0 +1,17 @@
+name: 3d-isometric-diorama
+version: 1.0.0
+type: prompt
+description: "Cute polished 3D isometric diorama, miniature city scene, soft pastel color palette, smooth rounded forms, tilt-shift effect, playful and whimsical, rendered in a clean modern 3D style"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - illustration
+  - art
+category: ai-ml
+content_file: prompt.md

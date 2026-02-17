@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "7d6ca3d027902c9e",
+    "path": "registry/packages/storybook-fantasy"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:7d6ca3d027902c9e97af202b2ae4d04b957b42df85d7b125357368f60b73d721"
+}

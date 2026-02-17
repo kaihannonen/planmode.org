@@ -1,0 +1,17 @@
+name: camera-lifestyle-photography
+version: 1.0.0
+type: prompt
+description: "Lifestyle photography, natural poses, warm tones, everyday environment, relaxed mood"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - camera
+category: ai-ml
+content_file: prompt.md

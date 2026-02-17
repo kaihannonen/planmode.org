@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "b461063c01ee4e45",
+    "path": "registry/packages/1980s-synthwave"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:b461063c01ee4e4520b0f1e1faf25ca37cfcbcdb76af0774f6ec4df37b599489"
+}

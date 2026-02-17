@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "87d0fa19a096690f",
+    "path": "registry/packages/photo-macro-80mm"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:87d0fa19a096690f88fb55b60833f37c3923174b451d86bc6ab99111f2588e07"
+}

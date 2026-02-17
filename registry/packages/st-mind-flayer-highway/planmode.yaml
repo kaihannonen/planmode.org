@@ -1,0 +1,17 @@
+name: st-mind-flayer-highway
+version: 1.0.0
+type: prompt
+description: "Wide-angle poster shot featuring the person as a lone traveler on an empty highway facing a \"WELCOME TO HAWKINS\" sign. Above, the Mind Flayer (Shadow Monster) from Stranger Things looms from apocal..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - stranger-things
+  - fan-art
+category: ai-ml
+content_file: prompt.md

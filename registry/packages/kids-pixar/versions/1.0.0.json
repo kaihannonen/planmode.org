@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "0c256383b11b226b",
+    "path": "registry/packages/kids-pixar"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:0c256383b11b226b21266fd6175966a5cca81ddcb6c0e04dc4d4fb6cdaa3fcd5"
+}

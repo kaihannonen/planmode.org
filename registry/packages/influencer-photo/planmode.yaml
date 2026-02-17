@@ -1,0 +1,17 @@
+name: influencer-photo
+version: 1.0.0
+type: prompt
+description: "Influencer photography style, soft light, curated realism"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - pop-culture
+  - internet
+category: ai-ml
+content_file: prompt.md

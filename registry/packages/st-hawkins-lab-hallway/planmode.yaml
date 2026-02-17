@@ -1,0 +1,17 @@
+name: st-hawkins-lab-hallway
+version: 1.0.0
+type: prompt
+description: "Render the subject walking confidently through a glowing neon-red doorway in an abandoned Hawkins Lab hallway of Stranger Things. Thick black organic vines (Mind Flayer vines) crawl across the wall..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - stranger-things
+  - fan-art
+category: ai-ml
+content_file: prompt.md

@@ -1,0 +1,23 @@
+name: map-underwater-kingdom
+version: 1.0.0
+type: prompt
+description: "Underwater kingdom map of {{location}} in an aquatic style, with coral reefs, sunken ships, and marine life."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - maps
+  - cartography
+category: ai-ml
+variables:
+  location:
+    description: "Location or region name for the map"
+    type: string
+    required: false
+    default: "the Coral Throne"
+content_file: prompt.md

@@ -1,0 +1,27 @@
+{
+  "name": "watercolor-painting",
+  "description": "Delicate watercolor painting on textured cold-press paper, soft wet-on-wet washes, visible brush strokes, gentle color bleeding at edges, transparent layered pigments, artistic and hand-painted feel",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "illustration",
+    "art"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/illustration-and-art-watercolor-painting-640.png"
+}

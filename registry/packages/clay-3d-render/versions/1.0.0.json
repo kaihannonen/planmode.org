@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "b43e0ccf715e876e",
+    "path": "registry/packages/clay-3d-render"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:b43e0ccf715e876e3d1790780647cad5c8a22945e27bda7792c77117c5fda67a"
+}

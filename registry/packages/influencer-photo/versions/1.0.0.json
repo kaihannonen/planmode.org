@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "9b36788b3a447ca0",
+    "path": "registry/packages/influencer-photo"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:9b36788b3a447ca0773acc2b87f8a3cb7463bd14552955738e373d8769fb326f"
+}

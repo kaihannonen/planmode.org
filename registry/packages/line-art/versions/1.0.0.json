@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "9bdb151458b41e31",
+    "path": "registry/packages/line-art"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:9bdb151458b41e3151973635cca742b75320c1faae8b50bb1d16f323ba6fbfb2"
+}

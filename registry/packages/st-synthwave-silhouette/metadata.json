@@ -1,0 +1,27 @@
+{
+  "name": "st-synthwave-silhouette",
+  "description": "Person silhouette portrait in Stranger Things synthwave style. Neon pink and blue gradients. Grid floor reflecting 80s retro wave aesthetic. Palm tree silhouettes. Sunset background. Vaporwave colo...",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "stranger-things",
+    "fan-art"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/stranger-things-synthwave-silhouette-640.png"
+}

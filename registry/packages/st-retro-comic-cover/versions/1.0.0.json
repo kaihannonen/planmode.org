@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "2a086878fa653771",
+    "path": "registry/packages/st-retro-comic-cover"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:2a086878fa6537711f30917fc2d81f18531b77d72f7bc2158f23c46525b52534"
+}

@@ -1,0 +1,1 @@
+Create a studio portrait of a man wearing a dark blazer over a plain T-shirt. Background: neutral grey gradient. Lighting: softbox-style portrait lighting, gentle shadows. Style: realistic, sharp details, suitable for website About page.

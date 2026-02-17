@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "964118261e6496dc",
+    "path": "registry/packages/map-victorian-london"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:964118261e6496dc8e7a5df608b748520633d6b759c26ce309fe725515cef181"
+}

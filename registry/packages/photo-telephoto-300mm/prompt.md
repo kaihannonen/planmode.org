@@ -1,0 +1,1 @@
+300mm telephoto lens photography, extreme background compression, powerful subject isolation, stacked depth layers, buttery smooth bokeh, wildlife and action photography style, distant subject intimacy

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "e72d7349071c09ae",
+    "path": "registry/packages/architectural-3d"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:e72d7349071c09aeda982c94be53d59fd010a8c2d3020807a4228ded3e6a626e"
+}

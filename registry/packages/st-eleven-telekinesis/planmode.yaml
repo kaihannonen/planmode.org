@@ -1,0 +1,17 @@
+name: st-eleven-telekinesis
+version: 1.0.0
+type: prompt
+description: "Reimagine the person as a fan-inspired version of Eleven. Recreate the iconic telekinetic power scene aesthetic. Intense focused expression. Dark atmospheric lighting with dramatic blue and red glo..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - stranger-things
+  - fan-art
+category: ai-ml
+content_file: prompt.md

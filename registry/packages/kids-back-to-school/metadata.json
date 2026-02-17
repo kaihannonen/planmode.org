@@ -1,0 +1,27 @@
+{
+  "name": "kids-back-to-school",
+  "description": "Create a fun back-to-school image from this child's photo. Add: backpack, chalkboard with doodles of books and stars, stack of colorful notebooks. Style: bright, cheerful, cartoonish, simple shapes...",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "kids",
+    "children"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/kids-back-to-school-illustration-640.png"
+}

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "dc4371115bc5917c",
+    "path": "registry/packages/voxel-art"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:dc4371115bc5917c08b3e40cf6d7b8ace86cdb3b3d8bfdea7263a57d0b2fe0e5"
+}

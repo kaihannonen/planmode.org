@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "6ff57284fff4aad8",
+    "path": "registry/packages/map-alien-planet"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:6ff57284fff4aad8df383c67b18884f65575efbfc8f6b3a5f897072d7968724c"
+}

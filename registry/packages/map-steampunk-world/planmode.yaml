@@ -1,0 +1,23 @@
+name: map-steampunk-world
+version: 1.0.0
+type: prompt
+description: "Steampunk world map of {{location}} in a Victorian style, with gears, cogs, and steam-powered cities."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - maps
+  - cartography
+category: ai-ml
+variables:
+  location:
+    description: "Location or region name for the map"
+    type: string
+    required: false
+    default: "the Clockwork Empire"
+content_file: prompt.md

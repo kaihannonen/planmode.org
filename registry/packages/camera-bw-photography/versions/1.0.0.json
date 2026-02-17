@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "a48442846fa4d3e8",
+    "path": "registry/packages/camera-bw-photography"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:a48442846fa4d3e80512a587903b31b5dff918eda0040685ed50fe4abda4a715"
+}

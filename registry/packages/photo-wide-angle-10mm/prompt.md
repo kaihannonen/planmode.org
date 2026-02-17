@@ -1,0 +1,1 @@
+10mm ultra wide-angle lens photography, dramatic exaggerated perspective, sweeping field of view, architectural and landscape grandeur, converging lines, immersive and expansive feel, slight fisheye distortion

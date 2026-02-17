@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "77f57fbd4b7aa6ff",
+    "path": "registry/packages/map-underwater-kingdom"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:77f57fbd4b7aa6ff956c497168b9f717ffc39533a97137a9d996bdffc76b0ff9"
+}

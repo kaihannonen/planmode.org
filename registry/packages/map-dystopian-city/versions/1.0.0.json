@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "0522f59aa7bb190a",
+    "path": "registry/packages/map-dystopian-city"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:0522f59aa7bb190aa91921e773bc0d28c0d51226db309c4ee17137716658f394"
+}

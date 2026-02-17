@@ -1,0 +1,17 @@
+name: st-retro-comic-cover
+version: 1.0.0
+type: prompt
+description: "Person featured on retro comic book cover design inspired by Stranger Things. Bold comic art style. Dramatic action scene. Bright primary colors. Vintage comic book font for title. \"Issue #1\" brand..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - stranger-things
+  - fan-art
+category: ai-ml
+content_file: prompt.md

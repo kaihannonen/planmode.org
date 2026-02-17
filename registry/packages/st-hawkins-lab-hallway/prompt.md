@@ -1,0 +1,1 @@
+Render the subject walking confidently through a glowing neon-red doorway in an abandoned Hawkins Lab hallway of Stranger Things. Thick black organic vines (Mind Flayer vines) crawl across the walls and floor. The doorway emits intense crimson light. Flickering green EXIT sign. Moody sci-fi horror aesthetic, volumetric fog, ultra-detailed textures.

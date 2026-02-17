@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "2016f4014c6fad06",
+    "path": "registry/packages/photo-wide-angle-17mm"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:2016f4014c6fad06a8b063326ec8504b44f2da10d6cf12f62ed760d9455705a1"
+}

@@ -1,0 +1,17 @@
+name: photo-professional-product
+version: 1.0.0
+type: prompt
+description: "Clean professional product photography on pure white studio background, commercial lighting setup with softboxes, sharp detail, no shadows, e-commerce ready, high resolution product shot"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

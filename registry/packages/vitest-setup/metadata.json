@@ -5,11 +5,24 @@
   "license": "MIT",
   "repository": "github.com/kaihannonen/planmode.org",
   "category": "testing",
-  "tags": ["vitest", "testing", "typescript", "coverage"],
+  "tags": [
+    "vitest",
+    "testing",
+    "typescript",
+    "coverage"
+  ],
   "type": "plan",
-  "models": ["claude-4", "claude-3.5"],
+  "models": [
+    "claude-opus-4",
+    "claude-sonnet-4-5",
+    "gpt-4o",
+    "gemini-2.5-pro",
+    "kimi-k2"
+  ],
   "latest_version": "1.0.0",
-  "versions": ["1.0.0"],
+  "versions": [
+    "1.0.0"
+  ],
   "downloads": 0,
   "created_at": "2026-01-22T08:00:00Z",
   "updated_at": "2026-01-28T10:00:00Z"

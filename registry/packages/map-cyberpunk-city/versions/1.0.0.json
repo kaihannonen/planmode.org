@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "8fdd49481c0aa5a3",
+    "path": "registry/packages/map-cyberpunk-city"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:8fdd49481c0aa5a39ce26e0f364476215777a464055ce61ad9350d6f3662a6e4"
+}

@@ -1,0 +1,1 @@
+Person featured on retro comic book cover design inspired by Stranger Things. Bold comic art style. Dramatic action scene. Bright primary colors. Vintage comic book font for title. "Issue #1" branding. Halftone dot patterns. 80s comic aesthetic.

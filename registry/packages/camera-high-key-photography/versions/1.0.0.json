@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "d3b39561f0b277d2",
+    "path": "registry/packages/camera-high-key-photography"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:d3b39561f0b277d2a300de05662609784eebfb959c3d075a6ff7dfdc85bce216"
+}

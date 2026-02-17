@@ -1,0 +1,23 @@
+name: map-fantasy-hand-drawn
+version: 1.0.0
+type: prompt
+description: "Fantasy map of {{location}} in a hand-drawn style, featuring mystical lands, ancient forests, and enchanted castles."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - maps
+  - cartography
+category: ai-ml
+variables:
+  location:
+    description: "Location or region name for the map"
+    type: string
+    required: false
+    default: "the Enchanted Realms"
+content_file: prompt.md

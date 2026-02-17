@@ -1,0 +1,1 @@
+Epic low-angle group poster shot featuring the person as the central figure with 3 friends on BMX bikes, looking up at a red apocalyptic sky. They wear 80s outfits. Behind them, lightning strikes the Mind Flayer silhouette. Distressed neon title "STRANGER THINGS" glows in the sky. Teal and orange color grading, epic movie poster composition, 80s adventure aesthetic.

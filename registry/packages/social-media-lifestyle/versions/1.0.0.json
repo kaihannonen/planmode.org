@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "9a2858ac22c568d8",
+    "path": "registry/packages/social-media-lifestyle"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:9a2858ac22c568d85d0ffb5604107fb55bf4de912db7d83383aba66aeaa0d3be"
+}

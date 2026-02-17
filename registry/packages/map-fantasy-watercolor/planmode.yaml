@@ -1,0 +1,23 @@
+name: map-fantasy-watercolor
+version: 1.0.0
+type: prompt
+description: "Fantasy continent map of {{location}} in a watercolor style, with vibrant colors, mythical creatures, and diverse landscapes."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - maps
+  - cartography
+category: ai-ml
+variables:
+  location:
+    description: "Location or region name for the map"
+    type: string
+    required: false
+    default: "the Emerald Continent"
+content_file: prompt.md

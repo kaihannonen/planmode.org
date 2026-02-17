@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "8b55f437ebee2240",
+    "path": "registry/packages/men-travel-explorer"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:8b55f437ebee2240caa4df84ddb11f867759bf2d07463e8339dd89f098d68d27"
+}

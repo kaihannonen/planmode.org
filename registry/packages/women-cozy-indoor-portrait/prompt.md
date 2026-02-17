@@ -1,0 +1,1 @@
+Turn this photo into a cozy indoor portrait of a woman sitting by a window. Add: a mug of coffee, soft blanket, bookshelf in the back. Style: warm, slightly desaturated, natural light, shallow depth of field.

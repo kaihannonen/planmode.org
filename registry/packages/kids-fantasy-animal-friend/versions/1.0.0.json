@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "2b33116e07982bce",
+    "path": "registry/packages/kids-fantasy-animal-friend"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:2b33116e07982bcef46d460a2c5c83e97a576775ff3b8408182eae1a4ac16e58"
+}

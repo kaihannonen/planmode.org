@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "1ff2c945858a110c",
+    "path": "registry/packages/map-modern-city"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:1ff2c945858a110c2554d55bd1df0606a39f0bd64952aa28a30cb6deab0537a0"
+}

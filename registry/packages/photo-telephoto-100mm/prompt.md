@@ -1,0 +1,1 @@
+100mm telephoto lens photography, flattering portrait compression, subject isolation from background, smooth creamy bokeh, shallow depth of field, natural skin rendering, professional portrait aesthetic

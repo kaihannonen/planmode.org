@@ -1,0 +1,17 @@
+name: abstract-art
+version: 1.0.0
+type: prompt
+description: "Abstract art style, non-representational shapes, expressive colors"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - experimental
+  - mixed-media
+category: ai-ml
+content_file: prompt.md

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "10d887be14cd0b47",
+    "path": "registry/packages/baroque"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:10d887be14cd0b4798c51e5f56b8aef350287524de487d4495c1a70d225dd759"
+}

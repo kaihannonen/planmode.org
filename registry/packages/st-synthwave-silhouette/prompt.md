@@ -1,0 +1,1 @@
+Person silhouette portrait in Stranger Things synthwave style. Neon pink and blue gradients. Grid floor reflecting 80s retro wave aesthetic. Palm tree silhouettes. Sunset background. Vaporwave colors. Outrun art style. Nostalgic futuristic blend.

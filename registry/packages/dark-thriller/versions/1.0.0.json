@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "5678df4fa56a0d79",
+    "path": "registry/packages/dark-thriller"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:5678df4fa56a0d7923079cc4d272b2e8f139c6d0dd3f4eb404e1f168cc0beac0"
+}

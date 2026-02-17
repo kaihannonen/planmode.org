@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "d2f3cd278b314587",
+    "path": "registry/packages/map-fantasy-island"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:d2f3cd278b3145876658c6e90f82b8c35cdf32cd1fcda241de67a59c25708099"
+}

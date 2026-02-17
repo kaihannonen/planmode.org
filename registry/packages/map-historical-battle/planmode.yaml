@@ -1,0 +1,23 @@
+name: map-historical-battle
+version: 1.0.0
+type: prompt
+description: "Historical battle map of {{location}} in a military style, with troop movements, fortifications, and strategic points."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - maps
+  - cartography
+category: ai-ml
+variables:
+  location:
+    description: "Location or region name for the map"
+    type: string
+    required: false
+    default: "Gettysburg"
+content_file: prompt.md

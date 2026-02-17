@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "d496832b672e7416",
+    "path": "registry/packages/stylized-3d-render"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:d496832b672e74167e9f2ecea2d3f272832fdc83216f023e0d1f38aa593e6342"
+}

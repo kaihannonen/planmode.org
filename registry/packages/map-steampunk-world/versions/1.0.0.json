@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "4ce4ff9ce5f94788",
+    "path": "registry/packages/map-steampunk-world"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:4ce4ff9ce5f947880c28f474d7d9f7d6362642bfd522ef659f10225d98a0116c"
+}

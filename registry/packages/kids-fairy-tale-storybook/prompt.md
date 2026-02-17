@@ -1,0 +1,1 @@
+Create a storybook-style illustration of this girl reading a book under a tree. Add: small friendly animals and floating stars above the book. Style: watercolor children's book art, soft edges, warm colors.

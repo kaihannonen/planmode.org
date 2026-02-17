@@ -1,0 +1,17 @@
+name: historical-film
+version: 1.0.0
+type: prompt
+description: "Historical film look, period-accurate lighting, textured tones, classic cinema feel"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - cinematic
+  - film
+category: ai-ml
+content_file: prompt.md

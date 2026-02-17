@@ -1,0 +1,17 @@
+name: photo-telephoto-300mm
+version: 1.0.0
+type: prompt
+description: "300mm telephoto lens photography, extreme background compression, powerful subject isolation, stacked depth layers, buttery smooth bokeh, wildlife and action photography style, distant subject inti..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

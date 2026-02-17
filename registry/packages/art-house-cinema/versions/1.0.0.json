@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "f38502e18b9d990d",
+    "path": "registry/packages/art-house-cinema"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:f38502e18b9d990dcac7e875e5b297e1592631054a8b537138cfcde64b9a3221"
+}

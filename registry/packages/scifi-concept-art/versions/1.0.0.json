@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "6bd527682fa7a04d",
+    "path": "registry/packages/scifi-concept-art"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:6bd527682fa7a04d48240ea96734f70eef8723b9d150049b9b01cd3f72b57a6a"
+}

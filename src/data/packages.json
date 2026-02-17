@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-02-16T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
   "packages": [
     {
       "name": "nextjs-tailwind-starter",
@@ -9,7 +9,12 @@
       "description": "Full-stack Next.js starter with Tailwind, Prisma, and auth",
       "author": "planmode",
       "category": "frontend",
-      "tags": ["nextjs", "tailwind", "prisma", "auth"],
+      "tags": [
+        "nextjs",
+        "tailwind",
+        "prisma",
+        "auth"
+      ],
       "downloads": 0,
       "created_at": "2026-01-15T08:00:00Z",
       "updated_at": "2026-02-01T12:00:00Z"
@@ -21,7 +26,11 @@
       "description": "Strict TypeScript configuration rules for safer, more maintainable code",
       "author": "planmode",
       "category": "frontend",
-      "tags": ["typescript", "linting", "best-practices"],
+      "tags": [
+        "typescript",
+        "linting",
+        "best-practices"
+      ],
       "downloads": 0,
       "created_at": "2026-01-10T08:00:00Z",
       "updated_at": "2026-02-05T10:00:00Z"
@@ -33,7 +42,11 @@
       "description": "Tailwind CSS coding standards: utility-first patterns, component extraction, responsive design",
       "author": "planmode",
       "category": "frontend",
-      "tags": ["tailwind", "css", "best-practices"],
+      "tags": [
+        "tailwind",
+        "css",
+        "best-practices"
+      ],
       "downloads": 0,
       "created_at": "2026-01-12T08:00:00Z",
       "updated_at": "2026-01-20T09:00:00Z"
@@ -45,7 +58,12 @@
       "description": "Set up Prisma ORM with PostgreSQL, migrations, and seed data",
       "author": "planmode",
       "category": "database",
-      "tags": ["prisma", "postgresql", "orm", "database"],
+      "tags": [
+        "prisma",
+        "postgresql",
+        "orm",
+        "database"
+      ],
       "downloads": 0,
       "created_at": "2026-01-18T08:00:00Z",
       "updated_at": "2026-02-10T14:00:00Z"
@@ -57,7 +75,11 @@
       "description": "Production-ready Docker Compose setup with Nginx, app server, and database",
       "author": "planmode",
       "category": "devops",
-      "tags": ["docker", "nginx", "deployment"],
+      "tags": [
+        "docker",
+        "nginx",
+        "deployment"
+      ],
       "downloads": 0,
       "created_at": "2026-01-20T08:00:00Z",
       "updated_at": "2026-01-25T11:00:00Z"
@@ -69,7 +91,12 @@
       "description": "Generate a complete REST API with CRUD endpoints, validation, and error handling",
       "author": "planmode",
       "category": "backend",
-      "tags": ["api", "rest", "crud", "generator"],
+      "tags": [
+        "api",
+        "rest",
+        "crud",
+        "generator"
+      ],
       "downloads": 0,
       "created_at": "2026-01-08T08:00:00Z",
       "updated_at": "2026-02-12T16:00:00Z"
@@ -81,7 +108,12 @@
       "description": "Configure Vitest with TypeScript, coverage, and sensible defaults",
       "author": "planmode",
       "category": "testing",
-      "tags": ["vitest", "testing", "typescript", "coverage"],
+      "tags": [
+        "vitest",
+        "testing",
+        "typescript",
+        "coverage"
+      ],
       "downloads": 0,
       "created_at": "2026-01-22T08:00:00Z",
       "updated_at": "2026-01-28T10:00:00Z"
@@ -93,7 +125,12 @@
       "description": "Add authentication to any web framework with NextAuth, Clerk, or Lucia",
       "author": "planmode",
       "category": "backend",
-      "tags": ["auth", "nextauth", "clerk", "lucia"],
+      "tags": [
+        "auth",
+        "nextauth",
+        "clerk",
+        "lucia"
+      ],
       "downloads": 0,
       "created_at": "2026-01-05T08:00:00Z",
       "updated_at": "2026-02-14T09:00:00Z"
@@ -105,7 +142,12 @@
       "description": "Set up GitHub Actions CI/CD pipeline with testing, linting, and deployment",
       "author": "planmode",
       "category": "devops",
-      "tags": ["github-actions", "ci-cd", "deployment", "testing"],
+      "tags": [
+        "github-actions",
+        "ci-cd",
+        "deployment",
+        "testing"
+      ],
       "downloads": 0,
       "created_at": "2026-01-14T08:00:00Z",
       "updated_at": "2026-02-08T13:00:00Z"
@@ -117,7 +159,12 @@
       "description": "Generate weather-themed images for any city with dynamic data injection",
       "author": "planmode",
       "category": "ai-ml",
-      "tags": ["image", "weather", "creative", "templating"],
+      "tags": [
+        "image",
+        "weather",
+        "creative",
+        "templating"
+      ],
       "downloads": 0,
       "created_at": "2026-02-01T08:00:00Z",
       "updated_at": "2026-02-05T11:00:00Z"
@@ -129,7 +176,12 @@
       "description": "Scaffold a FastAPI project with SQLAlchemy, Alembic, and Docker",
       "author": "planmode",
       "category": "backend",
-      "tags": ["python", "fastapi", "sqlalchemy", "docker"],
+      "tags": [
+        "python",
+        "fastapi",
+        "sqlalchemy",
+        "docker"
+      ],
       "downloads": 0,
       "created_at": "2026-01-25T08:00:00Z",
       "updated_at": "2026-02-03T15:00:00Z"
@@ -141,10 +193,3471 @@
       "description": "Enforce security headers, CSP, and HTTPS best practices in web applications",
       "author": "planmode",
       "category": "security",
-      "tags": ["security", "headers", "csp", "https"],
+      "tags": [
+        "security",
+        "headers",
+        "csp",
+        "https"
+      ],
       "downloads": 0,
       "created_at": "2026-02-03T08:00:00Z",
       "updated_at": "2026-02-10T09:00:00Z"
+    },
+    {
+      "name": "photo-professional-headshot",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Professional studio headshot photography, 85mm lens, f/2.8 aperture, soft studio lighting with a key light and fill light, clean neutral background, sharp focus on the eyes, professional attire, na...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-professional-headshot-640.png"
+    },
+    {
+      "name": "photo-1990s-film-portrait",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Shot on a 1990s point-and-shoot camera, direct on-camera flash, slight red-eye, warm nostalgic color cast, soft grain, candid and unposed feeling, slightly overexposed highlights",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-1990s-film-portrait-640.png"
+    },
+    {
+      "name": "photo-emotional-film",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Shot on Kodak Portra 400 film, golden hour natural light, cinematic composition, shallow depth of field, warm tones with lifted shadows, gentle film grain, emotionally evocative mood",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-emotional-film-photography-640.png"
+    },
+    {
+      "name": "photo-magazine-cover",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "High-end glossy magazine cover layout, professional studio lighting, bold typography overlay, vibrant saturated colors, flawless retouching, eye-catching composition, editorial fashion photography ...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-magazine-cover-640.png"
+    },
+    {
+      "name": "photo-luxury-product",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Luxury commercial product photography, floating on dark reflective water surface, surrounded by delicate flowers and petals, dramatic moody lighting, high-end advertising aesthetic, shallow depth o...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-luxury-product-shot-640.png"
+    },
+    {
+      "name": "photo-professional-product",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Clean professional product photography on pure white studio background, commercial lighting setup with softboxes, sharp detail, no shadows, e-commerce ready, high resolution product shot",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-professional-product-photo-640.png"
+    },
+    {
+      "name": "photo-isometric-photo",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Perfectly isometric perspective photography, captured from a precise 45-degree elevated angle, symmetrical composition, architectural precision, clean lines and geometric forms",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-isometric-photography-640.png"
+    },
+    {
+      "name": "photo-prime-zoom-24mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Shot with a 24mm prime lens, wide perspective with slight barrel distortion, environmental context visible, sharp across the frame, photojournalistic feel, natural available light",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-prime-zoom-24mm-640.png"
+    },
+    {
+      "name": "photo-prime-zoom-35mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Shot with a 35mm prime lens, classic street photography focal length, natural perspective close to human vision, versatile framing, sharp detail with smooth background separation, documentary style",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-prime-zoom-35mm-640.png"
+    },
+    {
+      "name": "photo-macro-60mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "60mm macro lens photography, extreme close-up revealing fine textures and details invisible to the naked eye, razor-thin depth of field, soft diffused background, precise focus on subject surface d...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-macro-60mm-640.png"
+    },
+    {
+      "name": "photo-macro-80mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "80mm macro lens photography, intimate close-up with slightly more working distance, beautiful bokeh, intricate detail capture, creamy out-of-focus areas, natural color rendition, studio-quality sha...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-macro-80mm-640.png"
+    },
+    {
+      "name": "photo-macro-105mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "105mm macro lens photography, true 1:1 magnification, exceptional detail and texture, paper-thin depth of field with silky smooth bokeh, professional macro technique, vibrant colors and tack-sharp ...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-macro-105mm-640.png"
+    },
+    {
+      "name": "photo-telephoto-100mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "100mm telephoto lens photography, flattering portrait compression, subject isolation from background, smooth creamy bokeh, shallow depth of field, natural skin rendering, professional portrait aest...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-telephoto-100mm-640.png"
+    },
+    {
+      "name": "photo-telephoto-200mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "200mm telephoto lens photography, strong background compression, dramatic subject isolation, distant subjects brought close, layered depth with smooth bokeh, sports and wildlife photography aesthetic",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-telephoto-200mm-640.png"
+    },
+    {
+      "name": "photo-telephoto-300mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "300mm telephoto lens photography, extreme background compression, powerful subject isolation, stacked depth layers, buttery smooth bokeh, wildlife and action photography style, distant subject inti...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-telephoto-300mm-640.png"
+    },
+    {
+      "name": "photo-telephoto-400mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "400mm super-telephoto lens photography, maximum background compression and subject isolation, atmospheric haze between layers, dreamy out-of-focus rendering, professional wildlife and sports photog...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-telephoto-400mm-640.png"
+    },
+    {
+      "name": "photo-wide-angle-10mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "10mm ultra wide-angle lens photography, dramatic exaggerated perspective, sweeping field of view, architectural and landscape grandeur, converging lines, immersive and expansive feel, slight fishey...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-wide-angle-10mm-640.png"
+    },
+    {
+      "name": "photo-wide-angle-17mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "17mm wide-angle lens photography, expansive field of view, dramatic foreground-to-background depth, architectural and landscape photography, strong leading lines, environmental storytelling, rectil...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-wide-angle-17mm-640.png"
+    },
+    {
+      "name": "photo-wide-angle-24mm",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "24mm wide-angle lens photography, classic wide-angle perspective, environmental portraits and landscapes, natural sense of space and depth, slight perspective exaggeration, reportage and documentar...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-wide-angle-24mm-640.png"
+    },
+    {
+      "name": "photo-black-white-film",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Classic black and white film photography, rich tonal range from deep blacks to bright whites, visible film grain, dramatic contrast, timeless monochrome aesthetic, shot on Ilford HP5 or Tri-X 400, ...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-black-and-white-film-640.png"
+    },
+    {
+      "name": "photo-film-noir",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Film noir photography style, high contrast black and white, dramatic chiaroscuro lighting, deep shadows and harsh highlights, venetian blind light patterns, moody and mysterious atmosphere, 1940s d...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-film-noir-640.png"
+    },
+    {
+      "name": "photo-depth-of-field",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Extreme shallow depth of field photography, f/1.4 aperture, razor-thin focus plane on the subject with everything else melting into beautiful creamy bokeh, dreamy out-of-focus foreground and backgr...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-depth-of-field-640.png"
+    },
+    {
+      "name": "photo-duotone-blue-grey",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Duotone photography in blue and grey tones, cool steel blue highlights with neutral grey shadows, modern minimalist color grading, editorial and contemporary feel, muted yet striking two-tone palette",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-duotone-blue-and-grey-640.png"
+    },
+    {
+      "name": "photo-duotone-red-grey",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Duotone photography in red and grey tones, warm red highlights with neutral grey shadows, bold and dramatic two-tone color grading, striking contrast between warmth and neutrality, editorial poster...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-duotone-red-and-grey-640.png"
+    },
+    {
+      "name": "photo-duotone-yellow-grey",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Duotone photography in yellow and grey tones, warm golden yellow highlights with cool grey shadows, energetic yet sophisticated two-tone palette, modern graphic design aesthetic, eye-catching color...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-duotone-yellow-and-grey-640.png"
+    },
+    {
+      "name": "photo-duotone-orange-grey",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Duotone photography in orange and grey tones, vibrant warm orange highlights with neutral grey shadows, bold and inviting two-tone color grading, sunset warmth meets urban cool, contemporary editor...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "portrait"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/photography-duotone-orange-and-grey-640.png"
+    },
+    {
+      "name": "map-fantasy-hand-drawn",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Fantasy map of {{location}} in a hand-drawn style, featuring mystical lands, ancient forests, and enchanted castles.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-fantasy-hand-drawn-map-640.png"
+    },
+    {
+      "name": "map-pirate-treasure",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Pirate treasure map of {{location}} in a vintage style, with weathered parchment, X marks the spot, and nautical symbols.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-pirate-treasure-map-640.png"
+    },
+    {
+      "name": "map-scifi-galaxy",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Sci-fi galaxy map of {{location}} in a futuristic style, showcasing star systems, space stations, and alien planets.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-sci-fi-galaxy-map-640.png"
+    },
+    {
+      "name": "map-medieval-kingdom",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Medieval kingdom map of {{location}} in a parchment style, with detailed castles, villages, and battlefields.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-medieval-kingdom-map-640.png"
+    },
+    {
+      "name": "map-modern-city",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Modern city map of {{location}} in a minimalist style, highlighting major landmarks, streets, and public transport routes.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-modern-city-map-640.png"
+    },
+    {
+      "name": "map-ancient-world",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Ancient world map of {{location}} in an antique style, with sepia tones, mythical creatures, and old-world charm.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-ancient-world-map-640.png"
+    },
+    {
+      "name": "map-fantasy-rpg",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Fantasy RPG map of {{location}} in a detailed style, featuring diverse terrains, dungeons, and quest locations.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-fantasy-rpg-map-640.png"
+    },
+    {
+      "name": "map-steampunk-world",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Steampunk world map of {{location}} in a Victorian style, with gears, cogs, and steam-powered cities.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-steampunk-world-map-640.png"
+    },
+    {
+      "name": "map-post-apocalyptic",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Post-apocalyptic map of {{location}} in a grunge style, showing ruined cities, wastelands, and survival zones.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-post-apocalyptic-map-640.png"
+    },
+    {
+      "name": "map-underwater-kingdom",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Underwater kingdom map of {{location}} in an aquatic style, with coral reefs, sunken ships, and marine life.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-underwater-kingdom-map-640.png"
+    },
+    {
+      "name": "map-space-exploration",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Space exploration map of {{location}} in a high-tech style, with star charts, wormholes, and spacecraft routes.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-space-exploration-map-640.png"
+    },
+    {
+      "name": "map-historical-battle",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Historical battle map of {{location}} in a military style, with troop movements, fortifications, and strategic points.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-historical-battle-map-640.png"
+    },
+    {
+      "name": "map-fantasy-island",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Fantasy island map of {{location}} in a tropical style, with lush jungles, hidden coves, and pirate hideouts.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-fantasy-island-map-640.png"
+    },
+    {
+      "name": "map-cyberpunk-city",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Cyberpunk city map of {{location}} in a neon style, with glowing streets, high-tech buildings, and dark alleys.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-cyberpunk-city-map-640.png"
+    },
+    {
+      "name": "map-victorian-london",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Victorian London map of {{location}} in a detailed style, with cobblestone streets, gas lamps, and historical landmarks.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-victorian-london-map-640.png"
+    },
+    {
+      "name": "map-fantasy-watercolor",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Fantasy continent map of {{location}} in a watercolor style, with vibrant colors, mythical creatures, and diverse landscapes.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-fantasy-watercolor-map-640.png"
+    },
+    {
+      "name": "map-dystopian-city",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Dystopian city map of {{location}} in a dark style, with oppressive architecture, surveillance zones, and resistance hideouts.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-dystopian-city-map-640.png"
+    },
+    {
+      "name": "map-ancient-egypt",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Ancient Egypt map of {{location}} in a hieroglyphic style, with pyramids, temples, and the Nile River.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-ancient-egypt-map-640.png"
+    },
+    {
+      "name": "map-fantasy-cartographic",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Fantasy world map of {{location}} in a cartographic style, with detailed topography, kingdoms, and trade routes.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-fantasy-cartographic-map-640.png"
+    },
+    {
+      "name": "map-alien-planet",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Alien planet map of {{location}} in an extraterrestrial style, with bizarre landscapes, alien flora, and research stations.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-alien-planet-map-640.png"
+    },
+    {
+      "name": "map-pirate-archipelago",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Pirate archipelago map of {{location}} in a swashbuckling style, with treasure islands, pirate ships, and sea monsters.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-pirate-archipelago-map-640.png"
+    },
+    {
+      "name": "map-fantasy-forest",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Fantasy forest map of {{location}} in an enchanted style, with magical glades, hidden paths, and ancient trees.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-fantasy-forest-map-640.png"
+    },
+    {
+      "name": "map-space-colony",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Space colony map of {{location}} in a futuristic style, with domed habitats, spaceports, and terraformed regions.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-space-colony-map-640.png"
+    },
+    {
+      "name": "map-fantasy-desert",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Fantasy desert map of {{location}} in an Arabian Nights style, with oases, sand dunes, and ancient ruins.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-fantasy-desert-map-640.png"
+    },
+    {
+      "name": "map-modern-subway",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Modern subway map of {{location}} in a clean style, with clear lines, station names, and transit connections.",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "maps",
+        "cartography"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/maps-modern-subway-map-640.png"
+    },
+    {
+      "name": "3d-isometric-diorama",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Cute polished 3D isometric diorama, miniature city scene, soft pastel color palette, smooth rounded forms, tilt-shift effect, playful and whimsical, rendered in a clean modern 3D style",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "illustration",
+        "art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/illustration-and-art-3d-isometric-diorama-640.png"
+    },
+    {
+      "name": "torn-paper-art",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Torn paper layered art style, ripped paper edges revealing detailed line art illustration underneath, mixed media collage effect, textured paper surfaces, artistic and tactile feeling",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "illustration",
+        "art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/illustration-and-art-torn-paper-art-640.png"
+    },
+    {
+      "name": "watercolor-painting",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Delicate watercolor painting on textured cold-press paper, soft wet-on-wet washes, visible brush strokes, gentle color bleeding at edges, transparent layered pigments, artistic and hand-painted feel",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "illustration",
+        "art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/illustration-and-art-watercolor-painting-640.png"
+    },
+    {
+      "name": "anime-portrait",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Hyperrealistic anime style illustration, dramatic spotlight lighting, vibrant colors with deep shadows, detailed hair and eyes in anime aesthetic, semi-realistic proportions, cinematic atmosphere",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "illustration",
+        "art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/illustration-and-art-anime-portrait-640.png"
+    },
+    {
+      "name": "3d-blind-box",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Pop Mart blind box collectible figure style, C4D 3D rendering, cute chibi Q-version proportions, smooth plastic-like material, soft studio lighting, pastel background, collectible toy aesthetic",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "illustration",
+        "art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/illustration-and-art-3d-blind-box-avatar-640.png"
+    },
+    {
+      "name": "droste-effect",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Droste effect recursive infinite loop image, the scene contains a smaller version of itself repeating inward, mind-bending recursive composition, mathematically precise spiral repetition",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "effects",
+        "editing"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/effects-recursive-droste-effect-640.png"
+    },
+    {
+      "name": "smart-outpainting",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Expand and extend the scene seamlessly to a wider 16:9 cinematic composition, generate natural continuation of the environment, maintain consistent lighting and style, seamless scenery extension",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "effects",
+        "editing"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/effects-smart-outpainting-640.png"
+    },
+    {
+      "name": "crowd-removal",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Remove all background people and bystanders from the scene, intelligently fill the removed areas with natural background continuation, maintain the main subject and environment, clean and unclutter...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "effects",
+        "editing"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/effects-crowd-removal-640.png"
+    },
+    {
+      "name": "men-linkedin-headshot",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Turn this into a professional LinkedIn headshot of a man. Background: softly blurred office with big windows. Style: clean, realistic, subtle retouching, no heavy filters. Lighting: soft daylight f...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "men"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/men-clean-linkedin-headshot-640.png"
+    },
+    {
+      "name": "men-streetwear-lifestyle",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Edit into a candid, high-realism street photograph while preserving original facial identity and hairstyle accurately. Show leaning casually against a large glass building wall on a sunny day. Outf...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "men"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/men-streetwear-lifestyle-photo-640.png"
+    },
+    {
+      "name": "men-cinematic-neon-portrait",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Edit into an ultra-realistic cinematic portrait while preserving face and identity accurately. Keep facial features, skin tone, and likeness the same. Place sitting casually on the floor in a moder...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "men"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/men-cinematic-neon-portrait-640.png"
+    },
+    {
+      "name": "men-movie-entry-scene",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Transform into an ultra-realistic cinematic film still while preserving exact identity. Scene: dusty desert roadside with soft beige haze; a white SUV on the left with the door open. Wardrobe: all-...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "men"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/men-movie-entry-scene-640.png"
+    },
+    {
+      "name": "men-fitness-progress",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Transform this gym selfie into a fitness magazine-style photo of a man mid-workout. Lighting: dramatic side lighting emphasizing muscles, dark background. Style: realistic, high contrast, crisp det...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "men"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/men-fitness-progress-photo-640.png"
+    },
+    {
+      "name": "men-formal-blazer-portrait",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Create a studio portrait of a man wearing a dark blazer over a plain T-shirt. Background: neutral grey gradient. Lighting: softbox-style portrait lighting, gentle shadows. Style: realistic, sharp d...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "men"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/men-formal-portrait-with-blazer-640.png"
+    },
+    {
+      "name": "men-travel-explorer",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Turn this photo into an image of a man standing on a mountain viewpoint at sunrise. Add: clouds below, golden light on the face. Outfit: hiking jacket and backpack. Style: cinematic landscape, rich...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "men"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/men-travel-explorer-shot-640.png"
+    },
+    {
+      "name": "women-soft-pastel-portrait",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Turn this portrait into a soft pastel aesthetic photo of a woman. Background: blurred flowers in pastel colors. Lighting: warm golden hour sunlight. Style: dreamy, gentle skin glow, light film grai...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "women"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/women-soft-pastel-aesthetic-portrait-640.png"
+    },
+    {
+      "name": "women-boss-mode-founder",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Create a confident business portrait of a woman tech founder. Setting: modern office with glass walls and city view. Pose: standing with arms relaxed, looking into the camera. Style: realistic, neu...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "women"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/women-boss-mode-founder-shot-640.png"
+    },
+    {
+      "name": "women-festival-party-look",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Transform this selfie into a festival photo of a woman with glitter makeup. Add: colorful lights and blurred crowd in the background. Style: energetic, high-saturation, lens flare and bokeh. Frame:...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "women"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/women-festival-party-look-640.png"
+    },
+    {
+      "name": "women-editorial-beauty",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Create an editorial-style beauty portrait of a woman. Background: solid color backdrop matching skin tone. Lighting: soft but directional, highlighting cheekbones. Style: magazine beauty shot, clea...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "women"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/women-editorial-beauty-shot-640.png"
+    },
+    {
+      "name": "women-cozy-indoor-portrait",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Turn this photo into a cozy indoor portrait of a woman sitting by a window. Add: a mug of coffee, soft blanket, bookshelf in the back. Style: warm, slightly desaturated, natural light, shallow dept...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "portrait",
+        "women"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/women-cozy-indoor-portrait-640.png"
+    },
+    {
+      "name": "kids-cartoon-princess",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Turn this child's photo into a cute cartoon princess character. Outfit: sparkling dress and tiny crown. Background: magical forest with soft glowing lights. Style: colorful, big expressive eyes, si...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "kids",
+        "children"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/kids-cartoon-princess-640.png"
+    },
+    {
+      "name": "kids-fairy-tale-storybook",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Create a storybook-style illustration of this girl reading a book under a tree. Add: small friendly animals and floating stars above the book. Style: watercolor children's book art, soft edges, war...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "kids",
+        "children"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/kids-fairy-tale-storybook-illustration-640.png"
+    },
+    {
+      "name": "kids-superhero-poster",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Turn this boy into a comic-book superhero. Outfit: colorful suit with cape, simple emblem on chest. Background: stylized city skyline at sunset. Style: bold comic shading, halftone texture, dynamic...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "kids",
+        "children"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/kids-superhero-poster-640.png"
+    },
+    {
+      "name": "kids-sports-star-poster",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Transform this child's photo into a sports poster. Setting: stadium at night with bright floodlights and cheering crowd. Style: realistic with slightly dramatic lighting, motion blur on background ...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "kids",
+        "children"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/kids-sports-star-poster-640.png"
+    },
+    {
+      "name": "kids-back-to-school",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Create a fun back-to-school image from this child's photo. Add: backpack, chalkboard with doodles of books and stars, stack of colorful notebooks. Style: bright, cheerful, cartoonish, simple shapes...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "kids",
+        "children"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/kids-back-to-school-illustration-640.png"
+    },
+    {
+      "name": "kids-fantasy-animal-friend",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Turn this child into a character riding their favorite animal through the clouds. Animal: keep realistic but friendly. Background: big fluffy clouds, rainbow, sun rays. Style: whimsical, painterly,...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "kids",
+        "children"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/kids-fantasy-animal-friend-640.png"
+    },
+    {
+      "name": "kids-pixar",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Generate 3D images in the style of Pixar animation. The images should capture the vibrant colors, whimsical characters, and imaginative settings typical of Pixar films. Focus on creating characters...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "kids",
+        "children"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/kids-pixar-640.png"
+    },
+    {
+      "name": "st-netflix-poster",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Person featured in official Netflix Stranger Things season poster design. Bold red title text. Character positioned in center. Dark atmospheric background with Upside Down elements. Floating partic...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-netflix-character-poster-640.png"
+    },
+    {
+      "name": "st-eleven-telekinesis",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Reimagine the person as a fan-inspired version of Eleven. Recreate the iconic telekinetic power scene aesthetic. Intense focused expression. Dark atmospheric lighting with dramatic blue and red glo...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-eleven-telekinesis-scene-640.png"
+    },
+    {
+      "name": "st-upside-down-portal",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Person standing before massive glowing red portal to Stranger Things' Upside Down dimension. Tentacles and vines emerging from gateway. Dark forest setting. Ominous red lighting with particle effec...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-upside-down-portal-640.png"
+    },
+    {
+      "name": "st-retro-comic-cover",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Person featured on retro comic book cover design inspired by Stranger Things. Bold comic art style. Dramatic action scene. Bright primary colors. Vintage comic book font for title. \"Issue #1\" brand...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-retro-comic-book-cover-640.png"
+    },
+    {
+      "name": "st-synthwave-silhouette",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Person silhouette portrait in Stranger Things synthwave style. Neon pink and blue gradients. Grid floor reflecting 80s retro wave aesthetic. Palm tree silhouettes. Sunset background. Vaporwave colo...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-synthwave-silhouette-640.png"
+    },
+    {
+      "name": "st-christmas-lights-wall",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Place the person into the Byers' living room of Stranger Things. Standing before the iconic wall covered in floral wallpaper and multicolored Christmas lights painted with alphabet letters. Hand ra...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-christmas-lights-wall-640.png"
+    },
+    {
+      "name": "st-demogorgon-encounter",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Terrifying close encounter of person facing Demogorgon creature from Stranger Things. Demogorgon flower-like head opening. Dark Hawkins forest night. Dramatic horror lighting. Person showing fear. ...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-demogorgon-encounter-640.png"
+    },
+    {
+      "name": "st-hawkins-lab-hallway",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Render the subject walking confidently through a glowing neon-red doorway in an abandoned Hawkins Lab hallway of Stranger Things. Thick black organic vines (Mind Flayer vines) crawl across the wall...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-hawkins-lab-hallway-640.png"
+    },
+    {
+      "name": "st-mind-flayer-highway",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Wide-angle poster shot featuring the person as a lone traveler on an empty highway facing a \"WELCOME TO HAWKINS\" sign. Above, the Mind Flayer (Shadow Monster) from Stranger Things looms from apocal...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-mind-flayer-highway-640.png"
+    },
+    {
+      "name": "st-starcourt-mall",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Person sitting at a table in the Starcourt Mall food court (Stranger Things Season 3). Background: Neon signs for Scoops Ahoy, The Gap, and RadioShack. 80s mall fashion: bright windbreaker, scrunch...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-starcourt-mall-640.png"
+    },
+    {
+      "name": "st-eddie-munson-guitar",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Person performing an intense electric guitar solo on top of a trailer in the Upside Down, honoring Eddie Munson's \"Master of Puppets\" scene. Red lightning strikes, Demobats swarm the sky. Dramatic ...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-eddie-munson-guitar-solo-640.png"
+    },
+    {
+      "name": "st-split-dimension",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Split composition showing person transitioning between normal Hawkins and Upside Down dimension of Stranger Things. Left side normal colorful world, right side dark decayed mirror version. Vines an...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-split-dimension-640.png"
+    },
+    {
+      "name": "st-lovers-lake",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Split-level shot showing the person floating in Lovers Lake. Above water: Normal night forest. Below water: The Upside Down dimension of Stranger Things with red spores and dead vines. Ethereal und...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-lovers-lake-split-640.png"
+    },
+    {
+      "name": "st-bicycle-sunset",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Cinematic silhouette shot of the person on a bicycle appearing to fly across a massive setting sun, an homage to E.T. and Stranger Things. Perfect black silhouette against orange-red sky. Nostalgic...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-bicycle-sunset-silhouette-640.png"
+    },
+    {
+      "name": "st-group-bmx-poster",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Epic low-angle group poster shot featuring the person as the central figure with 3 friends on BMX bikes, looking up at a red apocalyptic sky. They wear 80s outfits. Behind them, lightning strikes t...",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "stranger-things",
+        "fan-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/stranger-things-bmx-group-poster-640.png"
+    },
+    {
+      "name": "camera-street-photography",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Street photography, candid moment, natural light, urban environment, authentic emotions",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "camera"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/camera-styles-street-photography-640.png"
+    },
+    {
+      "name": "camera-studio-portrait",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Studio portrait photography, softbox lighting, neutral backdrop, sharp focus, professional look",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "camera"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/camera-styles-studio-portrait-640.png"
+    },
+    {
+      "name": "camera-lifestyle-photography",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Lifestyle photography, natural poses, warm tones, everyday environment, relaxed mood",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "camera"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/camera-styles-lifestyle-photography-640.png"
+    },
+    {
+      "name": "camera-high-key-photography",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "High-key photography, bright lighting, minimal shadows, clean white background",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "camera"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/camera-styles-high-key-photography-640.png"
+    },
+    {
+      "name": "camera-low-key-photography",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Low-key photography, deep shadows, dramatic contrast, moody atmosphere",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "camera"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/camera-styles-low-key-photography-640.png"
+    },
+    {
+      "name": "camera-macro-photography",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Macro photography, extreme close-up, fine texture detail, shallow depth of field",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "camera"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/camera-styles-macro-photography-640.png"
+    },
+    {
+      "name": "camera-landscape-photography",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Landscape photography, wide-angle view, natural light, expansive scenery",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "camera"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/camera-styles-landscape-photography-640.png"
+    },
+    {
+      "name": "camera-editorial-photography",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Editorial photography, fashion magazine style, controlled lighting, polished composition",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "camera"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/camera-styles-editorial-photography-640.png"
+    },
+    {
+      "name": "camera-documentary-photography",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Documentary photography, raw realism, unposed subjects, storytelling focus",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "camera"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/camera-styles-documentary-photography-640.png"
+    },
+    {
+      "name": "camera-bw-photography",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Black and white photography, strong contrast, timeless aesthetic, film-inspired tones",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "photography",
+        "camera"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/camera-styles-black-and-white-photography-640.png"
+    },
+    {
+      "name": "cinematic-portrait",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Cinematic portrait, dramatic side lighting, shallow depth of field, moody color grading",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "cinematic",
+        "film"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/cinematic-and-film-cinematic-portrait-640.png"
+    },
+    {
+      "name": "film-still-aesthetic",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Film still aesthetic, narrative framing, cinematic composition, subtle grain",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "cinematic",
+        "film"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/cinematic-and-film-film-still-aesthetic-640.png"
+    },
+    {
+      "name": "neo-noir",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Neo-noir style, high contrast lighting, urban night scene, mysterious mood",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "cinematic",
+        "film"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/cinematic-and-film-neo-noir-640.png"
+    },
+    {
+      "name": "golden-hour-cinematic",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Golden hour cinematic lighting, warm highlights, soft shadows, dreamy atmosphere",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "cinematic",
+        "film"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/cinematic-and-film-golden-hour-cinematic-640.png"
+    },
+    {
+      "name": "dark-thriller",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Dark thriller style, desaturated colors, intense shadows, suspenseful tone",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "cinematic",
+        "film"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/cinematic-and-film-dark-thriller-640.png"
+    },
+    {
+      "name": "epic-wide-shot",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Epic wide shot, cinematic scale, dramatic sky, heroic composition",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "cinematic",
+        "film"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/cinematic-and-film-epic-wide-shot-640.png"
+    },
+    {
+      "name": "indie-film-aesthetic",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Indie film aesthetic, natural lighting, muted colors, intimate framing",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "cinematic",
+        "film"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/cinematic-and-film-indie-film-aesthetic-640.png"
+    },
+    {
+      "name": "historical-film",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Historical film look, period-accurate lighting, textured tones, classic cinema feel",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "cinematic",
+        "film"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/cinematic-and-film-historical-film-look-640.png"
+    },
+    {
+      "name": "anamorphic-cinematic",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Anamorphic cinematic style, wide frame, soft lens flare, cinematic depth",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "cinematic",
+        "film"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/cinematic-and-film-anamorphic-cinematic-640.png"
+    },
+    {
+      "name": "art-house-cinema",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Art-house cinema, minimal dialogue feel, visual symbolism, contemplative mood",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "cinematic",
+        "film"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/cinematic-and-film-art-house-cinema-640.png"
+    },
+    {
+      "name": "oil-painting",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Oil painting, rich brushstrokes, layered texture, classical fine art feel",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "traditional-art",
+        "painting"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/traditional-art-oil-painting-640.png"
+    },
+    {
+      "name": "pencil-sketch",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Pencil sketch, hand-drawn lines, light shading, unfinished artistic look",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "traditional-art",
+        "painting"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/traditional-art-pencil-sketch-640.png"
+    },
+    {
+      "name": "ink-illustration",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Ink illustration, bold line work, high contrast, graphic detail",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "traditional-art",
+        "painting"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/traditional-art-ink-illustration-640.png"
+    },
+    {
+      "name": "charcoal-drawing",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Charcoal drawing, rough texture, expressive strokes, dramatic shading",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "traditional-art",
+        "painting"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/traditional-art-charcoal-drawing-640.png"
+    },
+    {
+      "name": "pastel-drawing",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Pastel drawing, soft edges, powdery texture, muted colors",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "traditional-art",
+        "painting"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/traditional-art-pastel-drawing-640.png"
+    },
+    {
+      "name": "gouache-painting",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Gouache painting, opaque paint, matte finish, illustrative style",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "traditional-art",
+        "painting"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/traditional-art-gouache-painting-640.png"
+    },
+    {
+      "name": "hand-painted-illustration",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Hand-painted illustration, organic imperfections, traditional art feel",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "traditional-art",
+        "painting"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/traditional-art-hand-painted-illustration-640.png"
+    },
+    {
+      "name": "childrens-book-illustration",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Children's book illustration, playful colors, soft shapes, whimsical mood",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "traditional-art",
+        "painting"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/traditional-art-children-s-book-illustration-640.png"
+    },
+    {
+      "name": "storybook-fantasy",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Storybook fantasy illustration, detailed environments, magical atmosphere",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "traditional-art",
+        "painting"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/traditional-art-storybook-fantasy-640.png"
+    },
+    {
+      "name": "minimalist-vector",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Minimalist vector illustration, flat design, limited color palette, clean lines",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "design",
+        "graphic"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/design-and-graphic-minimalist-vector-640.png"
+    },
+    {
+      "name": "infographic-style",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Modern infographic style, clear layout, simple icons, visual clarity",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "design",
+        "graphic"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/design-and-graphic-infographic-style-640.png"
+    },
+    {
+      "name": "editorial-illustration",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Editorial illustration, conceptual design, bold shapes, magazine-ready look",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "design",
+        "graphic"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/design-and-graphic-editorial-illustration-640.png"
+    },
+    {
+      "name": "flat-ui-illustration",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Flat UI illustration, soft gradients, friendly shapes, modern tech style",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "design",
+        "graphic"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/design-and-graphic-flat-ui-illustration-640.png"
+    },
+    {
+      "name": "poster-design",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Poster design style, bold typography influence, strong composition",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "design",
+        "graphic"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/design-and-graphic-poster-design-640.png"
+    },
+    {
+      "name": "corporate-illustration",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Corporate illustration, neutral colors, professional tone, clean visuals",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "design",
+        "graphic"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/design-and-graphic-corporate-illustration-640.png"
+    },
+    {
+      "name": "line-art",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Line art illustration, single-weight lines, simple forms, elegant design",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "design",
+        "graphic"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/design-and-graphic-line-art-640.png"
+    },
+    {
+      "name": "geometric-illustration",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Geometric illustration, sharp shapes, balanced composition, modern aesthetic",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "design",
+        "graphic"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/design-and-graphic-geometric-illustration-640.png"
+    },
+    {
+      "name": "branding-illustration",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Branding illustration, cohesive color system, polished commercial look",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "design",
+        "graphic"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/design-and-graphic-branding-illustration-640.png"
+    },
+    {
+      "name": "icon-style",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Icon-style illustration, simplified forms, high readability, minimal detail",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "design",
+        "graphic"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/design-and-graphic-icon-style-640.png"
+    },
+    {
+      "name": "isometric-3d",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Isometric 3D illustration, miniature scene, soft shadows, pastel colors",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "3d",
+        "game-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/3d-and-game-art-isometric-3d-640.png"
+    },
+    {
+      "name": "stylized-3d-render",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Stylized 3D render, smooth surfaces, playful proportions, clean lighting",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "3d",
+        "game-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/3d-and-game-art-stylized-3d-render-640.png"
+    },
+    {
+      "name": "realistic-3d-render",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Realistic 3D render, detailed materials, natural lighting, photoreal finish",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "3d",
+        "game-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/3d-and-game-art-realistic-3d-render-640.png"
+    },
+    {
+      "name": "low-poly-3d",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Low-poly 3D style, simplified geometry, flat shading, game-inspired",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "3d",
+        "game-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/3d-and-game-art-low-poly-3d-640.png"
+    },
+    {
+      "name": "diorama-scene",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Diorama scene, tiny detailed world, controlled lighting, collectible look",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "3d",
+        "game-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/3d-and-game-art-diorama-scene-640.png"
+    },
+    {
+      "name": "mobile-game-art",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Mobile game art style, bright colors, friendly characters, clean design",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "3d",
+        "game-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/3d-and-game-art-mobile-game-art-640.png"
+    },
+    {
+      "name": "console-game-cinematic",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Console game cinematic render, dramatic lighting, realistic textures",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "3d",
+        "game-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/3d-and-game-art-console-game-cinematic-640.png"
+    },
+    {
+      "name": "clay-3d-render",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Clay-style 3D render, soft forms, handcrafted appearance",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "3d",
+        "game-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/3d-and-game-art-clay-3d-render-640.png"
+    },
+    {
+      "name": "voxel-art",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Voxel art style, blocky forms, pixelated 3D aesthetic",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "3d",
+        "game-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/3d-and-game-art-voxel-art-640.png"
+    },
+    {
+      "name": "architectural-3d",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Architectural 3D visualization, realistic lighting, clean materials, modern design",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "3d",
+        "game-art"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/3d-and-game-art-architectural-3d-visualization-640.png"
+    },
+    {
+      "name": "instant-polaroid",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Instant polaroid photo, faded colors, soft vignette, white border frame",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "retro",
+        "vintage"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/retro-and-vintage-instant-polaroid-640.png"
+    },
+    {
+      "name": "1970s-film",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "1970s film photography, warm tones, light grain, nostalgic mood",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "retro",
+        "vintage"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/retro-and-vintage-1970s-film-photography-640.png"
+    },
+    {
+      "name": "1980s-synthwave",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "1980s retro synthwave, neon colors, futuristic nostalgia, bold gradients",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "retro",
+        "vintage"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/retro-and-vintage-1980s-retro-synthwave-640.png"
+    },
+    {
+      "name": "1990s-magazine",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "1990s magazine aesthetic, saturated colors, editorial flash look",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "retro",
+        "vintage"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/retro-and-vintage-1990s-magazine-aesthetic-640.png"
+    },
+    {
+      "name": "vintage-postcard",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Vintage postcard style, muted colors, worn texture, travel nostalgia",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "retro",
+        "vintage"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/retro-and-vintage-vintage-postcard-640.png"
+    },
+    {
+      "name": "old-hollywood-glamour",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Old Hollywood glamour, classic lighting, elegant styling, timeless look",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "retro",
+        "vintage"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/retro-and-vintage-old-hollywood-glamour-640.png"
+    },
+    {
+      "name": "retro-comic-book",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Retro comic book style, halftone dots, bold outlines, vintage print feel",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "retro",
+        "vintage"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/retro-and-vintage-retro-comic-book-640.png"
+    },
+    {
+      "name": "vhs-aesthetic",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "VHS aesthetic, scan lines, color distortion, analog artifacts",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "retro",
+        "vintage"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/retro-and-vintage-vhs-aesthetic-640.png"
+    },
+    {
+      "name": "sepia-vintage",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Sepia-toned vintage photo, aged texture, historical atmosphere",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "retro",
+        "vintage"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/retro-and-vintage-sepia-vintage-photo-640.png"
+    },
+    {
+      "name": "mid-century-modern",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Mid-century modern illustration, simple shapes, muted palette, retro design",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "retro",
+        "vintage"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/retro-and-vintage-mid-century-modern-640.png"
+    },
+    {
+      "name": "cyberpunk",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Cyberpunk aesthetic, neon lights, urban night, futuristic cityscape",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "futuristic",
+        "sci-fi"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/futuristic-and-sci-fi-cyberpunk-640.png"
+    },
+    {
+      "name": "scifi-concept-art",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Sci-fi concept art, advanced technology, cinematic scale, imaginative design",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "futuristic",
+        "sci-fi"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/futuristic-and-sci-fi-sci-fi-concept-art-640.png"
+    },
+    {
+      "name": "space-opera",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Space opera style, epic scope, cosmic environments, dramatic lighting",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "futuristic",
+        "sci-fi"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/futuristic-and-sci-fi-space-opera-640.png"
+    },
+    {
+      "name": "futuristic-minimalism",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Futuristic minimalism, clean surfaces, bright whites, high-tech calm",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "futuristic",
+        "sci-fi"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/futuristic-and-sci-fi-futuristic-minimalism-640.png"
+    },
+    {
+      "name": "ai-laboratory",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "AI laboratory aesthetic, glowing interfaces, modern science environment",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "futuristic",
+        "sci-fi"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/futuristic-and-sci-fi-ai-laboratory-640.png"
+    },
+    {
+      "name": "dystopian-future",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Dystopian future, desaturated tones, industrial textures, bleak mood",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "futuristic",
+        "sci-fi"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/futuristic-and-sci-fi-dystopian-future-640.png"
+    },
+    {
+      "name": "utopian-future",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Utopian future, clean cities, soft light, optimistic tone",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "futuristic",
+        "sci-fi"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/futuristic-and-sci-fi-utopian-future-640.png"
+    },
+    {
+      "name": "mecha-design",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Mecha design style, mechanical detail, industrial sci-fi look",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "futuristic",
+        "sci-fi"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/futuristic-and-sci-fi-mecha-design-640.png"
+    },
+    {
+      "name": "alien-world",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Alien world concept, exotic landscapes, unfamiliar textures",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "futuristic",
+        "sci-fi"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/futuristic-and-sci-fi-alien-world-640.png"
+    },
+    {
+      "name": "digital-hologram",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Digital hologram style, glowing transparency, futuristic interface look",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "futuristic",
+        "sci-fi"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/futuristic-and-sci-fi-digital-hologram-640.png"
+    },
+    {
+      "name": "renaissance",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Renaissance painting style, classical composition, soft natural lighting",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "fine-art",
+        "historical"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/fine-art-and-historical-renaissance-640.png"
+    },
+    {
+      "name": "baroque",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Baroque art style, dramatic contrast, rich detail, emotional intensity",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "fine-art",
+        "historical"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/fine-art-and-historical-baroque-640.png"
+    },
+    {
+      "name": "impressionist",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Impressionist painting, loose brushstrokes, light-focused color palette",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "fine-art",
+        "historical"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/fine-art-and-historical-impressionist-640.png"
+    },
+    {
+      "name": "expressionist",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Expressionist art, distorted forms, emotional color use",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "fine-art",
+        "historical"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/fine-art-and-historical-expressionist-640.png"
+    },
+    {
+      "name": "surrealist",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Surrealist painting, dreamlike imagery, symbolic elements",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "fine-art",
+        "historical"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/fine-art-and-historical-surrealist-640.png"
+    },
+    {
+      "name": "art-nouveau",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Art Nouveau style, flowing lines, decorative patterns, organic forms",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "fine-art",
+        "historical"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/fine-art-and-historical-art-nouveau-640.png"
+    },
+    {
+      "name": "medieval-manuscript",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Medieval manuscript illustration, ornate borders, flat perspective",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "fine-art",
+        "historical"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/fine-art-and-historical-medieval-manuscript-640.png"
+    },
+    {
+      "name": "classical-sculpture",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Classical sculpture aesthetic, marble texture, timeless form",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "fine-art",
+        "historical"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/fine-art-and-historical-classical-sculpture-640.png"
+    },
+    {
+      "name": "romanticism",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Romanticism art style, dramatic nature, emotional atmosphere",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "fine-art",
+        "historical"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/fine-art-and-historical-romanticism-640.png"
+    },
+    {
+      "name": "fresco",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Fresco painting style, muted pigments, historical wall art look",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "fine-art",
+        "historical"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/fine-art-and-historical-fresco-640.png"
+    },
+    {
+      "name": "vaporwave",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Vaporwave aesthetic, pastel neon, retro internet nostalgia",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "pop-culture",
+        "internet"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/pop-culture-and-internet-vaporwave-640.png"
+    },
+    {
+      "name": "meme-style",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Meme-style image, bold composition, exaggerated expression",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "pop-culture",
+        "internet"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/pop-culture-and-internet-meme-style-640.png"
+    },
+    {
+      "name": "social-media-lifestyle",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Social media lifestyle aesthetic, clean tones, aspirational mood",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "pop-culture",
+        "internet"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/pop-culture-and-internet-social-media-lifestyle-640.png"
+    },
+    {
+      "name": "influencer-photo",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Influencer photography style, soft light, curated realism",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "pop-culture",
+        "internet"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/pop-culture-and-internet-influencer-photography-640.png"
+    },
+    {
+      "name": "tumblr-aesthetic",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Tumblr-era aesthetic, moody tones, artistic self-expression",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "pop-culture",
+        "internet"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/pop-culture-and-internet-tumblr-aesthetic-640.png"
+    },
+    {
+      "name": "kpop-visual",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "K-pop visual style, polished lighting, vibrant colors, stylish composition",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "pop-culture",
+        "internet"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/pop-culture-and-internet-k-pop-visual-640.png"
+    },
+    {
+      "name": "anime-inspired",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Anime-inspired illustration, expressive faces, clean line art",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "pop-culture",
+        "internet"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/pop-culture-and-internet-anime-inspired-640.png"
+    },
+    {
+      "name": "cartoon-modern",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Cartoon modern style, bold colors, simplified forms",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "pop-culture",
+        "internet"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/pop-culture-and-internet-cartoon-modern-640.png"
+    },
+    {
+      "name": "sticker-illustration",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Sticker illustration style, outlined shapes, playful design",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "pop-culture",
+        "internet"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/pop-culture-and-internet-sticker-illustration-640.png"
+    },
+    {
+      "name": "digital-collage",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Digital collage aesthetic, layered imagery, mixed textures",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "pop-culture",
+        "internet"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/pop-culture-and-internet-digital-collage-640.png"
+    },
+    {
+      "name": "mixed-media-collage",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Mixed media collage, paper textures, layered materials, artistic contrast",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "experimental",
+        "mixed-media"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/experimental-and-mixed-media-mixed-media-collage-640.png"
+    },
+    {
+      "name": "double-exposure",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Double exposure effect, overlapping imagery, surreal composition",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "experimental",
+        "mixed-media"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/experimental-and-mixed-media-double-exposure-640.png"
+    },
+    {
+      "name": "abstract-art",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Abstract art style, non-representational shapes, expressive colors",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "experimental",
+        "mixed-media"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/experimental-and-mixed-media-abstract-art-640.png"
+    },
+    {
+      "name": "glitch-art",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Glitch art aesthetic, digital distortion, fragmented visuals",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "experimental",
+        "mixed-media"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/experimental-and-mixed-media-glitch-art-640.png"
+    },
+    {
+      "name": "dreamlike-surrealism",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Dreamlike surrealism, floating elements, soft focus, ethereal mood",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "experimental",
+        "mixed-media"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/experimental-and-mixed-media-dreamlike-surrealism-640.png"
+    },
+    {
+      "name": "photorealism-painterly",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Photorealism with painterly texture, realistic detail, artistic brush feel",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "experimental",
+        "mixed-media"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/experimental-and-mixed-media-photorealism-with-painterly-texture-640.png"
+    },
+    {
+      "name": "minimal-abstract",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Minimal abstract composition, subtle colors, balanced negative space",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "experimental",
+        "mixed-media"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/experimental-and-mixed-media-minimal-abstract-640.png"
+    },
+    {
+      "name": "experimental-lighting",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Experimental lighting study, unusual shadows, creative illumination",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "experimental",
+        "mixed-media"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/experimental-and-mixed-media-experimental-lighting-640.png"
+    },
+    {
+      "name": "ai-surreal-portrait",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "AI-generated surreal portrait, distorted realism, uncanny aesthetic",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "experimental",
+        "mixed-media"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/experimental-and-mixed-media-ai-surreal-portrait-640.png"
+    },
+    {
+      "name": "conceptual-art",
+      "version": "1.0.0",
+      "type": "prompt",
+      "description": "Conceptual art style, idea-driven imagery, symbolic composition",
+      "author": "prompted-photos",
+      "category": "ai-ml",
+      "tags": [
+        "image-generation",
+        "ai-prompt",
+        "experimental",
+        "mixed-media"
+      ],
+      "downloads": 0,
+      "created_at": "2026-02-17T10:00:00Z",
+      "updated_at": "2026-02-17T10:00:00Z",
+      "preview_image": "https://prompted.photos/img/experimental-and-mixed-media-conceptual-art-640.png"
     }
   ]
 }

@@ -1,0 +1,17 @@
+name: charcoal-drawing
+version: 1.0.0
+type: prompt
+description: "Charcoal drawing, rough texture, expressive strokes, dramatic shading"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - traditional-art
+  - painting
+category: ai-ml
+content_file: prompt.md

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "4597ef7a883b8f24",
+    "path": "registry/packages/droste-effect"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:4597ef7a883b8f245229975706895e19d0c4aa2139535499152dcc392a64dc29"
+}

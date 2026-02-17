@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "1e5ed5e27e0bed24",
+    "path": "registry/packages/photo-wide-angle-24mm"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:1e5ed5e27e0bed24a6a6e6b62822ed05e5dfdcf4a4fa9842c94aaf5e0a05f619"
+}

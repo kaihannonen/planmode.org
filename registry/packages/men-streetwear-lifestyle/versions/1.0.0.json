@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "5de4cb0588fcb821",
+    "path": "registry/packages/men-streetwear-lifestyle"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:5de4cb0588fcb821e21d4c52c296160d6cd1119d2674fae47c55d91d097fda27"
+}

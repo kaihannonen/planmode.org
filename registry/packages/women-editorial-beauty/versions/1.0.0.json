@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "b03f40fc94b4264e",
+    "path": "registry/packages/women-editorial-beauty"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:b03f40fc94b4264ea799d3b99378c2004d66977f44ce21519942b068e6b16b0b"
+}

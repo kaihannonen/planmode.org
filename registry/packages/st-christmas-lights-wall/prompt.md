@@ -1,0 +1,1 @@
+Place the person into the Byers' living room of Stranger Things. Standing before the iconic wall covered in floral wallpaper and multicolored Christmas lights painted with alphabet letters. Hand raised as if controlling the lights. Some bulbs flicker intensely. Vintage 80s atmosphere, film grain, warm amber lighting, cozy yet eerie.

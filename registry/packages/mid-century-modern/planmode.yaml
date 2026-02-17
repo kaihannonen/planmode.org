@@ -1,0 +1,17 @@
+name: mid-century-modern
+version: 1.0.0
+type: prompt
+description: "Mid-century modern illustration, simple shapes, muted palette, retro design"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - retro
+  - vintage
+category: ai-ml
+content_file: prompt.md

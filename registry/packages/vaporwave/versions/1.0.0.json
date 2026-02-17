@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "f125fade9fa4b28e",
+    "path": "registry/packages/vaporwave"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:f125fade9fa4b28e0e993d625057035449d12582403c68ebf00be23199bfc883"
+}

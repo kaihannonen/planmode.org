@@ -1,0 +1,1 @@
+Wide-angle poster shot featuring the person as a lone traveler on an empty highway facing a "WELCOME TO HAWKINS" sign. Above, the Mind Flayer (Shadow Monster) from Stranger Things looms from apocalyptic red-black storm clouds, tentacles reaching down. Person wears a bomber jacket and carries a bat. Red lightning, cracked pavement, 80s sci-fi horror movie poster style.

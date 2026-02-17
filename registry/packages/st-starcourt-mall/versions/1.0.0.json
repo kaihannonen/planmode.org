@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "f254590a3b970d6b",
+    "path": "registry/packages/st-starcourt-mall"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:f254590a3b970d6b420bc566ae0d9c70af4703845746ed53385ed869ca3c1b24"
+}

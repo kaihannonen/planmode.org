@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "92e41c0e9d7359f3",
+    "path": "registry/packages/classical-sculpture"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:92e41c0e9d7359f307b91062e910cdadee16cad60908257d9e011226bf35236b"
+}

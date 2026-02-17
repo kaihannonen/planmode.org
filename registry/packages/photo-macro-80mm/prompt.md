@@ -1,0 +1,1 @@
+80mm macro lens photography, intimate close-up with slightly more working distance, beautiful bokeh, intricate detail capture, creamy out-of-focus areas, natural color rendition, studio-quality sharpness

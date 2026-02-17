@@ -1,0 +1,27 @@
+{
+  "name": "men-fitness-progress",
+  "description": "Transform this gym selfie into a fitness magazine-style photo of a man mid-workout. Lighting: dramatic side lighting emphasizing muscles, dark background. Style: realistic, high contrast, crisp det...",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "portrait",
+    "men"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/men-fitness-progress-photo-640.png"
+}

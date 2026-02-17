@@ -1,0 +1,1 @@
+Create a fun back-to-school image from this child's photo. Add: backpack, chalkboard with doodles of books and stars, stack of colorful notebooks. Style: bright, cheerful, cartoonish, simple shapes and clean lines.

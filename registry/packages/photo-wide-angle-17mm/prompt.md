@@ -1,0 +1,1 @@
+17mm wide-angle lens photography, expansive field of view, dramatic foreground-to-background depth, architectural and landscape photography, strong leading lines, environmental storytelling, rectilinear perspective

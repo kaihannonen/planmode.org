@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "901eba7cbe995780",
+    "path": "registry/packages/photo-isometric-photo"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:901eba7cbe995780f1d2c6698e3f4eab0624b5e74fe665fe3db80b3f687cca2e"
+}

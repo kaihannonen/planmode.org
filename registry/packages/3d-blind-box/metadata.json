@@ -1,0 +1,27 @@
+{
+  "name": "3d-blind-box",
+  "description": "Pop Mart blind box collectible figure style, C4D 3D rendering, cute chibi Q-version proportions, smooth plastic-like material, soft studio lighting, pastel background, collectible toy aesthetic",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "illustration",
+    "art"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/illustration-and-art-3d-blind-box-avatar-640.png"
+}

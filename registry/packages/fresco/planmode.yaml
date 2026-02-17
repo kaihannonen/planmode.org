@@ -1,0 +1,17 @@
+name: fresco
+version: 1.0.0
+type: prompt
+description: "Fresco painting style, muted pigments, historical wall art look"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - fine-art
+  - historical
+category: ai-ml
+content_file: prompt.md

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "69b5e34adc2aa54c",
+    "path": "registry/packages/indie-film-aesthetic"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:69b5e34adc2aa54c39f402a6169e00de5a02d4471586429cf7c266039459bad1"
+}

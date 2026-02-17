@@ -1,0 +1,1 @@
+Turn this child into a character riding their favorite animal through the clouds. Animal: keep realistic but friendly. Background: big fluffy clouds, rainbow, sun rays. Style: whimsical, painterly, child-safe fantasy.

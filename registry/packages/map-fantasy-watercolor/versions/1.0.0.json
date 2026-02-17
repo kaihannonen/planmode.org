@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "d511fe2be1c4fdf8",
+    "path": "registry/packages/map-fantasy-watercolor"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:d511fe2be1c4fdf82f4f81da44ea282dbafaec2593c558527ba6ab0be600f431"
+}

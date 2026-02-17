@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "d8b1dcf3811a0365",
+    "path": "registry/packages/photo-telephoto-200mm"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:d8b1dcf3811a036587ac8ef629971a241b5a520b2d56652b5e7a0f4ff40f8a9f"
+}

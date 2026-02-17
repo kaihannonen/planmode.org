@@ -1,0 +1,17 @@
+name: women-soft-pastel-portrait
+version: 1.0.0
+type: prompt
+description: "Turn this portrait into a soft pastel aesthetic photo of a woman. Background: blurred flowers in pastel colors. Lighting: warm golden hour sunlight. Style: dreamy, gentle skin glow, light film grai..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - portrait
+  - women
+category: ai-ml
+content_file: prompt.md

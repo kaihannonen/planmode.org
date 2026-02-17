@@ -1,0 +1,17 @@
+name: kids-pixar
+version: 1.0.0
+type: prompt
+description: "Generate 3D images in the style of Pixar animation. The images should capture the vibrant colors, whimsical characters, and imaginative settings typical of Pixar films. Focus on creating characters..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - kids
+  - children
+category: ai-ml
+content_file: prompt.md

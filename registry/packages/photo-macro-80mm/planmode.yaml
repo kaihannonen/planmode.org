@@ -1,0 +1,17 @@
+name: photo-macro-80mm
+version: 1.0.0
+type: prompt
+description: "80mm macro lens photography, intimate close-up with slightly more working distance, beautiful bokeh, intricate detail capture, creamy out-of-focus areas, natural color rendition, studio-quality sha..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "4dece1cc24ea1ae9",
+    "path": "registry/packages/low-poly-3d"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:4dece1cc24ea1ae93abaf3f1613bf76240a71aed05472e5c832cea79daae4d96"
+}

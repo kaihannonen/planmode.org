@@ -1,0 +1,17 @@
+name: glitch-art
+version: 1.0.0
+type: prompt
+description: "Glitch art aesthetic, digital distortion, fragmented visuals"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - experimental
+  - mixed-media
+category: ai-ml
+content_file: prompt.md

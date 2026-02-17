@@ -1,0 +1,1 @@
+Split composition showing person transitioning between normal Hawkins and Upside Down dimension of Stranger Things. Left side normal colorful world, right side dark decayed mirror version. Vines and particles. Cold vs warm lighting. Reality distortion effect.

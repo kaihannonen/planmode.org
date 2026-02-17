@@ -1,0 +1,17 @@
+name: kids-fairy-tale-storybook
+version: 1.0.0
+type: prompt
+description: "Create a storybook-style illustration of this girl reading a book under a tree. Add: small friendly animals and floating stars above the book. Style: watercolor children's book art, soft edges, war..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - kids
+  - children
+category: ai-ml
+content_file: prompt.md

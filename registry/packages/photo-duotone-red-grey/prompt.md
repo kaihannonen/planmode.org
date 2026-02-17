@@ -1,0 +1,1 @@
+Duotone photography in red and grey tones, warm red highlights with neutral grey shadows, bold and dramatic two-tone color grading, striking contrast between warmth and neutrality, editorial poster aesthetic

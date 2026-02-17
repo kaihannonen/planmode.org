@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "dc46818bd6917a40",
+    "path": "registry/packages/st-bicycle-sunset"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:dc46818bd6917a40c607dd14488f93b71b8e2d50d1986a9086d89bd04f2b77ba"
+}

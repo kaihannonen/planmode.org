@@ -1,0 +1,17 @@
+name: 1980s-synthwave
+version: 1.0.0
+type: prompt
+description: "1980s retro synthwave, neon colors, futuristic nostalgia, bold gradients"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - retro
+  - vintage
+category: ai-ml
+content_file: prompt.md

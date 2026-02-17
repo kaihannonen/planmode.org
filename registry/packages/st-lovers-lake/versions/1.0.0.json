@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "3057605ae5d7e12d",
+    "path": "registry/packages/st-lovers-lake"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:3057605ae5d7e12d9022e9c70068571f4a5317c4afb86c36fa35ff5c291b4d70"
+}

@@ -1,0 +1,17 @@
+name: photo-professional-headshot
+version: 1.0.0
+type: prompt
+description: "Professional studio headshot photography, 85mm lens, f/2.8 aperture, soft studio lighting with a key light and fill light, clean neutral background, sharp focus on the eyes, professional attire, na..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

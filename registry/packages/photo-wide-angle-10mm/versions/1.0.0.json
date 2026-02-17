@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "9732a4581e15c366",
+    "path": "registry/packages/photo-wide-angle-10mm"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:9732a4581e15c3669a377a0599489dd1b7c17059fdacc6d63e173b4e16cfd2d8"
+}

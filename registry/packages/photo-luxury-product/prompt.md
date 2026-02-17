@@ -1,0 +1,1 @@
+Luxury commercial product photography, floating on dark reflective water surface, surrounded by delicate flowers and petals, dramatic moody lighting, high-end advertising aesthetic, shallow depth of field

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "29c850f50fb83e1a",
+    "path": "registry/packages/photo-professional-product"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:29c850f50fb83e1af7860360a6cfc88f80c374769744d4d3284b842e3a77cf4f"
+}

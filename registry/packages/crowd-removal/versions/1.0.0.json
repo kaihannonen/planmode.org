@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "2ae0d44e93f6d023",
+    "path": "registry/packages/crowd-removal"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:2ae0d44e93f6d02346a39cf9e91c34ff1f998101f720cfff216b78bf1675cb50"
+}

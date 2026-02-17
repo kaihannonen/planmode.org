@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "21e8441165eb2660",
+    "path": "registry/packages/st-mind-flayer-highway"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:21e8441165eb2660f3fd901cc1f8bf72480380d54213a5d48fded0b4b44f33e6"
+}

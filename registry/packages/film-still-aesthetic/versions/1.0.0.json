@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "c8a657edbef830d0",
+    "path": "registry/packages/film-still-aesthetic"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:c8a657edbef830d0ae3a8d8b72ddd3bb7ba8bfd8359a0fecebe3588ed91fee0e"
+}

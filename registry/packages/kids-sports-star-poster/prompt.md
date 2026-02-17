@@ -1,0 +1,1 @@
+Transform this child's photo into a sports poster. Setting: stadium at night with bright floodlights and cheering crowd. Style: realistic with slightly dramatic lighting, motion blur on background only.

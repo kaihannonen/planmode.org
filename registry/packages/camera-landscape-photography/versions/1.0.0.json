@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "413351d703c3e66c",
+    "path": "registry/packages/camera-landscape-photography"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:413351d703c3e66c60cce574dfa2fab451e510e75f9ba0f9ef3aae896345a2d9"
+}

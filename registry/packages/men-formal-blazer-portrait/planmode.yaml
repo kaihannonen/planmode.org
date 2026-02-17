@@ -1,0 +1,17 @@
+name: men-formal-blazer-portrait
+version: 1.0.0
+type: prompt
+description: "Create a studio portrait of a man wearing a dark blazer over a plain T-shirt. Background: neutral grey gradient. Lighting: softbox-style portrait lighting, gentle shadows. Style: realistic, sharp d..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - portrait
+  - men
+category: ai-ml
+content_file: prompt.md

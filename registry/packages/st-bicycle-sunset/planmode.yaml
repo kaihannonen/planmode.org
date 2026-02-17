@@ -1,0 +1,17 @@
+name: st-bicycle-sunset
+version: 1.0.0
+type: prompt
+description: "Cinematic silhouette shot of the person on a bicycle appearing to fly across a massive setting sun, an homage to E.T. and Stranger Things. Perfect black silhouette against orange-red sky. Nostalgic..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - stranger-things
+  - fan-art
+category: ai-ml
+content_file: prompt.md

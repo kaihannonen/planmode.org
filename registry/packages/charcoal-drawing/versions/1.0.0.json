@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "ef98f8b047bca687",
+    "path": "registry/packages/charcoal-drawing"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:ef98f8b047bca6875ae40846a5324bf5d122c4bac9229f19a38c7e65d9462440"
+}

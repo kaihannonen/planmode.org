@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "f19be130019de9da",
+    "path": "registry/packages/isometric-3d"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:f19be130019de9da7d365f87279de1f6143f3cd8fc4a6679f9a244c9bc05d73a"
+}

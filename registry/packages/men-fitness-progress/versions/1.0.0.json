@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "f8596457b609501e",
+    "path": "registry/packages/men-fitness-progress"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:f8596457b609501e51871d269fbc48edd13fd4ffd533f3a1721333c52c8f52be"
+}

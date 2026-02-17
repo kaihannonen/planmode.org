@@ -1,0 +1,27 @@
+{
+  "name": "photo-professional-headshot",
+  "description": "Professional studio headshot photography, 85mm lens, f/2.8 aperture, soft studio lighting with a key light and fill light, clean neutral background, sharp focus on the eyes, professional attire, na...",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "photography",
+    "portrait"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/photography-professional-headshot-640.png"
+}

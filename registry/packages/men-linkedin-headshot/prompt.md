@@ -1,0 +1,1 @@
+Turn this into a professional LinkedIn headshot of a man. Background: softly blurred office with big windows. Style: clean, realistic, subtle retouching, no heavy filters. Lighting: soft daylight from the front. Constraints: keep facial features and hairstyle accurate, no text.

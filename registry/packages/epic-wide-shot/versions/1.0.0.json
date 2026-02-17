@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "c4f2aaf55ac1d058",
+    "path": "registry/packages/epic-wide-shot"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:c4f2aaf55ac1d058649a1bf6f4c248b9624e2199123c1c2068adab91544c4913"
+}

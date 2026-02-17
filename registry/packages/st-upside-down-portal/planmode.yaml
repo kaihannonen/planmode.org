@@ -1,0 +1,17 @@
+name: st-upside-down-portal
+version: 1.0.0
+type: prompt
+description: "Person standing before massive glowing red portal to Stranger Things' Upside Down dimension. Tentacles and vines emerging from gateway. Dark forest setting. Ominous red lighting with particle effec..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - stranger-things
+  - fan-art
+category: ai-ml
+content_file: prompt.md

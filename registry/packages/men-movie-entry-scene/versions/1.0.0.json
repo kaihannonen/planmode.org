@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "279f0f71f5699027",
+    "path": "registry/packages/men-movie-entry-scene"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:279f0f71f5699027b847e7c69642ede5fc653037a3bbe4657e6110bc89e4dbc6"
+}

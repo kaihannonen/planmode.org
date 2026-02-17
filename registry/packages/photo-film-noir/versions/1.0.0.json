@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "10fd0abc678be94b",
+    "path": "registry/packages/photo-film-noir"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:10fd0abc678be94bc3e477d947e3527e57b8409d84507ebbac44300f4d123296"
+}

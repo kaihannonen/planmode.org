@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "b9829b45df5a9821",
+    "path": "registry/packages/renaissance"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:b9829b45df5a9821f8259cb28295c999cbb711f6c819d6c5dd05cbe57d9d944a"
+}

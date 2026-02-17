@@ -1,0 +1,1 @@
+24mm wide-angle lens photography, classic wide-angle perspective, environmental portraits and landscapes, natural sense of space and depth, slight perspective exaggeration, reportage and documentary feel

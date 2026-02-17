@@ -1,0 +1,27 @@
+{
+  "name": "men-travel-explorer",
+  "description": "Turn this photo into an image of a man standing on a mountain viewpoint at sunrise. Add: clouds below, golden light on the face. Outfit: hiking jacket and backpack. Style: cinematic landscape, rich...",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "portrait",
+    "men"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/men-travel-explorer-shot-640.png"
+}

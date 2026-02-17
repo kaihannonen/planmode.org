@@ -1,0 +1,23 @@
+name: map-space-colony
+version: 1.0.0
+type: prompt
+description: "Space colony map of {{location}} in a futuristic style, with domed habitats, spaceports, and terraformed regions."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - maps
+  - cartography
+category: ai-ml
+variables:
+  location:
+    description: "Location or region name for the map"
+    type: string
+    required: false
+    default: "Mars Colony Alpha"
+content_file: prompt.md

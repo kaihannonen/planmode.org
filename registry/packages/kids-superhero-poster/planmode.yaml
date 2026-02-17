@@ -1,0 +1,17 @@
+name: kids-superhero-poster
+version: 1.0.0
+type: prompt
+description: "Turn this boy into a comic-book superhero. Outfit: colorful suit with cape, simple emblem on chest. Background: stylized city skyline at sunset. Style: bold comic shading, halftone texture, dynamic..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - kids
+  - children
+category: ai-ml
+content_file: prompt.md

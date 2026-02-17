@@ -1,0 +1,1 @@
+High-end glossy magazine cover layout, professional studio lighting, bold typography overlay, vibrant saturated colors, flawless retouching, eye-catching composition, editorial fashion photography style

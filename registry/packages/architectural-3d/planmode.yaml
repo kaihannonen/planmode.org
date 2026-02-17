@@ -1,0 +1,17 @@
+name: architectural-3d
+version: 1.0.0
+type: prompt
+description: "Architectural 3D visualization, realistic lighting, clean materials, modern design"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - 3d
+  - game-art
+category: ai-ml
+content_file: prompt.md

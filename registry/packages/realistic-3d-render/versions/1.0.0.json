@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "12f8b73afe0c82ee",
+    "path": "registry/packages/realistic-3d-render"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:12f8b73afe0c82ee575af09705f01e2ea0ee3479f5d1ba71b61ea81a565a86cf"
+}

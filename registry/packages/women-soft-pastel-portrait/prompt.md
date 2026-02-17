@@ -1,0 +1,1 @@
+Turn this portrait into a soft pastel aesthetic photo of a woman. Background: blurred flowers in pastel colors. Lighting: warm golden hour sunlight. Style: dreamy, gentle skin glow, light film grain, Instagram-ready.

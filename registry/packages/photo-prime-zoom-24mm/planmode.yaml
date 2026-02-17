@@ -1,0 +1,17 @@
+name: photo-prime-zoom-24mm
+version: 1.0.0
+type: prompt
+description: "Shot with a 24mm prime lens, wide perspective with slight barrel distortion, environmental context visible, sharp across the frame, photojournalistic feel, natural available light"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

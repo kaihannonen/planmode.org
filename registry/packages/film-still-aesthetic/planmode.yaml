@@ -1,0 +1,17 @@
+name: film-still-aesthetic
+version: 1.0.0
+type: prompt
+description: "Film still aesthetic, narrative framing, cinematic composition, subtle grain"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - cinematic
+  - film
+category: ai-ml
+content_file: prompt.md

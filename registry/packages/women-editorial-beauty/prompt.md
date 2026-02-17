@@ -1,0 +1,1 @@
+Create an editorial-style beauty portrait of a woman. Background: solid color backdrop matching skin tone. Lighting: soft but directional, highlighting cheekbones. Style: magazine beauty shot, clean, sharp details, visible catchlights in the eyes.

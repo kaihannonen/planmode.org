@@ -1,0 +1,1 @@
+Split-level shot showing the person floating in Lovers Lake. Above water: Normal night forest. Below water: The Upside Down dimension of Stranger Things with red spores and dead vines. Ethereal underwater atmosphere, haunting composition, volumetric light rays.

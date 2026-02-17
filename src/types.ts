@@ -9,6 +9,7 @@ export interface PackageSummary {
   downloads: number;
   created_at: string;
   updated_at: string;
+  preview_image?: string;
 }
 
 export interface RegistryIndex {
@@ -46,6 +47,7 @@ export interface PackageMetadata {
   };
   variables?: Record<string, Variable>;
   content?: string;
+  preview_image?: string;
 }
 
 export interface Category {

@@ -1,0 +1,17 @@
+name: kids-sports-star-poster
+version: 1.0.0
+type: prompt
+description: "Transform this child's photo into a sports poster. Setting: stadium at night with bright floodlights and cheering crowd. Style: realistic with slightly dramatic lighting, motion blur on background ..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - kids
+  - children
+category: ai-ml
+content_file: prompt.md

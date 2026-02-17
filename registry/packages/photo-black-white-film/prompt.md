@@ -1,0 +1,1 @@
+Classic black and white film photography, rich tonal range from deep blacks to bright whites, visible film grain, dramatic contrast, timeless monochrome aesthetic, shot on Ilford HP5 or Tri-X 400, analog darkroom print quality

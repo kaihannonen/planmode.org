@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "da895d953cd7101b",
+    "path": "registry/packages/anamorphic-cinematic"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:da895d953cd7101bb94587357150f71d081c22bdfd3040fe08b7ccd3b51f20f8"
+}

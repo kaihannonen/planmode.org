@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "1d19f582b9af129a",
+    "path": "registry/packages/ai-surreal-portrait"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:1d19f582b9af129aebba4cadd9c6fda4b197e770da596cc8850b028923637b46"
+}

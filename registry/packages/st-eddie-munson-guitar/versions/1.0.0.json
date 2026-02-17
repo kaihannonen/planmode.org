@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "c19ab0fdb0cc2820",
+    "path": "registry/packages/st-eddie-munson-guitar"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:c19ab0fdb0cc282038aa875d4c27f7c762f4c3c4577dda8932da75bb4e873884"
+}

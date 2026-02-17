@@ -1,0 +1,17 @@
+name: women-boss-mode-founder
+version: 1.0.0
+type: prompt
+description: "Create a confident business portrait of a woman tech founder. Setting: modern office with glass walls and city view. Pose: standing with arms relaxed, looking into the camera. Style: realistic, neu..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - portrait
+  - women
+category: ai-ml
+content_file: prompt.md

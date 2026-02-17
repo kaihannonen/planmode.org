@@ -1,0 +1,17 @@
+name: photo-duotone-blue-grey
+version: 1.0.0
+type: prompt
+description: "Duotone photography in blue and grey tones, cool steel blue highlights with neutral grey shadows, modern minimalist color grading, editorial and contemporary feel, muted yet striking two-tone palette"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

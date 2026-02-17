@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "65d6fea816eafe3a",
+    "path": "registry/packages/space-opera"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:65d6fea816eafe3a3b52598f69032681c95feb03f7ac54d5afef94f9c0681ceb"
+}

@@ -1,0 +1,17 @@
+name: women-editorial-beauty
+version: 1.0.0
+type: prompt
+description: "Create an editorial-style beauty portrait of a woman. Background: solid color backdrop matching skin tone. Lighting: soft but directional, highlighting cheekbones. Style: magazine beauty shot, clea..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - portrait
+  - women
+category: ai-ml
+content_file: prompt.md

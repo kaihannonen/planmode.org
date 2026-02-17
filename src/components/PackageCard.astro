@@ -18,6 +18,9 @@ const typeColors: Record<string, string> = {
   href={`/packages/${pkg.name}`}
   class="block bg-black-card border border-grey-border/20 rounded-lg p-5 hover:border-grey-border/40 transition-colors"
 >
+  {pkg.preview_image && (
+    <img src={pkg.preview_image} alt="" class="w-full h-32 object-cover rounded-md mb-3" loading="lazy" />
+  )}
   <div class="flex items-start justify-between gap-3 mb-3">
     <h3 class="font-semibold text-white text-sm truncate">{pkg.name}</h3>
     <span class:list={["text-xs font-medium px-2 py-0.5 rounded-full shrink-0", typeColors[pkg.type] ?? ""]}>

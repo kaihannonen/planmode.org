@@ -1,0 +1,17 @@
+name: crowd-removal
+version: 1.0.0
+type: prompt
+description: "Remove all background people and bystanders from the scene, intelligently fill the removed areas with natural background continuation, maintain the main subject and environment, clean and unclutter..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - effects
+  - editing
+category: ai-ml
+content_file: prompt.md

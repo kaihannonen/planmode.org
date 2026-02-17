@@ -1,0 +1,23 @@
+name: map-modern-city
+version: 1.0.0
+type: prompt
+description: "Modern city map of {{location}} in a minimalist style, highlighting major landmarks, streets, and public transport routes."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - maps
+  - cartography
+category: ai-ml
+variables:
+  location:
+    description: "Location or region name for the map"
+    type: string
+    required: false
+    default: "New York City"
+content_file: prompt.md

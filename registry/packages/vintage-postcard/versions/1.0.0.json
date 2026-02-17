@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "8d18b22f553401d6",
+    "path": "registry/packages/vintage-postcard"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:8d18b22f553401d65c3d1da47070423f6ced7fb84fe0a0bfacb29ec4bd0f4a2d"
+}

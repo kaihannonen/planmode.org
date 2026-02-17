@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "d7bb976d3e82bb9c",
+    "path": "registry/packages/sepia-vintage"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:d7bb976d3e82bb9cc84ea30019fb6dc3cbc256f97022a6e6cb6b3ada6adcf09c"
+}

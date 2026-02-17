@@ -1,0 +1,1 @@
+Person featured in official Netflix Stranger Things season poster design. Bold red title text. Character positioned in center. Dark atmospheric background with Upside Down elements. Floating particles. Netflix branding style. Cinematic movie poster composition. Professional graphic design.

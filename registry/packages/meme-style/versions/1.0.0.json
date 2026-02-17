@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "667d6767c13926d7",
+    "path": "registry/packages/meme-style"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:667d6767c13926d762cc94e846bd6ece8995ff750e6d25861b700e14ecd1c8b3"
+}

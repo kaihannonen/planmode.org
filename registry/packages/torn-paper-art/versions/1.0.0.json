@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "5dbb4b977a94c1a1",
+    "path": "registry/packages/torn-paper-art"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:5dbb4b977a94c1a14beb9b8d96c9577f22690e518cabfd83bb0346d6f545404a"
+}

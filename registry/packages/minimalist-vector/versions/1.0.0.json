@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "9eeaa84bb5ccde92",
+    "path": "registry/packages/minimalist-vector"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:9eeaa84bb5ccde92ad8bf88aae7747b47499786cc37b999314eb37082c9f6ebb"
+}

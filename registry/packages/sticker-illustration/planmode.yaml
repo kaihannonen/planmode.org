@@ -1,0 +1,17 @@
+name: sticker-illustration
+version: 1.0.0
+type: prompt
+description: "Sticker illustration style, outlined shapes, playful design"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - pop-culture
+  - internet
+category: ai-ml
+content_file: prompt.md

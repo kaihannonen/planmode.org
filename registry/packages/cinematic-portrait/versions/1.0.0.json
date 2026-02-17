@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "071372a97c0bb307",
+    "path": "registry/packages/cinematic-portrait"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:071372a97c0bb3075b8841e874532265f93de2a1353cccba52de715dcf28107d"
+}

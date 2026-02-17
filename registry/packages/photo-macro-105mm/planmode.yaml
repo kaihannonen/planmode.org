@@ -1,0 +1,17 @@
+name: photo-macro-105mm
+version: 1.0.0
+type: prompt
+description: "105mm macro lens photography, true 1:1 magnification, exceptional detail and texture, paper-thin depth of field with silky smooth bokeh, professional macro technique, vibrant colors and tack-sharp ..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

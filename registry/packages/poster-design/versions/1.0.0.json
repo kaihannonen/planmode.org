@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "7a6b66153993c514",
+    "path": "registry/packages/poster-design"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:7a6b66153993c514b1e956f73191aa28bbb7780658fa93593427d42c78edbe85"
+}

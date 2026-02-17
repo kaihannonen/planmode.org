@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "54e7b2429d101660",
+    "path": "registry/packages/camera-macro-photography"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:54e7b2429d10166055750b1031f0013c0c1f5d3ae873a59144d24e1f22bacfda"
+}

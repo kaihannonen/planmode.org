@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "4e2489e6c5772d92",
+    "path": "registry/packages/3d-blind-box"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:4e2489e6c5772d92f7a7cd312adf2625607a5f5aefb2859bbba7f390349f92f9"
+}

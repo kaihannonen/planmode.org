@@ -1,0 +1,27 @@
+{
+  "name": "photo-duotone-yellow-grey",
+  "description": "Duotone photography in yellow and grey tones, warm golden yellow highlights with cool grey shadows, energetic yet sophisticated two-tone palette, modern graphic design aesthetic, eye-catching color...",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "photography",
+    "portrait"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/photography-duotone-yellow-and-grey-640.png"
+}

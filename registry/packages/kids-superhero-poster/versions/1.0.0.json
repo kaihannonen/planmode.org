@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "b88e7b9b23a14556",
+    "path": "registry/packages/kids-superhero-poster"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:b88e7b9b23a14556c59d205a2cc2628ec964582d9947bbd4bf9995be1d339df1"
+}

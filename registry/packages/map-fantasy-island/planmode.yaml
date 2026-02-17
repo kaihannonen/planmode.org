@@ -1,0 +1,23 @@
+name: map-fantasy-island
+version: 1.0.0
+type: prompt
+description: "Fantasy island map of {{location}} in a tropical style, with lush jungles, hidden coves, and pirate hideouts."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - maps
+  - cartography
+category: ai-ml
+variables:
+  location:
+    description: "Location or region name for the map"
+    type: string
+    required: false
+    default: "the Isle of Storms"
+content_file: prompt.md

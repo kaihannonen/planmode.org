@@ -1,0 +1,17 @@
+name: men-movie-entry-scene
+version: 1.0.0
+type: prompt
+description: "Transform into an ultra-realistic cinematic film still while preserving exact identity. Scene: dusty desert roadside with soft beige haze; a white SUV on the left with the door open. Wardrobe: all-..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - portrait
+  - men
+category: ai-ml
+content_file: prompt.md

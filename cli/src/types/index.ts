@@ -58,6 +58,7 @@ export interface PackageSummary {
   downloads: number;
   created_at: string;
   updated_at: string;
+  preview_image?: string;
 }
 
 export interface RegistryIndex {
@@ -86,6 +87,7 @@ export interface PackageMetadata {
     plans?: string[];
   };
   variables?: Record<string, VariableDefinition>;
+  preview_image?: string;
 }
 
 export interface VersionMetadata {

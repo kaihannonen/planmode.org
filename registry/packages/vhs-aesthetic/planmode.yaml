@@ -1,0 +1,17 @@
+name: vhs-aesthetic
+version: 1.0.0
+type: prompt
+description: "VHS aesthetic, scan lines, color distortion, analog artifacts"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - retro
+  - vintage
+category: ai-ml
+content_file: prompt.md

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "81e0d73a4a7d6593",
+    "path": "registry/packages/geometric-illustration"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:81e0d73a4a7d659327cf704ea7d8bea7157f2b4630d11a695b1a394716afde84"
+}

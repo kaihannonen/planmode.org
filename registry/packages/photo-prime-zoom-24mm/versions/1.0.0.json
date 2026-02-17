@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "7d7d28420479ad6d",
+    "path": "registry/packages/photo-prime-zoom-24mm"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:7d7d28420479ad6dbba782900e7999998e619dfd93d97d59fd9a0ce383464653"
+}

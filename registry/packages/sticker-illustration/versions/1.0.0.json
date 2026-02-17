@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "868f7ea98a1694b7",
+    "path": "registry/packages/sticker-illustration"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:868f7ea98a1694b70fb0122aa743962688313f5d1c93938311fbf72ef9cae568"
+}

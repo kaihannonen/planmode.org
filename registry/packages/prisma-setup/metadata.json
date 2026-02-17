@@ -5,16 +5,33 @@
   "license": "MIT",
   "repository": "github.com/kaihannonen/planmode.org",
   "category": "database",
-  "tags": ["prisma", "postgresql", "orm", "database"],
+  "tags": [
+    "prisma",
+    "postgresql",
+    "orm",
+    "database"
+  ],
   "type": "plan",
-  "models": ["claude-4", "claude-3.5"],
+  "models": [
+    "claude-opus-4",
+    "claude-sonnet-4-5",
+    "gpt-4o",
+    "gemini-2.5-pro",
+    "kimi-k2"
+  ],
   "latest_version": "2.0.1",
-  "versions": ["1.0.0", "2.0.0", "2.0.1"],
+  "versions": [
+    "1.0.0",
+    "2.0.0",
+    "2.0.1"
+  ],
   "downloads": 0,
   "created_at": "2026-01-18T08:00:00Z",
   "updated_at": "2026-02-10T14:00:00Z",
   "dependencies": {
-    "rules": ["typescript-strict@^1.0.0"]
+    "rules": [
+      "typescript-strict@^1.0.0"
+    ]
   },
   "variables": {
     "database_url": {

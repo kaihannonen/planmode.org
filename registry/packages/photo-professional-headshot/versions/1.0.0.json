@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "6ea238ca8c86a60e",
+    "path": "registry/packages/photo-professional-headshot"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:6ea238ca8c86a60e5b4289a29f9caa9d4c8575eb11a14b085a1425bcda79e688"
+}

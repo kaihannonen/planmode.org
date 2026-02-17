@@ -1,0 +1,17 @@
+name: editorial-illustration
+version: 1.0.0
+type: prompt
+description: "Editorial illustration, conceptual design, bold shapes, magazine-ready look"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - design
+  - graphic
+category: ai-ml
+content_file: prompt.md

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "1c7deb7a72d5fd4b",
+    "path": "registry/packages/utopian-future"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:1c7deb7a72d5fd4b7e52599c1382e093f7009a91748bd50a25727524b8b71992"
+}

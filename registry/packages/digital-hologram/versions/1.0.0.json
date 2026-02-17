@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "9595b8b54462df6f",
+    "path": "registry/packages/digital-hologram"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:9595b8b54462df6f38dca66e2c7fb031e4770aa346c149b5867ddf6db7445cc0"
+}

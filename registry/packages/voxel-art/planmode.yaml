@@ -1,0 +1,17 @@
+name: voxel-art
+version: 1.0.0
+type: prompt
+description: "Voxel art style, blocky forms, pixelated 3D aesthetic"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - 3d
+  - game-art
+category: ai-ml
+content_file: prompt.md

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "5c42bf13d751876a",
+    "path": "registry/packages/men-linkedin-headshot"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:5c42bf13d751876a8ac196c016d933b3428f44397a91754375d48e28e52911c5"
+}

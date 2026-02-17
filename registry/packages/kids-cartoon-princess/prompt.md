@@ -1,0 +1,1 @@
+Turn this child's photo into a cute cartoon princess character. Outfit: sparkling dress and tiny crown. Background: magical forest with soft glowing lights. Style: colorful, big expressive eyes, simple shapes, kid-friendly. Constraints: no makeup or adult styling.

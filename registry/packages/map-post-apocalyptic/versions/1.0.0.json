@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "4806afa8889c421c",
+    "path": "registry/packages/map-post-apocalyptic"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:4806afa8889c421cc51307ff51d245b3688dc2aaea6553bed11180ef4e69af4f"
+}

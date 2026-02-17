@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "bbf5b41e1f970706",
+    "path": "registry/packages/cartoon-modern"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:bbf5b41e1f970706ed7be3f6aa569b5f661b219cbec65bc9a059809c962018c9"
+}

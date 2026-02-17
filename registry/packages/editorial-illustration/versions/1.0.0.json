@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "e445c66c7c4e12ef",
+    "path": "registry/packages/editorial-illustration"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:e445c66c7c4e12effcfd218c0751eaf20a1168a66826ed23e25e6fc6077147d4"
+}

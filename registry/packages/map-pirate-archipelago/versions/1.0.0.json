@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "6030b1de9752e466",
+    "path": "registry/packages/map-pirate-archipelago"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:6030b1de9752e466e76baf466636bc2c11064eec56aaffa91c5f448c79185731"
+}

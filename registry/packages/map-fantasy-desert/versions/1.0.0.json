@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "25f05f4570ce8f00",
+    "path": "registry/packages/map-fantasy-desert"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:25f05f4570ce8f004bdf0b23312ebb6f78e42e419075328cebe9320ae107d361"
+}

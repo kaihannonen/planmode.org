@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "af629494a8f12805",
+    "path": "registry/packages/women-soft-pastel-portrait"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:af629494a8f12805f31b2cd388f138d7cd572b2ccaf5245a251d96c3a2857c09"
+}

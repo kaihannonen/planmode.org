@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "de577094f90be5fb",
+    "path": "registry/packages/vhs-aesthetic"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:de577094f90be5fb9772fdda4f508a7a219c30f44fd07d6afeb96adb973039b8"
+}

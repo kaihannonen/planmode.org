@@ -1,0 +1,1 @@
+Person performing an intense electric guitar solo on top of a trailer in the Upside Down, honoring Eddie Munson's "Master of Puppets" scene. Red lightning strikes, Demobats swarm the sky. Dramatic low-angle hero shot, concert lighting, epic heavy metal aesthetic.

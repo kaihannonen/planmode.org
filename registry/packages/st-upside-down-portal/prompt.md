@@ -1,0 +1,1 @@
+Person standing before massive glowing red portal to Stranger Things' Upside Down dimension. Tentacles and vines emerging from gateway. Dark forest setting. Ominous red lighting with particle effects. Eerie atmosphere. Fog and mist. Cinematic wide angle. Horror movie aesthetic.

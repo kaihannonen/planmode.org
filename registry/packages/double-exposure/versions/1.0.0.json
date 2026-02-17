@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "d096e6281fbcb01d",
+    "path": "registry/packages/double-exposure"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:d096e6281fbcb01d28ab3fbc4b215e294723a6d1415596c5e8c2eedc09269f07"
+}

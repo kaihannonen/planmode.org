@@ -1,0 +1,1 @@
+Terrifying close encounter of person facing Demogorgon creature from Stranger Things. Demogorgon flower-like head opening. Dark Hawkins forest night. Dramatic horror lighting. Person showing fear. Monster detailed texture. Mist and fog effects. Cinematic tension.

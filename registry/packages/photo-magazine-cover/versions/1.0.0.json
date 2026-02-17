@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "2e5c7621362dcf53",
+    "path": "registry/packages/photo-magazine-cover"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:2e5c7621362dcf538423fe25f7cdb27d5264a5967138c8420a3cd59fda1fddbf"
+}

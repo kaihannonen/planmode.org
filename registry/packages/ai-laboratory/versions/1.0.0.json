@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "9c3921f36e9e150c",
+    "path": "registry/packages/ai-laboratory"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:9c3921f36e9e150c9220ab211db4559d55d2e241f772d49154abd5bb7176bd0a"
+}

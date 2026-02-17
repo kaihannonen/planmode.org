@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "f47c72b3a8eb6c95",
+    "path": "registry/packages/camera-lifestyle-photography"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:f47c72b3a8eb6c9500ca31d581839bc787a39789f8a59602403d829192ece510"
+}

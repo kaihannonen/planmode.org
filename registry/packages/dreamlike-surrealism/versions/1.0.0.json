@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "33b40c2387dd20e2",
+    "path": "registry/packages/dreamlike-surrealism"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:33b40c2387dd20e27e5aa4fa054c03a61336fd9700a6994770619f09d7437272"
+}

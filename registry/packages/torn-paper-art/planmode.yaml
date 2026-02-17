@@ -1,0 +1,17 @@
+name: torn-paper-art
+version: 1.0.0
+type: prompt
+description: "Torn paper layered art style, ripped paper edges revealing detailed line art illustration underneath, mixed media collage effect, textured paper surfaces, artistic and tactile feeling"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - illustration
+  - art
+category: ai-ml
+content_file: prompt.md

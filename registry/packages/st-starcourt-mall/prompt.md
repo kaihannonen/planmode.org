@@ -1,0 +1,1 @@
+Person sitting at a table in the Starcourt Mall food court (Stranger Things Season 3). Background: Neon signs for Scoops Ahoy, The Gap, and RadioShack. 80s mall fashion: bright windbreaker, scrunchie. Vibrant nostalgic atmosphere, pastel neon color scheme, cinematic wide angle.

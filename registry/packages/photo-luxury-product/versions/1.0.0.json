@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "aad264d49194dc3e",
+    "path": "registry/packages/photo-luxury-product"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:aad264d49194dc3e2c7ab5fe24b902a2988d23633e3374021eb4303baa4e308d"
+}

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "e7a0d52843846d96",
+    "path": "registry/packages/photo-duotone-blue-grey"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:e7a0d52843846d96de6f9d36ea5e9830bfef21d15073ded7d863e42d32e29067"
+}

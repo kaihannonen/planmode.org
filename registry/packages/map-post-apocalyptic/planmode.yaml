@@ -1,0 +1,23 @@
+name: map-post-apocalyptic
+version: 1.0.0
+type: prompt
+description: "Post-apocalyptic map of {{location}} in a grunge style, showing ruined cities, wastelands, and survival zones."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - maps
+  - cartography
+category: ai-ml
+variables:
+  location:
+    description: "Location or region name for the map"
+    type: string
+    required: false
+    default: "the Wasteland"
+content_file: prompt.md

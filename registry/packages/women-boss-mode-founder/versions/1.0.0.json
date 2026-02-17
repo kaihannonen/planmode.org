@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "2e7e0c9fa46be6e4",
+    "path": "registry/packages/women-boss-mode-founder"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:2e7e0c9fa46be6e4782d7cf924de32abf07c230f6800d244be491c750df78c27"
+}

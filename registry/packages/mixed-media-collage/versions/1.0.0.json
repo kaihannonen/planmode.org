@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "1cba8d8d2278af22",
+    "path": "registry/packages/mixed-media-collage"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:1cba8d8d2278af22022b8b7405bd1e88935e0c9b2d61dc3e793085206da58821"
+}

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "f9945d89bd16e8a2",
+    "path": "registry/packages/anime-portrait"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:f9945d89bd16e8a2721980c341a0fd2a3932e9592e328ca4d3b261ce66c5ba24"
+}

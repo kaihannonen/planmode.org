@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "da3a4a1c5bd3548b",
+    "path": "registry/packages/map-fantasy-cartographic"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:da3a4a1c5bd3548b0b564525c497ca9c02ffd44b39a1c58a0bf634b1ca9a4c68"
+}

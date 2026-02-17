@@ -1,0 +1,17 @@
+name: photo-emotional-film
+version: 1.0.0
+type: prompt
+description: "Shot on Kodak Portra 400 film, golden hour natural light, cinematic composition, shallow depth of field, warm tones with lifted shadows, gentle film grain, emotionally evocative mood"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

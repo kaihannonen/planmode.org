@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "2b8fd7ec09db8c3c",
+    "path": "registry/packages/digital-collage"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:2b8fd7ec09db8c3c03ce5bdba70e043b73976c5d89a7367f378d9bf83f4157dd"
+}

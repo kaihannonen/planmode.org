@@ -1,0 +1,17 @@
+name: childrens-book-illustration
+version: 1.0.0
+type: prompt
+description: "Children's book illustration, playful colors, soft shapes, whimsical mood"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - traditional-art
+  - painting
+category: ai-ml
+content_file: prompt.md

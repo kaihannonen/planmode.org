@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "8fa52cf4f5ecb754",
+    "path": "registry/packages/console-game-cinematic"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:8fa52cf4f5ecb75410237ad46b861fa74e4c2f45aab5dc54a46e0f8658ba7179"
+}

@@ -1,0 +1,1 @@
+Remove all background people and bystanders from the scene, intelligently fill the removed areas with natural background continuation, maintain the main subject and environment, clean and uncluttered result

@@ -1,0 +1,1 @@
+Cinematic silhouette shot of the person on a bicycle appearing to fly across a massive setting sun, an homage to E.T. and Stranger Things. Perfect black silhouette against orange-red sky. Nostalgic 80s adventure movie vibe, dreamy golden hour.

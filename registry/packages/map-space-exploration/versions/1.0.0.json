@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "737e5f07cb35f9e0",
+    "path": "registry/packages/map-space-exploration"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:737e5f07cb35f9e0578f83d4084404d98652f5a370e3ce07115c2d930741e9af"
+}

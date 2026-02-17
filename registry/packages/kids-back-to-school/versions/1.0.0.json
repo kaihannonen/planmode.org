@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "b8d87bfb833c24e5",
+    "path": "registry/packages/kids-back-to-school"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:b8d87bfb833c24e59634f99399421a96d8339cb47e02dce02485464317bca6cd"
+}

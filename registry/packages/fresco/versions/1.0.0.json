@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "4da3523e58adf5ea",
+    "path": "registry/packages/fresco"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:4da3523e58adf5eaa9778d067feb0cdb7cb03cba398ec7bf6ab72488b382d5ad"
+}

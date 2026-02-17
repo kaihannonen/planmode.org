@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "0b70e5ae01543ccc",
+    "path": "registry/packages/old-hollywood-glamour"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:0b70e5ae01543ccc87639433015465386fc7201985b544ee6bfc5530bb5b4309"
+}

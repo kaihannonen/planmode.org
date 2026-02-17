@@ -1,0 +1,17 @@
+name: photo-black-white-film
+version: 1.0.0
+type: prompt
+description: "Classic black and white film photography, rich tonal range from deep blacks to bright whites, visible film grain, dramatic contrast, timeless monochrome aesthetic, shot on Ilford HP5 or Tri-X 400, ..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

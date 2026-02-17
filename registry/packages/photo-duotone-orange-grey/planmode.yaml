@@ -1,0 +1,17 @@
+name: photo-duotone-orange-grey
+version: 1.0.0
+type: prompt
+description: "Duotone photography in orange and grey tones, vibrant warm orange highlights with neutral grey shadows, bold and inviting two-tone color grading, sunset warmth meets urban cool, contemporary editor..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

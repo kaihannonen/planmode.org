@@ -1,0 +1,17 @@
+name: st-demogorgon-encounter
+version: 1.0.0
+type: prompt
+description: "Terrifying close encounter of person facing Demogorgon creature from Stranger Things. Demogorgon flower-like head opening. Dark Hawkins forest night. Dramatic horror lighting. Person showing fear. ..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - stranger-things
+  - fan-art
+category: ai-ml
+content_file: prompt.md

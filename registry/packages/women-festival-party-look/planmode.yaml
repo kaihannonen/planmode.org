@@ -1,0 +1,17 @@
+name: women-festival-party-look
+version: 1.0.0
+type: prompt
+description: "Transform this selfie into a festival photo of a woman with glitter makeup. Add: colorful lights and blurred crowd in the background. Style: energetic, high-saturation, lens flare and bokeh. Frame:..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - portrait
+  - women
+category: ai-ml
+content_file: prompt.md

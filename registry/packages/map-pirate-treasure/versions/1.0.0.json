@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "4223b09240928c48",
+    "path": "registry/packages/map-pirate-treasure"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:4223b09240928c48e4fb342c62d2513c012bd6890eebc1e2ea557dd3fb245809"
+}

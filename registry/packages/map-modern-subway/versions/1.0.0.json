@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "0573b7ea6cb574bd",
+    "path": "registry/packages/map-modern-subway"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:0573b7ea6cb574bd713bebcfa43205048eaa0d9bdb6ea618d9cc65164bf5fc20"
+}

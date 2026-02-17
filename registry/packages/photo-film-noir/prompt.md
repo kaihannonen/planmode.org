@@ -1,0 +1,1 @@
+Film noir photography style, high contrast black and white, dramatic chiaroscuro lighting, deep shadows and harsh highlights, venetian blind light patterns, moody and mysterious atmosphere, 1940s detective cinema aesthetic

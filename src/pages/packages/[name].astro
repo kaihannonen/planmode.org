@@ -47,6 +47,12 @@ const installLocation: Record<string, string> = {
           <InstallButton packageName={pkg.name} />
         </div>
 
+        {pkg.preview_image && (
+          <div class="mb-8">
+            <img src={pkg.preview_image} alt="" class="w-full rounded-lg border border-grey-border/20" loading="lazy" />
+          </div>
+        )}
+
         <!-- Content preview -->
         {pkg.content && (
           <div class="mb-8">

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "f6e0d33233ba8738",
+    "path": "registry/packages/futuristic-minimalism"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:f6e0d33233ba8738199a2233b6c8bedc506087f9af0610d4322de1b98d3a0ddb"
+}

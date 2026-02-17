@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "6380758a214284b2",
+    "path": "registry/packages/st-eleven-telekinesis"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:6380758a214284b256332d4d534d9df8cafbcc262873aef269bcfa0047b8fcdb"
+}

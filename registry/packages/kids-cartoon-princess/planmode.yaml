@@ -1,0 +1,17 @@
+name: kids-cartoon-princess
+version: 1.0.0
+type: prompt
+description: "Turn this child's photo into a cute cartoon princess character. Outfit: sparkling dress and tiny crown. Background: magical forest with soft glowing lights. Style: colorful, big expressive eyes, si..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - kids
+  - children
+category: ai-ml
+content_file: prompt.md

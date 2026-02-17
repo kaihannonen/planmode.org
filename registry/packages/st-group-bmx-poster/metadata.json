@@ -1,0 +1,27 @@
+{
+  "name": "st-group-bmx-poster",
+  "description": "Epic low-angle group poster shot featuring the person as the central figure with 3 friends on BMX bikes, looking up at a red apocalyptic sky. They wear 80s outfits. Behind them, lightning strikes t...",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "stranger-things",
+    "fan-art"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/stranger-things-bmx-group-poster-640.png"
+}

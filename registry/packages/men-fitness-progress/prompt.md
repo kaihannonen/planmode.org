@@ -1,0 +1,1 @@
+Transform this gym selfie into a fitness magazine-style photo of a man mid-workout. Lighting: dramatic side lighting emphasizing muscles, dark background. Style: realistic, high contrast, crisp details, no overdone smoothing. Constraints: keep body shape natural and realistic.

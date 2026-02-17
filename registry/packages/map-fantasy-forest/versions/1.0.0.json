@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "e9b0aa70dc7c7929",
+    "path": "registry/packages/map-fantasy-forest"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:e9b0aa70dc7c7929563c02edab3b11f0216a0b29d65ef3b3d85a4398a1747e43"
+}

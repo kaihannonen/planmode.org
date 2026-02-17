@@ -1,0 +1,27 @@
+{
+  "name": "st-lovers-lake",
+  "description": "Split-level shot showing the person floating in Lovers Lake. Above water: Normal night forest. Below water: The Upside Down dimension of Stranger Things with red spores and dead vines. Ethereal und...",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "stranger-things",
+    "fan-art"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/stranger-things-lovers-lake-split-640.png"
+}

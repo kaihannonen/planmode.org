@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "846cd86d6de48d08",
+    "path": "registry/packages/st-netflix-poster"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:846cd86d6de48d08685cf047f066824d678a6e1c25411fbf317328028b2cc50d"
+}

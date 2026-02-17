@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "d70f0c836ad7c033",
+    "path": "registry/packages/st-synthwave-silhouette"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:d70f0c836ad7c033ee63ff63de98fd35ee1df1136daf171987c613c9bdcad5e4"
+}

@@ -1,0 +1,17 @@
+name: poster-design
+version: 1.0.0
+type: prompt
+description: "Poster design style, bold typography influence, strong composition"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - design
+  - graphic
+category: ai-ml
+content_file: prompt.md

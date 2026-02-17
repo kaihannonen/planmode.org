@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "2a3beeae9b8283ca",
+    "path": "registry/packages/childrens-book-illustration"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:2a3beeae9b8283ca6f28bb2b753f7ce01a780e98d7c8d503e635400efd2585d7"
+}

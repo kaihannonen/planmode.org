@@ -1,0 +1,27 @@
+{
+  "name": "kids-fantasy-animal-friend",
+  "description": "Turn this child into a character riding their favorite animal through the clouds. Animal: keep realistic but friendly. Background: big fluffy clouds, rainbow, sun rays. Style: whimsical, painterly,...",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "kids",
+    "children"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/kids-fantasy-animal-friend-640.png"
+}

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "950221deac4d5b34",
+    "path": "registry/packages/infographic-style"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:950221deac4d5b349638093d8f339ba2a434bdacc33d25eda9db5c76c4198091"
+}

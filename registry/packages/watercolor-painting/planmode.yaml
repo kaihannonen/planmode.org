@@ -1,0 +1,17 @@
+name: watercolor-painting
+version: 1.0.0
+type: prompt
+description: "Delicate watercolor painting on textured cold-press paper, soft wet-on-wet washes, visible brush strokes, gentle color bleeding at edges, transparent layered pigments, artistic and hand-painted feel"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - illustration
+  - art
+category: ai-ml
+content_file: prompt.md

@@ -1,0 +1,1 @@
+Extreme shallow depth of field photography, f/1.4 aperture, razor-thin focus plane on the subject with everything else melting into beautiful creamy bokeh, dreamy out-of-focus foreground and background, cinematic focus pull effect

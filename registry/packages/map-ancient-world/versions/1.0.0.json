@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "acf1a6432c742bbb",
+    "path": "registry/packages/map-ancient-world"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:acf1a6432c742bbb1998aac7c54095b49586703ac463ea3bc470e045ad0dcfc3"
+}

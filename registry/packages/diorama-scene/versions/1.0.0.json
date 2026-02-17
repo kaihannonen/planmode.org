@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "1f81b716abe428dc",
+    "path": "registry/packages/diorama-scene"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:1f81b716abe428dcd202aa50b25e47e093b50336367d07fafa7bed5779d72165"
+}

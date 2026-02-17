@@ -1,0 +1,17 @@
+name: romanticism
+version: 1.0.0
+type: prompt
+description: "Romanticism art style, dramatic nature, emotional atmosphere"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - fine-art
+  - historical
+category: ai-ml
+content_file: prompt.md

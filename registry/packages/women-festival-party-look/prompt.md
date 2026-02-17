@@ -1,0 +1,1 @@
+Transform this selfie into a festival photo of a woman with glitter makeup. Add: colorful lights and blurred crowd in the background. Style: energetic, high-saturation, lens flare and bokeh. Frame: close-up from shoulders up.

@@ -1,0 +1,17 @@
+name: tumblr-aesthetic
+version: 1.0.0
+type: prompt
+description: "Tumblr-era aesthetic, moody tones, artistic self-expression"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - pop-culture
+  - internet
+category: ai-ml
+content_file: prompt.md

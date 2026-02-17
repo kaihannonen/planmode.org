@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "5e71420956f103d8",
+    "path": "registry/packages/1970s-film"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:5e71420956f103d83e3061f6b08bd0f208a52c8171af6e9e645f55264b626dfd"
+}

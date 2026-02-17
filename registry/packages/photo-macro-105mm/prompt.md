@@ -1,0 +1,1 @@
+105mm macro lens photography, true 1:1 magnification, exceptional detail and texture, paper-thin depth of field with silky smooth bokeh, professional macro technique, vibrant colors and tack-sharp focus plane

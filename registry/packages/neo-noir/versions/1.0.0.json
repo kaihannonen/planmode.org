@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "47cf5d8bdede4f1e",
+    "path": "registry/packages/neo-noir"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:47cf5d8bdede4f1eaeaa08effd73d17aee4f7fa5f5d8a99b05a4e2c74a0b3672"
+}

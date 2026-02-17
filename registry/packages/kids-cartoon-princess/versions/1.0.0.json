@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "d978b03a9d92045d",
+    "path": "registry/packages/kids-cartoon-princess"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:d978b03a9d92045d7b55ca5b9a246f15048abd6698eccab22a99c58477feb60a"
+}

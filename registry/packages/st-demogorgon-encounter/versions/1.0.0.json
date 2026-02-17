@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "cf91301760e34b88",
+    "path": "registry/packages/st-demogorgon-encounter"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:cf91301760e34b8896d93dfbfb19837fff6ec7bac49d5e59f7f902ecab186710"
+}

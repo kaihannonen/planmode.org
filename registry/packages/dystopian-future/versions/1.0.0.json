@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "5d4768fd5f09fcfd",
+    "path": "registry/packages/dystopian-future"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:5d4768fd5f09fcfd0bda2beaf4cd27c0cf35d2cc073673bc69fabd3339188d2c"
+}

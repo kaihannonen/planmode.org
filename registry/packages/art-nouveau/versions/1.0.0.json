@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "ea1eec13f21ccd63",
+    "path": "registry/packages/art-nouveau"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:ea1eec13f21ccd630b2a8c51c40729b9a0cfa0a3223b653af7c1354222aab3fa"
+}

@@ -1,0 +1,23 @@
+name: map-fantasy-cartographic
+version: 1.0.0
+type: prompt
+description: "Fantasy world map of {{location}} in a cartographic style, with detailed topography, kingdoms, and trade routes."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - maps
+  - cartography
+category: ai-ml
+variables:
+  location:
+    description: "Location or region name for the map"
+    type: string
+    required: false
+    default: "the Known Lands"
+content_file: prompt.md

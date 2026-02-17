@@ -1,0 +1,1 @@
+Turn this boy into a comic-book superhero. Outfit: colorful suit with cape, simple emblem on chest. Background: stylized city skyline at sunset. Style: bold comic shading, halftone texture, dynamic pose. Constraints: no weapons, kid-safe action.

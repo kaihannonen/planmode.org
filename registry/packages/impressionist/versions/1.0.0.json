@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "076c9f7257ce58b0",
+    "path": "registry/packages/impressionist"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:076c9f7257ce58b01d1bd067fc388122599f2f8f430e1fae87f9201b139d88da"
+}

@@ -1,0 +1,17 @@
+name: men-streetwear-lifestyle
+version: 1.0.0
+type: prompt
+description: "Edit into a candid, high-realism street photograph while preserving original facial identity and hairstyle accurately. Show leaning casually against a large glass building wall on a sunny day. Outf..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - portrait
+  - men
+category: ai-ml
+content_file: prompt.md

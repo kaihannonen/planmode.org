@@ -1,0 +1,17 @@
+name: st-split-dimension
+version: 1.0.0
+type: prompt
+description: "Split composition showing person transitioning between normal Hawkins and Upside Down dimension of Stranger Things. Left side normal colorful world, right side dark decayed mirror version. Vines an..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - stranger-things
+  - fan-art
+category: ai-ml
+content_file: prompt.md

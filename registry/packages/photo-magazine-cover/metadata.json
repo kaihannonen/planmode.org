@@ -1,0 +1,27 @@
+{
+  "name": "photo-magazine-cover",
+  "description": "High-end glossy magazine cover layout, professional studio lighting, bold typography overlay, vibrant saturated colors, flawless retouching, eye-catching composition, editorial fashion photography ...",
+  "author": "prompted-photos",
+  "license": "MIT",
+  "repository": "github.com/kaihannonen/planmode.org",
+  "category": "ai-ml",
+  "tags": [
+    "image-generation",
+    "ai-prompt",
+    "photography",
+    "portrait"
+  ],
+  "type": "prompt",
+  "models": [
+    "gemini-image-pro",
+    "openai-4o"
+  ],
+  "latest_version": "1.0.0",
+  "versions": [
+    "1.0.0"
+  ],
+  "downloads": 0,
+  "created_at": "2026-02-17T10:00:00Z",
+  "updated_at": "2026-02-17T10:00:00Z",
+  "preview_image": "https://prompted.photos/img/photography-magazine-cover-640.png"
+}

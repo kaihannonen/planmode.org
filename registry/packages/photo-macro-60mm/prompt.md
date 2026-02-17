@@ -1,0 +1,1 @@
+60mm macro lens photography, extreme close-up revealing fine textures and details invisible to the naked eye, razor-thin depth of field, soft diffused background, precise focus on subject surface detail

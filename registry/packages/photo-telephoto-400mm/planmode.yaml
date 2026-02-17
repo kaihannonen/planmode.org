@@ -1,0 +1,17 @@
+name: photo-telephoto-400mm
+version: 1.0.0
+type: prompt
+description: "400mm super-telephoto lens photography, maximum background compression and subject isolation, atmospheric haze between layers, dreamy out-of-focus rendering, professional wildlife and sports photog..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

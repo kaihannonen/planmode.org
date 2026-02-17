@@ -1,0 +1,17 @@
+name: photo-wide-angle-17mm
+version: 1.0.0
+type: prompt
+description: "17mm wide-angle lens photography, expansive field of view, dramatic foreground-to-background depth, architectural and landscape photography, strong leading lines, environmental storytelling, rectil..."
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md

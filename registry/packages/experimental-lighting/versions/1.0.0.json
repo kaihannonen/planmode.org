@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "db15a9992b6911ef",
+    "path": "registry/packages/experimental-lighting"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:db15a9992b6911ef0698ce30d77a799bf0ec93fd79a64f8fd8558563c904bc06"
+}

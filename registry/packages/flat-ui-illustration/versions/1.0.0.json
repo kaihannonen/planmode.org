@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "published_at": "2026-02-17T10:00:00Z",
+  "source": {
+    "repository": "github.com/kaihannonen/planmode.org",
+    "tag": "main",
+    "sha": "bf42f68cba981400",
+    "path": "registry/packages/flat-ui-illustration"
+  },
+  "files": [
+    "planmode.yaml",
+    "prompt.md"
+  ],
+  "content_hash": "sha256:bf42f68cba9814007bcef7d0e073ff6a1a9a4cdfca0c174822cb53d913c94bb7"
+}

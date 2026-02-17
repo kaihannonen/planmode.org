@@ -1,0 +1,17 @@
+name: photo-telephoto-200mm
+version: 1.0.0
+type: prompt
+description: "200mm telephoto lens photography, strong background compression, dramatic subject isolation, distant subjects brought close, layered depth with smooth bokeh, sports and wildlife photography aesthetic"
+author: prompted-photos
+license: MIT
+repository: github.com/kaihannonen/planmode.org
+models:
+  - gemini-image-pro
+  - openai-4o
+tags:
+  - image-generation
+  - ai-prompt
+  - photography
+  - portrait
+category: ai-ml
+content_file: prompt.md
