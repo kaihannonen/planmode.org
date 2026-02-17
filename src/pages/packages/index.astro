@@ -9,7 +9,6 @@ import type { PackageSummary } from "../../types";
 const packages = (registryData.packages as PackageSummary[]).sort(
   (a, b) => b.downloads - a.downloads,
 );
-const packagesJson = JSON.stringify(packages);
 ---
 
 <Base title="Packages — Planmode" description="Browse and search AI plans, rules, and prompts.">

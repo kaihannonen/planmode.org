@@ -4,7 +4,7 @@ import registryData from "../data/packages.json";
 const packagesJson = JSON.stringify(registryData.packages);
 ---
 
-<div class="relative" id="search-container">
+<div class="relative" id="search-container" data-packages={packagesJson}>
   <div class="relative">
     <svg
       class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-grey-text"
@@ -26,31 +26,29 @@ const packagesJson = JSON.stringify(registryData.packages);
   </div>
 </div>
 
-<script define:vars={{ packagesJson }}>
-  const packages = JSON.parse(packagesJson);
+<script>
+  import Fuse from "fuse.js";
 
-  async function initSearch() {
-    const Fuse = (await import("fuse.js")).default;
-    const fuse = new Fuse(packages, {
-      keys: ["name", "description", "tags", "author"],
-      threshold: 0.4,
-    });
+  const container = document.getElementById("search-container");
+  const packages = JSON.parse(container?.dataset.packages ?? "[]");
 
-    const input = document.getElementById("search-input");
-    if (!input) return;
+  const fuse = new Fuse(packages, {
+    keys: ["name", "description", "tags", "author"],
+    threshold: 0.4,
+  });
 
-    input.addEventListener("input", (e) => {
-      const query = e.target.value.trim();
+  const input = document.getElementById("search-input") as HTMLInputElement | null;
+  if (input) {
+    input.addEventListener("input", () => {
+      const query = input.value.trim();
       if (!query) {
         window.dispatchEvent(new CustomEvent("search-filter", { detail: { matches: null } }));
         return;
       }
 
       const matches = fuse.search(query);
-      const matchedNames = new Set(matches.map(({ item }) => item.name));
+      const matchedNames = new Set(matches.map(({ item }: { item: any }) => item.name));
       window.dispatchEvent(new CustomEvent("search-filter", { detail: { matches: matchedNames } }));
     });
   }
-
-  initSearch();
 </script>
