@@ -1,7 +1,7 @@
 name: men-cinematic-neon-portrait
 version: 1.0.0
 type: prompt
-description: "Edit into an ultra-realistic cinematic portrait while preserving face and identity accurately. Keep facial features, skin tone, and likeness the same. Place sitting casually on the floor in a moder..."
+description: "Edit into an ultra-realistic cinematic portrait while preserving face and identity accurately. Keep facial features, skin tone, and likeness the same. Place sitting casually on the floor in a modern neon-lit lounge, relaxed and confident pose. Outfit: a navy blue shirt featuring a yellow-gold geometric linear pattern, baggy denim pants, and chunky sneakers. Lighting: cool blue ambient light on the subject, warm yellow background, and a yellow glow behind the hair (halo effect). Ultra-realistic detail, cinematic color grading, shallow depth of field."
 author: prompted-photos
 license: MIT
 repository: github.com/kaihannonen/planmode.org

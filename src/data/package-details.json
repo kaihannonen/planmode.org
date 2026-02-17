@@ -501,7 +501,7 @@
   },
   "photo-professional-headshot": {
     "name": "photo-professional-headshot",
-    "description": "Professional studio headshot photography, 85mm lens, f/2.8 aperture, soft studio lighting with a key light and fill light, clean neutral background, sharp focus on the eyes, professional attire, na...",
+    "description": "Professional studio headshot photography, 85mm lens, f/2.8 aperture, soft studio lighting with a key light and fill light, clean neutral background, sharp focus on the eyes, professional attire, natural skin tones, high-end retouching",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -585,7 +585,7 @@
   },
   "photo-magazine-cover": {
     "name": "photo-magazine-cover",
-    "description": "High-end glossy magazine cover layout, professional studio lighting, bold typography overlay, vibrant saturated colors, flawless retouching, eye-catching composition, editorial fashion photography ...",
+    "description": "High-end glossy magazine cover layout, professional studio lighting, bold typography overlay, vibrant saturated colors, flawless retouching, eye-catching composition, editorial fashion photography style",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -613,7 +613,7 @@
   },
   "photo-luxury-product": {
     "name": "photo-luxury-product",
-    "description": "Luxury commercial product photography, floating on dark reflective water surface, surrounded by delicate flowers and petals, dramatic moody lighting, high-end advertising aesthetic, shallow depth o...",
+    "description": "Luxury commercial product photography, floating on dark reflective water surface, surrounded by delicate flowers and petals, dramatic moody lighting, high-end advertising aesthetic, shallow depth of field",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -753,7 +753,7 @@
   },
   "photo-macro-60mm": {
     "name": "photo-macro-60mm",
-    "description": "60mm macro lens photography, extreme close-up revealing fine textures and details invisible to the naked eye, razor-thin depth of field, soft diffused background, precise focus on subject surface d...",
+    "description": "60mm macro lens photography, extreme close-up revealing fine textures and details invisible to the naked eye, razor-thin depth of field, soft diffused background, precise focus on subject surface detail",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -781,7 +781,7 @@
   },
   "photo-macro-80mm": {
     "name": "photo-macro-80mm",
-    "description": "80mm macro lens photography, intimate close-up with slightly more working distance, beautiful bokeh, intricate detail capture, creamy out-of-focus areas, natural color rendition, studio-quality sha...",
+    "description": "80mm macro lens photography, intimate close-up with slightly more working distance, beautiful bokeh, intricate detail capture, creamy out-of-focus areas, natural color rendition, studio-quality sharpness",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -809,7 +809,7 @@
   },
   "photo-macro-105mm": {
     "name": "photo-macro-105mm",
-    "description": "105mm macro lens photography, true 1:1 magnification, exceptional detail and texture, paper-thin depth of field with silky smooth bokeh, professional macro technique, vibrant colors and tack-sharp ...",
+    "description": "105mm macro lens photography, true 1:1 magnification, exceptional detail and texture, paper-thin depth of field with silky smooth bokeh, professional macro technique, vibrant colors and tack-sharp focus plane",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -837,7 +837,7 @@
   },
   "photo-telephoto-100mm": {
     "name": "photo-telephoto-100mm",
-    "description": "100mm telephoto lens photography, flattering portrait compression, subject isolation from background, smooth creamy bokeh, shallow depth of field, natural skin rendering, professional portrait aest...",
+    "description": "100mm telephoto lens photography, flattering portrait compression, subject isolation from background, smooth creamy bokeh, shallow depth of field, natural skin rendering, professional portrait aesthetic",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -893,7 +893,7 @@
   },
   "photo-telephoto-300mm": {
     "name": "photo-telephoto-300mm",
-    "description": "300mm telephoto lens photography, extreme background compression, powerful subject isolation, stacked depth layers, buttery smooth bokeh, wildlife and action photography style, distant subject inti...",
+    "description": "300mm telephoto lens photography, extreme background compression, powerful subject isolation, stacked depth layers, buttery smooth bokeh, wildlife and action photography style, distant subject intimacy",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -921,7 +921,7 @@
   },
   "photo-telephoto-400mm": {
     "name": "photo-telephoto-400mm",
-    "description": "400mm super-telephoto lens photography, maximum background compression and subject isolation, atmospheric haze between layers, dreamy out-of-focus rendering, professional wildlife and sports photog...",
+    "description": "400mm super-telephoto lens photography, maximum background compression and subject isolation, atmospheric haze between layers, dreamy out-of-focus rendering, professional wildlife and sports photography, extraordinary reach",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -949,7 +949,7 @@
   },
   "photo-wide-angle-10mm": {
     "name": "photo-wide-angle-10mm",
-    "description": "10mm ultra wide-angle lens photography, dramatic exaggerated perspective, sweeping field of view, architectural and landscape grandeur, converging lines, immersive and expansive feel, slight fishey...",
+    "description": "10mm ultra wide-angle lens photography, dramatic exaggerated perspective, sweeping field of view, architectural and landscape grandeur, converging lines, immersive and expansive feel, slight fisheye distortion",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -977,7 +977,7 @@
   },
   "photo-wide-angle-17mm": {
     "name": "photo-wide-angle-17mm",
-    "description": "17mm wide-angle lens photography, expansive field of view, dramatic foreground-to-background depth, architectural and landscape photography, strong leading lines, environmental storytelling, rectil...",
+    "description": "17mm wide-angle lens photography, expansive field of view, dramatic foreground-to-background depth, architectural and landscape photography, strong leading lines, environmental storytelling, rectilinear perspective",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -1005,7 +1005,7 @@
   },
   "photo-wide-angle-24mm": {
     "name": "photo-wide-angle-24mm",
-    "description": "24mm wide-angle lens photography, classic wide-angle perspective, environmental portraits and landscapes, natural sense of space and depth, slight perspective exaggeration, reportage and documentar...",
+    "description": "24mm wide-angle lens photography, classic wide-angle perspective, environmental portraits and landscapes, natural sense of space and depth, slight perspective exaggeration, reportage and documentary feel",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -1033,7 +1033,7 @@
   },
   "photo-black-white-film": {
     "name": "photo-black-white-film",
-    "description": "Classic black and white film photography, rich tonal range from deep blacks to bright whites, visible film grain, dramatic contrast, timeless monochrome aesthetic, shot on Ilford HP5 or Tri-X 400, ...",
+    "description": "Classic black and white film photography, rich tonal range from deep blacks to bright whites, visible film grain, dramatic contrast, timeless monochrome aesthetic, shot on Ilford HP5 or Tri-X 400, analog darkroom print quality",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -1061,7 +1061,7 @@
   },
   "photo-film-noir": {
     "name": "photo-film-noir",
-    "description": "Film noir photography style, high contrast black and white, dramatic chiaroscuro lighting, deep shadows and harsh highlights, venetian blind light patterns, moody and mysterious atmosphere, 1940s d...",
+    "description": "Film noir photography style, high contrast black and white, dramatic chiaroscuro lighting, deep shadows and harsh highlights, venetian blind light patterns, moody and mysterious atmosphere, 1940s detective cinema aesthetic",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -1089,7 +1089,7 @@
   },
   "photo-depth-of-field": {
     "name": "photo-depth-of-field",
-    "description": "Extreme shallow depth of field photography, f/1.4 aperture, razor-thin focus plane on the subject with everything else melting into beautiful creamy bokeh, dreamy out-of-focus foreground and backgr...",
+    "description": "Extreme shallow depth of field photography, f/1.4 aperture, razor-thin focus plane on the subject with everything else melting into beautiful creamy bokeh, dreamy out-of-focus foreground and background, cinematic focus pull effect",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -1145,7 +1145,7 @@
   },
   "photo-duotone-red-grey": {
     "name": "photo-duotone-red-grey",
-    "description": "Duotone photography in red and grey tones, warm red highlights with neutral grey shadows, bold and dramatic two-tone color grading, striking contrast between warmth and neutrality, editorial poster...",
+    "description": "Duotone photography in red and grey tones, warm red highlights with neutral grey shadows, bold and dramatic two-tone color grading, striking contrast between warmth and neutrality, editorial poster aesthetic",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -1173,7 +1173,7 @@
   },
   "photo-duotone-yellow-grey": {
     "name": "photo-duotone-yellow-grey",
-    "description": "Duotone photography in yellow and grey tones, warm golden yellow highlights with cool grey shadows, energetic yet sophisticated two-tone palette, modern graphic design aesthetic, eye-catching color...",
+    "description": "Duotone photography in yellow and grey tones, warm golden yellow highlights with cool grey shadows, energetic yet sophisticated two-tone palette, modern graphic design aesthetic, eye-catching color contrast",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -1201,7 +1201,7 @@
   },
   "photo-duotone-orange-grey": {
     "name": "photo-duotone-orange-grey",
-    "description": "Duotone photography in orange and grey tones, vibrant warm orange highlights with neutral grey shadows, bold and inviting two-tone color grading, sunset warmth meets urban cool, contemporary editor...",
+    "description": "Duotone photography in orange and grey tones, vibrant warm orange highlights with neutral grey shadows, bold and inviting two-tone color grading, sunset warmth meets urban cool, contemporary editorial style",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2325,7 +2325,7 @@
   },
   "crowd-removal": {
     "name": "crowd-removal",
-    "description": "Remove all background people and bystanders from the scene, intelligently fill the removed areas with natural background continuation, maintain the main subject and environment, clean and unclutter...",
+    "description": "Remove all background people and bystanders from the scene, intelligently fill the removed areas with natural background continuation, maintain the main subject and environment, clean and uncluttered result",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2353,7 +2353,7 @@
   },
   "men-linkedin-headshot": {
     "name": "men-linkedin-headshot",
-    "description": "Turn this into a professional LinkedIn headshot of a man. Background: softly blurred office with big windows. Style: clean, realistic, subtle retouching, no heavy filters. Lighting: soft daylight f...",
+    "description": "Turn this into a professional LinkedIn headshot of a man. Background: softly blurred office with big windows. Style: clean, realistic, subtle retouching, no heavy filters. Lighting: soft daylight from the front. Constraints: keep facial features and hairstyle accurate, no text.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2381,7 +2381,7 @@
   },
   "men-streetwear-lifestyle": {
     "name": "men-streetwear-lifestyle",
-    "description": "Edit into a candid, high-realism street photograph while preserving original facial identity and hairstyle accurately. Show leaning casually against a large glass building wall on a sunny day. Outf...",
+    "description": "Edit into a candid, high-realism street photograph while preserving original facial identity and hairstyle accurately. Show leaning casually against a large glass building wall on a sunny day. Outfit: oversized khaki graphic t-shirt, black cargo pants with multiple pockets, white sneakers, sunglasses, wristwatch. Pose: hands in pockets, looking to the side casually. Include a clear reflection on the glass surface behind. Background: urban cityscape with a clear blue sky. Lighting: bright direct sunlight creating sharp shadows. Natural photography look, high realism.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2409,7 +2409,7 @@
   },
   "men-cinematic-neon-portrait": {
     "name": "men-cinematic-neon-portrait",
-    "description": "Edit into an ultra-realistic cinematic portrait while preserving face and identity accurately. Keep facial features, skin tone, and likeness the same. Place sitting casually on the floor in a moder...",
+    "description": "Edit into an ultra-realistic cinematic portrait while preserving face and identity accurately. Keep facial features, skin tone, and likeness the same. Place sitting casually on the floor in a modern neon-lit lounge, relaxed and confident pose. Outfit: a navy blue shirt featuring a yellow-gold geometric linear pattern, baggy denim pants, and chunky sneakers. Lighting: cool blue ambient light on the subject, warm yellow background, and a yellow glow behind the hair (halo effect). Ultra-realistic detail, cinematic color grading, shallow depth of field.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2437,7 +2437,7 @@
   },
   "men-movie-entry-scene": {
     "name": "men-movie-entry-scene",
-    "description": "Transform into an ultra-realistic cinematic film still while preserving exact identity. Scene: dusty desert roadside with soft beige haze; a white SUV on the left with the door open. Wardrobe: all-...",
+    "description": "Transform into an ultra-realistic cinematic film still while preserving exact identity. Scene: dusty desert roadside with soft beige haze; a white SUV on the left with the door open. Wardrobe: all-black layered outfit — black kurta with buttons, black blazer/coat, and a black scarf/stole draped around the neck. Accessories: dark aviator sunglasses, realistic lens reflections. Pose/expression: confident smirk, head slightly down and turned; both arms open outward with palms up. Lighting: warm daylight, gentle contrast, soft shadows, subtle film grain; cinematic color grading. Camera: medium shot, slightly low angle, shallow depth of field.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2465,7 +2465,7 @@
   },
   "men-fitness-progress": {
     "name": "men-fitness-progress",
-    "description": "Transform this gym selfie into a fitness magazine-style photo of a man mid-workout. Lighting: dramatic side lighting emphasizing muscles, dark background. Style: realistic, high contrast, crisp det...",
+    "description": "Transform this gym selfie into a fitness magazine-style photo of a man mid-workout. Lighting: dramatic side lighting emphasizing muscles, dark background. Style: realistic, high contrast, crisp details, no overdone smoothing. Constraints: keep body shape natural and realistic.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2493,7 +2493,7 @@
   },
   "men-formal-blazer-portrait": {
     "name": "men-formal-blazer-portrait",
-    "description": "Create a studio portrait of a man wearing a dark blazer over a plain T-shirt. Background: neutral grey gradient. Lighting: softbox-style portrait lighting, gentle shadows. Style: realistic, sharp d...",
+    "description": "Create a studio portrait of a man wearing a dark blazer over a plain T-shirt. Background: neutral grey gradient. Lighting: softbox-style portrait lighting, gentle shadows. Style: realistic, sharp details, suitable for website About page.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2521,7 +2521,7 @@
   },
   "men-travel-explorer": {
     "name": "men-travel-explorer",
-    "description": "Turn this photo into an image of a man standing on a mountain viewpoint at sunrise. Add: clouds below, golden light on the face. Outfit: hiking jacket and backpack. Style: cinematic landscape, rich...",
+    "description": "Turn this photo into an image of a man standing on a mountain viewpoint at sunrise. Add: clouds below, golden light on the face. Outfit: hiking jacket and backpack. Style: cinematic landscape, rich colors, wide-angle perspective. Instagram-ready.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2549,7 +2549,7 @@
   },
   "women-soft-pastel-portrait": {
     "name": "women-soft-pastel-portrait",
-    "description": "Turn this portrait into a soft pastel aesthetic photo of a woman. Background: blurred flowers in pastel colors. Lighting: warm golden hour sunlight. Style: dreamy, gentle skin glow, light film grai...",
+    "description": "Turn this portrait into a soft pastel aesthetic photo of a woman. Background: blurred flowers in pastel colors. Lighting: warm golden hour sunlight. Style: dreamy, gentle skin glow, light film grain, Instagram-ready.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2577,7 +2577,7 @@
   },
   "women-boss-mode-founder": {
     "name": "women-boss-mode-founder",
-    "description": "Create a confident business portrait of a woman tech founder. Setting: modern office with glass walls and city view. Pose: standing with arms relaxed, looking into the camera. Style: realistic, neu...",
+    "description": "Create a confident business portrait of a woman tech founder. Setting: modern office with glass walls and city view. Pose: standing with arms relaxed, looking into the camera. Style: realistic, neutral color grading, subtle depth of field. Constraints: keep outfit smart casual, no exaggerated fashion styling.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2605,7 +2605,7 @@
   },
   "women-festival-party-look": {
     "name": "women-festival-party-look",
-    "description": "Transform this selfie into a festival photo of a woman with glitter makeup. Add: colorful lights and blurred crowd in the background. Style: energetic, high-saturation, lens flare and bokeh. Frame:...",
+    "description": "Transform this selfie into a festival photo of a woman with glitter makeup. Add: colorful lights and blurred crowd in the background. Style: energetic, high-saturation, lens flare and bokeh. Frame: close-up from shoulders up.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2633,7 +2633,7 @@
   },
   "women-editorial-beauty": {
     "name": "women-editorial-beauty",
-    "description": "Create an editorial-style beauty portrait of a woman. Background: solid color backdrop matching skin tone. Lighting: soft but directional, highlighting cheekbones. Style: magazine beauty shot, clea...",
+    "description": "Create an editorial-style beauty portrait of a woman. Background: solid color backdrop matching skin tone. Lighting: soft but directional, highlighting cheekbones. Style: magazine beauty shot, clean, sharp details, visible catchlights in the eyes.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2661,7 +2661,7 @@
   },
   "women-cozy-indoor-portrait": {
     "name": "women-cozy-indoor-portrait",
-    "description": "Turn this photo into a cozy indoor portrait of a woman sitting by a window. Add: a mug of coffee, soft blanket, bookshelf in the back. Style: warm, slightly desaturated, natural light, shallow dept...",
+    "description": "Turn this photo into a cozy indoor portrait of a woman sitting by a window. Add: a mug of coffee, soft blanket, bookshelf in the back. Style: warm, slightly desaturated, natural light, shallow depth of field.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2689,7 +2689,7 @@
   },
   "kids-cartoon-princess": {
     "name": "kids-cartoon-princess",
-    "description": "Turn this child's photo into a cute cartoon princess character. Outfit: sparkling dress and tiny crown. Background: magical forest with soft glowing lights. Style: colorful, big expressive eyes, si...",
+    "description": "Turn this child's photo into a cute cartoon princess character. Outfit: sparkling dress and tiny crown. Background: magical forest with soft glowing lights. Style: colorful, big expressive eyes, simple shapes, kid-friendly. Constraints: no makeup or adult styling.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2717,7 +2717,7 @@
   },
   "kids-fairy-tale-storybook": {
     "name": "kids-fairy-tale-storybook",
-    "description": "Create a storybook-style illustration of this girl reading a book under a tree. Add: small friendly animals and floating stars above the book. Style: watercolor children's book art, soft edges, war...",
+    "description": "Create a storybook-style illustration of this girl reading a book under a tree. Add: small friendly animals and floating stars above the book. Style: watercolor children's book art, soft edges, warm colors.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2745,7 +2745,7 @@
   },
   "kids-superhero-poster": {
     "name": "kids-superhero-poster",
-    "description": "Turn this boy into a comic-book superhero. Outfit: colorful suit with cape, simple emblem on chest. Background: stylized city skyline at sunset. Style: bold comic shading, halftone texture, dynamic...",
+    "description": "Turn this boy into a comic-book superhero. Outfit: colorful suit with cape, simple emblem on chest. Background: stylized city skyline at sunset. Style: bold comic shading, halftone texture, dynamic pose. Constraints: no weapons, kid-safe action.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2773,7 +2773,7 @@
   },
   "kids-sports-star-poster": {
     "name": "kids-sports-star-poster",
-    "description": "Transform this child's photo into a sports poster. Setting: stadium at night with bright floodlights and cheering crowd. Style: realistic with slightly dramatic lighting, motion blur on background ...",
+    "description": "Transform this child's photo into a sports poster. Setting: stadium at night with bright floodlights and cheering crowd. Style: realistic with slightly dramatic lighting, motion blur on background only.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2801,7 +2801,7 @@
   },
   "kids-back-to-school": {
     "name": "kids-back-to-school",
-    "description": "Create a fun back-to-school image from this child's photo. Add: backpack, chalkboard with doodles of books and stars, stack of colorful notebooks. Style: bright, cheerful, cartoonish, simple shapes...",
+    "description": "Create a fun back-to-school image from this child's photo. Add: backpack, chalkboard with doodles of books and stars, stack of colorful notebooks. Style: bright, cheerful, cartoonish, simple shapes and clean lines.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2829,7 +2829,7 @@
   },
   "kids-fantasy-animal-friend": {
     "name": "kids-fantasy-animal-friend",
-    "description": "Turn this child into a character riding their favorite animal through the clouds. Animal: keep realistic but friendly. Background: big fluffy clouds, rainbow, sun rays. Style: whimsical, painterly,...",
+    "description": "Turn this child into a character riding their favorite animal through the clouds. Animal: keep realistic but friendly. Background: big fluffy clouds, rainbow, sun rays. Style: whimsical, painterly, child-safe fantasy.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2857,7 +2857,7 @@
   },
   "kids-pixar": {
     "name": "kids-pixar",
-    "description": "Generate 3D images in the style of Pixar animation. The images should capture the vibrant colors, whimsical characters, and imaginative settings typical of Pixar films. Focus on creating characters...",
+    "description": "Generate 3D images in the style of Pixar animation. The images should capture the vibrant colors, whimsical characters, and imaginative settings typical of Pixar films. Focus on creating characters with expressive features and engaging poses, and design backgrounds that are rich in detail and creativity.\n\nTo ensure high-quality images, consider the following:\n- Use exaggerated proportions for characters to give them a more animated feel.\n- Incorporate vivid color palettes that reflect joy and playfulness.\n- Add depth to scenes with layering and perspective to enhance the three-dimensional aspect.\n\n# Output Format\n- Each image should be described in detail, including character traits, colors used, and the setting of the scene.\n- Provide a brief narrative or context for each image to bring the scene to life.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2885,7 +2885,7 @@
   },
   "st-netflix-poster": {
     "name": "st-netflix-poster",
-    "description": "Person featured in official Netflix Stranger Things season poster design. Bold red title text. Character positioned in center. Dark atmospheric background with Upside Down elements. Floating partic...",
+    "description": "Person featured in official Netflix Stranger Things season poster design. Bold red title text. Character positioned in center. Dark atmospheric background with Upside Down elements. Floating particles. Netflix branding style. Cinematic movie poster composition. Professional graphic design.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2913,7 +2913,7 @@
   },
   "st-eleven-telekinesis": {
     "name": "st-eleven-telekinesis",
-    "description": "Reimagine the person as a fan-inspired version of Eleven. Recreate the iconic telekinetic power scene aesthetic. Intense focused expression. Dark atmospheric lighting with dramatic blue and red glo...",
+    "description": "Reimagine the person as a fan-inspired version of Eleven. Recreate the iconic telekinetic power scene aesthetic. Intense focused expression. Dark atmospheric lighting with dramatic blue and red glows. Wearing a simple hospital-style gown. Floating particles and eerie Upside Down-style visual effects around the subject. Glowing energy effects. Nose bleeding. Objects floating and spinning around. Blue energy aura. Particles and debris levitating. Dark background. Supernatural VFX.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2941,7 +2941,7 @@
   },
   "st-upside-down-portal": {
     "name": "st-upside-down-portal",
-    "description": "Person standing before massive glowing red portal to Stranger Things' Upside Down dimension. Tentacles and vines emerging from gateway. Dark forest setting. Ominous red lighting with particle effec...",
+    "description": "Person standing before massive glowing red portal to Stranger Things' Upside Down dimension. Tentacles and vines emerging from gateway. Dark forest setting. Ominous red lighting with particle effects. Eerie atmosphere. Fog and mist. Cinematic wide angle. Horror movie aesthetic.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2969,7 +2969,7 @@
   },
   "st-retro-comic-cover": {
     "name": "st-retro-comic-cover",
-    "description": "Person featured on retro comic book cover design inspired by Stranger Things. Bold comic art style. Dramatic action scene. Bright primary colors. Vintage comic book font for title. \"Issue #1\" brand...",
+    "description": "Person featured on retro comic book cover design inspired by Stranger Things. Bold comic art style. Dramatic action scene. Bright primary colors. Vintage comic book font for title. \"Issue #1\" branding. Halftone dot patterns. 80s comic aesthetic.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -2997,7 +2997,7 @@
   },
   "st-synthwave-silhouette": {
     "name": "st-synthwave-silhouette",
-    "description": "Person silhouette portrait in Stranger Things synthwave style. Neon pink and blue gradients. Grid floor reflecting 80s retro wave aesthetic. Palm tree silhouettes. Sunset background. Vaporwave colo...",
+    "description": "Person silhouette portrait in Stranger Things synthwave style. Neon pink and blue gradients. Grid floor reflecting 80s retro wave aesthetic. Palm tree silhouettes. Sunset background. Vaporwave colors. Outrun art style. Nostalgic futuristic blend.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -3025,7 +3025,7 @@
   },
   "st-christmas-lights-wall": {
     "name": "st-christmas-lights-wall",
-    "description": "Place the person into the Byers' living room of Stranger Things. Standing before the iconic wall covered in floral wallpaper and multicolored Christmas lights painted with alphabet letters. Hand ra...",
+    "description": "Place the person into the Byers' living room of Stranger Things. Standing before the iconic wall covered in floral wallpaper and multicolored Christmas lights painted with alphabet letters. Hand raised as if controlling the lights. Some bulbs flicker intensely. Vintage 80s atmosphere, film grain, warm amber lighting, cozy yet eerie.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -3053,7 +3053,7 @@
   },
   "st-demogorgon-encounter": {
     "name": "st-demogorgon-encounter",
-    "description": "Terrifying close encounter of person facing Demogorgon creature from Stranger Things. Demogorgon flower-like head opening. Dark Hawkins forest night. Dramatic horror lighting. Person showing fear. ...",
+    "description": "Terrifying close encounter of person facing Demogorgon creature from Stranger Things. Demogorgon flower-like head opening. Dark Hawkins forest night. Dramatic horror lighting. Person showing fear. Monster detailed texture. Mist and fog effects. Cinematic tension.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -3081,7 +3081,7 @@
   },
   "st-hawkins-lab-hallway": {
     "name": "st-hawkins-lab-hallway",
-    "description": "Render the subject walking confidently through a glowing neon-red doorway in an abandoned Hawkins Lab hallway of Stranger Things. Thick black organic vines (Mind Flayer vines) crawl across the wall...",
+    "description": "Render the subject walking confidently through a glowing neon-red doorway in an abandoned Hawkins Lab hallway of Stranger Things. Thick black organic vines (Mind Flayer vines) crawl across the walls and floor. The doorway emits intense crimson light. Flickering green EXIT sign. Moody sci-fi horror aesthetic, volumetric fog, ultra-detailed textures.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -3109,7 +3109,7 @@
   },
   "st-mind-flayer-highway": {
     "name": "st-mind-flayer-highway",
-    "description": "Wide-angle poster shot featuring the person as a lone traveler on an empty highway facing a \"WELCOME TO HAWKINS\" sign. Above, the Mind Flayer (Shadow Monster) from Stranger Things looms from apocal...",
+    "description": "Wide-angle poster shot featuring the person as a lone traveler on an empty highway facing a \"WELCOME TO HAWKINS\" sign. Above, the Mind Flayer (Shadow Monster) from Stranger Things looms from apocalyptic red-black storm clouds, tentacles reaching down. Person wears a bomber jacket and carries a bat. Red lightning, cracked pavement, 80s sci-fi horror movie poster style.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -3137,7 +3137,7 @@
   },
   "st-starcourt-mall": {
     "name": "st-starcourt-mall",
-    "description": "Person sitting at a table in the Starcourt Mall food court (Stranger Things Season 3). Background: Neon signs for Scoops Ahoy, The Gap, and RadioShack. 80s mall fashion: bright windbreaker, scrunch...",
+    "description": "Person sitting at a table in the Starcourt Mall food court (Stranger Things Season 3). Background: Neon signs for Scoops Ahoy, The Gap, and RadioShack. 80s mall fashion: bright windbreaker, scrunchie. Vibrant nostalgic atmosphere, pastel neon color scheme, cinematic wide angle.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -3165,7 +3165,7 @@
   },
   "st-eddie-munson-guitar": {
     "name": "st-eddie-munson-guitar",
-    "description": "Person performing an intense electric guitar solo on top of a trailer in the Upside Down, honoring Eddie Munson's \"Master of Puppets\" scene. Red lightning strikes, Demobats swarm the sky. Dramatic ...",
+    "description": "Person performing an intense electric guitar solo on top of a trailer in the Upside Down, honoring Eddie Munson's \"Master of Puppets\" scene. Red lightning strikes, Demobats swarm the sky. Dramatic low-angle hero shot, concert lighting, epic heavy metal aesthetic.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -3193,7 +3193,7 @@
   },
   "st-split-dimension": {
     "name": "st-split-dimension",
-    "description": "Split composition showing person transitioning between normal Hawkins and Upside Down dimension of Stranger Things. Left side normal colorful world, right side dark decayed mirror version. Vines an...",
+    "description": "Split composition showing person transitioning between normal Hawkins and Upside Down dimension of Stranger Things. Left side normal colorful world, right side dark decayed mirror version. Vines and particles. Cold vs warm lighting. Reality distortion effect.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -3221,7 +3221,7 @@
   },
   "st-lovers-lake": {
     "name": "st-lovers-lake",
-    "description": "Split-level shot showing the person floating in Lovers Lake. Above water: Normal night forest. Below water: The Upside Down dimension of Stranger Things with red spores and dead vines. Ethereal und...",
+    "description": "Split-level shot showing the person floating in Lovers Lake. Above water: Normal night forest. Below water: The Upside Down dimension of Stranger Things with red spores and dead vines. Ethereal underwater atmosphere, haunting composition, volumetric light rays.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -3249,7 +3249,7 @@
   },
   "st-bicycle-sunset": {
     "name": "st-bicycle-sunset",
-    "description": "Cinematic silhouette shot of the person on a bicycle appearing to fly across a massive setting sun, an homage to E.T. and Stranger Things. Perfect black silhouette against orange-red sky. Nostalgic...",
+    "description": "Cinematic silhouette shot of the person on a bicycle appearing to fly across a massive setting sun, an homage to E.T. and Stranger Things. Perfect black silhouette against orange-red sky. Nostalgic 80s adventure movie vibe, dreamy golden hour.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",
@@ -3277,7 +3277,7 @@
   },
   "st-group-bmx-poster": {
     "name": "st-group-bmx-poster",
-    "description": "Epic low-angle group poster shot featuring the person as the central figure with 3 friends on BMX bikes, looking up at a red apocalyptic sky. They wear 80s outfits. Behind them, lightning strikes t...",
+    "description": "Epic low-angle group poster shot featuring the person as the central figure with 3 friends on BMX bikes, looking up at a red apocalyptic sky. They wear 80s outfits. Behind them, lightning strikes the Mind Flayer silhouette. Distressed neon title \"STRANGER THINGS\" glows in the sky. Teal and orange color grading, epic movie poster composition, 80s adventure aesthetic.",
     "author": "prompted-photos",
     "license": "MIT",
     "repository": "github.com/kaihannonen/planmode.org",

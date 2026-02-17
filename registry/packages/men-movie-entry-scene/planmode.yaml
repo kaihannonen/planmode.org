@@ -1,7 +1,7 @@
 name: men-movie-entry-scene
 version: 1.0.0
 type: prompt
-description: "Transform into an ultra-realistic cinematic film still while preserving exact identity. Scene: dusty desert roadside with soft beige haze; a white SUV on the left with the door open. Wardrobe: all-..."
+description: "Transform into an ultra-realistic cinematic film still while preserving exact identity. Scene: dusty desert roadside with soft beige haze; a white SUV on the left with the door open. Wardrobe: all-black layered outfit — black kurta with buttons, black blazer/coat, and a black scarf/stole draped around the neck. Accessories: dark aviator sunglasses, realistic lens reflections. Pose/expression: confident smirk, head slightly down and turned; both arms open outward with palms up. Lighting: warm daylight, gentle contrast, soft shadows, subtle film grain; cinematic color grading. Camera: medium shot, slightly low angle, shallow depth of field."
 author: prompted-photos
 license: MIT
 repository: github.com/kaihannonen/planmode.org

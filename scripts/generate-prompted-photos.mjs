@@ -172,9 +172,8 @@ function generatePackage(preset) {
   // Prompt text — add {{location}} for maps
   const promptText = isMap ? templateMapPrompt(preset.prompt) : preset.prompt;
 
-  // Description for metadata (truncate if needed)
-  const description =
-    promptText.length > 200 ? promptText.slice(0, 197) + "..." : promptText;
+  // Description — use full prompt text, no truncation
+  const description = promptText;
 
   // ── metadata.json ──
   const metadata = {

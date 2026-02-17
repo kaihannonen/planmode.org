@@ -1,7 +1,7 @@
 name: kids-fairy-tale-storybook
 version: 1.0.0
 type: prompt
-description: "Create a storybook-style illustration of this girl reading a book under a tree. Add: small friendly animals and floating stars above the book. Style: watercolor children's book art, soft edges, war..."
+description: "Create a storybook-style illustration of this girl reading a book under a tree. Add: small friendly animals and floating stars above the book. Style: watercolor children's book art, soft edges, warm colors."
 author: prompted-photos
 license: MIT
 repository: github.com/kaihannonen/planmode.org

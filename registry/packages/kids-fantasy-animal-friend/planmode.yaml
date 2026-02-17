@@ -1,7 +1,7 @@
 name: kids-fantasy-animal-friend
 version: 1.0.0
 type: prompt
-description: "Turn this child into a character riding their favorite animal through the clouds. Animal: keep realistic but friendly. Background: big fluffy clouds, rainbow, sun rays. Style: whimsical, painterly,..."
+description: "Turn this child into a character riding their favorite animal through the clouds. Animal: keep realistic but friendly. Background: big fluffy clouds, rainbow, sun rays. Style: whimsical, painterly, child-safe fantasy."
 author: prompted-photos
 license: MIT
 repository: github.com/kaihannonen/planmode.org

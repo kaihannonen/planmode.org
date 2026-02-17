@@ -1,7 +1,7 @@
 name: photo-depth-of-field
 version: 1.0.0
 type: prompt
-description: "Extreme shallow depth of field photography, f/1.4 aperture, razor-thin focus plane on the subject with everything else melting into beautiful creamy bokeh, dreamy out-of-focus foreground and backgr..."
+description: "Extreme shallow depth of field photography, f/1.4 aperture, razor-thin focus plane on the subject with everything else melting into beautiful creamy bokeh, dreamy out-of-focus foreground and background, cinematic focus pull effect"
 author: prompted-photos
 license: MIT
 repository: github.com/kaihannonen/planmode.org

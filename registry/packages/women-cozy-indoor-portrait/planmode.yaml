@@ -1,7 +1,7 @@
 name: women-cozy-indoor-portrait
 version: 1.0.0
 type: prompt
-description: "Turn this photo into a cozy indoor portrait of a woman sitting by a window. Add: a mug of coffee, soft blanket, bookshelf in the back. Style: warm, slightly desaturated, natural light, shallow dept..."
+description: "Turn this photo into a cozy indoor portrait of a woman sitting by a window. Add: a mug of coffee, soft blanket, bookshelf in the back. Style: warm, slightly desaturated, natural light, shallow depth of field."
 author: prompted-photos
 license: MIT
 repository: github.com/kaihannonen/planmode.org
