@@ -1,8 +1,10 @@
 import { Command } from "commander";
+import * as p from "@clack/prompts";
 import fs from "node:fs";
 import path from "node:path";
 import { startRecordingAsync, stopRecording, isRecording } from "../lib/recorder.js";
 import { logger } from "../lib/logger.js";
+import { isInteractive, withSpinner } from "../lib/prompts.js";
 
 export const recordCommand = new Command("record")
   .description("Record git activity and generate a plan from commits");
@@ -31,13 +33,30 @@ recordCommand
   .option("--dir <dir>", "Output directory for the generated package (default: current directory)")
   .action(async (options: { name?: string; author?: string; dir?: string }) => {
     try {
-      logger.blank();
-      logger.info("Analyzing commits...");
+      const interactive = isInteractive();
 
-      const result = await stopRecording(process.cwd(), {
-        name: options.name,
-        author: options.author,
-      });
+      if (interactive) {
+        p.intro("Generating plan from recording");
+      } else {
+        logger.blank();
+      }
+
+      const result = interactive
+        ? await withSpinner(
+            "Analyzing commits...",
+            () => stopRecording(process.cwd(), {
+              name: options.name,
+              author: options.author,
+            }),
+            "Analysis complete",
+          )
+        : await (async () => {
+            logger.info("Analyzing commits...");
+            return stopRecording(process.cwd(), {
+              name: options.name,
+              author: options.author,
+            });
+          })();
 
       // Write to output directory
       const outDir = options.dir ?? process.cwd();
@@ -56,8 +75,13 @@ recordCommand
 
       logger.blank();
       logger.success("Created planmode.yaml and plan.md");
-      logger.dim("Edit the generated plan, then run `planmode test` to validate and `planmode publish` when ready.");
-      logger.blank();
+
+      if (interactive) {
+        p.outro("Edit the generated plan, then run `planmode test` to validate and `planmode publish` when ready.");
+      } else {
+        logger.dim("Edit the generated plan, then run `planmode test` to validate and `planmode publish` when ready.");
+        logger.blank();
+      }
     } catch (err) {
       logger.error((err as Error).message);
       process.exit(1);

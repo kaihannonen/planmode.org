@@ -1,7 +1,9 @@
 import { Command } from "commander";
+import * as p from "@clack/prompts";
 import { execSync } from "node:child_process";
 import { setGitHubToken, getGitHubToken } from "../lib/config.js";
 import { logger } from "../lib/logger.js";
+import { isInteractive, handleCancel, withSpinner } from "../lib/prompts.js";
 
 export const loginCommand = new Command("login")
   .description("Configure GitHub authentication")
@@ -19,16 +21,18 @@ export const loginCommand = new Command("login")
         logger.error("Failed to read token from GitHub CLI. Make sure `gh` is installed and authenticated.");
         process.exit(1);
       }
-    } else {
-      // Interactive prompt via stdin
-      const { createInterface } = await import("node:readline");
-      const rl = createInterface({ input: process.stdin, output: process.stdout });
-      token = await new Promise<string>((resolve) => {
-        rl.question("GitHub personal access token: ", (answer) => {
-          rl.close();
-          resolve(answer.trim());
-        });
+    } else if (isInteractive()) {
+      p.intro("planmode login");
+      const value = await p.password({
+        message: "GitHub personal access token:",
+        validate(input) {
+          if (!input) return "Token is required";
+        },
       });
+      token = handleCancel(value);
+    } else {
+      logger.error("No token provided. Use --token <token> or --gh.");
+      process.exit(1);
     }
 
     if (!token) {
@@ -37,20 +41,43 @@ export const loginCommand = new Command("login")
     }
 
     // Validate token
-    logger.info("Validating token...");
-    const response = await fetch("https://api.github.com/user", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "User-Agent": "planmode-cli",
-      },
-    });
+    const validateToken = async () => {
+      const response = await fetch("https://api.github.com/user", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "User-Agent": "planmode-cli",
+        },
+      });
 
-    if (!response.ok) {
-      logger.error("Invalid token. GitHub API returned: " + response.status);
+      if (!response.ok) {
+        throw new Error("Invalid token. GitHub API returned: " + response.status);
+      }
+
+      return (await response.json()) as { login: string };
+    };
+
+    try {
+      const user = await withSpinner(
+        "Validating token...",
+        validateToken,
+        "Token validated",
+      );
+
+      setGitHubToken(token);
+
+      if (isInteractive()) {
+        p.log.success(`Authenticated as ${user.login}`);
+        p.outro("You're all set!");
+      } else {
+        logger.success(`Authenticated as ${user.login}`);
+      }
+    } catch (err) {
+      if (isInteractive()) {
+        p.log.error((err as Error).message);
+        p.outro("Authentication failed.");
+      } else {
+        logger.error((err as Error).message);
+      }
       process.exit(1);
     }
-
-    const user = (await response.json()) as { login: string };
-    setGitHubToken(token);
-    logger.success(`Authenticated as ${user.login}`);
   });

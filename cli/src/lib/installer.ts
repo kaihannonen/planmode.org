@@ -11,6 +11,7 @@ import { parseManifest, readPackageContent } from "./manifest.js";
 import { renderTemplate, collectVariableValues } from "./template.js";
 import { logger } from "./logger.js";
 import { trackDownload } from "./analytics.js";
+import { isInteractive, promptForVariables, withSpinner } from "./prompts.js";
 
 function getInstallDir(type: PackageType): string {
   switch (type) {
@@ -37,6 +38,7 @@ export interface InstallOptions {
   noInput?: boolean;
   variables?: Record<string, string>;
   projectDir?: string;
+  interactive?: boolean;
 }
 
 export async function installPackage(
@@ -44,6 +46,7 @@ export async function installPackage(
   options: InstallOptions = {},
 ): Promise<void> {
   const projectDir = options.projectDir ?? process.cwd();
+  const interactive = options.interactive ?? (isInteractive() && !options.noInput);
 
   // Check lockfile first
   const locked = getLockedVersion(packageName, projectDir);
@@ -53,44 +56,68 @@ export async function installPackage(
   }
 
   // Resolve version
-  logger.info(`Resolving ${packageName}...`);
-  const { version, metadata } = await resolveVersion(packageName, options.version);
+  const resolveAndFetch = async () => {
+    const { version, metadata } = await resolveVersion(packageName, options.version);
+    const versionMeta = await fetchVersionMetadata(packageName, version);
+    return { version, metadata, versionMeta };
+  };
 
-  // Fetch version metadata
-  const versionMeta = await fetchVersionMetadata(packageName, version);
+  const { version, metadata, versionMeta } = interactive
+    ? await withSpinner(
+        `Resolving ${packageName}...`,
+        resolveAndFetch,
+        `Resolved ${packageName}`,
+      )
+    : await (async () => {
+        logger.info(`Resolving ${packageName}...`);
+        return resolveAndFetch();
+      })();
 
-  // Fetch manifest
-  logger.info(`Fetching ${packageName}@${version}...`);
-  const basePath = versionMeta.source.path ? `${versionMeta.source.path}/` : "";
-  const manifestRaw = await fetchFileAtTag(
-    versionMeta.source.repository,
-    versionMeta.source.tag,
-    `${basePath}planmode.yaml`,
-  );
-  const manifest = parseManifest(manifestRaw);
-
-  // Fetch content
-  let content: string;
-  if (manifest.content) {
-    content = manifest.content;
-  } else if (manifest.content_file) {
-    content = await fetchFileAtTag(
+  // Fetch manifest and content
+  const fetchContent = async () => {
+    const basePath = versionMeta.source.path ? `${versionMeta.source.path}/` : "";
+    const manifestRaw = await fetchFileAtTag(
       versionMeta.source.repository,
       versionMeta.source.tag,
-      `${basePath}${manifest.content_file}`,
+      `${basePath}planmode.yaml`,
     );
-  } else {
-    throw new Error("Package has no content or content_file");
-  }
+    const manifest = parseManifest(manifestRaw);
+
+    let content: string;
+    if (manifest.content) {
+      content = manifest.content;
+    } else if (manifest.content_file) {
+      content = await fetchFileAtTag(
+        versionMeta.source.repository,
+        versionMeta.source.tag,
+        `${basePath}${manifest.content_file}`,
+      );
+    } else {
+      throw new Error("Package has no content or content_file");
+    }
+
+    return { manifest, content };
+  };
+
+  const { manifest, content: rawContent } = interactive
+    ? await withSpinner(
+        `Fetching ${packageName}@${version}...`,
+        fetchContent,
+        `Fetched ${packageName}@${version}`,
+      )
+    : await (async () => {
+        logger.info(`Fetching ${packageName}@${version}...`);
+        return fetchContent();
+      })();
 
   // Process variables if templated
+  let content = rawContent;
   if (manifest.variables && Object.keys(manifest.variables).length > 0) {
     const provided = options.variables ?? {};
-    if (options.noInput) {
-      const values = collectVariableValues(manifest.variables, provided);
+    if (interactive) {
+      const values = await promptForVariables(manifest.variables, provided, false);
       content = renderTemplate(content, values);
     } else {
-      // Use defaults for non-provided values
       const values = collectVariableValues(manifest.variables, provided);
       content = renderTemplate(content, values);
     }
@@ -170,6 +197,7 @@ export async function installPackage(
         version: range === "*" ? undefined : range,
         projectDir,
         noInput: options.noInput,
+        interactive: options.interactive,
       });
     }
   }

@@ -2,8 +2,9 @@ import { Command } from "commander";
 import fs from "node:fs";
 import path from "node:path";
 import { parseManifest, readPackageContent } from "../lib/manifest.js";
-import { renderTemplate, collectVariableValues, resolveVariable } from "../lib/template.js";
+import { renderTemplate, resolveVariable } from "../lib/template.js";
 import { logger } from "../lib/logger.js";
+import { isInteractive, promptForVariables } from "../lib/prompts.js";
 
 export const runCommand = new Command("run")
   .description("Run a templated prompt and output to stdout")
@@ -49,22 +50,12 @@ export const runCommand = new Command("run")
 
       // Resolve variables
       if (manifest?.variables && Object.keys(manifest.variables).length > 0) {
-        const values: Record<string, string | number | boolean> = {};
+        const noInput = options.input === false;
 
-        // First pass: resolve non-resolved variables
-        for (const [name, def] of Object.entries(manifest.variables)) {
-          if (def.type === "resolved") continue;
-          if (vars[name] !== undefined) {
-            values[name] = vars[name]!;
-          } else if (def.default !== undefined) {
-            values[name] = def.default;
-          } else if (def.required && options.input === false) {
-            logger.error(`Missing required variable: --${name}`);
-            process.exit(1);
-          }
-        }
+        // Collect non-resolved variables (interactive or from flags/defaults)
+        const values = await promptForVariables(manifest.variables, vars, noInput);
 
-        // Second pass: resolve dynamic variables
+        // Resolve dynamic variables
         for (const [name, def] of Object.entries(manifest.variables)) {
           if (def.type !== "resolved") continue;
           values[name] = await resolveVariable(def, values);

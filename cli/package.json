@@ -1,6 +1,6 @@
 {
   "name": "planmode",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "The open source package manager for AI plans, rules, and prompts.",
   "type": "module",
   "bin": {
@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@clack/prompts": "^0.9.1",
     "@modelcontextprotocol/sdk": "^1.26.0",
     "commander": "^13.1.0",
     "handlebars": "^4.7.8",
