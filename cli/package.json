@@ -1,6 +1,6 @@
 {
   "name": "planmode",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "The open source package manager for AI plans, rules, and prompts.",
   "type": "module",
   "bin": {
