@@ -4,7 +4,8 @@
   "description": "The open source package manager for AI plans, rules, and prompts.",
   "type": "module",
   "bin": {
-    "planmode": "./dist/index.js"
+    "planmode": "./dist/index.js",
+    "planmode-mcp": "./dist/mcp.js"
   },
   "scripts": {
     "build": "tsup",
@@ -15,10 +16,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
     "commander": "^13.1.0",
     "handlebars": "^4.7.8",
     "simple-git": "^3.27.0",
-    "yaml": "^2.7.0"
+    "yaml": "^2.7.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/node": "^22.13.0",

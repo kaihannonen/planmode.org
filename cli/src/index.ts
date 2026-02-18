@@ -9,6 +9,7 @@ import { listCommand } from "./commands/list.js";
 import { infoCommand } from "./commands/info.js";
 import { initCommand } from "./commands/init.js";
 import { loginCommand } from "./commands/login.js";
+import { mcpCommand } from "./commands/mcp.js";
 
 const program = new Command();
 
@@ -27,5 +28,6 @@ program.addCommand(listCommand);
 program.addCommand(infoCommand);
 program.addCommand(initCommand);
 program.addCommand(loginCommand);
+program.addCommand(mcpCommand);
 
 program.parse();
