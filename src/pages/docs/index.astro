@@ -75,6 +75,28 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       via <code>planmode run</code>.
     </p>
 
+    <h2>Use with Claude Code (MCP)</h2>
+    <p>
+      Planmode includes an MCP server that lets Claude Code search, install, preview, and manage
+      packages directly from your conversations — no terminal needed.
+    </p>
+
+    <h3>One-time setup</h3>
+    <pre><code>planmode mcp setup</code></pre>
+    <p>
+      That's it. Claude Code now has access to all planmode tools. Try asking Claude:
+      "Search planmode for a Next.js starter plan" or "Install the typescript-strict rule".
+    </p>
+
+    <h3>What Claude can do</h3>
+    <ul>
+      <li><strong>Search and discover</strong> — find packages by name, type, or category</li>
+      <li><strong>Preview before install</strong> — see the full content of any package before installing</li>
+      <li><strong>Install and manage</strong> — install, update, and uninstall packages</li>
+      <li><strong>Health check</strong> — diagnose issues with <code>planmode_doctor</code></li>
+      <li><strong>Create and publish</strong> — scaffold new packages and publish to the registry</li>
+    </ul>
+
     <h2>What's next</h2>
     <ul>
       <li><a href="/docs/cli">CLI Reference</a> — all commands and flags</li>

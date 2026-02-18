@@ -10,6 +10,10 @@ import { infoCommand } from "./commands/info.js";
 import { initCommand } from "./commands/init.js";
 import { loginCommand } from "./commands/login.js";
 import { mcpCommand } from "./commands/mcp.js";
+import { doctorCommand } from "./commands/doctor.js";
+import { testCommand } from "./commands/test.js";
+import { recordCommand } from "./commands/record.js";
+import { snapshotCommand } from "./commands/snapshot.js";
 
 const program = new Command();
 
@@ -29,5 +33,9 @@ program.addCommand(infoCommand);
 program.addCommand(initCommand);
 program.addCommand(loginCommand);
 program.addCommand(mcpCommand);
+program.addCommand(doctorCommand);
+program.addCommand(testCommand);
+program.addCommand(recordCommand);
+program.addCommand(snapshotCommand);
 
 program.parse();

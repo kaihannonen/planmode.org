@@ -13,6 +13,10 @@ import { createPackage } from "./lib/init.js";
 import { publishPackage } from "./lib/publisher.js";
 import { resolveVersion } from "./lib/resolver.js";
 import { fetchFileAtTag } from "./lib/git.js";
+import { runDoctor } from "./lib/doctor.js";
+import { testPackage } from "./lib/tester.js";
+import { startRecordingAsync, stopRecording, isRecording } from "./lib/recorder.js";
+import { takeSnapshot } from "./lib/snapshot.js";
 import type { Category } from "./types/index.js";
 
 // ── Helpers ──
@@ -590,6 +594,192 @@ server.registerTool(
       return textResult(content);
     } catch (err) {
       return errorResult("Error running prompt", err as Error);
+    }
+  },
+);
+
+// -- planmode_doctor --
+server.registerTool(
+  "planmode_doctor",
+  {
+    description: "Check project health: verify installed packages have matching files on disk, CLAUDE.md imports are correct, and content hashes haven't drifted. Use this to diagnose issues with planmode packages.",
+    inputSchema: {
+      projectDir: z.string().optional().describe("Project directory (default: current working directory)"),
+    },
+  },
+  async ({ projectDir }) => {
+    try {
+      const result = runDoctor(projectDir);
+
+      if (result.issues.length === 0) {
+        return textResult(`Checked ${result.packagesChecked} package(s) — all healthy. No issues found.`);
+      }
+
+      const lines = [`Checked ${result.packagesChecked} package(s):\n`];
+
+      for (const issue of result.issues) {
+        const icon = issue.severity === "error" ? "ERROR" : "WARN";
+        lines.push(`**${icon}:** ${issue.message}`);
+        if (issue.fix) {
+          lines.push(`  Fix: ${adaptError(issue.fix)}`);
+        }
+      }
+
+      const errors = result.issues.filter((i) => i.severity === "error").length;
+      const warnings = result.issues.filter((i) => i.severity === "warning").length;
+      lines.push("", `${errors} error(s), ${warnings} warning(s)`);
+
+      return textResult(lines.join("\n"), errors > 0);
+    } catch (err) {
+      return errorResult("Error running health check", err as Error);
+    }
+  },
+);
+
+// -- planmode_test --
+server.registerTool(
+  "planmode_test",
+  {
+    description: "Test a planmode package before publishing. Validates the manifest, checks that templates render with default values, verifies dependencies exist in the registry, and checks content size.",
+    inputSchema: {
+      projectDir: z.string().optional().describe("Directory containing planmode.yaml (default: current working directory)"),
+    },
+  },
+  async ({ projectDir }) => {
+    try {
+      const { result, messages } = await withCaptureAsync(() =>
+        testPackage(projectDir),
+      );
+
+      const lines: string[] = [];
+
+      for (const check of result.checks) {
+        if (check.passed) {
+          lines.push(`PASS: ${check.name}`);
+        } else {
+          const issue = result.issues.find((i) => i.check === check.name);
+          const severity = issue?.severity === "error" ? "FAIL" : "WARN";
+          lines.push(`${severity}: ${check.name}${issue ? ` — ${issue.message}` : ""}`);
+        }
+      }
+
+      lines.push("");
+      if (result.passed) {
+        lines.push("All checks passed. Ready to publish.");
+      } else {
+        const errors = result.issues.filter((i) => i.severity === "error").length;
+        const warnings = result.issues.filter((i) => i.severity === "warning").length;
+        lines.push(`${errors} error(s), ${warnings} warning(s). Fix errors before publishing.`);
+      }
+
+      return textResult(formatMessages(messages, lines.join("\n")), !result.passed);
+    } catch (err) {
+      return errorResult("Error testing package", err as Error);
+    }
+  },
+);
+
+// -- planmode_record_start --
+server.registerTool(
+  "planmode_record_start",
+  {
+    description: "Start recording git activity. Saves the current HEAD commit as the starting point. Work normally (make commits), then use planmode_record_stop to generate a plan from the commits.",
+    inputSchema: {
+      projectDir: z.string().optional().describe("Project directory (default: current working directory)"),
+    },
+  },
+  async ({ projectDir }) => {
+    try {
+      const dir = projectDir ?? process.cwd();
+      if (isRecording(dir)) {
+        return textResult("A recording is already in progress. Use planmode_record_stop to finish it first.", true);
+      }
+
+      const sha = await startRecordingAsync(dir);
+      return textResult(`Recording started at commit ${sha.slice(0, 7)}. Make commits as normal, then use planmode_record_stop to generate a plan.`);
+    } catch (err) {
+      return errorResult("Error starting recording", err as Error);
+    }
+  },
+);
+
+// -- planmode_record_stop --
+server.registerTool(
+  "planmode_record_stop",
+  {
+    description: "Stop recording and generate a planmode package from the git commits made since recording started. Creates planmode.yaml and plan.md with each commit as a step.",
+    inputSchema: {
+      name: z.string().optional().describe("Package name (auto-inferred from commits if not provided)"),
+      author: z.string().optional().describe("Author GitHub username"),
+      outputDir: z.string().optional().describe("Directory to write planmode.yaml and plan.md (default: current working directory)"),
+      projectDir: z.string().optional().describe("Project directory (default: current working directory)"),
+    },
+  },
+  async ({ name, author, outputDir, projectDir }) => {
+    try {
+      const dir = projectDir ?? process.cwd();
+
+      const result = await stopRecording(dir, { name, author });
+
+      // Write files
+      const outDir = outputDir ?? dir;
+      const fsModule = await import("node:fs");
+      const pathModule = await import("node:path");
+      fsModule.mkdirSync(outDir, { recursive: true });
+      fsModule.writeFileSync(pathModule.join(outDir, "planmode.yaml"), result.manifestContent, "utf-8");
+      fsModule.writeFileSync(pathModule.join(outDir, "plan.md"), result.planContent, "utf-8");
+
+      const stepList = result.steps
+        .map((s, i) => `${i + 1}. ${s.title} (${s.filesChanged.length} files)`)
+        .join("\n");
+
+      return textResult(
+        `Generated plan from ${result.totalCommits} commit(s) (${result.totalFilesChanged} files changed):\n\n${stepList}\n\nCreated planmode.yaml and plan.md. Edit the plan content, then use planmode_test to validate and planmode_publish to publish.`,
+      );
+    } catch (err) {
+      return errorResult("Error stopping recording", err as Error);
+    }
+  },
+);
+
+// -- planmode_snapshot --
+server.registerTool(
+  "planmode_snapshot",
+  {
+    description: "Analyze the current project and generate a planmode package that recreates this setup. Reads package.json, detects config files and tools, captures the directory structure, and creates a step-by-step plan.",
+    inputSchema: {
+      name: z.string().optional().describe("Package name (auto-inferred from project name)"),
+      author: z.string().optional().describe("Author GitHub username"),
+      outputDir: z.string().optional().describe("Directory to write planmode.yaml and plan.md (default: current working directory)"),
+      projectDir: z.string().optional().describe("Project to analyze (default: current working directory)"),
+    },
+  },
+  async ({ name, author, outputDir, projectDir }) => {
+    try {
+      const dir = projectDir ?? process.cwd();
+      const result = takeSnapshot(dir, { name, author });
+
+      // Write files
+      const outDir = outputDir ?? dir;
+      const fsModule = await import("node:fs");
+      const pathModule = await import("node:path");
+      fsModule.mkdirSync(outDir, { recursive: true });
+      fsModule.writeFileSync(pathModule.join(outDir, "planmode.yaml"), result.manifestContent, "utf-8");
+      fsModule.writeFileSync(pathModule.join(outDir, "plan.md"), result.planContent, "utf-8");
+
+      const toolList = result.data.detectedTools.map((t) => t.name).join(", ") || "none";
+      const depCount = Object.keys(result.data.dependencies).length;
+      const devDepCount = Object.keys(result.data.devDependencies).length;
+
+      let summary = `Snapshot: **${result.data.name}**\n`;
+      if (result.data.framework) summary += `Framework: ${result.data.framework}\n`;
+      summary += `Dependencies: ${depCount} | Dev dependencies: ${devDepCount}\n`;
+      summary += `Tools detected: ${toolList}\n\n`;
+      summary += `Created planmode.yaml and plan.md. Edit the plan content to add details, then use planmode_test to validate and planmode_publish to publish.`;
+
+      return textResult(summary);
+    } catch (err) {
+      return errorResult("Error creating snapshot", err as Error);
     }
   },
 );

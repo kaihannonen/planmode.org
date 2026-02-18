@@ -113,6 +113,16 @@ export async function installPackage(
     }
   }
 
+  // Verify content hash against registry
+  const computedHash = contentHash(content);
+  if (versionMeta.content_hash && computedHash !== versionMeta.content_hash) {
+    logger.warn(
+      `Content hash mismatch for ${packageName}@${version}. ` +
+      `Expected ${versionMeta.content_hash.slice(0, 20)}..., got ${computedHash.slice(0, 20)}... ` +
+      `The package content may have been modified after review.`,
+    );
+  }
+
   // Create directory and write file
   fs.mkdirSync(path.dirname(fullPath), { recursive: true });
   fs.writeFileSync(fullPath, content, "utf-8");
@@ -122,7 +132,16 @@ export async function installPackage(
   // Update CLAUDE.md for plans
   if (type === "plan") {
     addImport(packageName, projectDir);
-    logger.dim(`Added @import to CLAUDE.md`);
+    logger.dim(`Added @plans/${packageName}.md to CLAUDE.md`);
+    logger.dim(`Claude Code will automatically see this plan in your next conversation.`);
+  }
+
+  if (type === "rule") {
+    logger.dim(`Rule is active — Claude Code auto-loads all files in .claude/rules/.`);
+  }
+
+  if (type === "prompt") {
+    logger.dim(`Run it with: planmode run ${packageName}`);
   }
 
   // Update lockfile

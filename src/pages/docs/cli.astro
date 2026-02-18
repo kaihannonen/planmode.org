@@ -106,6 +106,67 @@ planmode run weather-image</code></pre>
       <li><code>--gh</code> — read token from <code>gh auth token</code> (GitHub CLI)</li>
     </ul>
     <p>Tokens are stored in <code>~/.planmode/config</code>. You can also set the <code>PLANMODE_GITHUB_TOKEN</code> environment variable.</p>
+
+    <h2 id="doctor">planmode doctor</h2>
+    <pre><code>planmode doctor</code></pre>
+    <p>
+      Check project health. Verifies that all installed packages have matching files on disk,
+      CLAUDE.md imports are correct, content hashes haven't drifted, and there are no orphaned files.
+    </p>
+    <h3>What it checks</h3>
+    <ul>
+      <li>Every lockfile entry has a corresponding file on disk</li>
+      <li>Content hashes match (detects local modifications)</li>
+      <li>Every installed plan has an <code>@import</code> in CLAUDE.md</li>
+      <li>Every CLAUDE.md import points to an existing file</li>
+      <li>Untracked files in <code>plans/</code></li>
+    </ul>
+
+    <h2 id="test">planmode test</h2>
+    <pre><code>planmode test</code></pre>
+    <p>
+      Test the current package before publishing. Run this in a directory with a <code>planmode.yaml</code>
+      to validate everything is ready.
+    </p>
+    <h3>What it checks</h3>
+    <ul>
+      <li>Manifest parses and passes all validation rules</li>
+      <li>All fields required for publishing are present</li>
+      <li>Content file exists and is non-empty</li>
+      <li>Templates render successfully with default variable values</li>
+      <li>Declared dependencies exist in the registry</li>
+      <li>Content size is reasonable (warns above 100KB)</li>
+    </ul>
+    <h3>Example</h3>
+    <pre><code># In a directory with planmode.yaml
+planmode test
+
+# Fix any errors, then publish
+planmode publish</code></pre>
+
+    <h2 id="mcp">planmode mcp</h2>
+    <pre><code>planmode mcp setup
+planmode mcp remove</code></pre>
+    <p>
+      Register or remove the Planmode MCP server with Claude Code. Once registered, Claude can
+      search, install, preview, and manage packages directly from your conversations — no terminal needed.
+    </p>
+    <h3>Subcommands</h3>
+    <ul>
+      <li><code>setup</code> — register the planmode MCP server with Claude Code</li>
+      <li><code>remove</code> — remove the planmode MCP server from Claude Code</li>
+    </ul>
+    <h3>Example</h3>
+    <pre><code># Register (one-time setup)
+planmode mcp setup
+
+# Or register manually
+claude mcp add --transport stdio planmode -- planmode-mcp</code></pre>
+    <p>
+      After setup, Claude Code gains access to all planmode tools: <code>planmode_search</code>,
+      <code>planmode_install</code>, <code>planmode_preview</code>, <code>planmode_read</code>,
+      <code>planmode_doctor</code>, <code>planmode_test</code>, and more.
+    </p>
   </div>
 </DocsLayout>
 
