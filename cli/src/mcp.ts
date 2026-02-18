@@ -83,7 +83,7 @@ function errorResult(prefix: string, err: Error): ReturnType<typeof textResult> 
 
 const server = new McpServer({
   name: "planmode",
-  version: "0.2.0",
+  version: "0.2.1",
 });
 
 // ── Tools ──
