@@ -30,6 +30,22 @@ planmode run rest-api-generator --resource users --framework express
 planmode list
 ```
 
+## Use with Claude Code (MCP)
+
+Planmode includes an MCP server that lets Claude Code search, install, preview, and manage packages directly from your conversations.
+
+```bash
+# One-time setup
+planmode mcp setup
+```
+
+Once registered, Claude has access to 17 tools including `planmode_search`, `planmode_install`, `planmode_preview`, `planmode_read`, `planmode_doctor`, and more. Installed packages are also exposed as MCP resources that Claude can browse automatically.
+
+Ask Claude things like:
+- "Search planmode for a Next.js starter plan"
+- "Preview the typescript-strict rule before installing"
+- "Run a health check on my planmode packages"
+
 ## Package types
 
 | Type | What it is | Where it lives | Lifecycle |
@@ -52,6 +68,33 @@ planmode list
 | `planmode init` | Create a new package |
 | `planmode publish` | Publish to the registry |
 | `planmode login` | Configure GitHub auth |
+| `planmode mcp setup\|remove` | Register/remove MCP server with Claude Code |
+| `planmode doctor` | Check project health and file integrity |
+| `planmode test` | Validate a package before publishing |
+| `planmode record start\|stop` | Generate a plan from git commits |
+| `planmode snapshot` | Generate a plan from existing project setup |
+
+## Create plans from your work
+
+### Record mode
+
+Start a recording, work normally, then generate a plan from your commits:
+
+```bash
+planmode record start
+# ... do your work, make commits ...
+planmode record stop --name my-setup-plan --author myusername
+```
+
+### Snapshot mode
+
+Analyze an existing project and generate a plan that recreates the setup:
+
+```bash
+planmode snapshot --name nextjs-prisma-setup --author myusername
+```
+
+This reads `package.json`, detects config files (TypeScript, ESLint, Tailwind, Prisma, Docker, etc.), captures the directory structure, and creates a step-by-step plan.
 
 ## How it works
 
