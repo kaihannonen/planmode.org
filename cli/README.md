@@ -32,19 +32,94 @@ planmode list
 
 ## Use with Claude Code (MCP)
 
-Planmode includes an MCP server that lets Claude Code search, install, preview, and manage packages directly from your conversations.
+Planmode includes an MCP server that lets Claude Code search, install, preview, and manage packages directly from your conversations — no need to leave the chat.
+
+### Prerequisites
+
+- [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed and working (`claude` command available)
+- Planmode installed globally: `npm install -g planmode`
+
+### Setup
 
 ```bash
-# One-time setup
+# Automatic — registers the MCP server with Claude Code
 planmode mcp setup
 ```
 
-Once registered, Claude has access to 17 tools including `planmode_search`, `planmode_install`, `planmode_preview`, `planmode_read`, `planmode_doctor`, and more. Installed packages are also exposed as MCP resources that Claude can browse automatically.
+This runs `claude mcp add --transport stdio planmode -- planmode-mcp` under the hood. You only need to do this once.
+
+### Manual setup
+
+If you prefer to register manually, or if the automatic setup doesn't work:
+
+```bash
+claude mcp add --transport stdio planmode -- planmode-mcp
+```
+
+Or add it directly to your Claude Code MCP config (`~/.claude/settings.json`):
+
+```json
+{
+  "mcpServers": {
+    "planmode": {
+      "command": "planmode-mcp",
+      "transport": "stdio"
+    }
+  }
+}
+```
+
+### Verify it works
+
+After setup, start a Claude Code session and ask:
+
+> "Search planmode for a Next.js starter plan"
+
+Claude should call the `planmode_search` tool and return results from the registry.
+
+### Available MCP tools
+
+Once connected, Claude has access to these tools:
+
+| Tool | What it does |
+|------|-------------|
+| `planmode_search` | Search the registry for packages |
+| `planmode_info` | Get detailed package metadata |
+| `planmode_preview` | Read a package's content before installing |
+| `planmode_install` | Install a package into the current project |
+| `planmode_uninstall` | Remove an installed package |
+| `planmode_list` | List all installed packages |
+| `planmode_read` | Read the content of an installed package |
+| `planmode_update` | Update installed packages |
+| `planmode_init` | Scaffold a new package |
+| `planmode_publish` | Publish a package to the registry |
+| `planmode_validate` | Validate a planmode.yaml manifest |
+| `planmode_run` | Render a templated prompt with variables |
+| `planmode_doctor` | Run a health check on installed packages |
+| `planmode_test` | Validate a package before publishing |
+| `planmode_record_start` | Start recording git commits for plan generation |
+| `planmode_record_stop` | Stop recording and generate a plan |
+| `planmode_snapshot` | Generate a plan from existing project setup |
+
+Installed packages are also exposed as MCP resources that Claude can browse automatically.
+
+### Example prompts
 
 Ask Claude things like:
+
 - "Search planmode for a Next.js starter plan"
-- "Preview the typescript-strict rule before installing"
+- "Show me what the typescript-strict rule contains"
+- "Install the docker-compose-stack plan"
+- "Preview the rest-api-generator prompt before installing"
 - "Run a health check on my planmode packages"
+- "Create a new planmode rule called my-coding-standards"
+- "Record my work and generate a plan from my commits"
+
+### Remove
+
+```bash
+planmode mcp remove
+```
 
 ## Package types
 

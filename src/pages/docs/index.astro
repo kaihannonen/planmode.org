@@ -81,21 +81,53 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       packages directly from your conversations — no terminal needed.
     </p>
 
+    <h3>Prerequisites</h3>
+    <ul>
+      <li><strong>Claude Code CLI</strong> — the <code>claude</code> command must be installed and working</li>
+      <li><strong>Planmode</strong> — installed globally via <code>npm install -g planmode</code></li>
+    </ul>
+
     <h3>One-time setup</h3>
     <pre><code>planmode mcp setup</code></pre>
     <p>
-      That's it. Claude Code now has access to all planmode tools. Try asking Claude:
-      "Search planmode for a Next.js starter plan" or "Install the typescript-strict rule".
+      This registers the <code>planmode-mcp</code> server with Claude Code over stdio. You only need to run this once.
     </p>
 
+    <h3>Manual setup</h3>
+    <p>If the automatic setup doesn't work, register manually:</p>
+    <pre><code>claude mcp add --transport stdio planmode -- planmode-mcp</code></pre>
+
+    <h3>Verify it works</h3>
+    <p>Start a new Claude Code session and ask:</p>
+    <pre><code>"Search planmode for a Next.js starter plan"</code></pre>
+    <p>Claude should call the <code>planmode_search</code> tool and return results from the registry.</p>
+
     <h3>What Claude can do</h3>
+    <p>Once connected, Claude has access to 17 tools:</p>
     <ul>
-      <li><strong>Search and discover</strong> — find packages by name, type, or category</li>
-      <li><strong>Preview before install</strong> — see the full content of any package before installing</li>
-      <li><strong>Install and manage</strong> — install, update, and uninstall packages</li>
-      <li><strong>Health check</strong> — diagnose issues with <code>planmode_doctor</code></li>
-      <li><strong>Create and publish</strong> — scaffold new packages and publish to the registry</li>
+      <li><strong>Search and discover</strong> — <code>planmode_search</code>, <code>planmode_info</code></li>
+      <li><strong>Preview before install</strong> — <code>planmode_preview</code>, <code>planmode_read</code></li>
+      <li><strong>Install and manage</strong> — <code>planmode_install</code>, <code>planmode_uninstall</code>, <code>planmode_update</code>, <code>planmode_list</code></li>
+      <li><strong>Create and publish</strong> — <code>planmode_init</code>, <code>planmode_publish</code>, <code>planmode_validate</code>, <code>planmode_test</code></li>
+      <li><strong>Run prompts</strong> — <code>planmode_run</code></li>
+      <li><strong>Health check</strong> — <code>planmode_doctor</code></li>
+      <li><strong>Generate plans</strong> — <code>planmode_record_start</code>, <code>planmode_record_stop</code>, <code>planmode_snapshot</code></li>
     </ul>
+    <p>Installed packages are also exposed as MCP resources that Claude can browse automatically.</p>
+
+    <h3>Example prompts</h3>
+    <ul>
+      <li>"Search planmode for a Next.js starter plan"</li>
+      <li>"Show me what the typescript-strict rule contains"</li>
+      <li>"Install the docker-compose-stack plan"</li>
+      <li>"Run a health check on my planmode packages"</li>
+      <li>"Create a new rule called my-coding-standards"</li>
+      <li>"Record my work and generate a plan from my commits"</li>
+    </ul>
+
+    <h3>Remove</h3>
+    <pre><code>planmode mcp remove</code></pre>
+    <p>See the <a href="/docs/cli#mcp">CLI Reference</a> for full details.</p>
 
     <h2>What's next</h2>
     <ul>
