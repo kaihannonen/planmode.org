@@ -7,7 +7,7 @@ A full-stack Next.js project with Tailwind CSS, Prisma ORM, and authentication p
 ### 1. Create the Next.js project
 
 ```bash
-npx create-next-app@latest {{project_name}} --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
+npx create-next-app@latest {{project_name}} --typescript --tailwind --eslint --app --src-dir --import-alias "@/*" --use-npm --no-turbopack --yes
 cd {{project_name}}
 ```
 
