@@ -6,6 +6,10 @@ The open source package manager for AI plans, rules, and prompts.
 **License:** MIT
 **Repository:** github.com/kaihannonen/planmode.org
 
+## Plans
+
+- @plans/build-planmode.md
+
 ## The problem
 
 Developers share code through npm, pip, cargo. But AI instructions — the plans, rules, and prompts that drive AI-assisted development — have no equivalent. You write a detailed plan for setting up Next.js with auth, Prisma, and deployment, and it lives in one project forever. There's no way to publish it, version it, or let others install it.
