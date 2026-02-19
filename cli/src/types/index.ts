@@ -133,6 +133,34 @@ export interface PlanmodeConfig {
   };
 }
 
+// ── Context (document indexing) ──
+
+export interface ContextRepo {
+  path: string;
+  name?: string;
+  added_at: string;
+}
+
+export interface IndexedFile {
+  path: string;
+  extension: string;
+  size: number;
+  modified_at: string;
+}
+
+export interface ContextRepoIndex {
+  repo: ContextRepo;
+  files: IndexedFile[];
+  indexed_at: string;
+  file_count: number;
+  total_size: number;
+}
+
+export interface ContextIndex {
+  version: number;
+  repos: ContextRepoIndex[];
+}
+
 // ── Resolved package info ──
 
 export interface ResolvedPackage {

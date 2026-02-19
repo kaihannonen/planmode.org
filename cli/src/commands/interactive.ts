@@ -7,6 +7,7 @@ import { searchPackages, fetchPackageMetadata, fetchIndex } from "../lib/registr
 import { installPackage } from "../lib/installer.js";
 import { readLockfile } from "../lib/lockfile.js";
 import { runDoctor } from "../lib/doctor.js";
+import { addContextRepo, removeContextRepo, reindexContext, getContextSummary, formatSize, readContextIndex } from "../lib/context.js";
 import type { PackageSummary } from "../types/index.js";
 
 type Action =
@@ -15,6 +16,7 @@ type Action =
   | "install"
   | "create"
   | "list"
+  | "context"
   | "doctor"
   | "exit";
 
@@ -195,6 +197,7 @@ async function mainMenu(): Promise<void> {
           { value: "install" as Action, label: "Install a package", hint: "install by name" },
           { value: "create" as Action, label: "Create a new package" },
           { value: "list" as Action, label: "My installed packages" },
+          { value: "context" as Action, label: "Manage context", hint: "document directories for AI" },
           { value: "doctor" as Action, label: "Health check" },
           { value: "exit" as Action, label: "Exit" },
         ],
@@ -218,6 +221,9 @@ async function mainMenu(): Promise<void> {
       }
       case "list":
         listFlow();
+        break;
+      case "context":
+        await contextFlow();
         break;
       case "doctor":
         doctorFlow();
@@ -404,6 +410,107 @@ async function installFlow(): Promise<void> {
     p.log.success(`Installed ${packageName}`);
   } catch (err) {
     p.log.error((err as Error).message);
+  }
+}
+
+type ContextAction = "add" | "remove" | "reindex" | "back";
+
+async function contextFlow(): Promise<void> {
+  const summary = getContextSummary();
+
+  if (summary.totalRepos === 0) {
+    p.log.info("No context repos yet.");
+  } else {
+    const lines = summary.repos.map(
+      (r) => `${r.name} — ${r.fileCount} file(s), ${formatSize(r.totalSize)}`,
+    );
+    p.note(lines.join("\n"), `${summary.totalRepos} context repo(s)`);
+  }
+
+  const action = handleCancel(
+    await p.select<ContextAction>({
+      message: "What would you like to do?",
+      options: [
+        { value: "add" as ContextAction, label: "Add a directory" },
+        { value: "remove" as ContextAction, label: "Remove a directory" },
+        { value: "reindex" as ContextAction, label: "Re-index all" },
+        { value: "back" as ContextAction, label: "Back" },
+      ],
+    }),
+  );
+
+  if (action === "back") return;
+
+  if (action === "add") {
+    const dirPath = handleCancel(
+      await p.text({
+        message: "Path to document directory:",
+        placeholder: "e.g. docs, specs, ./reference",
+        validate(input) {
+          if (!input) return "Please enter a directory path";
+        },
+      }),
+    );
+
+    const name = handleCancel(
+      await p.text({
+        message: "Label (optional):",
+        placeholder: "e.g. Project Documentation",
+      }),
+    );
+
+    try {
+      await withSpinner(
+        "Indexing documents...",
+        async () => addContextRepo(dirPath, { name: name || undefined }),
+        "Indexing complete",
+      );
+    } catch (err) {
+      p.log.error((err as Error).message);
+    }
+  } else if (action === "remove") {
+    if (summary.totalRepos === 0) {
+      p.log.warn("No context repos to remove.");
+      return;
+    }
+
+    const selected = handleCancel(
+      await p.select({
+        message: "Select a repo to remove:",
+        options: [
+          ...summary.repos.map((r) => ({
+            value: r.name,
+            label: r.name,
+            hint: `${r.fileCount} files, ${formatSize(r.totalSize)}`,
+          })),
+          { value: "__back__", label: "Back" },
+        ],
+      }),
+    );
+
+    if (selected === "__back__") return;
+
+    try {
+      removeContextRepo(selected);
+      p.log.success(`Removed "${selected}"`);
+    } catch (err) {
+      p.log.error((err as Error).message);
+    }
+  } else if (action === "reindex") {
+    if (summary.totalRepos === 0) {
+      p.log.warn("No context repos to reindex.");
+      return;
+    }
+
+    try {
+      await withSpinner(
+        "Re-scanning documents...",
+        async () => reindexContext(),
+        "Reindex complete",
+      );
+    } catch (err) {
+      p.log.error((err as Error).message);
+    }
   }
 }
 

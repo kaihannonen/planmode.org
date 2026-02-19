@@ -17,6 +17,7 @@ import { runDoctor } from "./lib/doctor.js";
 import { testPackage } from "./lib/tester.js";
 import { startRecordingAsync, stopRecording, isRecording } from "./lib/recorder.js";
 import { takeSnapshot } from "./lib/snapshot.js";
+import { addContextRepo, removeContextRepo, reindexContext, getContextSummary, formatSize } from "./lib/context.js";
 import type { Category } from "./types/index.js";
 
 // ── Helpers ──
@@ -783,6 +784,151 @@ server.registerTool(
     }
   },
 );
+
+// -- planmode_context_add --
+server.registerTool(
+  "planmode_context_add",
+  {
+    description: "Add a document directory to the project context. Indexes all text-based files (md, pdf, txt, json, yaml, csv, html, etc.) and stores their metadata in .planmode/context.yaml. The AI can then see what documents are available and read them on demand.",
+    inputSchema: {
+      path: z.string().describe("Path to the document directory (relative to project or absolute)"),
+      name: z.string().optional().describe("Human-readable label for this directory"),
+      projectDir: z.string().optional().describe("Project directory (default: current working directory)"),
+    },
+  },
+  async ({ path: dirPath, name, projectDir }) => {
+    try {
+      const { result, messages } = withCapture(() =>
+        addContextRepo(dirPath, { name, projectDir }),
+      );
+
+      const breakdown = result.files.length > 0
+        ? `\nTypes: ${getTypeBreakdownText(result)}`
+        : "";
+
+      return textResult(
+        formatMessages(
+          messages,
+          `Added "${name ?? result.repo.path}" — ${result.file_count} file(s), ${formatSize(result.total_size)}${breakdown}`,
+        ),
+      );
+    } catch (err) {
+      return errorResult("Error adding context repo", err as Error);
+    }
+  },
+);
+
+// -- planmode_context_remove --
+server.registerTool(
+  "planmode_context_remove",
+  {
+    description: "Remove a document directory from the project context",
+    inputSchema: {
+      pathOrName: z.string().describe("Path or name of the context repo to remove"),
+      projectDir: z.string().optional().describe("Project directory (default: current working directory)"),
+    },
+  },
+  async ({ pathOrName, projectDir }) => {
+    try {
+      const { messages } = withCapture(() =>
+        removeContextRepo(pathOrName, projectDir),
+      );
+
+      return textResult(formatMessages(messages) || `Removed "${pathOrName}" from context.`);
+    } catch (err) {
+      return errorResult("Error removing context repo", err as Error);
+    }
+  },
+);
+
+// -- planmode_context_list --
+server.registerTool(
+  "planmode_context_list",
+  {
+    description: "List all document directories in the project context with file counts, sizes, and type breakdowns. Use this to see what reference documents are available for the project.",
+    inputSchema: {
+      detailed: z.boolean().optional().describe("Include full file listings for each repo (default: false, shows only summaries)"),
+      projectDir: z.string().optional().describe("Project directory (default: current working directory)"),
+    },
+  },
+  async ({ detailed, projectDir }) => {
+    try {
+      const summary = getContextSummary(projectDir);
+
+      if (summary.totalRepos === 0) {
+        return textResult("No context repos configured. Use planmode_context_add to add a document directory.");
+      }
+
+      const lines = [
+        `**${summary.totalRepos} context repo(s)** — ${summary.totalFiles} file(s), ${formatSize(summary.totalSize)}`,
+        "",
+      ];
+
+      for (const repo of summary.repos) {
+        lines.push(`### ${repo.name}`);
+        lines.push(`- **Path:** ${repo.path}`);
+        lines.push(`- **Files:** ${repo.fileCount} (${formatSize(repo.totalSize)})`);
+        if (repo.typeBreakdown.length > 0) {
+          lines.push(`- **Types:** ${repo.typeBreakdown.join(", ")}`);
+        }
+        lines.push(`- **Indexed:** ${repo.indexedAt}`);
+
+        if (detailed) {
+          const index = (await import("./lib/context.js")).readContextIndex(projectDir);
+          const repoIndex = index.repos.find(
+            (r) => r.repo.path === repo.path || r.repo.name === repo.name,
+          );
+          if (repoIndex && repoIndex.files.length > 0) {
+            lines.push("", "**Files:**");
+            for (const file of repoIndex.files) {
+              lines.push(`- \`${file.path}\` (${file.extension}, ${formatSize(file.size)})`);
+            }
+          }
+        }
+
+        lines.push("");
+      }
+
+      return textResult(lines.join("\n"));
+    } catch (err) {
+      return errorResult("Error listing context", err as Error);
+    }
+  },
+);
+
+// -- planmode_context_reindex --
+server.registerTool(
+  "planmode_context_reindex",
+  {
+    description: "Re-scan files in one or all context directories to update the file index",
+    inputSchema: {
+      pathOrName: z.string().optional().describe("Path or name of a specific repo to reindex (omit to reindex all)"),
+      projectDir: z.string().optional().describe("Project directory (default: current working directory)"),
+    },
+  },
+  async ({ pathOrName, projectDir }) => {
+    try {
+      const { messages } = withCapture(() =>
+        reindexContext(pathOrName, projectDir),
+      );
+
+      return textResult(formatMessages(messages) || "Reindex complete.");
+    } catch (err) {
+      return errorResult("Error reindexing context", err as Error);
+    }
+  },
+);
+
+function getTypeBreakdownText(repoIndex: { files: Array<{ extension: string }> }): string {
+  const counts = new Map<string, number>();
+  for (const file of repoIndex.files) {
+    counts.set(file.extension, (counts.get(file.extension) ?? 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .sort((a, b) => b[1] - a[1])
+    .map(([ext, count]) => `${ext}: ${count}`)
+    .join(", ");
+}
 
 // ── Resources ──
 

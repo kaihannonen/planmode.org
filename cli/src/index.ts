@@ -14,6 +14,7 @@ import { doctorCommand } from "./commands/doctor.js";
 import { testCommand } from "./commands/test.js";
 import { recordCommand } from "./commands/record.js";
 import { snapshotCommand } from "./commands/snapshot.js";
+import { contextCommand } from "./commands/context.js";
 import { isInteractive } from "./lib/prompts.js";
 
 const program = new Command();
@@ -21,7 +22,7 @@ const program = new Command();
 program
   .name("planmode")
   .description("The open source package manager for AI plans, rules, and prompts.")
-  .version("0.3.0");
+  .version("0.4.0");
 
 program.addCommand(installCommand);
 program.addCommand(uninstallCommand);
@@ -38,6 +39,7 @@ program.addCommand(doctorCommand);
 program.addCommand(testCommand);
 program.addCommand(recordCommand);
 program.addCommand(snapshotCommand);
+program.addCommand(contextCommand);
 
 // If no args and interactive TTY, show the interactive menu
 if (process.argv.length <= 2 && isInteractive()) {
