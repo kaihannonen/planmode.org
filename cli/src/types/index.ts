@@ -25,6 +25,16 @@ export interface VariableDefinition {
   extract?: string;
 }
 
+export interface VerificationCommand {
+  name: string;
+  run: string;
+  timeout?: number;
+}
+
+export interface PackageVerification {
+  commands: VerificationCommand[];
+}
+
 export interface PackageManifest {
   name: string;
   version: string;
@@ -41,6 +51,7 @@ export interface PackageManifest {
     plans?: string[];
   };
   variables?: Record<string, VariableDefinition>;
+  verification?: PackageVerification;
   content?: string;
   content_file?: string;
 }
@@ -113,6 +124,7 @@ export interface LockfileEntry {
   sha: string;
   content_hash: string;
   installed_to: string;
+  verification?: PackageVerification;
 }
 
 export interface Lockfile {

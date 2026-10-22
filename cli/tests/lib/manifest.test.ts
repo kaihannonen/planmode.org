@@ -310,6 +310,62 @@ describe("validateManifest — variables", () => {
   });
 });
 
+// ── validateManifest — verification ──
+
+describe("validateManifest — verification", () => {
+  it("accepts verification commands on a plan", () => {
+    const errors = validateManifest(
+      validManifest({
+        verification: {
+          commands: [{ name: "build", run: "npm run build", timeout: 120 }],
+        },
+      }),
+    );
+    expect(errors).toHaveLength(0);
+  });
+
+  it("rejects verification on non-plan packages", () => {
+    const errors = validateManifest(
+      validManifest({
+        type: "rule",
+        verification: { commands: [{ name: "build", run: "npm run build" }] },
+      }),
+    );
+    expect(errors.some((e) => e.includes("only allowed for plan"))).toBe(true);
+  });
+
+  it("requires at least one verification command", () => {
+    const errors = validateManifest(
+      validManifest({ verification: { commands: [] } }),
+    );
+    expect(errors.some((e) => e.includes("at least one command"))).toBe(true);
+  });
+
+  it("rejects commands without a name or run value", () => {
+    const errors = validateManifest(
+      validManifest({
+        verification: {
+          commands: [
+            { name: "", run: "npm test" },
+            { name: "build", run: "" },
+          ],
+        },
+      }),
+    );
+    expect(errors.some((e) => e.includes("missing a name"))).toBe(true);
+    expect(errors.some((e) => e.includes("missing a run command"))).toBe(true);
+  });
+
+  it("rejects non-positive timeouts", () => {
+    const errors = validateManifest(
+      validManifest({
+        verification: { commands: [{ name: "build", run: "npm run build", timeout: 0 }] },
+      }),
+    );
+    expect(errors.some((e) => e.includes("positive timeout"))).toBe(true);
+  });
+});
+
 // ── validateManifest — content ──
 
 describe("validateManifest — content", () => {

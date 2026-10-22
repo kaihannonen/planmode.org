@@ -181,6 +181,7 @@ export async function installPackage(
     sha: versionMeta.source.sha,
     content_hash: hash,
     installed_to: installPath,
+    ...(manifest.verification ? { verification: manifest.verification } : {}),
   };
   addToLockfile(packageName, entry, projectDir);
 

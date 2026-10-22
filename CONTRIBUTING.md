@@ -22,6 +22,7 @@ See the [package spec](https://planmode.org/docs/spec) for the full `planmode.ya
 - Include useful, working content — not placeholders
 - Tag appropriately (max 10 tags)
 - Choose the correct type: `plan` for multi-step guides, `rule` for always-on constraints, `prompt` for single-use instructions
+- Plans should include `verification.commands` so users can run `planmode verify` after applying them
 
 ## Reporting bugs
 

@@ -51,6 +51,15 @@ variables:
     type: string
     required: true
 
+# ── Verification (plans only) ──
+verification:
+  commands:
+    - name: build
+      run: npm run build
+      timeout: 120          # Optional per-command timeout in seconds
+    - name: tests
+      run: npm test
+
 # ── Content ──
 # Option A: inline
 content: |
@@ -98,9 +107,32 @@ content_file: plan.md</code></pre>
             <td class="px-4 py-2 font-mono text-red-accent">dependencies</td>
             <td class="px-4 py-2">Only allowed for <code>plan</code> and <code>rule</code> types</td>
           </tr>
+          <tr>
+            <td class="px-4 py-2 font-mono text-red-accent">verification.commands</td>
+            <td class="px-4 py-2">Only allowed for <code>plan</code> types; at least one command; each command needs <code>name</code> and <code>run</code></td>
+          </tr>
         </tbody>
       </table>
     </div>
+
+    <h2>Verification commands</h2>
+    <p>
+      Plans can declare machine-runnable acceptance checks. Planmode stores these commands in
+      <code>planmode.lock</code> at install time, so <code>planmode verify</code> can run them later
+      without fetching the package again.
+    </p>
+    <pre><code>verification:
+  commands:
+    - name: build
+      run: npm run build
+      timeout: 120
+    - name: tests
+      run: npm test</code></pre>
+    <p>
+      Commands run sequentially in the project root with a default 300-second timeout. A non-zero
+      exit code fails verification. Keep commands deterministic and avoid destructive operations.
+      Verification commands can run arbitrary shell commands, so only verify packages you trust.
+    </p>
 
     <h2>Version ranges</h2>
     <p>Dependencies support npm-style version ranges:</p>

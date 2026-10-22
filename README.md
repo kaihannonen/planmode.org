@@ -43,9 +43,30 @@ planmode install typescript-strict
 # Run a templated prompt
 planmode run rest-api-generator --resource users --framework express
 
+# Prove an installed plan still works
+planmode verify nextjs-tailwind-starter
+
 # See what's installed
 planmode list
 ```
+
+## Plan verification
+
+Plans can declare machine-runnable acceptance checks in `planmode.yaml`:
+
+```yaml
+verification:
+  commands:
+    - name: build
+      run: npm run build
+      timeout: 120
+    - name: tests
+      run: npm test
+```
+
+`planmode verify` runs those commands from the lockfile, reports pass/fail with timings and
+output, and exits non-zero if anything fails. Use it locally after applying a plan, or in CI.
+`--dry-run` lists the commands without executing them.
 
 ## CLI commands
 
@@ -61,6 +82,7 @@ planmode list
 | `planmode init` | Create a new package |
 | `planmode publish` | Publish to the registry |
 | `planmode login` | Configure GitHub auth |
+| `planmode verify [pkg]` | Run a plan's verification commands |
 
 ## How it works
 
