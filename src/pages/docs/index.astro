@@ -20,7 +20,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
     <h2>Prerequisites</h2>
     <ul>
       <li><strong>Node.js 20+</strong> — Planmode is built on Node.js</li>
-      <li><strong>Claude Code</strong> — Planmode uses Claude Code's <code>CLAUDE.md</code> and <code>@import</code> system as its runtime</li>
+      <li><strong>An AI coding client</strong> — Claude Code, Codex, or Cursor</li>
       <li><strong>Git</strong> — packages are fetched from Git repositories</li>
     </ul>
 
@@ -34,18 +34,32 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
     <p>This searches the registry for packages matching "nextjs" and shows results in a table.</p>
 
     <h3>2. Install a package</h3>
-    <pre><code>planmode install nextjs-tailwind-starter</code></pre>
-    <p>
-      This downloads the plan, places it in <code>plans/nextjs-tailwind-starter.md</code>, and adds
-      an <code>@import</code> line to your <code>CLAUDE.md</code>. Dependencies (like rules) are
-      installed automatically.
-    </p>
+    <pre><code># Claude Code (default)
+planmode install nextjs-tailwind-starter
 
-    <h3>3. Use with Claude Code</h3>
+# Codex and Cursor
+planmode install nextjs-tailwind-starter --target codex,cursor</code></pre>
     <p>
-      That's it. Claude Code automatically picks up the installed plans and rules through its native
-      <code>@import</code> and <code>.claude/rules/</code> auto-discovery. Start a conversation and
-      the AI will follow the installed instructions.
+      This downloads the plan and places the canonical content in
+      <code>plans/nextjs-tailwind-starter.md</code>. For Claude Code it adds an <code>@import</code>
+      line to <code>CLAUDE.md</code>; for Codex it writes a reference to <code>AGENTS.md</code>; for
+      Cursor it writes <code>.cursor/rules/nextjs-tailwind-starter.mdc</code>. Dependencies (like
+      rules) are installed automatically for the same targets.
+    </p>
+    <p>
+      To avoid repeating the flag, add targets to <code>planmode.config.yaml</code>:
+    </p>
+    <pre><code>targets:
+  - claude
+  - codex
+  - cursor</code></pre>
+
+    <h3>3. Use with your AI client</h3>
+    <p>
+      That's it. Claude Code picks up plans through <code>@import</code> and rules through
+      <code>.claude/rules/</code>; Codex reads <code>AGENTS.md</code>; Cursor loads
+      <code>.cursor/rules/*.mdc</code>. Start a conversation and the AI will follow the installed
+      instructions.
     </p>
 
     <h3>4. Run a templated prompt</h3>
@@ -60,13 +74,16 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
     <h3>Plans</h3>
     <p>
       Multi-step implementation guides. Active during a task, removed when done. Installed to
-      <code>plans/*.md</code> and referenced via <code>@import</code> in <code>CLAUDE.md</code>.
+      <code>plans/*.md</code>, then wired into Claude Code (<code>@import</code> in
+      <code>CLAUDE.md</code>), Codex (<code>AGENTS.md</code>), or Cursor
+      (<code>.cursor/rules/*.mdc</code>).
     </p>
 
     <h3>Rules</h3>
     <p>
-      Always-on constraints that shape every AI interaction. Installed to <code>.claude/rules/*.md</code>
-      and auto-loaded by Claude Code.
+      Always-on constraints that shape every AI interaction. Installed to
+      <code>.claude/rules/*.md</code> for Claude Code, <code>AGENTS.md</code> for Codex, or
+      <code>.cursor/rules/*.mdc</code> for Cursor.
     </p>
 
     <h3>Prompts</h3>

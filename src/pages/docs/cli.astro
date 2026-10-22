@@ -7,31 +7,46 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
 
   <div class="prose-custom">
     <h2 id="install">planmode install</h2>
-    <pre><code>planmode install &lt;package&gt; [--version &lt;ver&gt;] [--rule] [--no-input] [--set key=value...]</code></pre>
+    <pre><code>planmode install &lt;package&gt; [--version &lt;ver&gt;] [--rule] [--target &lt;targets&gt;] [--no-input] [--set key=value...]</code></pre>
     <p>Install a package into the current project.</p>
     <h3>Arguments</h3>
     <ul>
       <li><code>&lt;package&gt;</code> — package name (e.g., <code>nextjs-tailwind-starter</code> or <code>@mycompany/deploy</code>)</li>
       <li><code>--version &lt;ver&gt;</code> / <code>-v &lt;ver&gt;</code> — install specific version (default: latest)</li>
       <li><code>--rule</code> — force install as a rule to <code>.claude/rules/</code></li>
+      <li><code>--target &lt;targets&gt;</code> — client targets: <code>claude</code>, <code>codex</code>, <code>cursor</code>, or <code>all</code> (comma-separated)</li>
       <li><code>--no-input</code> — fail if any required variable is missing (no interactive prompts)</li>
       <li><code>--set key=value</code> — set template variables (e.g., <code>--set project_name=myapp</code>)</li>
     </ul>
     <h3>File placement</h3>
     <ul>
-      <li><code>rule</code> &rarr; <code>.claude/rules/&lt;name&gt;.md</code></li>
-      <li><code>plan</code> &rarr; <code>plans/&lt;name&gt;.md</code> + <code>@import</code> in CLAUDE.md</li>
-      <li><code>prompt</code> &rarr; <code>prompts/&lt;name&gt;.md</code></li>
+      <li><code>rule</code> &rarr; <code>.claude/rules/&lt;name&gt;.md</code>, plus generated Codex/Cursor files when targeted</li>
+      <li><code>plan</code> &rarr; <code>plans/&lt;name&gt;.md</code>, plus <code>@import</code> in CLAUDE.md or generated Codex/Cursor files</li>
+      <li><code>prompt</code> &rarr; <code>prompts/&lt;name&gt;.md</code> (prompts are client-agnostic)</li>
+    </ul>
+    <h3>Client targets</h3>
+    <p>
+      The default target is <code>claude</code>. Set targets per install with
+      <code>--target</code>, or persist them in <code>planmode.config.yaml</code>:
+    </p>
+    <pre><code>targets:
+  - claude
+  - codex
+  - cursor</code></pre>
+    <ul>
+      <li><strong>claude</strong> — <code>CLAUDE.md</code> imports and <code>.claude/rules/</code></li>
+      <li><strong>codex</strong> — <code>AGENTS.md</code> sections</li>
+      <li><strong>cursor</strong> — <code>.cursor/rules/*.mdc</code></li>
     </ul>
     <h3>Example</h3>
     <pre><code>planmode install nextjs-tailwind-starter
 planmode install nextjs-tailwind-starter --set project_name=myapp
-planmode install typescript-strict@^1.0.0
-planmode install @mycompany/deploy-playbook -v 2.0.0</code></pre>
+planmode install typescript-strict@^1.0.0 --target codex,cursor
+planmode install @mycompany/deploy-playbook -v 2.0.0 --target all</code></pre>
 
     <h2 id="uninstall">planmode uninstall</h2>
     <pre><code>planmode uninstall &lt;package&gt;</code></pre>
-    <p>Remove an installed package. Removes the file, updates <code>CLAUDE.md</code> and <code>planmode.lock</code>. Dependencies shared with other packages are kept.</p>
+    <p>Remove an installed package. Removes the canonical file, generated client files, the <code>planmode.lock</code> entry, and any CLAUDE.md import. Dependencies shared with other packages are kept.</p>
 
     <h2 id="search">planmode search</h2>
     <pre><code>planmode search &lt;query&gt; [--type &lt;type&gt;] [--category &lt;cat&gt;] [--json]</code></pre>
@@ -80,11 +95,11 @@ planmode run weather-image</code></pre>
 
     <h2 id="update">planmode update</h2>
     <pre><code>planmode update [package]</code></pre>
-    <p>Update installed packages to the latest compatible versions. If no package is specified, updates all.</p>
+    <p>Update installed packages to the latest compatible versions. If no package is specified, updates all. Client targets are preserved.</p>
 
     <h2 id="list">planmode list</h2>
     <pre><code>planmode list</code></pre>
-    <p>List all installed packages from <code>planmode.lock</code> with their type, version, and file location.</p>
+    <p>List all installed packages from <code>planmode.lock</code> with their type, version, client targets, and file location.</p>
 
     <h2 id="info">planmode info</h2>
     <pre><code>planmode info &lt;package&gt;</code></pre>
@@ -111,13 +126,15 @@ planmode run weather-image</code></pre>
     <pre><code>planmode doctor</code></pre>
     <p>
       Check project health. Verifies that all installed packages have matching files on disk,
-      CLAUDE.md imports are correct, content hashes haven't drifted, and there are no orphaned files.
+      client targets are present, CLAUDE.md imports are correct, content hashes haven't drifted,
+      and there are no orphaned files.
     </p>
     <h3>What it checks</h3>
     <ul>
       <li>Every lockfile entry has a corresponding file on disk</li>
       <li>Content hashes match (detects local modifications)</li>
-      <li>Every installed plan has an <code>@import</code> in CLAUDE.md</li>
+      <li>Codex <code>AGENTS.md</code> sections and Cursor <code>.cursor/rules/*.mdc</code> files exist</li>
+      <li>Every Claude-targeted plan has an <code>@import</code> in CLAUDE.md</li>
       <li>Every CLAUDE.md import points to an existing file</li>
       <li>Untracked files in <code>plans/</code></li>
     </ul>

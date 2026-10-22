@@ -108,12 +108,18 @@ The core of the CLI. Multiple lib modules work together:
   4. Fetch content (inline or content_file)
   5. If templated, prompt for variables (interactive) or use defaults/provided values
   6. Render content through Handlebars
-  7. Place file based on type: `plans/<name>.md`, `.claude/rules/<name>.md`, or `prompts/<name>.md`
-  8. Update CLAUDE.md imports (for plans)
-  9. Install dependencies recursively
-  10. Update `planmode.lock`
-- `uninstallPackage(name)` — remove file, update lockfile, remove CLAUDE.md import
-- `updatePackage(name?)` — check for newer versions, reinstall
+  7. Place canonical file based on type: `plans/<name>.md`, `.claude/rules/<name>.md`, or `prompts/<name>.md`
+  8. Generate client files for each target: Claude (`CLAUDE.md` / `.claude/rules`), Codex (`AGENTS.md`), Cursor (`.cursor/rules/*.mdc`)
+  9. Install dependencies recursively with the same targets
+  10. Update `planmode.lock` with the installed targets
+- `uninstallPackage(name)` — remove canonical file, client files, lockfile entry, and CLAUDE.md import
+- `updatePackage(name?)` — check for newer versions, reinstall with the same targets
+
+**`lib/targets.ts`** — resolve and generate client-specific files:
+- `parseTargets(values)` / `resolveTargets(cliValues, projectDir)` — parse `claude`, `codex`, `cursor`, `all`, or `planmode.config.yaml`
+- `applyTargets(options)` — write CLAUDE.md imports, AGENTS.md sections, and Cursor `.mdc` rules
+- `removeTargets(options)` / `checkTargets(options)` — remove and validate generated files
+- `getEntryTargets(entry.targets)` — default older lockfile entries to the `claude` target
 
 **`lib/claude-md.ts`** — manage `@import` entries in CLAUDE.md:
 - `addPlanImport(name, projectDir)` — add `@plans/<name>.md` under a `# Planmode` section

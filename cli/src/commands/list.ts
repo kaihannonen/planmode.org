@@ -1,5 +1,6 @@
 import { Command } from "commander";
 import { readLockfile } from "../lib/lockfile.js";
+import { getEntryTargets } from "../lib/targets.js";
 import { logger } from "../lib/logger.js";
 
 export const listCommand = new Command("list")
@@ -15,11 +16,12 @@ export const listCommand = new Command("list")
 
     logger.blank();
     logger.table(
-      ["name", "type", "version", "location"],
+      ["name", "type", "version", "targets", "location"],
       entries.map(([name, entry]) => [
         name,
         entry.type,
         entry.version,
+        getEntryTargets(entry.targets).join(","),
         entry.installed_to,
       ]),
     );

@@ -15,7 +15,7 @@ npm install -g planmode
 planmode install nextjs-tailwind-starter
 ```
 
-That's it. The plan lands in your project, `CLAUDE.md` gets updated, and Claude Code picks it up automatically.
+That's it. The plan lands in your project and Planmode wires it into Claude Code (`CLAUDE.md`), Codex (`AGENTS.md`), or Cursor (`.cursor/rules`).
 
 ## Package types
 
@@ -24,6 +24,29 @@ That's it. The plan lands in your project, `CLAUDE.md` gets updated, and Claude 
 | **Plan** | Multi-step implementation guide | `plans/*.md` | Active during task |
 | **Rule** | Always-on constraint | `.claude/rules/*.md` | Permanent |
 | **Prompt** | Fire-once instruction | `prompts/*.md` | Single use |
+
+## Client targets
+
+Planmode supports Claude Code, Codex, and Cursor. The default target is `claude`; select others
+with `--target`, or persist them in `planmode.config.yaml`:
+
+```yaml
+targets:
+  - claude
+  - codex
+  - cursor
+```
+
+| Target | Plans | Rules |
+|--------|-------|-------|
+| **Claude Code** | `@import` in `CLAUDE.md` | `.claude/rules/` |
+| **Codex** | reference in `AGENTS.md` | section in `AGENTS.md` |
+| **Cursor** | `.cursor/rules/*.mdc` | `.cursor/rules/*.mdc` |
+
+```bash
+planmode install nextjs-tailwind-starter --target codex,cursor
+planmode install typescript-strict --target all
+```
 
 ## Quick start
 
@@ -64,13 +87,14 @@ planmode list
 
 ## How it works
 
-Planmode leverages Claude Code's native `@import` system. When you install a plan:
+Planmode keeps one canonical copy of each package, then generates the files each AI client reads.
+When you install a plan:
 
 1. The CLI fetches `.md` files from the registry
 2. Drops them into the correct directory (`plans/`, `.claude/rules/`, or `prompts/`)
-3. Adds `@plans/<name>.md` to your `CLAUDE.md`
+3. Writes client files: `@plans/<name>.md` to `CLAUDE.md`, a reference to `AGENTS.md`, or a Cursor rule
 
-Claude Code is already the runtime. Planmode handles discovery, versioning, and distribution.
+Planmode handles discovery, versioning, and distribution; your AI client provides the runtime.
 
 ## Project structure
 

@@ -1,12 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
-import type { PackageManifest, PackageType, LockfileEntry, ResolvedPackage } from "../types/index.js";
+import type { InstallTarget, PackageManifest, PackageType, LockfileEntry, ResolvedPackage } from "../types/index.js";
 import { resolveVersion, parseDepString } from "./resolver.js";
 import { fetchVersionMetadata, fetchPackageMetadata } from "./registry.js";
 import { fetchFileAtTag } from "./git.js";
 import { addToLockfile, removeFromLockfile, getLockedVersion } from "./lockfile.js";
-import { addImport, removeImport } from "./claude-md.js";
+import { applyTargets, getEntryTargets, removeTargets, resolveTargets } from "./targets.js";
 import { parseManifest, readPackageContent } from "./manifest.js";
 import { renderTemplate, collectVariableValues } from "./template.js";
 import { logger } from "./logger.js";
@@ -39,6 +39,7 @@ export interface InstallOptions {
   variables?: Record<string, string>;
   projectDir?: string;
   interactive?: boolean;
+  targets?: InstallTarget[];
 }
 
 export async function installPackage(
@@ -47,12 +48,52 @@ export async function installPackage(
 ): Promise<void> {
   const projectDir = options.projectDir ?? process.cwd();
   const interactive = options.interactive ?? (isInteractive() && !options.noInput);
+  const targets = options.targets ?? resolveTargets(undefined, projectDir);
 
   // Check lockfile first
   const locked = getLockedVersion(packageName, projectDir);
   if (locked && !options.version) {
-    logger.dim(`${packageName}@${locked.version} already installed`);
-    return;
+    if (!options.targets || locked.type === "prompt") {
+      logger.dim(`${packageName}@${locked.version} already installed`);
+      if (locked.type === "prompt" && options.targets) {
+        logger.dim("Prompts are client-agnostic; install targets do not apply.");
+      }
+      return;
+    }
+
+    const lockedTargets = getEntryTargets(locked.targets);
+    const missingTargets = targets.filter((target) => !lockedTargets.includes(target));
+
+    if (missingTargets.length === 0) {
+      logger.dim(`${packageName}@${locked.version} already installed`);
+      return;
+    }
+
+    const existingPath = path.join(projectDir, locked.installed_to);
+    if (!fs.existsSync(existingPath)) {
+      logger.warn(
+        `${packageName}@${locked.version} is missing ${locked.installed_to}; reinstalling it from the locked version.`,
+      );
+      options.version = locked.version;
+    } else {
+      const content = fs.readFileSync(existingPath, "utf-8");
+      applyTargets({
+        targets: missingTargets,
+        name: packageName,
+        type: locked.type,
+        content,
+        projectDir,
+      });
+      addToLockfile(
+        packageName,
+        { ...locked, targets: [...lockedTargets, ...missingTargets] },
+        projectDir,
+      );
+      logger.success(
+        `Added ${missingTargets.join(", ")} target(s) for ${packageName}@${locked.version}`,
+      );
+      return;
+    }
   }
 
   // Resolve version
@@ -125,6 +166,8 @@ export async function installPackage(
 
   // Determine type (--rule overrides)
   const type = options.forceRule ? "rule" : manifest.type;
+  // Prompts are client-agnostic, so only the canonical file is installed.
+  const packageTargets: InstallTarget[] = type === "prompt" ? ["claude"] : targets;
   const installPath = getInstallPath(packageName, type);
   const fullPath = path.join(projectDir, installPath);
 
@@ -156,15 +199,31 @@ export async function installPackage(
   logger.success(`Installed ${packageName}@${version} → ${installPath}`);
   trackDownload(packageName);
 
-  // Update CLAUDE.md for plans
-  if (type === "plan") {
-    addImport(packageName, projectDir);
-    logger.dim(`Added @plans/${packageName}.md to CLAUDE.md`);
-    logger.dim(`Claude Code will automatically see this plan in your next conversation.`);
+  // Generate the client-specific files for every requested target.
+  applyTargets({
+    targets: packageTargets,
+    name: packageName,
+    type,
+    content,
+    description: manifest.description,
+    projectDir,
+  });
+
+  if (packageTargets.includes("claude")) {
+    if (type === "plan") {
+      logger.dim(`Added @plans/${packageName}.md to CLAUDE.md`);
+    }
+    if (type === "rule") {
+      logger.dim(`Rule is active — Claude Code auto-loads all files in .claude/rules/.`);
+    }
   }
 
-  if (type === "rule") {
-    logger.dim(`Rule is active — Claude Code auto-loads all files in .claude/rules/.`);
+  if (packageTargets.includes("codex") && type !== "prompt") {
+    logger.dim(`Updated AGENTS.md for Codex.`);
+  }
+
+  if (packageTargets.includes("cursor") && type !== "prompt") {
+    logger.dim(`Wrote .cursor/rules/${packageName}.mdc for Cursor.`);
   }
 
   if (type === "prompt") {
@@ -181,6 +240,7 @@ export async function installPackage(
     sha: versionMeta.source.sha,
     content_hash: hash,
     installed_to: installPath,
+    targets: packageTargets,
   };
   addToLockfile(packageName, entry, projectDir);
 
@@ -198,6 +258,7 @@ export async function installPackage(
         projectDir,
         noInput: options.noInput,
         interactive: options.interactive,
+        targets,
       });
     }
   }
@@ -219,10 +280,22 @@ export async function uninstallPackage(
     logger.success(`Removed ${locked.installed_to}`);
   }
 
-  // Remove import from CLAUDE.md
-  if (locked.type === "plan") {
-    removeImport(packageName, projectDir);
+  // Remove client-specific files and imports.
+  const targets = getEntryTargets(locked.targets);
+  removeTargets({
+    targets,
+    name: packageName,
+    type: locked.type,
+    projectDir,
+  });
+  if (targets.includes("claude") && locked.type === "plan") {
     logger.dim(`Removed @import from CLAUDE.md`);
+  }
+  if (targets.includes("codex") && locked.type !== "prompt") {
+    logger.dim(`Removed Planmode section from AGENTS.md`);
+  }
+  if (targets.includes("cursor") && locked.type !== "prompt") {
+    logger.dim(`Removed .cursor/rules/${packageName}.mdc`);
   }
 
   // Update lockfile
@@ -246,9 +319,10 @@ export async function updatePackage(
   }
 
   logger.info(`Updating ${packageName}: ${locked.version} → ${version}`);
+  const targets = getEntryTargets(locked.targets);
 
-  // Uninstall old, install new
+  // Uninstall old, install new with the same client targets.
   await uninstallPackage(packageName, projectDir);
-  await installPackage(packageName, { version, projectDir });
+  await installPackage(packageName, { version, projectDir, targets });
   return true;
 }

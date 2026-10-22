@@ -20,6 +20,9 @@ planmode search nextjs
 # Install a plan (adds to plans/ and updates CLAUDE.md)
 planmode install nextjs-tailwind-starter
 
+# Install for Codex and Cursor instead
+planmode install nextjs-tailwind-starter --target codex,cursor
+
 # Install a rule (goes to .claude/rules/)
 planmode install typescript-strict
 
@@ -28,6 +31,28 @@ planmode run rest-api-generator --resource users --framework express
 
 # See what's installed
 planmode list
+```
+
+## Client targets
+
+Planmode supports Claude Code, Codex, and Cursor. The default target is `claude`. Select targets
+per install, or persist them in `planmode.config.yaml`:
+
+```yaml
+targets:
+  - claude
+  - codex
+  - cursor
+```
+
+| Target | Plans | Rules |
+|--------|-------|-------|
+| **claude** | `@import` in `CLAUDE.md` | `.claude/rules/` |
+| **codex** | reference in `AGENTS.md` | section in `AGENTS.md` |
+| **cursor** | `.cursor/rules/*.mdc` | `.cursor/rules/*.mdc` |
+
+```bash
+planmode install nextjs-tailwind-starter --target all
 ```
 
 ## Use with Claude Code (MCP)
@@ -173,13 +198,14 @@ This reads `package.json`, detects config files (TypeScript, ESLint, Tailwind, P
 
 ## How it works
 
-Planmode leverages Claude Code's native `@import` system. When you install a plan:
+Planmode keeps one canonical copy of each package, then generates the files each AI client reads.
+When you install a plan:
 
 1. The CLI fetches `.md` files from the registry
 2. Drops them into the correct directory (`plans/`, `.claude/rules/`, or `prompts/`)
-3. Adds `@plans/<name>.md` to your `CLAUDE.md`
+3. Writes client files: `@plans/<name>.md` to `CLAUDE.md`, a reference to `AGENTS.md`, or a Cursor rule
 
-Claude Code is already the runtime. Planmode handles discovery, versioning, and distribution.
+Planmode handles discovery, versioning, and distribution; your AI client provides the runtime.
 
 ## Browse packages
 

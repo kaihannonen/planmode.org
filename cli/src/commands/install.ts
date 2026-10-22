@@ -1,6 +1,7 @@
 import { Command } from "commander";
 import * as p from "@clack/prompts";
 import { installPackage } from "../lib/installer.js";
+import { parseTargets } from "../lib/targets.js";
 import { logger } from "../lib/logger.js";
 import { isInteractive } from "../lib/prompts.js";
 
@@ -21,16 +22,18 @@ export const installCommand = new Command("install")
   .argument("<package>", "Package name (e.g., nextjs-tailwind-starter)")
   .option("-v, --version <version>", "Install specific version")
   .option("--rule", "Force install as a rule to .claude/rules/")
+  .option("--target <targets>", "Client targets: claude, codex, cursor, or all (comma-separated)")
   .option("--no-input", "Fail if any required variable is missing")
   .option("--set <key=value...>", "Set template variables (e.g., --set project_name=myapp)")
   .action(
     async (
       packageName: string,
-      options: { version?: string; rule?: boolean; input?: boolean; set?: string[] },
+      options: { version?: string; rule?: boolean; target?: string; input?: boolean; set?: string[] },
     ) => {
       try {
         const interactive = isInteractive() && options.input !== false;
         const variables = options.set ? parseVariables(options.set) : undefined;
+        const targets = options.target ? parseTargets(options.target) : undefined;
 
         if (interactive) {
           p.intro(`Installing ${packageName}`);
@@ -44,6 +47,7 @@ export const installCommand = new Command("install")
           noInput: options.input === false,
           variables,
           interactive,
+          targets,
         });
 
         if (interactive) {

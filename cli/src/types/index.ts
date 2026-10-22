@@ -2,6 +2,7 @@
 
 export type PackageType = "prompt" | "rule" | "plan";
 export type VariableType = "string" | "number" | "boolean" | "enum" | "resolved";
+export type InstallTarget = "claude" | "codex" | "cursor";
 export type Category =
   | "frontend"
   | "backend"
@@ -113,6 +114,7 @@ export interface LockfileEntry {
   sha: string;
   content_hash: string;
   installed_to: string;
+  targets?: InstallTarget[];
 }
 
 export interface Lockfile {
@@ -131,6 +133,10 @@ export interface PlanmodeConfig {
     dir?: string;
     ttl?: number;
   };
+}
+
+export interface PlanmodeProjectConfig {
+  targets?: InstallTarget[];
 }
 
 // ── Context (document indexing) ──

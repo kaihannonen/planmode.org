@@ -3,6 +3,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { readLockfile } from "./lockfile.js";
 import { listImports } from "./claude-md.js";
+import { checkTargets, getEntryTargets } from "./targets.js";
 
 export interface DiagnosticIssue {
   severity: "error" | "warning";
@@ -49,13 +50,28 @@ export function runDoctor(projectDir: string = process.cwd()): DoctorResult {
         fix: "File was modified locally. Run `planmode update " + name + "` to restore, or ignore if intentional",
       });
     }
+
+    // Client-specific exports (Codex AGENTS.md and Cursor rules).
+    const targets = getEntryTargets(entry.targets).filter((target) => target !== "claude");
+    for (const targetIssue of checkTargets({
+      targets,
+      name,
+      type: entry.type,
+      projectDir,
+    })) {
+      issues.push({
+        severity: "error",
+        message: targetIssue.message,
+        fix: `Run \`planmode uninstall ${name}\` and reinstall with \`--target ${getEntryTargets(entry.targets).join(",")}\``,
+      });
+    }
   }
 
   // Check CLAUDE.md imports match installed plans
   const claudeMdPath = path.join(projectDir, "CLAUDE.md");
   const imports = listImports(projectDir);
   const installedPlans = entries
-    .filter(([, entry]) => entry.type === "plan")
+    .filter(([, entry]) => entry.type === "plan" && getEntryTargets(entry.targets).includes("claude"))
     .map(([name]) => name);
 
   // Plans in lockfile but missing from CLAUDE.md
@@ -81,10 +97,15 @@ export function runDoctor(projectDir: string = process.cwd()): DoctorResult {
           fix: `Run \`planmode install ${importName}\` or remove the import from CLAUDE.md`,
         });
       } else {
+        const tracked = lockfile.packages[importName];
         issues.push({
           severity: "warning",
-          message: `CLAUDE.md imports "${importName}" but it's not tracked in planmode.lock`,
-          fix: "This plan was added manually. No action needed unless you want lockfile tracking.",
+          message: tracked
+            ? `CLAUDE.md imports "${importName}" but it is not configured for the claude target`
+            : `CLAUDE.md imports "${importName}" but it's not tracked in planmode.lock`,
+          fix: tracked
+            ? `Run \`planmode install ${importName} --target claude\` or remove the import from CLAUDE.md`
+            : "This plan was added manually. No action needed unless you want lockfile tracking.",
         });
       }
     }

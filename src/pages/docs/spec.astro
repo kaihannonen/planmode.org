@@ -144,7 +144,7 @@ content_file: plan.md</code></pre>
           <tr class="bg-black-card">
             <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Type</th>
             <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Location</th>
-            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">How Claude loads it</th>
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">How clients load it</th>
             <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Lifecycle</th>
           </tr>
         </thead>
@@ -152,7 +152,7 @@ content_file: plan.md</code></pre>
           <tr class="border-b border-grey-border/10">
             <td class="px-4 py-2 font-medium text-red-accent">plan</td>
             <td class="px-4 py-2 font-mono">plans/*.md</td>
-            <td class="px-4 py-2">@import in CLAUDE.md</td>
+            <td class="px-4 py-2">Claude @import; Codex AGENTS.md reference; Cursor rule</td>
             <td class="px-4 py-2">Active during task</td>
           </tr>
           <tr class="border-b border-grey-border/10">
@@ -170,6 +170,46 @@ content_file: plan.md</code></pre>
         </tbody>
       </table>
     </div>
+
+    <h2>Client targets</h2>
+    <p>
+      Planmode installs the canonical package content once, then generates client-specific files:
+    </p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border border-grey-border/20 rounded-lg overflow-hidden">
+        <thead>
+          <tr class="bg-black-card">
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Target</th>
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Plans</th>
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Rules</th>
+          </tr>
+        </thead>
+        <tbody class="text-grey-text">
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono text-red-accent">claude</td>
+            <td class="px-4 py-2"><code>@import</code> in <code>CLAUDE.md</code></td>
+            <td class="px-4 py-2"><code>.claude/rules/</code></td>
+          </tr>
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono text-red-accent">codex</td>
+            <td class="px-4 py-2"><code>AGENTS.md</code> reference to <code>plans/</code></td>
+            <td class="px-4 py-2"><code>AGENTS.md</code> section</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 font-mono text-red-accent">cursor</td>
+            <td class="px-4 py-2"><code>.cursor/rules/*.mdc</code> (agent-requested)</td>
+            <td class="px-4 py-2"><code>.cursor/rules/*.mdc</code> (always-on)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Set targets with <code>--target</code> or in <code>planmode.config.yaml</code>:
+    </p>
+    <pre><code>targets:
+  - claude
+  - codex
+  - cursor</code></pre>
 
     <h2>Categories</h2>
     <p>Every package belongs to one primary category:</p>
@@ -229,7 +269,11 @@ packages:
     tag: v1.1.0
     sha: abc123def456
     content_hash: sha256:abcdef1234567890
-    installed_to: plans/nextjs-tailwind-starter.md</code></pre>
+    installed_to: plans/nextjs-tailwind-starter.md
+    targets:
+      - claude
+      - codex
+      - cursor</code></pre>
 
     <h2>Global config</h2>
     <p>
