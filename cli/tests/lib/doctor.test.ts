@@ -19,7 +19,7 @@ afterEach(() => {
   tmpDirs = [];
 });
 
-function makePlanEntry(name: string, content: string): LockfileEntry {
+function makePlanEntry(name: string, content: string, targets?: LockfileEntry["targets"]): LockfileEntry {
   return {
     version: "1.0.0",
     type: "plan",
@@ -28,6 +28,7 @@ function makePlanEntry(name: string, content: string): LockfileEntry {
     sha: "abc123",
     content_hash: computeHash(content),
     installed_to: `plans/${name}.md`,
+    ...(targets ? { targets } : {}),
   };
 }
 
@@ -183,6 +184,58 @@ describe("runDoctor — orphaned files", () => {
     });
     const result = runDoctor(dir);
     expect(result.issues.filter((i) => i.message.includes("Untracked"))).toHaveLength(0);
+  });
+});
+
+// ── client targets ──
+
+describe("runDoctor — client targets", () => {
+  it("does not require CLAUDE.md for a Codex-only plan", () => {
+    const dir = useTmpDir();
+    const content = "# Codex plan";
+    writeFile(dir, "plans/my-plan.md", content);
+    writeFile(
+      dir,
+      "AGENTS.md",
+      "# Planmode\n\n<!-- planmode:start:my-plan -->\n## Plan: my-plan\n<!-- planmode:end:my-plan -->\n",
+    );
+    writeLockfile(dir, {
+      lockfile_version: 1,
+      packages: { "my-plan": makePlanEntry("my-plan", content, ["codex"]) },
+    });
+
+    const result = runDoctor(dir);
+    expect(result.healthy).toBe(true);
+    expect(result.issues).toHaveLength(0);
+  });
+
+  it("reports a missing Codex section", () => {
+    const dir = useTmpDir();
+    const content = "# Codex plan";
+    writeFile(dir, "plans/my-plan.md", content);
+    writeLockfile(dir, {
+      lockfile_version: 1,
+      packages: { "my-plan": makePlanEntry("my-plan", content, ["codex"]) },
+    });
+
+    const result = runDoctor(dir);
+    expect(result.healthy).toBe(false);
+    expect(result.issues.some((i) => i.message.includes("AGENTS.md"))).toBe(true);
+  });
+
+  it("does not require CLAUDE.md for a Cursor-only plan", () => {
+    const dir = useTmpDir();
+    const content = "# Cursor plan";
+    writeFile(dir, "plans/my-plan.md", content);
+    writeFile(dir, ".cursor/rules/my-plan.mdc", "---\nalwaysApply: false\n---\n");
+    writeLockfile(dir, {
+      lockfile_version: 1,
+      packages: { "my-plan": makePlanEntry("my-plan", content, ["cursor"]) },
+    });
+
+    const result = runDoctor(dir);
+    expect(result.healthy).toBe(true);
+    expect(result.issues).toHaveLength(0);
   });
 });
 

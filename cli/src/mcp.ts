@@ -7,6 +7,7 @@ import { logger } from "./lib/logger.js";
 import { searchPackages, fetchPackageMetadata, fetchVersionMetadata } from "./lib/registry.js";
 import { installPackage, uninstallPackage, updatePackage } from "./lib/installer.js";
 import { readLockfile } from "./lib/lockfile.js";
+import { getEntryTargets } from "./lib/targets.js";
 import { readManifest, validateManifest, parseManifest, readPackageContent } from "./lib/manifest.js";
 import { renderTemplate, collectVariableValues } from "./lib/template.js";
 import { createPackage } from "./lib/init.js";
@@ -250,16 +251,17 @@ server.registerTool(
 server.registerTool(
   "planmode_install",
   {
-    description: "Install a planmode package into the current project. Places plans in plans/, rules in .claude/rules/, prompts in prompts/. Updates CLAUDE.md with @import for plans. Use planmode_info first to check for required variables.",
+    description: "Install a planmode package into the current project. Places plans in plans/, rules in .claude/rules/, prompts in prompts/. Generates client files for Claude Code (CLAUDE.md), Codex (AGENTS.md), and Cursor (.cursor/rules). Use planmode_info first to check for required variables.",
     inputSchema: {
       package: z.string().describe("Package name to install"),
       version: z.string().optional().describe("Specific version to install (default: latest)"),
       asRule: z.boolean().optional().describe("Force install as a rule to .claude/rules/"),
+      targets: z.array(z.enum(["claude", "codex", "cursor"])).optional().describe("Client targets (default: planmode.config.yaml or claude)"),
       variables: z.record(z.string(), z.string()).optional().describe("Template variable values as key-value pairs"),
       projectDir: z.string().optional().describe("Project directory (default: current working directory)"),
     },
   },
-  async ({ package: packageName, version, asRule, variables, projectDir }) => {
+  async ({ package: packageName, version, asRule, targets, variables, projectDir }) => {
     try {
       const { messages } = await withCaptureAsync(() =>
         installPackage(packageName, {
@@ -268,6 +270,7 @@ server.registerTool(
           noInput: true,
           variables: variables as Record<string, string> | undefined,
           projectDir,
+          targets,
         }),
       );
 
@@ -322,7 +325,7 @@ server.registerTool(
       const table = entries
         .map(
           ([name, entry]) =>
-            `- **${name}** (${entry.type} v${entry.version}) → ${entry.installed_to}`,
+            `- **${name}** (${entry.type} v${entry.version}, ${getEntryTargets(entry.targets).join(",")}) → ${entry.installed_to}`,
         )
         .join("\n");
 
@@ -603,7 +606,7 @@ server.registerTool(
 server.registerTool(
   "planmode_doctor",
   {
-    description: "Check project health: verify installed packages have matching files on disk, CLAUDE.md imports are correct, and content hashes haven't drifted. Use this to diagnose issues with planmode packages.",
+    description: "Check project health: verify installed packages have matching files on disk, CLAUDE.md imports and Codex/Cursor target files are present, and content hashes haven't drifted. Use this to diagnose issues with planmode packages.",
     inputSchema: {
       projectDir: z.string().optional().describe("Project directory (default: current working directory)"),
     },
