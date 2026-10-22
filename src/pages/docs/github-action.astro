@@ -1,0 +1,95 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout title="GitHub Action — Planmode" description="Verify a locked Planmode install in GitHub Actions.">
+  <h1 class="text-3xl font-bold mb-8">GitHub Action</h1>
+
+  <div class="prose-custom">
+    <p>
+      The Planmode composite action installs the CLI and runs <code>planmode ci</code> against your
+      repository. It fails when <code>planmode.lock</code> and the committed generated files drift.
+    </p>
+
+    <h2>Quick start</h2>
+    <pre><code>name: Planmode
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  planmode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: kaihannonen/planmode.org@main
+        with:
+          version: latest</code></pre>
+
+    <p>
+      The action expects <code>planmode.lock</code> and the generated files to be committed. It does
+      not fetch packages or modify the repository.
+    </p>
+
+    <h2>Inputs</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border border-grey-border/20 rounded-lg overflow-hidden">
+        <thead>
+          <tr class="bg-black-card">
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Input</th>
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Default</th>
+            <th class="text-left px-4 py-3 font-medium text-grey-text border-b border-grey-border/20">Description</th>
+          </tr>
+        </thead>
+        <tbody class="text-grey-text">
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono text-red-accent">version</td>
+            <td class="px-4 py-2"><code>latest</code></td>
+            <td class="px-4 py-2">Planmode CLI version to install. Pin this in production.</td>
+          </tr>
+          <tr class="border-b border-grey-border/10">
+            <td class="px-4 py-2 font-mono text-red-accent">working-directory</td>
+            <td class="px-4 py-2"><code>.</code></td>
+            <td class="px-4 py-2">Directory containing <code>planmode.lock</code>.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 font-mono text-red-accent">args</td>
+            <td class="px-4 py-2">empty</td>
+            <td class="px-4 py-2">Extra arguments for <code>planmode ci</code>, such as <code>--strict</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Strict mode</h2>
+    <p>
+      By default, warnings such as untracked plan files do not fail the job. Use
+      <code>args: --strict</code> to fail on any diagnostic.
+    </p>
+    <pre><code>- uses: kaihannonen/planmode.org@main
+  with:
+    version: latest
+    args: --strict</code></pre>
+
+    <h2>Monorepos</h2>
+    <pre><code>- uses: kaihannonen/planmode.org@main
+  with:
+    working-directory: apps/web</code></pre>
+
+    <h2>What it verifies</h2>
+    <ul>
+      <li><code>planmode.lock</code> exists and is valid</li>
+      <li>Every locked package has its canonical file</li>
+      <li>Content hashes match — committed files have not drifted</li>
+      <li>Client target files and <code>CLAUDE.md</code> imports are present</li>
+    </ul>
+
+    <h2>Version note</h2>
+    <p>
+      The action requires a Planmode release that includes <code>planmode ci</code>. Pin
+      <code>version</code> to that release once it is published.
+    </p>
+  </div>
+</DocsLayout>

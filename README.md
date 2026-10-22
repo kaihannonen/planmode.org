@@ -56,6 +56,7 @@ planmode list
 | `planmode search <query>` | Search the registry |
 | `planmode run <prompt>` | Run a templated prompt |
 | `planmode list` | List installed packages |
+| `planmode ci` | Verify a locked install in CI |
 | `planmode info <pkg>` | Show package details |
 | `planmode update [pkg]` | Update packages |
 | `planmode init` | Create a new package |
@@ -71,6 +72,29 @@ Planmode leverages Claude Code's native `@import` system. When you install a pla
 3. Adds `@plans/<name>.md` to your `CLAUDE.md`
 
 Claude Code is already the runtime. Planmode handles discovery, versioning, and distribution.
+
+## CI and drift detection
+
+`planmode ci` verifies a locked install without network access. It fails if `planmode.lock` is
+missing or invalid, a generated file is missing, a content hash no longer matches, or a client
+target is out of sync. Use `--strict` to fail on warnings too.
+
+```bash
+planmode ci
+planmode ci --strict
+```
+
+Use the composite GitHub Action after checking out the repository:
+
+```yaml
+- uses: actions/checkout@v4
+- uses: kaihannonen/planmode.org@main
+  with:
+    version: latest
+```
+
+See [planmode.org/docs/github-action](https://planmode.org/docs/github-action) for inputs and
+monorepo examples.
 
 ## Project structure
 

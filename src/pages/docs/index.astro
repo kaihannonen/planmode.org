@@ -55,6 +55,14 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       into Claude Code: <code>planmode run rest-api-generator --resource users | claude</code>
     </p>
 
+    <h3>5. Verify in CI</h3>
+    <pre><code>planmode ci</code></pre>
+    <p>
+      Fails if <code>planmode.lock</code> or the committed generated files have drifted. Use the
+      <a href="/docs/github-action" class="text-red-accent hover:underline">Planmode GitHub Action</a>
+      to run it automatically.
+    </p>
+
     <h2>Package types</h2>
 
     <h3>Plans</h3>
