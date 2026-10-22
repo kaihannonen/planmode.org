@@ -20,6 +20,38 @@ export function readLockfile(projectDir: string = process.cwd()): Lockfile {
   }
 }
 
+export function readLockfileStrict(projectDir: string = process.cwd()): Lockfile {
+  const lockfilePath = getLockfilePath(projectDir);
+  if (!fs.existsSync(lockfilePath)) {
+    throw new Error(
+      `No planmode.lock found in ${projectDir}. Run \`planmode install <package>\` first.`,
+    );
+  }
+
+  let data: unknown;
+  try {
+    data = parse(fs.readFileSync(lockfilePath, "utf-8"));
+  } catch (err) {
+    throw new Error(`Invalid planmode.lock: ${(err as Error).message}`);
+  }
+
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    throw new Error("Invalid planmode.lock: expected a YAML object.");
+  }
+
+  const lockfile = data as Lockfile;
+  if (lockfile.lockfile_version !== 1) {
+    throw new Error(
+      `Unsupported planmode.lock version: ${String(lockfile.lockfile_version)}. Expected 1.`,
+    );
+  }
+  if (!lockfile.packages || typeof lockfile.packages !== "object" || Array.isArray(lockfile.packages)) {
+    throw new Error("Invalid planmode.lock: `packages` must be an object.");
+  }
+
+  return lockfile;
+}
+
 export function writeLockfile(lockfile: Lockfile, projectDir: string = process.cwd()): void {
   const lockfilePath = getLockfilePath(projectDir);
   fs.writeFileSync(lockfilePath, stringify(lockfile), "utf-8");

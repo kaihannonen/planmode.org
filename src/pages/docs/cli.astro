@@ -107,6 +107,31 @@ planmode run weather-image</code></pre>
     </ul>
     <p>Tokens are stored in <code>~/.planmode/config</code>. You can also set the <code>PLANMODE_GITHUB_TOKEN</code> environment variable.</p>
 
+    <h2 id="ci">planmode ci</h2>
+    <pre><code>planmode ci [--strict] [--json]</code></pre>
+    <p>
+      Verify a locked Planmode install in CI without network access. Use this after checking out a
+      repository to prove that the committed plans, rules, client files, and
+      <code>planmode.lock</code> are still consistent.
+    </p>
+    <h3>What it checks</h3>
+    <ul>
+      <li><code>planmode.lock</code> exists, parses, and uses a supported version</li>
+      <li>Every lockfile entry has a canonical file on disk</li>
+      <li>Content hashes match the lockfile — local edits fail the check</li>
+      <li>Client target files are present (Codex <code>AGENTS.md</code>, Cursor rules)</li>
+      <li>Claude-targeted plans have matching <code>CLAUDE.md</code> imports</li>
+    </ul>
+    <h3>Flags</h3>
+    <ul>
+      <li><code>--strict</code> — fail on warnings as well as errors</li>
+      <li><code>--json</code> — output machine-readable results</li>
+    </ul>
+    <h3>Example</h3>
+    <pre><code>planmode ci
+planmode ci --strict
+planmode ci --json</code></pre>
+
     <h2 id="doctor">planmode doctor</h2>
     <pre><code>planmode doctor</code></pre>
     <p>

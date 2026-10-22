@@ -177,7 +177,13 @@ The core of the CLI. Multiple lib modules work together:
 - Check content file exists and renders without errors
 - Verify variable definitions are consistent
 
-**`commands/doctor.ts`**, **`commands/test.ts`**
+**`lib/ci.ts`** — deterministic CI checks:
+- Read `planmode.lock` strictly (missing, invalid YAML, unsupported version)
+- Run doctor checks and promote content hash drift to an error
+- Fail on errors, or on all warnings with `--strict`
+- Never fetches packages or modifies the repository
+
+**`commands/doctor.ts`**, **`commands/test.ts`**, **`commands/ci.ts`**
 
 ## Step 10: Advanced features
 
@@ -296,13 +302,18 @@ worker/
 
 ## Step 16: CI/CD
 
-Four GitHub Actions workflows:
+GitHub Actions workflows:
 
 **`ci.yml`** — runs on every PR and push to main:
-- Lint and type-check the CLI (`npm run lint && npm run typecheck` in `cli/`)
-- Run CLI tests (`npm test` in `cli/`)
-- Build the CLI (`npm run build` in `cli/`)
 - Build the website (`npm run build` in root)
+- Install dependencies, type-check, test, and build the CLI (`npm ci`, `npm run typecheck`, `npm test`, `npm run build` in `cli/`)
+- Smoke-test `planmode ci` against a temporary locked project
+- Validate registry JSON
+
+**`action.yml`** — composite GitHub Action at the repository root:
+- Installs the published Planmode CLI
+- Runs `planmode ci` in the consumer's working directory
+- Supports `version`, `working-directory`, and `args` inputs
 
 **`deploy-website.yml`** — deploy Astro site to Cloudflare Pages:
 - Triggered on push to main (when `src/`, `registry/`, or root config files change)

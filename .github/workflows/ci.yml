@@ -38,7 +38,30 @@ jobs:
 
       - run: npm ci
       - run: npm run typecheck
+      - run: npm test
       - run: npm run build
+
+      - name: Smoke test planmode ci
+        working-directory: .
+        run: |
+          tmp="$(mktemp -d)"
+          mkdir -p "$tmp/plans"
+          printf '# Smoke plan\n' > "$tmp/plans/smoke-plan.md"
+          printf '# Planmode\n- @plans/smoke-plan.md\n' > "$tmp/CLAUDE.md"
+          hash="sha256:$(node -e "const c=require('node:crypto');const fs=require('node:fs');process.stdout.write(c.createHash('sha256').update(fs.readFileSync(process.argv[1],'utf-8')).digest('hex'))" "$tmp/plans/smoke-plan.md")"
+          cat > "$tmp/planmode.lock" <<EOF
+          lockfile_version: 1
+          packages:
+            smoke-plan:
+              version: 1.0.0
+              type: plan
+              source: github.com/example/smoke-plan
+              tag: v1.0.0
+              sha: abc123
+              content_hash: $hash
+              installed_to: plans/smoke-plan.md
+          EOF
+          (cd "$tmp" && node "$GITHUB_WORKSPACE/cli/dist/index.js" ci)
 
   validate-registry:
     name: Validate Registry

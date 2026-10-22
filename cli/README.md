@@ -145,6 +145,7 @@ planmode mcp remove
 | `planmode login` | Configure GitHub auth |
 | `planmode mcp setup\|remove` | Register/remove MCP server with Claude Code |
 | `planmode doctor` | Check project health and file integrity |
+| `planmode ci` | Verify a locked install in CI |
 | `planmode test` | Validate a package before publishing |
 | `planmode record start\|stop` | Generate a plan from git commits |
 | `planmode snapshot` | Generate a plan from existing project setup |
@@ -180,6 +181,28 @@ Planmode leverages Claude Code's native `@import` system. When you install a pla
 3. Adds `@plans/<name>.md` to your `CLAUDE.md`
 
 Claude Code is already the runtime. Planmode handles discovery, versioning, and distribution.
+
+## CI and drift detection
+
+`planmode ci` verifies a locked install without network access. It fails if `planmode.lock` is
+missing or invalid, a generated file is missing, a content hash no longer matches, or a client
+target is out of sync. Use `--strict` to fail on warnings too.
+
+```bash
+planmode ci
+planmode ci --strict
+planmode ci --json
+```
+
+Use the composite GitHub Action after checking out the repository:
+
+```yaml
+- uses: actions/checkout@v4
+- uses: kaihannonen/planmode.org@main
+  with:
+    version: latest
+    args: --strict
+```
 
 ## Browse packages
 

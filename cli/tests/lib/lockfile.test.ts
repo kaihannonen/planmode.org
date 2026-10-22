@@ -2,6 +2,7 @@ import { describe, it, expect, afterEach } from "vitest";
 import fs from "node:fs";
 import {
   readLockfile,
+  readLockfileStrict,
   writeLockfile,
   addToLockfile,
   removeFromLockfile,
@@ -59,6 +60,40 @@ describe("readLockfile", () => {
     // readLockfile catches parse errors and returns default
     const lockfile = readLockfile(dir);
     expect(lockfile.lockfile_version).toBe(1);
+  });
+});
+
+// ── readLockfileStrict ──
+
+describe("readLockfileStrict", () => {
+  it("parses an existing lockfile", () => {
+    const dir = useTmpDir();
+    writeLockfile({ lockfile_version: 1, packages: { "my-plan": sampleEntry } }, dir);
+    const lockfile = readLockfileStrict(dir);
+    expect(lockfile.packages["my-plan"]?.version).toBe("1.0.0");
+  });
+
+  it("throws when the lockfile is missing", () => {
+    const dir = useTmpDir();
+    expect(() => readLockfileStrict(dir)).toThrow("No planmode.lock found");
+  });
+
+  it("throws on invalid YAML", () => {
+    const dir = useTmpDir();
+    fs.writeFileSync(`${dir}/planmode.lock`, ":\n: [invalid", "utf-8");
+    expect(() => readLockfileStrict(dir)).toThrow("Invalid planmode.lock");
+  });
+
+  it("throws on an unsupported lockfile version", () => {
+    const dir = useTmpDir();
+    fs.writeFileSync(`${dir}/planmode.lock`, "lockfile_version: 2\npackages: {}\n", "utf-8");
+    expect(() => readLockfileStrict(dir)).toThrow("Unsupported planmode.lock version");
+  });
+
+  it("throws when packages is not an object", () => {
+    const dir = useTmpDir();
+    fs.writeFileSync(`${dir}/planmode.lock`, "lockfile_version: 1\npackages: []\n", "utf-8");
+    expect(() => readLockfileStrict(dir)).toThrow("`packages` must be an object");
   });
 });
 

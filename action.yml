@@ -1,0 +1,37 @@
+name: Planmode CI
+description: Verify a locked Planmode install in CI
+author: Planmode
+branding:
+  icon: check-circle
+  color: green
+
+inputs:
+  version:
+    description: Planmode CLI version to install (use a release that includes `planmode ci`)
+    required: false
+    default: latest
+  working-directory:
+    description: Directory containing planmode.lock
+    required: false
+    default: .
+  args:
+    description: Extra arguments passed to `planmode ci` (for example, `--strict`)
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+
+    - name: Install Planmode
+      shell: bash
+      run: npm install --global planmode@${{ inputs.version }}
+
+    - name: Verify Planmode lockfile
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: planmode ci ${{ inputs.args }}
