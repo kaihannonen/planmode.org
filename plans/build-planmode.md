@@ -164,7 +164,7 @@ The core of the CLI. Multiple lib modules work together:
 
 **`commands/publish.ts`**, **`commands/init.ts`**
 
-## Step 9: Health and testing
+## Step 9: Health, testing, and verification
 
 **`lib/doctor.ts`** — verify installation integrity:
 - Check that all lockfile entries have corresponding files on disk
@@ -176,8 +176,15 @@ The core of the CLI. Multiple lib modules work together:
 - Validate manifest completeness
 - Check content file exists and renders without errors
 - Verify variable definitions are consistent
+- Warn when a plan does not declare `verification.commands`
 
-**`commands/doctor.ts`**, **`commands/test.ts`**
+**`lib/verifier.ts`** — run a plan's acceptance checks:
+- Read `verification.commands` from the lockfile entry or a local manifest
+- Execute each command sequentially in the project root
+- Enforce per-command or default timeouts
+- Return pass/fail, exit code, duration, stdout, and stderr
+
+**`commands/doctor.ts`**, **`commands/test.ts`**, **`commands/verify.ts`**
 
 ## Step 10: Advanced features
 
@@ -201,7 +208,7 @@ The core of the CLI. Multiple lib modules work together:
 **`mcp.ts`** — Model Context Protocol server exposing all CLI features as tools:
 
 - Entry point: `new McpServer({ name: "planmode" })` with `StdioServerTransport`
-- Each tool mirrors a CLI command: `planmode_search`, `planmode_install`, `planmode_uninstall`, `planmode_info`, `planmode_list`, `planmode_publish`, `planmode_init`, `planmode_run`, `planmode_update`, `planmode_doctor`, `planmode_test`, `planmode_record_start`, `planmode_record_stop`, `planmode_snapshot`, `planmode_context_add`, `planmode_context_remove`, `planmode_context_reindex`, `planmode_context_summary`, `planmode_resolve`, `planmode_validate`
+- Each tool mirrors a CLI command: `planmode_search`, `planmode_install`, `planmode_uninstall`, `planmode_info`, `planmode_list`, `planmode_publish`, `planmode_init`, `planmode_run`, `planmode_update`, `planmode_doctor`, `planmode_verify`, `planmode_test`, `planmode_record_start`, `planmode_record_stop`, `planmode_snapshot`, `planmode_context_add`, `planmode_context_remove`, `planmode_context_reindex`, `planmode_context_summary`, `planmode_resolve`, `planmode_validate`
 - Input schemas defined with `zod` (`z.string()`, `z.enum()`, etc.)
 - Output capture: `withCapture()` / `withCaptureAsync()` wrappers intercept logger output so tool results include human-readable messages
 - Error adaptation: `adaptError()` rewrites CLI-oriented messages for MCP context

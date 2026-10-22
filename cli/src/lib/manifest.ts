@@ -84,6 +84,27 @@ export function validateManifest(manifest: PackageManifest, requirePublishFields
     errors.push("Dependencies are not allowed for prompt type packages");
   }
 
+  // Verification is only meaningful for executable plans
+  if (manifest.verification) {
+    if (manifest.type !== "plan") {
+      errors.push("Verification commands are only allowed for plan type packages");
+    } else if (!Array.isArray(manifest.verification.commands) || manifest.verification.commands.length === 0) {
+      errors.push("Verification must define at least one command");
+    } else {
+      for (const [index, command] of manifest.verification.commands.entries()) {
+        if (!command.name || command.name.trim().length === 0) {
+          errors.push(`Verification command ${index + 1} is missing a name`);
+        }
+        if (!command.run || command.run.trim().length === 0) {
+          errors.push(`Verification command ${index + 1} is missing a run command`);
+        }
+        if (command.timeout !== undefined && (!Number.isFinite(command.timeout) || command.timeout <= 0)) {
+          errors.push(`Verification command "${command.name || index + 1}" must have a positive timeout`);
+        }
+      }
+    }
+  }
+
   // Variable validation
   if (manifest.variables) {
     for (const [varName, varDef] of Object.entries(manifest.variables)) {

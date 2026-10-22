@@ -157,6 +157,20 @@ export async function testPackage(projectDir: string = process.cwd()): Promise<T
     }
   }
 
+  // 7. Plans should define machine-runnable verification
+  if (manifest.type === "plan") {
+    if (manifest.verification?.commands?.length) {
+      checks.push({ name: "Plan defines verification commands", passed: true });
+    } else {
+      issues.push({
+        severity: "warning",
+        check: "Plan defines verification commands",
+        message: "Add `verification.commands` to let users run `planmode verify` after applying the plan.",
+      });
+      checks.push({ name: "Plan defines verification commands", passed: false });
+    }
+  }
+
   const hasErrors = issues.some((i) => i.severity === "error");
   return { issues, passed: !hasErrors, checks };
 }

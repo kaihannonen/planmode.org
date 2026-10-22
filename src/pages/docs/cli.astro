@@ -144,6 +144,32 @@ planmode test
 # Fix any errors, then publish
 planmode publish</code></pre>
 
+    <h2 id="verify">planmode verify</h2>
+    <pre><code>planmode verify [package] [--dry-run] [--json] [--verbose] [--timeout &lt;seconds&gt;]</code></pre>
+    <p>
+      Run the verification commands declared by an installed plan. Use this after applying a plan
+      to prove that the expected build, tests, or smoke checks still pass.
+    </p>
+    <h3>What it does</h3>
+    <ul>
+      <li>Reads <code>verification.commands</code> from the installed package lockfile entry</li>
+      <li>Runs each command in the project root, in order</li>
+      <li>Reports pass/fail, exit code, duration, stdout, and stderr</li>
+      <li>Exits non-zero if any verification command fails</li>
+    </ul>
+    <h3>Flags</h3>
+    <ul>
+      <li><code>--dry-run</code> — list commands without executing them</li>
+      <li><code>--json</code> — output machine-readable results</li>
+      <li><code>--verbose</code> — show output from passing commands too</li>
+      <li><code>--timeout &lt;seconds&gt;</code> — default timeout per command (default: 300)</li>
+    </ul>
+    <h3>Example</h3>
+    <pre><code>planmode verify
+planmode verify nextjs-tailwind-starter --verbose
+planmode verify --dry-run
+planmode verify --json</code></pre>
+
     <h2 id="mcp">planmode mcp</h2>
     <pre><code>planmode mcp setup
 planmode mcp remove</code></pre>

@@ -96,6 +96,7 @@ Once connected, Claude has access to these tools:
 | `planmode_validate` | Validate a planmode.yaml manifest |
 | `planmode_run` | Render a templated prompt with variables |
 | `planmode_doctor` | Run a health check on installed packages |
+| `planmode_verify` | Run a plan's verification commands |
 | `planmode_test` | Validate a package before publishing |
 | `planmode_record_start` | Start recording git commits for plan generation |
 | `planmode_record_stop` | Stop recording and generate a plan |
@@ -146,8 +147,34 @@ planmode mcp remove
 | `planmode mcp setup\|remove` | Register/remove MCP server with Claude Code |
 | `planmode doctor` | Check project health and file integrity |
 | `planmode test` | Validate a package before publishing |
+| `planmode verify [pkg]` | Run a plan's verification commands |
 | `planmode record start\|stop` | Generate a plan from git commits |
 | `planmode snapshot` | Generate a plan from existing project setup |
+
+## Verify installed plans
+
+Plans can declare acceptance checks in `planmode.yaml`:
+
+```yaml
+verification:
+  commands:
+    - name: build
+      run: npm run build
+      timeout: 120
+    - name: tests
+      run: npm test
+```
+
+The commands are stored in `planmode.lock` at install time. Run them after applying a plan:
+
+```bash
+planmode verify
+planmode verify nextjs-tailwind-starter --verbose
+planmode verify --dry-run
+planmode verify --json
+```
+
+`planmode verify` exits non-zero if any command fails, so it also works in CI.
 
 ## Create plans from your work
 

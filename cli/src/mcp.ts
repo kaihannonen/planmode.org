@@ -15,6 +15,7 @@ import { resolveVersion } from "./lib/resolver.js";
 import { fetchFileAtTag } from "./lib/git.js";
 import { runDoctor } from "./lib/doctor.js";
 import { testPackage } from "./lib/tester.js";
+import { verifyPackages } from "./lib/verifier.js";
 import { startRecordingAsync, stopRecording, isRecording } from "./lib/recorder.js";
 import { takeSnapshot } from "./lib/snapshot.js";
 import { addContextRepo, removeContextRepo, reindexContext, getContextSummary, formatSize } from "./lib/context.js";
@@ -633,6 +634,56 @@ server.registerTool(
       return textResult(lines.join("\n"), errors > 0);
     } catch (err) {
       return errorResult("Error running health check", err as Error);
+    }
+  },
+);
+
+// -- planmode_verify --
+server.registerTool(
+  "planmode_verify",
+  {
+    description: "Run the verification commands declared by an installed plan. Returns pass/fail, exit code, duration, stdout, and stderr for each command. Use dryRun to list commands without executing them.",
+    inputSchema: {
+      package: z.string().optional().describe("Installed package name (omit to verify all installed plans with verification commands)"),
+      projectDir: z.string().optional().describe("Project directory (default: current working directory)"),
+      dryRun: z.boolean().optional().describe("List commands without executing them"),
+    },
+  },
+  async ({ package: packageName, projectDir, dryRun }) => {
+    try {
+      const results = await verifyPackages({ packageName, projectDir, dryRun });
+      const lines: string[] = [];
+
+      for (const result of results) {
+        lines.push(`# ${result.packageName}${result.version ? `@${result.version}` : ""}`);
+
+        for (const command of result.commands) {
+          if (command.status === "skipped") {
+            lines.push(`SKIP: ${command.name} — ${command.run}`);
+            continue;
+          }
+
+          const icon = command.status === "passed" ? "PASS" : "FAIL";
+          const detail = command.timedOut
+            ? "timed out"
+            : command.exitCode !== null
+              ? `exit ${command.exitCode}`
+              : "failed";
+          lines.push(`${icon}: ${command.name} (${command.durationMs}ms, ${detail})`);
+
+          if (command.status === "failed") {
+            if (command.stdout.trim()) lines.push(`stdout:\n${command.stdout.trim()}`);
+            if (command.stderr.trim()) lines.push(`stderr:\n${command.stderr.trim()}`);
+          }
+        }
+
+        lines.push(`Result: ${result.passed ? "PASS" : "FAIL"}`, "");
+      }
+
+      const failed = results.some((result) => !result.passed);
+      return textResult(lines.join("\n").trim(), failed);
+    } catch (err) {
+      return errorResult("Error verifying plan", err as Error);
     }
   },
 );
