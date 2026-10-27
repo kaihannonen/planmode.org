@@ -7,8 +7,9 @@ comparison are still to build.
 
 Release status: prepared as `0.5.0-beta.1`; not published. The beta includes
 cross-client targets and the verification loop. It is opt-in through the npm
-`next` dist-tag; `latest` remains `0.4.0` until the private testbed and beta
-feedback are green.
+`next` dist-tag; `latest` remains `0.4.0` until the real-client and real-builder
+smoke tests pass. The private testbed matrix and stable-vs-beta compatibility
+gate are green.
 
 This document describes the local development loop that should make agent output
 trustworthy without requiring a git commit at every step. It also defines how a
@@ -479,6 +480,8 @@ in the builder's context, but the guard is what prevents recurrence.
   on bad and 100/100 on good; command fixtures pass/fail correctly.
 - An end-to-end loop demo passes in two iterations, leaves the source checkout
   untouched, and works with no `.git` directory.
+- The private `planmode-testbed` runs four fixture stacks, negative diff-audit
+  cases, a fake-builder loop, and a stable-vs-beta compatibility gate in CI.
 
 ## Still to build
 
