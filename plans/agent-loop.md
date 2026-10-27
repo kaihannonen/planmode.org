@@ -122,9 +122,10 @@ The plan must contain:
 - verification commands and checks
 - risks and rollback
 
-Each criterion maps to a check. Vague criteria are rejected. The contract is
-hashed and frozen before coding starts. Changing it requires human approval and a
-new hash.
+Each criterion should map to a deterministic check. A criterion that cannot be
+expressed as a check must go through the semantic reviewer and cannot auto-pass
+without one. The contract is hashed and frozen before coding starts. Changing it
+requires human approval and a new hash.
 
 The contract can live in plan frontmatter or in `.planmode/contract.yaml`:
 
