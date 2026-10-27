@@ -17,7 +17,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "validate:prototypes": "node prototypes/validate.mjs"
   },
   "dependencies": {
     "astro": "^5.3.0",
