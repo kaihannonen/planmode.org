@@ -1,0 +1,53 @@
+name: node-api
+version: 0.1.0
+type: harness
+description: Node 22 and Fastify API in TypeScript with a single error path and schema-validated input
+author: planmode
+license: MIT
+category: backend
+tags: [node, fastify, typescript, postgres, api]
+
+targets: [claude, codex, cursor]
+
+includes:
+  rules:
+    - ../_shared/rules/typescript-strict.md
+    - ../_shared/rules/postgres-migrations.md
+    - rules/node-api-errors.md
+  plans:
+    - plans/node-api-endpoint.md
+
+verification:
+  commands:
+    - name: typecheck
+      run: npm run typecheck
+    - name: test
+      run: npm test
+
+evals:
+  - name: package-manifest
+    kind: path-exists
+    path: package.json
+  - name: no-console-log
+    kind: grep-absent
+    path: src
+    glob: "**/*.ts"
+    pattern: 'console\.log'
+    severity: error
+  - name: no-process-exit-in-request-path
+    kind: grep-absent
+    path: src
+    glob: "**/*.ts"
+    pattern: 'process\.exit'
+    severity: error
+  - name: single-error-handler
+    kind: grep-present
+    path: src
+    glob: "**/*.ts"
+    pattern: 'setErrorHandler|errorHandler'
+    min: 1
+    severity: error
+  - name: env-example
+    kind: path-exists
+    path: .env.example
+    severity: warn

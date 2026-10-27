@@ -1,0 +1,55 @@
+name: ts-nextjs
+version: 0.1.0
+type: harness
+description: Next.js App Router with TypeScript, Tailwind and Prisma, plus build and lint gates
+author: planmode
+license: MIT
+category: frontend
+tags: [nextjs, typescript, tailwind, prisma, react]
+
+targets: [claude, codex, cursor]
+
+includes:
+  rules:
+    - ../_shared/rules/typescript-strict.md
+    - rules/nextjs-app-router.md
+    - rules/tailwind-conventions.md
+  plans:
+    - plans/nextjs-feature-slice.md
+
+suggests:
+  mcp: [github]
+
+verification:
+  commands:
+    - name: typecheck
+      run: npm run typecheck
+    - name: lint
+      run: npm run lint
+    - name: build
+      run: npm run build
+
+evals:
+  - name: app-directory
+    kind: path-exists
+    path: app
+  - name: root-layout
+    kind: path-exists
+    path: app/layout.tsx
+  - name: no-explicit-any
+    kind: grep-absent
+    path: .
+    glob: "**/*.{ts,tsx}"
+    pattern: ':\s*any\b'
+    severity: error
+  - name: no-console-log
+    kind: grep-absent
+    path: .
+    glob: "**/*.{ts,tsx}"
+    pattern: 'console\.log'
+    severity: warn
+  - name: layout-is-server
+    kind: grep-absent
+    path: app/layout.tsx
+    pattern: '"use client"'
+    severity: error

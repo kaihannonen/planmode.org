@@ -1,0 +1,54 @@
+name: react-vite
+version: 0.1.0
+type: harness
+description: React 19 SPA on Vite with TypeScript, Vitest and behaviour-level component tests
+author: planmode
+license: MIT
+category: frontend
+tags: [react, vite, typescript, vitest, spa]
+
+targets: [claude, codex, cursor]
+
+includes:
+  rules:
+    - ../_shared/rules/typescript-strict.md
+    - rules/react-hooks.md
+    - rules/frontend-testing.md
+  plans:
+    - plans/react-feature.md
+
+verification:
+  commands:
+    - name: typecheck
+      run: npm run typecheck
+    - name: test
+      run: npm test
+    - name: build
+      run: npm run build
+
+evals:
+  - name: package-manifest
+    kind: path-exists
+    path: package.json
+  - name: source-directory
+    kind: path-exists
+    path: src
+  - name: no-explicit-any
+    kind: grep-absent
+    path: src
+    glob: "**/*.{ts,tsx}"
+    pattern: ':\s*any\b'
+    severity: error
+  - name: no-dangerous-html
+    kind: grep-absent
+    path: src
+    glob: "**/*.{ts,tsx}"
+    pattern: 'dangerouslySetInnerHTML'
+    severity: error
+  - name: has-tests
+    kind: grep-present
+    path: src
+    glob: "**/*.{test,spec}.{ts,tsx}"
+    pattern: 'describe\(|it\(|test\('
+    min: 1
+    severity: warn
