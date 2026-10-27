@@ -5,6 +5,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   build-website:
@@ -50,6 +51,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+
+      - name: Install the prototype validator dependency
+        run: npm ci
+        working-directory: cli
 
       - run: node prototypes/validate.mjs
 
