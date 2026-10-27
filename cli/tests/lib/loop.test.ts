@@ -61,7 +61,7 @@ function writeAgent(
       "const failure = process.env.PLANMODE_FAILURE_FILE;",
       'const target = path.join(workspace, "src", "a.ts");',
       `const mode = ${JSON.stringify(mode)};`,
-      "const clean = 'export const wait = () => setTimeout(() => {}, 10);\\n';",
+      "const clean = 'export const wait = () => setTimeout(() => {}, 10);\\nexport const built = true;\\n';",
       "const withConsole = 'export const wait = () => setTimeout(() => {}, 10);\\nconsole.log(\"debug\");\\n';",
       "const noTimeout = 'console.log(\"debug\");\\n';",
       "if (mode === 'tamper') {",
@@ -160,7 +160,7 @@ describe("runLoop", () => {
       sourceDir: source,
       harnessPath: path.join(source, "harness.yaml"),
       reportDir: useTmpDir(),
-      agentCommand: `"${process.execPath}" -e "process.exit(0)"`,
+      agentCommand: `"${process.execPath}" -e "require('fs').appendFileSync(process.env.PLANMODE_WORKSPACE + '/src/a.ts', 'export const built = true;\\n')"`,
       skipCommands: true,
       maxIterations: 1,
     });
@@ -195,6 +195,79 @@ describe("runLoop", () => {
         agentTimeout: -1,
       }),
     ).toThrow(/agent-timeout/);
+  });
+
+  it("runs an independent semantic reviewer after deterministic checks pass", () => {
+    const source = useTmpDir();
+    const reports = useTmpDir();
+    writeProject(source);
+    const agent = writeAgent(useTmpDir(), "fix");
+    const judgeScript = path.join(useTmpDir(), "judge.mjs");
+    writeFile(
+      path.dirname(judgeScript),
+      "judge.mjs",
+      [
+        'import fs from "node:fs";',
+        "fs.writeFileSync(process.env.PLANMODE_JUDGE_OUTPUT, JSON.stringify({ verdict: 'pass', summary: 'looks good', findings: [] }));",
+      ].join("\n"),
+    );
+
+    const result = runLoop({
+      sourceDir: source,
+      harnessPath: path.join(source, "harness.yaml"),
+      reportDir: reports,
+      agentCommand: commandFor(agent),
+      judgeAgent: commandFor(judgeScript),
+      maxIterations: 2,
+    });
+
+    expect(result.status).toBe("passed");
+    expect(result.judge?.semantic?.status).toBe("pass");
+    expect(
+      fs.existsSync(path.join(reports, "run-2", "SEMANTIC_REVIEW.json")),
+    ).toBe(true);
+    expect(fs.existsSync(path.join(reports, "run-2", "JUDGE.json"))).toBe(true);
+  });
+
+  it("uses a frozen plan contract and records its hash", () => {
+    const source = useTmpDir();
+    const reports = useTmpDir();
+    writeProject(source);
+    const plan = path.join(source, "plan.md");
+    writeFile(
+      source,
+      "plan.md",
+      [
+        "---",
+        "contract:",
+        "  acceptance:",
+        "    - no console logs",
+        "  allowed_paths:",
+        "    - src/**",
+        "---",
+        "",
+        "Remove console logs and leave the timeout in place.",
+        "",
+      ].join("\n"),
+    );
+    const agent = writeAgent(useTmpDir(), "fix");
+
+    const result = runLoop({
+      sourceDir: source,
+      harnessPath: path.join(source, "harness.yaml"),
+      reportDir: reports,
+      planPath: plan,
+      agentCommand: commandFor(agent),
+      maxIterations: 2,
+    });
+
+    expect(result.status).toBe("passed");
+    expect(result.planHash).toBeTruthy();
+    expect(result.contractHash).toBeTruthy();
+    expect(result.judge?.contract?.hash).toBe(result.contractHash);
+    expect(result.judge?.plan?.hash).toBe(result.planHash);
+    expect(fs.existsSync(path.join(reports, "contract.json"))).toBe(true);
+    expect(fs.existsSync(path.join(reports, "plan.sha256"))).toBe(true);
   });
 
   it("stops when the builder edits a protected file", () => {

@@ -98,6 +98,36 @@ describe("runCheck", () => {
     );
   });
 
+  it("reruns a failed command once and records flakiness", () => {
+    const dir = useTmpDir();
+    writeHarness(dir, `"${process.execPath}" "flaky.mjs"`);
+    writeCleanProject(dir);
+    writeFile(
+      dir,
+      "flaky.mjs",
+      [
+        'import fs from "node:fs";',
+        'if (!fs.existsSync("flaky.count")) {',
+        '  fs.writeFileSync("flaky.count", "1");',
+        "  process.exit(1);",
+        "}",
+        "process.exit(0);",
+        "",
+      ].join("\n"),
+    );
+
+    const withoutRerun = runCheck({ targetDir: dir });
+    expect(withoutRerun.failed).toBe(1);
+
+    fs.rmSync(path.join(dir, "flaky.count"), { force: true });
+    const report = runCheck({ targetDir: dir, rerunFailures: true });
+    expect(report.failed).toBe(0);
+    expect(report.flaky).toContain("command:smoke");
+    const smoke = report.results.find((result) => result.name === "command:smoke");
+    expect(smoke?.attempts).toBe(2);
+    expect(smoke?.first_attempt_status).toBe("fail");
+  });
+
   it("fails a command with a non-zero exit", () => {
     const dir = useTmpDir();
     writeHarness(dir, "node -e \"process.exit(3)\"");
