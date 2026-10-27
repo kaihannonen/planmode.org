@@ -254,8 +254,10 @@ contract:
 ```
 
 A criterion with `check` must map to a check that runs and passes. A criterion
-without `check` is left to the optional semantic reviewer. The plan and contract
-hashes are frozen before the loop starts and recorded in `JUDGE.json`.
+without `check` is left to the optional semantic reviewer. If a contract has an
+unmapped criterion and no reviewer is configured, the judge is `inconclusive`
+rather than silently passing. The plan and contract hashes are frozen before the
+loop starts and recorded in `JUDGE.json`.
 
 ### Optional semantic reviewer
 

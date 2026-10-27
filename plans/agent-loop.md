@@ -151,9 +151,9 @@ contract:
 
 `check` is optional. A criterion with a check is a deterministic gate: the named
 check must exist and pass. A criterion without a check is reviewed by the
-optional semantic reviewer. Check names are the same names `planmode check`
-prints (`no-console-log`, `command:api-tests`,
-`guard:prevent-no-raw-sql`).
+optional semantic reviewer; without a reviewer the judge is `inconclusive`, not
+pass. Check names are the same names `planmode check` prints (`no-console-log`,
+`command:api-tests`, `guard:prevent-no-raw-sql`).
 
 ### 2. Baseline
 

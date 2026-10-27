@@ -419,6 +419,44 @@ describe("judge report", () => {
     expect(missing.status).toBe("fail");
     expect(missing.reason).toContain("smoke passes");
     expect(missing.acceptance[0]?.status).toBe("missing");
+
+    const unmappedContract = {
+      contract: contract({
+        acceptance: [{ criterion: "intent is correct" }],
+      }),
+      hash: "contract-hash",
+      source: "plan-frontmatter" as const,
+    };
+    const withoutReviewer = buildJudgeReport({
+      check: checkReport(),
+      diff: diffReport(),
+      contract: unmappedContract,
+    });
+    expect(withoutReviewer.status).toBe("inconclusive");
+
+    const withPendingReviewer = buildJudgeReport({
+      check: checkReport(),
+      diff: diffReport(),
+      contract: unmappedContract,
+      semanticRequested: true,
+    });
+    expect(withPendingReviewer.status).toBe("pass");
+
+    const withPassingReviewer = buildJudgeReport({
+      check: checkReport(),
+      diff: diffReport(),
+      contract: unmappedContract,
+      semanticRequested: true,
+      semantic: {
+        status: "pass",
+        summary: "intent is correct",
+        findings: [],
+        command: "reviewer",
+        duration_ms: 1,
+        output_file: "/tmp/out.json",
+      },
+    });
+    expect(withPassingReviewer.status).toBe("pass");
   });
 
   it("writes JSON and Markdown artifacts", () => {

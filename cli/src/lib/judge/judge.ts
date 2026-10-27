@@ -18,6 +18,8 @@ export interface BuildJudgeOptions {
   planHash?: string;
   planFile?: string;
   semantic?: SemanticReview;
+  /** True when the caller will run a semantic reviewer for unmapped criteria. */
+  semanticRequested?: boolean;
   allowUnverified?: boolean;
 }
 
@@ -104,6 +106,14 @@ export function buildJudgeReport(options: BuildJudgeOptions): JudgeReport {
   ) {
     status = "inconclusive";
     reason = `Checks were not fully verified: ${options.check.not_verified.join("; ")}`;
+  } else if (
+    acceptance.some((item) => item.status === "unmapped") &&
+    !options.semanticRequested &&
+    !options.semantic
+  ) {
+    status = "inconclusive";
+    reason =
+      "Contract acceptance criteria have no deterministic check. Add a check or run an independent semantic reviewer.";
   } else if (options.semantic) {
     if (options.semantic.status === "fail") {
       status = "needs_human";
