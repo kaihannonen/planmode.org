@@ -73,6 +73,12 @@ export interface CheckResult {
   match_count?: number;
   output?: string;
   exit_code?: number | null;
+  /** Number of attempts when flake reruns are enabled. */
+  attempts?: number;
+  /** True when a failed command passed on a rerun. */
+  flaky?: boolean;
+  first_attempt_status?: CheckStatus;
+  first_attempt_detail?: string;
   /** The definition that produced this result. Included for failed checks. */
   definition?: CheckDefinition;
 }
@@ -100,6 +106,7 @@ export interface CheckReport {
   changed_files: string[];
   results: CheckResult[];
   fixed: string[];
+  flaky: string[];
   new_failures: string[];
   definition_changes: string[];
   not_verified: string[];

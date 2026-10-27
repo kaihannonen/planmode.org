@@ -17,6 +17,7 @@ import { snapshotCommand } from "./commands/snapshot.js";
 import { contextCommand } from "./commands/context.js";
 import { checkCommand } from "./commands/check.js";
 import { guardCommand } from "./commands/guard.js";
+import { judgeCommand } from "./commands/judge.js";
 import { loopCommand } from "./commands/loop.js";
 import { isInteractive } from "./lib/prompts.js";
 
@@ -45,6 +46,7 @@ program.addCommand(snapshotCommand);
 program.addCommand(contextCommand);
 program.addCommand(checkCommand);
 program.addCommand(guardCommand);
+program.addCommand(judgeCommand);
 program.addCommand(loopCommand);
 
 // If no args and interactive TTY, show the interactive menu

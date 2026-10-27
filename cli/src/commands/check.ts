@@ -15,6 +15,7 @@ interface CheckCliOptions {
   saveBaseline?: string;
   changedOnly?: boolean;
   skipCommands?: boolean;
+  rerunFailures?: boolean;
   allowUnverified?: boolean;
   writeSuggestions?: boolean;
   reportDir?: string;
@@ -40,6 +41,10 @@ export const checkCommand = new Command("check")
   .option("--changed-only", "Only scan files changed since the base/baseline")
   .option("--skip-commands", "Do not run verification commands")
   .option(
+    "--rerun-failures",
+    "Rerun failed command checks once to detect flakes",
+  )
+  .option(
     "--allow-unverified",
     "Exit 0 even when some required checks were skipped",
   )
@@ -63,6 +68,7 @@ export const checkCommand = new Command("check")
         saveBaselinePath: options.saveBaseline,
         changedOnly: options.changedOnly,
         skipCommands: options.skipCommands,
+        rerunFailures: options.rerunFailures,
         writeSuggestions: options.writeSuggestions,
         reportDir: options.reportDir,
         agent: options.agent,

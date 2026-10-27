@@ -30,6 +30,7 @@ export interface RunCheckOptions {
   saveBaselinePath?: string;
   changedOnly?: boolean;
   skipCommands?: boolean;
+  rerunFailures?: boolean;
   writeSuggestions?: boolean;
   reportDir?: string;
   agent?: string;
@@ -179,6 +180,17 @@ export function formatProof(report: CheckReport): string {
     lines.push("");
   }
 
+  if (report.flaky.length > 0) {
+    lines.push("## Flaky checks");
+    lines.push("");
+    lines.push(
+      "These command checks failed once and passed on a rerun. Treat the result as lower confidence.",
+    );
+    lines.push("");
+    for (const name of report.flaky) lines.push(`- ${name}`);
+    lines.push("");
+  }
+
   if (report.definition_changes.length > 0) {
     lines.push("## Changed check definitions");
     lines.push("");
@@ -261,6 +273,9 @@ export function formatCheckReport(report: CheckReport): string {
   }
   if (report.fixed.length > 0) {
     lines.push(`  fixed since baseline: ${report.fixed.join(", ")}`);
+  }
+  if (report.flaky.length > 0) {
+    lines.push(`  flaky on rerun: ${report.flaky.join(", ")}`);
   }
   if (report.definition_changes.length > 0) {
     lines.push(
@@ -376,6 +391,45 @@ export function runCheck(options: RunCheckOptions = {}): CheckReport {
     results.push(result);
   }
 
+  if (options.rerunFailures) {
+    for (const result of results) {
+      if (
+        (result.status !== "fail" && result.status !== "error") ||
+        result.definition?.kind !== "command"
+      ) {
+        continue;
+      }
+      const firstStatus = result.status;
+      const firstDetail = result.detail;
+      const firstOutput = result.output;
+      const rerun = runSingleCheck(result.definition, {
+        targetDir,
+        changedFiles: changedDefinitionSet.has(result.name)
+          ? undefined
+          : changedSet,
+        skipCommands: options.skipCommands,
+      });
+      result.attempts = 2;
+      if (rerun.status === "pass") {
+        result.flaky = true;
+        result.first_attempt_status = firstStatus;
+        result.first_attempt_detail = firstDetail;
+        result.status = "pass";
+        result.detail = `passed on rerun; first attempt ${firstStatus}: ${firstDetail}`;
+        result.output = firstOutput
+          ? `${firstOutput}\n--- rerun ---\n${rerun.output ?? ""}`.trim()
+          : rerun.output;
+        result.exit_code = rerun.exit_code;
+      } else {
+        result.detail = `${firstDetail} (failed on rerun too)`;
+        result.output = [firstOutput, rerun.output]
+          .filter(Boolean)
+          .join("\n--- rerun ---\n");
+        result.exit_code = rerun.exit_code;
+      }
+    }
+  }
+
   const summary = summarize(results);
   const newFailures = results
     .filter((result) => {
@@ -392,10 +446,14 @@ export function runCheck(options: RunCheckOptions = {}): CheckReport {
     .filter(
       (result) =>
         result.status === "pass" &&
+        !result.flaky &&
         !changedDefinitionSet.has(result.name) &&
         (baselineResults[result.name] === "fail" ||
           baselineResults[result.name] === "error"),
     )
+    .map((result) => result.name);
+  const flaky = results
+    .filter((result) => result.flaky)
     .map((result) => result.name);
 
   const notVerified: string[] = [];
@@ -452,6 +510,7 @@ export function runCheck(options: RunCheckOptions = {}): CheckReport {
     changed_files: changedFiles,
     results,
     fixed,
+    flaky,
     new_failures: newFailures,
     definition_changes: definitionChanges,
     not_verified: notVerified,

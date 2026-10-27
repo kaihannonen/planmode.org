@@ -4,8 +4,11 @@ import { logger } from "../lib/logger.js";
 
 interface LoopCliOptions {
   plan?: string;
+  contract?: string;
   agent: string;
   agentName?: string;
+  judgeAgent?: string;
+  judgeTimeout?: string;
   target?: string;
   workspace?: string;
   harness?: string;
@@ -13,6 +16,7 @@ interface LoopCliOptions {
   maxIterations?: string;
   agentTimeout?: string;
   skipCommands?: boolean;
+  rerunFailures?: boolean;
   allowUnverified?: boolean;
   linkDeps?: boolean;
   reportDir?: string;
@@ -25,11 +29,20 @@ export const loopCommand = new Command("loop")
     "Run an external builder in a copied workspace, verify, and stop on no progress",
   )
   .option("--plan <file>", "Plan or task description to give the builder")
+  .option(
+    "--contract <file>",
+    "Explicit contract YAML (default: plan frontmatter or .planmode/contract.yaml)",
+  )
   .requiredOption(
     "--agent <command>",
     "Builder command. Prompt is in $PLANMODE_PROMPT and $PLANMODE_PROMPT_FILE",
   )
   .option("--agent-name <name>", "Attribution name (claude, codex, opencode, ...)")
+  .option(
+    "--judge-agent <command>",
+    "Independent semantic reviewer. Prompt is in $PLANMODE_JUDGE_PROMPT",
+  )
+  .option("--judge-timeout <seconds>", "Semantic reviewer timeout", "300")
   .option("--target <dir>", "Project to copy", ".")
   .option("--workspace <dir>", "Use an existing workspace instead of making a copy")
   .option("--harness <path>", "Harness directory or harness.yaml")
@@ -37,6 +50,10 @@ export const loopCommand = new Command("loop")
   .option("--max-iterations <n>", "Attempt budget", "3")
   .option("--agent-timeout <seconds>", "Per-attempt timeout", "900")
   .option("--skip-commands", "Do not run verification commands")
+  .option(
+    "--rerun-failures",
+    "Rerun failed command checks once to detect flakes",
+  )
   .option(
     "--allow-unverified",
     "Accept a pass even when required checks were skipped",
@@ -54,10 +71,15 @@ export const loopCommand = new Command("loop")
         sourceDir: options.target ?? ".",
         workspace: options.workspace,
         planPath: options.plan,
+        contractPath: options.contract,
         harnessPath: options.harness,
         guardsPath: options.guards,
         agentCommand: options.agent,
         agentName: options.agentName,
+        judgeAgent: options.judgeAgent,
+        judgeTimeout: options.judgeTimeout
+          ? Number(options.judgeTimeout)
+          : undefined,
         maxIterations: options.maxIterations
           ? Number(options.maxIterations)
           : undefined,
@@ -65,6 +87,7 @@ export const loopCommand = new Command("loop")
           ? Number(options.agentTimeout)
           : undefined,
         skipCommands: options.skipCommands,
+        rerunFailures: options.rerunFailures,
         allowUnverified: options.allowUnverified,
         linkDependencies: options.linkDeps,
         reportDir: options.reportDir,
