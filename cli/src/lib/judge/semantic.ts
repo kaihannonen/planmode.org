@@ -18,6 +18,8 @@ export interface SemanticReviewOptions {
   outputFile: string;
   promptFile?: string;
   timeoutSeconds?: number;
+  /** Orchestration state that the reviewer may write to without being flagged. */
+  excludePaths?: string[];
 }
 
 interface SemanticPayload {
@@ -163,7 +165,7 @@ export function runSemanticReview(
   fs.mkdirSync(path.dirname(promptFile), { recursive: true });
   fs.writeFileSync(promptFile, options.prompt, "utf-8");
 
-  const before = snapshotTree(options.workspace);
+  const before = snapshotTree(options.workspace, options.excludePaths);
   const env = {
     ...process.env,
     PLANMODE_JUDGE_PROMPT: options.prompt,
@@ -181,7 +183,7 @@ export function runSemanticReview(
     maxBuffer: 20 * 1024 * 1024,
     env,
   });
-  const after = snapshotTree(options.workspace);
+  const after = snapshotTree(options.workspace, options.excludePaths);
   const edits = changedSnapshotFiles(before, after);
 
   const fileRaw = fs.existsSync(options.outputFile)

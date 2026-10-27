@@ -622,6 +622,7 @@ export function runLoop(options: LoopOptions): LoopResult {
         outputFile,
         promptFile,
         timeoutSeconds: options.judgeTimeout,
+        excludePaths: [iterationDir, stateDir],
       });
       writeSemanticArtifact(semantic, iterationDir);
       judge = buildJudgeReport({

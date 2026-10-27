@@ -167,6 +167,7 @@ export const judgeCommand = new Command("judge")
           outputFile,
           promptFile,
           timeoutSeconds: judgeTimeout,
+          excludePaths: [reportDir],
         });
         writeSemanticArtifact(semantic, reportDir);
         judge = buildJudgeReport({
