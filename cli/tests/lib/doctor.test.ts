@@ -202,3 +202,50 @@ describe("runDoctor — rules", () => {
     expect(result.issues).toHaveLength(0);
   });
 });
+
+// ── client-specific targets ──
+
+describe("runDoctor — client targets", () => {
+  it("does not require a CLAUDE.md import for a codex-only plan", () => {
+    const dir = useTmpDir();
+    const content = "# Codex Plan";
+    const entry: LockfileEntry = {
+      ...makePlanEntry("codex-plan", content),
+      targets: ["codex"],
+    };
+    writeFile(dir, "plans/codex-plan.md", content);
+    writeFile(
+      dir,
+      "AGENTS.md",
+      "<!-- planmode:start:codex-plan -->\n## Plan: codex-plan\n<!-- planmode:end:codex-plan -->\n",
+    );
+    writeLockfile(dir, {
+      lockfile_version: 1,
+      packages: { "codex-plan": entry },
+    });
+
+    const result = runDoctor(dir);
+    expect(result.healthy).toBe(true);
+    expect(result.issues).toHaveLength(0);
+  });
+
+  it("reports a missing AGENTS.md section for a codex install", () => {
+    const dir = useTmpDir();
+    const content = "# Codex Plan";
+    const entry: LockfileEntry = {
+      ...makePlanEntry("codex-plan", content),
+      targets: ["codex"],
+    };
+    writeFile(dir, "plans/codex-plan.md", content);
+    writeLockfile(dir, {
+      lockfile_version: 1,
+      packages: { "codex-plan": entry },
+    });
+
+    const result = runDoctor(dir);
+    expect(result.healthy).toBe(false);
+    expect(result.issues.some((issue) => issue.message.startsWith("codex:"))).toBe(
+      true,
+    );
+  });
+});

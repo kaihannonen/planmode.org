@@ -3,6 +3,8 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { readLockfile } from "./lockfile.js";
 import { listImports } from "./claude-md.js";
+import { checkTargets, getEntryTargets } from "./targets.js";
+import type { InstallTarget } from "../types/index.js";
 
 export interface DiagnosticIssue {
   severity: "error" | "warning";
@@ -49,13 +51,41 @@ export function runDoctor(projectDir: string = process.cwd()): DoctorResult {
         fix: "File was modified locally. Run `planmode update " + name + "` to restore, or ignore if intentional",
       });
     }
+
+    // Client-specific references. Claude's canonical file and CLAUDE.md import
+    // are checked below; Codex/OpenCode/Cursor references are checked here.
+    const targets = getEntryTargets(
+      entry.targets as InstallTarget[] | undefined,
+    );
+    if (entry.type !== "prompt") {
+      for (const target of targets) {
+        if (target === "claude") continue;
+        for (const targetIssue of checkTargets({
+          targets: [target],
+          name,
+          type: entry.type,
+          projectDir,
+        })) {
+          issues.push({
+            severity: "error",
+            message: `${target}: ${targetIssue.message} (${name})`,
+            fix: `Run \`planmode install ${name} --target ${target}\` to restore`,
+          });
+        }
+      }
+    }
   }
 
   // Check CLAUDE.md imports match installed plans
   const claudeMdPath = path.join(projectDir, "CLAUDE.md");
   const imports = listImports(projectDir);
   const installedPlans = entries
-    .filter(([, entry]) => entry.type === "plan")
+    .filter(([, entry]) => {
+      if (entry.type !== "plan") return false;
+      return getEntryTargets(
+        entry.targets as InstallTarget[] | undefined,
+      ).includes("claude");
+    })
     .map(([name]) => name);
 
   // Plans in lockfile but missing from CLAUDE.md

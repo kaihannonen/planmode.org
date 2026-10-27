@@ -1,32 +1,23 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
-import type { PackageManifest, PackageType, LockfileEntry, ResolvedPackage } from "../types/index.js";
+import type { LockfileEntry, InstallTarget } from "../types/index.js";
 import { resolveVersion, parseDepString } from "./resolver.js";
 import { fetchVersionMetadata, fetchPackageMetadata } from "./registry.js";
 import { fetchFileAtTag } from "./git.js";
 import { addToLockfile, removeFromLockfile, getLockedVersion } from "./lockfile.js";
-import { addImport, removeImport } from "./claude-md.js";
 import { parseManifest, readPackageContent } from "./manifest.js";
 import { renderTemplate, collectVariableValues } from "./template.js";
 import { logger } from "./logger.js";
 import { trackDownload } from "./analytics.js";
 import { isInteractive, promptForVariables, withSpinner } from "./prompts.js";
-
-function getInstallDir(type: PackageType): string {
-  switch (type) {
-    case "plan":
-      return "plans";
-    case "rule":
-      return path.join(".claude", "rules");
-    case "prompt":
-      return "prompts";
-  }
-}
-
-function getInstallPath(name: string, type: PackageType): string {
-  return path.join(getInstallDir(type), `${name}.md`);
-}
+import { canonicalInstallPath } from "./clients/paths.js";
+import {
+  applyTargets,
+  getEntryTargets,
+  removeTargets,
+  resolveTargets,
+} from "./targets.js";
 
 function contentHash(content: string): string {
   return `sha256:${crypto.createHash("sha256").update(content).digest("hex")}`;
@@ -39,6 +30,7 @@ export interface InstallOptions {
   variables?: Record<string, string>;
   projectDir?: string;
   interactive?: boolean;
+  targets?: string[] | string;
 }
 
 export async function installPackage(
@@ -47,10 +39,12 @@ export async function installPackage(
 ): Promise<void> {
   const projectDir = options.projectDir ?? process.cwd();
   const interactive = options.interactive ?? (isInteractive() && !options.noInput);
+  const targets = resolveTargets(options.targets, projectDir);
 
-  // Check lockfile first
+  // Check lockfile first. An explicit --target still reinstalls so a package
+  // can be added to another client without changing its version.
   const locked = getLockedVersion(packageName, projectDir);
-  if (locked && !options.version) {
+  if (locked && !options.version && !options.targets) {
     logger.dim(`${packageName}@${locked.version} already installed`);
     return;
   }
@@ -125,7 +119,7 @@ export async function installPackage(
 
   // Determine type (--rule overrides)
   const type = options.forceRule ? "rule" : manifest.type;
-  const installPath = getInstallPath(packageName, type);
+  const installPath = canonicalInstallPath(packageName, type);
   const fullPath = path.join(projectDir, installPath);
 
   // Check for conflicts
@@ -156,15 +150,17 @@ export async function installPackage(
   logger.success(`Installed ${packageName}@${version} → ${installPath}`);
   trackDownload(packageName);
 
-  // Update CLAUDE.md for plans
-  if (type === "plan") {
-    addImport(packageName, projectDir);
-    logger.dim(`Added @plans/${packageName}.md to CLAUDE.md`);
-    logger.dim(`Claude Code will automatically see this plan in your next conversation.`);
-  }
-
-  if (type === "rule") {
-    logger.dim(`Rule is active — Claude Code auto-loads all files in .claude/rules/.`);
+  // Add client-specific references (CLAUDE.md, AGENTS.md, .cursor/rules, ...)
+  if (type !== "prompt") {
+    applyTargets({
+      targets,
+      name: packageName,
+      type,
+      content,
+      description: manifest.description,
+      projectDir,
+    });
+    logger.dim(`Active for: ${targets.join(", ")}`);
   }
 
   if (type === "prompt") {
@@ -181,6 +177,7 @@ export async function installPackage(
     sha: versionMeta.source.sha,
     content_hash: hash,
     installed_to: installPath,
+    targets: getEntryTargets(targets),
   };
   addToLockfile(packageName, entry, projectDir);
 
@@ -196,6 +193,7 @@ export async function installPackage(
       await installPackage(name, {
         version: range === "*" ? undefined : range,
         projectDir,
+        targets,
         noInput: options.noInput,
         interactive: options.interactive,
       });
@@ -219,10 +217,14 @@ export async function uninstallPackage(
     logger.success(`Removed ${locked.installed_to}`);
   }
 
-  // Remove import from CLAUDE.md
-  if (locked.type === "plan") {
-    removeImport(packageName, projectDir);
-    logger.dim(`Removed @import from CLAUDE.md`);
+  // Remove client-specific references
+  if (locked.type !== "prompt") {
+    removeTargets({
+      targets: getEntryTargets(locked.targets as InstallTarget[] | undefined),
+      name: packageName,
+      type: locked.type,
+      projectDir,
+    });
   }
 
   // Update lockfile
@@ -247,8 +249,12 @@ export async function updatePackage(
 
   logger.info(`Updating ${packageName}: ${locked.version} → ${version}`);
 
-  // Uninstall old, install new
+  // Uninstall old, install new, keeping the same client targets
   await uninstallPackage(packageName, projectDir);
-  await installPackage(packageName, { version, projectDir });
+  await installPackage(packageName, {
+    version,
+    projectDir,
+    targets: locked.targets,
+  });
   return true;
 }

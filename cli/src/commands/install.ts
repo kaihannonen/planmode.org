@@ -21,12 +21,22 @@ export const installCommand = new Command("install")
   .argument("<package>", "Package name (e.g., nextjs-tailwind-starter)")
   .option("-v, --version <version>", "Install specific version")
   .option("--rule", "Force install as a rule to .claude/rules/")
+  .option(
+    "-t, --target <targets>",
+    "Comma-separated install targets: claude, codex, cursor, opencode, or all",
+  )
   .option("--no-input", "Fail if any required variable is missing")
   .option("--set <key=value...>", "Set template variables (e.g., --set project_name=myapp)")
   .action(
     async (
       packageName: string,
-      options: { version?: string; rule?: boolean; input?: boolean; set?: string[] },
+      options: {
+        version?: string;
+        rule?: boolean;
+        target?: string;
+        input?: boolean;
+        set?: string[];
+      },
     ) => {
       try {
         const interactive = isInteractive() && options.input !== false;
@@ -41,6 +51,7 @@ export const installCommand = new Command("install")
         await installPackage(packageName, {
           version: options.version,
           forceRule: options.rule,
+          targets: options.target,
           noInput: options.input === false,
           variables,
           interactive,
