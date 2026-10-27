@@ -89,7 +89,10 @@ function contractData(data: unknown): unknown {
     throw new Error("Contract must be a YAML object.");
   }
   const record = data as Record<string, unknown>;
-  return record.contract ?? record;
+  if (Object.prototype.hasOwnProperty.call(record, "contract")) {
+    return record.contract;
+  }
+  return record;
 }
 
 export function normalizeContract(data: unknown): Contract {

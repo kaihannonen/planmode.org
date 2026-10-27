@@ -146,7 +146,7 @@ export const judgeCommand = new Command("judge")
         contract,
         planHash,
         planFile: planPath,
-        semanticRequested: Boolean(options.judgeAgent),
+        semanticPending: Boolean(options.judgeAgent),
         allowUnverified: options.allowUnverified,
       });
 
@@ -178,7 +178,6 @@ export const judgeCommand = new Command("judge")
           planHash,
           planFile: planPath,
           semantic,
-          semanticRequested: Boolean(options.judgeAgent),
           allowUnverified: options.allowUnverified,
         });
       }

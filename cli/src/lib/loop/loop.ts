@@ -605,7 +605,7 @@ export function runLoop(options: LoopOptions): LoopResult {
       contract,
       planHash,
       planFile: planPath,
-      semanticRequested: Boolean(options.judgeAgent),
+      semanticPending: Boolean(options.judgeAgent),
       allowUnverified: options.allowUnverified,
     });
 
@@ -637,7 +637,6 @@ export function runLoop(options: LoopOptions): LoopResult {
         planHash,
         planFile: planPath,
         semantic,
-        semanticRequested: Boolean(options.judgeAgent),
         allowUnverified: options.allowUnverified,
       });
     }

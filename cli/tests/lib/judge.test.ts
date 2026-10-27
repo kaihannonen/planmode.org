@@ -180,6 +180,7 @@ describe("contract", () => {
       title: "x",
     });
     expect(() => normalizeContract({ version: 2 })).toThrow(/version/);
+    expect(() => normalizeContract({ contract: null })).toThrow(/YAML object/);
     expect(() =>
       normalizeContract({ max_changed_files: 0 }),
     ).toThrow(/positive integer/);
@@ -438,7 +439,7 @@ describe("judge report", () => {
       check: checkReport(),
       diff: diffReport(),
       contract: unmappedContract,
-      semanticRequested: true,
+      semanticPending: true,
     });
     expect(withPendingReviewer.status).toBe("pass");
 
@@ -446,7 +447,6 @@ describe("judge report", () => {
       check: checkReport(),
       diff: diffReport(),
       contract: unmappedContract,
-      semanticRequested: true,
       semantic: {
         status: "pass",
         summary: "intent is correct",
