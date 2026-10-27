@@ -61,6 +61,10 @@ planmode list
 | `planmode init` | Create a new package |
 | `planmode publish` | Publish to the registry |
 | `planmode login` | Configure GitHub auth |
+| `planmode check` | Run deterministic harness checks |
+| `planmode judge` | Run checks, a diff audit, and an optional semantic reviewer |
+| `planmode guard` | Add, verify, list, or propose permanent bug guards |
+| `planmode loop` | Run a builder through check/fix iterations in a copied workspace |
 
 ## How it works
 
