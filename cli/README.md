@@ -5,6 +5,15 @@ The open source package manager for AI plans, rules, and prompts.
 **Website:** [planmode.org](https://planmode.org)
 **Repository:** [github.com/kaihannonen/planmode.org](https://github.com/kaihannonen/planmode.org)
 
+> **Beta:** the verification commands (`check`, `judge`, `loop`, and `guard`)
+> are in `0.5.0-beta.1`. Install the prerelease with:
+>
+> ```bash
+> npm install -g planmode@next
+> ```
+>
+> The stable `latest` release (`0.4.0`) does not include these commands yet.
+
 ## Install
 
 ```bash

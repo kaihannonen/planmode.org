@@ -6,6 +6,10 @@ The open source package manager for AI plans, rules, and prompts.
 **CLI:** [npm](https://www.npmjs.com/package/planmode)
 **License:** MIT
 
+> **Beta:** `check`, `judge`, `loop`, and `guard` are in `0.5.0-beta.1`.
+> Install it with `npm install -g planmode@next`. The stable `latest` release
+> (`0.4.0`) does not include these commands yet.
+
 ## What is Planmode?
 
 Developers share code through npm, pip, cargo. But AI instructions — the plans, rules, and prompts that drive AI-assisted development — have no equivalent. Planmode fixes that.

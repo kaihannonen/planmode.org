@@ -5,6 +5,11 @@ contracts, the deterministic diff audit, and an optional semantic reviewer are
 implemented. Runtime evidence, AST checks, mutation testing, and cross-client
 comparison are still to build.
 
+Release status: prepared as `0.5.0-beta.1`; not published. The beta includes
+cross-client targets and the verification loop. It is opt-in through the npm
+`next` dist-tag; `latest` remains `0.4.0` until the private testbed and beta
+feedback are green.
+
 This document describes the local development loop that should make agent output
 trustworthy without requiring a git commit at every step. It also defines how a
 bug found during verification becomes a **deterministic guard** so the same class
@@ -468,7 +473,7 @@ in the builder's context, but the guard is what prevents recurrence.
 - Diff audit for protected files, allowed scope, existing test edits, dependency
   manifests, secrets, binary changes, stubs, deleted files, and size budgets.
 - Deterministic guard suggestions from failed checks.
-- 198 CLI tests, including temp-directory tests with no git repository and
+- 202 CLI tests, including temp-directory tests with no git repository and
   semantic-reviewer/loop integration.
 - The prototype fixtures reproduce the earlier scores exactly: `go-api` 20/100
   on bad and 100/100 on good; command fixtures pass/fail correctly.
