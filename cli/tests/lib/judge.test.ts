@@ -492,6 +492,49 @@ describe("semantic reviewer", () => {
     expect(result.summary).toContain("modified the workspace");
   });
 
+  it("does not reuse a stale reviewer verdict", () => {
+    const workspace = useTmpDir();
+    const artifacts = useTmpDir();
+    const outputFile = path.join(artifacts, "semantic-agent.json");
+    fs.writeFileSync(
+      outputFile,
+      JSON.stringify({ verdict: "pass", summary: "stale", findings: [] }),
+    );
+    const command = reviewer(
+      artifacts,
+      'import process from "node:process"; process.exit(0);',
+    );
+    const result = runSemanticReview({
+      command,
+      workspace,
+      prompt: "review",
+      outputFile,
+    });
+    expect(result.status).toBe("inconclusive");
+  });
+
+  it("does not accept a pass verdict from a nonzero reviewer exit", () => {
+    const workspace = useTmpDir();
+    const artifacts = useTmpDir();
+    const outputFile = path.join(artifacts, "semantic-agent.json");
+    const command = reviewer(
+      artifacts,
+      [
+        'import fs from "node:fs";',
+        "fs.writeFileSync(process.env.PLANMODE_JUDGE_OUTPUT, JSON.stringify({ verdict: 'pass', summary: 'ok', findings: [] }));",
+        "process.exit(2);",
+      ].join("\n"),
+    );
+    const result = runSemanticReview({
+      command,
+      workspace,
+      prompt: "review",
+      outputFile,
+    });
+    expect(result.status).toBe("inconclusive");
+    expect(result.summary).toContain("exited 2");
+  });
+
   it("is inconclusive when the reviewer writes invalid output", () => {
     const workspace = useTmpDir();
     const artifacts = useTmpDir();

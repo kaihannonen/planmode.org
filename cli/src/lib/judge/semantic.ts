@@ -163,6 +163,8 @@ export function runSemanticReview(
     options.promptFile ?? `${options.outputFile}.prompt.md`;
   fs.mkdirSync(path.dirname(options.outputFile), { recursive: true });
   fs.mkdirSync(path.dirname(promptFile), { recursive: true });
+  // Never accept a stale verdict from a previous reviewer run.
+  fs.rmSync(options.outputFile, { force: true });
   fs.writeFileSync(promptFile, options.prompt, "utf-8");
 
   const before = snapshotTree(options.workspace, options.excludePaths);
@@ -218,6 +220,20 @@ export function runSemanticReview(
       status: "inconclusive",
       summary:
         `Semantic reviewer did not write a valid JSON verdict (exit ${code}).`,
+      findings,
+      command: options.command,
+      duration_ms: Date.now() - startedAt,
+      output_file: options.outputFile,
+      raw: raw.slice(0, 8000),
+    };
+  }
+
+  if (verdict === "pass" && (proc.error || proc.status !== 0)) {
+    const code = proc.status ?? "?";
+    return {
+      status: "inconclusive",
+      summary:
+        `Semantic reviewer returned pass but exited ${code}; refusing to accept it.`,
       findings,
       command: options.command,
       duration_ms: Date.now() - startedAt,
