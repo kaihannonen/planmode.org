@@ -143,6 +143,7 @@ contract:
     - "docs/security/**"
   allow_test_edits: false
   allow_dependency_changes: false
+  allow_binary_changes: false
   max_changed_files: 20
   max_changed_lines: 800
 ---
@@ -222,8 +223,9 @@ the same pieces after each builder attempt. The order is:
 1. deterministic gates: typecheck, lint, unit, integration, build, e2e
 2. acceptance checks: contract criteria mapped to named checks
 3. the permanent guard corpus
-4. diff audit: scope, protected files, deleted code, stubs, test tampering,
-   dependency changes, added secrets, and size limits
+4. diff audit: scope, protected files, deleted code, unimplemented stubs,
+   TODO/FIXME warnings, test tampering, dependency changes, binary changes,
+   added secrets, and size limits
 5. failure classification: pre-existing vs new, plus flaky reruns
 6. optional semantic review by a separate agent, with evidence
 
@@ -464,7 +466,7 @@ in the builder's context, but the guard is what prevents recurrence.
 - Diff audit for protected files, allowed scope, existing test edits, dependency
   manifests, secrets, binary changes, stubs, deleted files, and size budgets.
 - Deterministic guard suggestions from failed checks.
-- 191 CLI tests, including temp-directory tests with no git repository and
+- 193 CLI tests, including temp-directory tests with no git repository and
   semantic-reviewer/loop integration.
 - The prototype fixtures reproduce the earlier scores exactly: `go-api` 20/100
   on bad and 100/100 on good; command fixtures pass/fail correctly.

@@ -221,7 +221,9 @@ The diff audit fails on:
 - edits or deletions of existing test files, unless the contract allows them
 - dependency manifest or lockfile changes, unless the contract allows them
 - high-confidence secrets added by the change
-- binary changes, deleted files, and large diffs (warnings)
+- binary changes, unless `allow_binary_changes` is set
+- unimplemented stubs (errors); TODO/FIXME comments are warnings
+- deleted files and large diffs (warnings)
 - a no-op change
 
 It writes `JUDGE.json`, `JUDGE.md`, `DIFF_AUDIT.json`, and `DIFF_AUDIT.md`.
@@ -245,6 +247,7 @@ contract:
     - "docs/security/**"
   allow_test_edits: false
   allow_dependency_changes: false
+  allow_binary_changes: false
   max_changed_files: 20
   max_changed_lines: 800
 ---
