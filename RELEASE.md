@@ -40,6 +40,8 @@ The private testbed must also pass:
 
 - `planmode-testbed` CI against this branch
 - install/render snapshots for Claude, Codex, and OpenCode
+- the stable-vs-beta compatibility gate (`planmode@0.4.0` install output and
+  lockfile compatibility)
 - Cursor manual install check
 - one real builder smoke run
 - one optional semantic-review smoke run

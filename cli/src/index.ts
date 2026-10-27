@@ -20,13 +20,14 @@ import { guardCommand } from "./commands/guard.js";
 import { judgeCommand } from "./commands/judge.js";
 import { loopCommand } from "./commands/loop.js";
 import { isInteractive } from "./lib/prompts.js";
+import { readVersion } from "./version.js";
 
 const program = new Command();
 
 program
   .name("planmode")
   .description("The open source package manager for AI plans, rules, and prompts.")
-  .version("0.4.0");
+  .version(readVersion());
 
 program.addCommand(installCommand);
 program.addCommand(uninstallCommand);
