@@ -229,6 +229,35 @@ describe("runLoop", () => {
     expect(fs.existsSync(path.join(reports, "run-2", "JUDGE.json"))).toBe(true);
   });
 
+  it("stops for human review when the semantic reviewer rejects the change", () => {
+    const source = useTmpDir();
+    const reports = useTmpDir();
+    writeProject(source);
+    const agent = writeAgent(useTmpDir(), "fix");
+    const judgeScript = path.join(useTmpDir(), "judge-fail.mjs");
+    writeFile(
+      path.dirname(judgeScript),
+      "judge-fail.mjs",
+      [
+        'import fs from "node:fs";',
+        "fs.writeFileSync(process.env.PLANMODE_JUDGE_OUTPUT, JSON.stringify({ verdict: 'fail', summary: 'does not satisfy the plan', findings: [{ severity: 'error', message: 'behavior is incomplete' }] }));",
+      ].join("\n"),
+    );
+
+    const result = runLoop({
+      sourceDir: source,
+      harnessPath: path.join(source, "harness.yaml"),
+      reportDir: reports,
+      agentCommand: commandFor(agent),
+      judgeAgent: commandFor(judgeScript),
+      maxIterations: 3,
+    });
+
+    expect(result.status).toBe("needs_human");
+    expect(result.iterations).toHaveLength(2);
+    expect(result.judge?.semantic?.status).toBe("fail");
+  });
+
   it("uses a frozen plan contract and records its hash", () => {
     const source = useTmpDir();
     const reports = useTmpDir();
