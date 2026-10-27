@@ -1,0 +1,54 @@
+name: python-fastapi
+version: 0.1.0
+type: harness
+description: FastAPI service with SQLAlchemy and Alembic, typed routes and reversible migrations
+author: planmode
+license: MIT
+category: backend
+tags: [python, fastapi, sqlalchemy, alembic, postgres]
+
+targets: [claude, codex, cursor]
+
+includes:
+  rules:
+    - ../_shared/rules/python-strict.md
+    - ../_shared/rules/postgres-migrations.md
+    - rules/fastapi-conventions.md
+  plans:
+    - plans/fastapi-feature.md
+
+verification:
+  commands:
+    - name: lint
+      run: uv run ruff check .
+    - name: types
+      run: uv run mypy app
+    - name: test
+      run: uv run pytest
+
+evals:
+  - name: project-file
+    kind: path-exists
+    path: pyproject.toml
+  - name: app-package
+    kind: path-exists
+    path: app
+  - name: no-wildcard-imports
+    kind: grep-absent
+    path: app
+    glob: "**/*.py"
+    pattern: 'from\s+\S+\s+import\s+\*'
+    severity: error
+  - name: no-bare-except
+    kind: grep-absent
+    path: app
+    glob: "**/*.py"
+    pattern: 'except\s*:'
+    severity: error
+  - name: routes-declare-response-model
+    kind: grep-present
+    path: app
+    glob: "**/*.py"
+    pattern: 'response_model='
+    min: 1
+    severity: warn

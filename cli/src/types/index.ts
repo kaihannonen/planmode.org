@@ -1,6 +1,7 @@
 // ── Package manifest (planmode.yaml) ──
 
 export type PackageType = "prompt" | "rule" | "plan";
+export type InstallTarget = "claude" | "codex" | "cursor" | "opencode";
 export type VariableType = "string" | "number" | "boolean" | "enum" | "resolved";
 export type Category =
   | "frontend"
@@ -113,6 +114,7 @@ export interface LockfileEntry {
   sha: string;
   content_hash: string;
   installed_to: string;
+  targets?: InstallTarget[];
 }
 
 export interface Lockfile {
@@ -130,6 +132,19 @@ export interface PlanmodeConfig {
   cache?: {
     dir?: string;
     ttl?: number;
+  };
+}
+
+export interface PlanmodeProjectConfig {
+  targets?: InstallTarget[];
+  checks?: {
+    harness?: string;
+    guards?: string;
+    protected?: string[];
+  };
+  loop?: {
+    agent?: InstallTarget | "manual";
+    max_iterations?: number;
   };
 }
 

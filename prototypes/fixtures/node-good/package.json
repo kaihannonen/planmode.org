@@ -1,0 +1,5 @@
+{
+  "name": "node-good",
+  "private": true,
+  "type": "module"
+}

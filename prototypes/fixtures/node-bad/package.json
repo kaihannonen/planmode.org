@@ -1,0 +1,5 @@
+{
+  "name": "node-bad",
+  "private": true,
+  "type": "module"
+}

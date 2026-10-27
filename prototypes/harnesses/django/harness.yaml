@@ -1,0 +1,58 @@
+name: django
+version: 0.1.0
+type: harness
+description: Django 5 and DRF with Postgres, environment-driven settings and query-count discipline
+author: planmode
+license: MIT
+category: backend
+tags: [django, python, drf, postgres, orm]
+
+targets: [claude, codex, cursor]
+
+includes:
+  rules:
+    - ../_shared/rules/python-strict.md
+    - ../_shared/rules/postgres-migrations.md
+    - rules/django-conventions.md
+  plans:
+    - plans/django-feature.md
+
+verification:
+  commands:
+    - name: checks
+      run: python manage.py check
+    - name: migrations
+      run: python manage.py makemigrations --check --dry-run
+    - name: test
+      run: pytest
+
+evals:
+  - name: manage-py
+    kind: path-exists
+    path: manage.py
+  - name: no-raw-queryset
+    kind: grep-absent
+    path: .
+    glob: "**/*.py"
+    pattern: '\.raw\(|\.extra\('
+    severity: error
+  - name: settings-from-environment
+    kind: grep-present
+    path: .
+    glob: "**/settings*.py"
+    pattern: 'os\.environ|environ\.get|env\('
+    min: 1
+    severity: error
+  - name: no-print
+    kind: grep-absent
+    path: .
+    glob: "**/*.py"
+    pattern: '^\s*print\('
+    severity: warn
+  - name: migrations-directory
+    kind: grep-present
+    path: .
+    glob: "**/migrations/__init__.py"
+    pattern: '.'
+    min: 1
+    severity: warn

@@ -1,0 +1,57 @@
+name: rust-cli
+version: 0.1.0
+type: harness
+description: Rust command-line tool with clap, stable exit codes and no unwrap in library code
+author: planmode
+license: MIT
+category: other
+tags: [rust, cli, clap, cargo]
+
+targets: [claude, codex, cursor]
+
+includes:
+  rules:
+    - ../_shared/rules/rust-strict.md
+    - rules/rust-cli-conventions.md
+  plans:
+    - plans/rust-cli-feature.md
+
+verification:
+  commands:
+    - name: fmt
+      run: cargo fmt --check
+    - name: clippy
+      run: cargo clippy --all-targets -- -D warnings
+    - name: test
+      run: cargo test
+
+evals:
+  - name: cargo-manifest
+    kind: path-exists
+    path: Cargo.toml
+  - name: no-unwrap-in-src
+    kind: grep-absent
+    path: src
+    glob: "**/*.rs"
+    pattern: '\.unwrap\(\)'
+    severity: error
+  - name: no-panic-in-src
+    kind: grep-absent
+    path: src
+    glob: "**/*.rs"
+    pattern: '\bpanic!\('
+    severity: error
+  - name: clap-derive
+    kind: grep-present
+    path: src
+    glob: "**/*.rs"
+    pattern: 'clap::Parser|derive\(.*Parser'
+    min: 1
+    severity: error
+  - name: has-tests
+    kind: grep-present
+    path: .
+    glob: "**/*.rs"
+    pattern: '#\[test\]'
+    min: 1
+    severity: warn

@@ -1,0 +1,50 @@
+name: expo-react-native
+version: 0.1.0
+type: harness
+description: Expo app in TypeScript with typed navigation, safe areas and list performance rules
+author: planmode
+license: MIT
+category: mobile
+tags: [expo, react-native, typescript, mobile, ios, android]
+
+targets: [claude, codex, cursor]
+
+includes:
+  rules:
+    - ../_shared/rules/typescript-strict.md
+    - rules/react-native-conventions.md
+  plans:
+    - plans/expo-screen.md
+
+verification:
+  commands:
+    - name: typecheck
+      run: npm run typecheck
+    - name: doctor
+      run: npx expo-doctor
+
+evals:
+  - name: app-config
+    kind: path-exists
+    path: app.json
+  - name: package-manifest
+    kind: path-exists
+    path: package.json
+  - name: no-inline-style-object
+    kind: grep-absent
+    path: app
+    glob: "**/*.tsx"
+    pattern: 'style=\{\{'
+    severity: warn
+  - name: no-dimensions-get
+    kind: grep-absent
+    path: app
+    glob: "**/*.tsx"
+    pattern: 'Dimensions\.get'
+    severity: error
+  - name: no-console-log
+    kind: grep-absent
+    path: app
+    glob: "**/*.{ts,tsx}"
+    pattern: 'console\.log'
+    severity: warn

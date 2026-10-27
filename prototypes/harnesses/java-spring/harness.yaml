@@ -1,0 +1,54 @@
+name: java-spring
+version: 0.1.0
+type: harness
+description: Spring Boot 3 service with constructor injection, record DTOs and problem-detail errors
+author: planmode
+license: MIT
+category: backend
+tags: [java, spring, spring-boot, maven, postgres]
+
+targets: [claude, codex, cursor]
+
+includes:
+  rules:
+    - ../_shared/rules/java-strict.md
+    - ../_shared/rules/postgres-migrations.md
+    - rules/spring-conventions.md
+  plans:
+    - plans/spring-endpoint.md
+
+verification:
+  commands:
+    - name: verify
+      run: ./mvnw verify
+
+evals:
+  - name: maven-wrapper
+    kind: path-exists
+    path: pom.xml
+  - name: no-field-injection
+    kind: grep-absent
+    path: src/main/java
+    glob: "**/*.java"
+    pattern: '@Autowired'
+    severity: error
+  - name: no-system-out
+    kind: grep-absent
+    path: src/main/java
+    glob: "**/*.java"
+    pattern: 'System\.out\.print'
+    severity: error
+  - name: problem-details
+    kind: grep-present
+    path: src/main/java
+    glob: "**/*.java"
+    pattern: 'ProblemDetail'
+    min: 1
+    severity: warn
+  - name: record-dtos
+    kind: grep-present
+    path: src/main/java
+    glob: "**/*.java"
+    pattern: '\brecord\s+\w+\('
+    min: 1
+    severity: warn

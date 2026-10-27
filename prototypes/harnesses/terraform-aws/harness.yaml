@@ -1,0 +1,59 @@
+name: terraform-aws
+version: 0.1.0
+type: harness
+description: Terraform for AWS with pinned providers, remote state and mandatory cost tags
+author: planmode
+license: MIT
+category: devops
+tags: [terraform, aws, iac, devops, infrastructure]
+
+targets: [claude, codex, cursor]
+
+includes:
+  rules:
+    - rules/terraform-strict.md
+    - rules/aws-tagging.md
+  plans:
+    - plans/terraform-module.md
+
+verification:
+  commands:
+    - name: fmt
+      run: terraform fmt -check -recursive
+    - name: validate
+      run: terraform validate
+
+evals:
+  - name: has-terraform-files
+    kind: grep-present
+    path: .
+    glob: "**/*.tf"
+    pattern: '^\s*(resource|module)\s'
+    min: 1
+    severity: error
+  - name: default-tags
+    kind: grep-present
+    path: .
+    glob: "**/*.tf"
+    pattern: 'default_tags'
+    min: 1
+    severity: error
+  - name: required-version
+    kind: grep-present
+    path: .
+    glob: "**/*.tf"
+    pattern: 'required_version'
+    min: 1
+    severity: error
+  - name: no-local-backend
+    kind: grep-absent
+    path: .
+    glob: "**/*.tf"
+    pattern: 'backend\s+"local"'
+    severity: error
+  - name: no-target-usage
+    kind: grep-absent
+    path: .
+    glob: "**/*.{tf,sh,yml,yaml}"
+    pattern: 'terraform\s+(plan|apply|destroy)[^\n]*-target'
+    severity: warn

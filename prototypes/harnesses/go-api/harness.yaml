@@ -1,0 +1,54 @@
+name: go-api
+version: 0.1.0
+type: harness
+description: Go HTTP service with chi, pgx and Postgres, with context timeouts and wrapped errors enforced
+author: planmode
+license: MIT
+category: backend
+tags: [go, chi, postgres, api, pgx]
+
+targets: [claude, codex, cursor]
+
+includes:
+  rules:
+    - ../_shared/rules/go-strict.md
+    - ../_shared/rules/postgres-migrations.md
+    - rules/go-api-errors.md
+  plans:
+    - plans/go-api-scaffold.md
+
+verification:
+  commands:
+    - name: build
+      run: go build ./...
+    - name: vet
+      run: go vet ./...
+    - name: test
+      run: go test ./...
+
+evals:
+  - name: go-module
+    kind: path-exists
+    path: go.mod
+  - name: migrations-directory
+    kind: path-exists
+    path: migrations
+  - name: handler-timeouts
+    kind: grep-present
+    path: internal
+    glob: "**/*.go"
+    pattern: 'context\.WithTimeout'
+    min: 1
+    severity: error
+  - name: no-raw-sql
+    kind: grep-absent
+    path: internal
+    glob: "**/*.go"
+    pattern: '\.Query\("'
+    severity: error
+  - name: no-panic-in-internal
+    kind: grep-absent
+    path: internal
+    glob: "**/*.go"
+    pattern: '\bpanic\('
+    severity: error
