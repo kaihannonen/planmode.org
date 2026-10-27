@@ -39,6 +39,7 @@ function contract(overrides: Partial<Contract> = {}): Contract {
     protected_paths: [],
     allow_test_edits: false,
     allow_dependency_changes: false,
+    allow_binary_changes: false,
     max_changed_files: 50,
     max_changed_lines: 2000,
     ...overrides,
@@ -249,6 +250,44 @@ describe("diff audit", () => {
     const report = auditDiff({ baseDir: base, targetDir: target });
     expect(report.status).toBe("fail");
     expect(report.findings.some((item) => item.category === "secret")).toBe(true);
+  });
+
+  it("fails on binary changes unless the contract allows them", () => {
+    const { base, target } = makeProject();
+    writeFile(base, "asset.bin", "old");
+    fs.writeFileSync(path.join(target, "asset.bin"), Buffer.from([0, 1, 2, 3]));
+    const blocked = auditDiff({ baseDir: base, targetDir: target });
+    expect(blocked.status).toBe("fail");
+    expect(blocked.findings.some((item) => item.category === "binary")).toBe(
+      true,
+    );
+    const allowed = auditDiff({
+      baseDir: base,
+      targetDir: target,
+      contract: contract({ allow_binary_changes: true }),
+    });
+    expect(allowed.status).toBe("pass");
+  });
+
+  it("fails on a hard-coded unimplemented stub but only warns on TODO", () => {
+    const { base, target } = makeProject();
+    writeFile(target, "src/a.ts", 'throw new Error("not implemented");\n');
+    const hard = auditDiff({ baseDir: base, targetDir: target });
+    expect(hard.status).toBe("fail");
+    expect(
+      hard.findings.some(
+        (item) => item.category === "quality" && item.severity === "error",
+      ),
+    ).toBe(true);
+
+    writeFile(target, "src/a.ts", "// TODO: improve this\\nexport const value = 2;\\n");
+    const todo = auditDiff({ baseDir: base, targetDir: target });
+    expect(todo.status).toBe("pass");
+    expect(
+      todo.findings.some(
+        (item) => item.category === "quality" && item.severity === "warn",
+      ),
+    ).toBe(true);
   });
 
   it("enforces file and line budgets", () => {

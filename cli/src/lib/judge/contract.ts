@@ -117,6 +117,11 @@ export function normalizeContract(data: unknown): Contract {
       "allow_dependency_changes",
       false,
     ),
+    allow_binary_changes: asBoolean(
+      record.allow_binary_changes,
+      "allow_binary_changes",
+      false,
+    ),
     max_changed_files: asPositiveInteger(
       record.max_changed_files,
       "max_changed_files",
@@ -237,6 +242,9 @@ export function formatContractForPrompt(loaded: LoadedContract): string {
   );
   lines.push(
     `Dependency changes allowed: ${contract.allow_dependency_changes ? "yes" : "no"}`,
+  );
+  lines.push(
+    `Binary changes allowed: ${contract.allow_binary_changes ? "yes" : "no"}`,
   );
   lines.push(`Max changed files: ${contract.max_changed_files}`);
   lines.push(`Max changed lines: ${contract.max_changed_lines}`);

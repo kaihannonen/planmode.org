@@ -165,7 +165,7 @@ function buildPrompt(options: {
     }
     lines.push("");
     lines.push(
-      `Test edits allowed: ${contract.allow_test_edits ? "yes" : "no"}; dependency changes allowed: ${contract.allow_dependency_changes ? "yes" : "no"}.`,
+      `Test edits allowed: ${contract.allow_test_edits ? "yes" : "no"}; dependency changes allowed: ${contract.allow_dependency_changes ? "yes" : "no"}; binary changes allowed: ${contract.allow_binary_changes ? "yes" : "no"}.`,
     );
     lines.push(
       `Limits: ${contract.max_changed_files} file(s), ${contract.max_changed_lines} changed line(s).`,

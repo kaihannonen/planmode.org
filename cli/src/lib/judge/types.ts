@@ -12,6 +12,7 @@ export interface Contract {
   protected_paths: string[];
   allow_test_edits: boolean;
   allow_dependency_changes: boolean;
+  allow_binary_changes: boolean;
   max_changed_files: number;
   max_changed_lines: number;
 }

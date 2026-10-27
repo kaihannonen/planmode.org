@@ -117,8 +117,9 @@ const SECRET_PATTERNS: Array<{
   },
 ];
 
-const STUB_PATTERN =
-  /\b(?:TODO|FIXME|NotImplemented|not implemented|throw new Error\(["']not implemented)/i;
+const STUB_PATTERN = /\b(?:TODO|FIXME)\b/i;
+const HARD_STUB_PATTERN =
+  /\b(?:NotImplemented(?:Error)?|not implemented)\b|throw new Error\(["']not implemented/i;
 
 export interface TreeEntry {
   hash: string;
@@ -332,13 +333,16 @@ export function auditDiff(options: AuditDiffOptions): DiffReport {
       binary: beforeText?.binary || afterText?.binary || undefined,
     });
 
-    if (oldEntry?.binary || newEntry?.binary) {
+    if (
+      (oldEntry?.binary || newEntry?.binary) &&
+      !contract?.allow_binary_changes
+    ) {
       findings.push(
         finding(
           `binary:${relative}`,
-          "warn",
+          "error",
           "binary",
-          "Binary file changed; review it manually.",
+          "Binary file changed. Set contract allow_binary_changes to permit it.",
           relative,
         ),
       );
@@ -365,7 +369,19 @@ export function auditDiff(options: AuditDiffOptions): DiffReport {
             `stub:${relative}`,
             "warn",
             "quality",
-            "Added line looks like a stub or TODO.",
+            "Added line contains a TODO or FIXME.",
+            relative,
+            line.trim().slice(0, 200),
+          ),
+        );
+      }
+      if (HARD_STUB_PATTERN.test(line)) {
+        findings.push(
+          finding(
+            `unimplemented:${relative}`,
+            "error",
+            "quality",
+            "Added line looks like an unimplemented stub.",
             relative,
             line.trim().slice(0, 200),
           ),
