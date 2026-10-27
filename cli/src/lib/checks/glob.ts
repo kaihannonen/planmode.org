@@ -20,6 +20,17 @@ export const IGNORED_DIRS = new Set([
   ".astro",
 ]);
 
+const IGNORED_FILES = new Set([
+  ".eslintcache",
+  ".stylelintcache",
+  ".DS_Store",
+  "next-env.d.ts",
+]);
+
+export function isIgnoredFile(name: string): boolean {
+  return IGNORED_FILES.has(name) || name.endsWith(".tsbuildinfo");
+}
+
 export function expandBraces(pattern: string): string[] {
   const match = pattern.match(/\{([^{}]+)\}/);
   if (!match) return [pattern];
@@ -73,7 +84,7 @@ export function walkFiles(root: string): string[] {
       if (entry.isDirectory()) {
         if (IGNORED_DIRS.has(entry.name)) continue;
         stack.push(path.join(current, entry.name));
-      } else if (entry.isFile()) {
+      } else if (entry.isFile() && !isIgnoredFile(entry.name)) {
         files.push(path.join(current, entry.name));
       }
     }

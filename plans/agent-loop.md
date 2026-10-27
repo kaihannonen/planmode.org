@@ -226,7 +226,7 @@ the same pieces after each builder attempt. The order is:
 3. the permanent guard corpus
 4. diff audit: scope, protected files, deleted code, unimplemented stubs,
    TODO/FIXME warnings, test tampering, dependency changes, binary changes,
-   added secrets, and size limits
+   added secrets, size limits, and ignored generated caches
 5. failure classification: pre-existing vs new, plus flaky reruns
 6. optional semantic review by a separate agent, with evidence
 
@@ -468,7 +468,7 @@ in the builder's context, but the guard is what prevents recurrence.
 - Diff audit for protected files, allowed scope, existing test edits, dependency
   manifests, secrets, binary changes, stubs, deleted files, and size budgets.
 - Deterministic guard suggestions from failed checks.
-- 197 CLI tests, including temp-directory tests with no git repository and
+- 198 CLI tests, including temp-directory tests with no git repository and
   semantic-reviewer/loop integration.
 - The prototype fixtures reproduce the earlier scores exactly: `go-api` 20/100
   on bad and 100/100 on good; command fixtures pass/fail correctly.

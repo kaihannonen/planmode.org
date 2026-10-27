@@ -207,6 +207,17 @@ describe("diff audit", () => {
     });
   });
 
+  it("ignores generated Next.js and TypeScript cache files", () => {
+    const { base, target } = makeProject();
+    writeFile(target, "src/a.ts", "export const value = 2;\n");
+    writeFile(target, "next-env.d.ts", "/// <reference types=\"next\" />\n");
+    writeFile(target, "tsconfig.tsbuildinfo", "cache\n");
+    writeFile(target, ".eslintcache", "cache\n");
+    const report = auditDiff({ baseDir: base, targetDir: target });
+    expect(report.status).toBe("pass");
+    expect(report.files.map((file) => file.path)).toEqual(["src/a.ts"]);
+  });
+
   it("flags protected, test, dependency, and scope changes", () => {
     const { base, target } = makeProject();
     writeFile(target, ".planmode/guards.yaml", "version: 1\nguards: [{}]\n");

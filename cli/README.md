@@ -226,6 +226,9 @@ The diff audit fails on:
 - deleted files and large diffs (warnings)
 - a no-op change
 
+Generated files such as `next-env.d.ts`, `*.tsbuildinfo`, and `.eslintcache` are
+ignored, so running typecheck or a Next.js build does not create false changes.
+
 It writes `JUDGE.json`, `JUDGE.md`, `DIFF_AUDIT.json`, and `DIFF_AUDIT.md`.
 
 ### Frozen contract

@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import { formatPath, globToRegExp } from "../checks/glob.js";
+import { formatPath, globToRegExp, isIgnoredFile } from "../checks/glob.js";
 import type { Contract, DiffFile, DiffFinding, DiffReport } from "./types.js";
 
 const SKIP_DIRS = new Set([
@@ -185,7 +185,7 @@ function walkDiffFiles(root: string, excludes: string[] = []): string[] {
           continue;
         }
         stack.push(full);
-      } else if (entry.isFile()) {
+      } else if (entry.isFile() && !isIgnoredFile(entry.name)) {
         files.push(full);
       }
     }
