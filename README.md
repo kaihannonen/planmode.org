@@ -15,7 +15,7 @@ npm install -g planmode
 planmode install nextjs-tailwind-starter
 ```
 
-That's it. The plan lands in your project, `CLAUDE.md` gets updated, and Claude Code picks it up automatically.
+That's it. The plan lands in your project, the target client's instruction file is updated, and the agent picks it up automatically.
 
 ## Package types
 
@@ -68,13 +68,13 @@ planmode list
 
 ## How it works
 
-Planmode leverages Claude Code's native `@import` system. When you install a plan:
+Planmode renders each package for the target client's native instruction surface. When you install a plan:
 
 1. The CLI fetches `.md` files from the registry
-2. Drops them into the correct directory (`plans/`, `.claude/rules/`, or `prompts/`)
-3. Adds `@plans/<name>.md` to your `CLAUDE.md`
+2. Renders them into the client's instruction files (for example `CLAUDE.md`, `AGENTS.md`, or `.cursor/rules/*.mdc`)
+3. Keeps a lockfile so updates and removals are repeatable
 
-Claude Code is already the runtime. Planmode handles discovery, versioning, and distribution.
+Your existing coding agent is the runtime. Planmode handles discovery, versioning, rendering, and distribution.
 
 ## Project structure
 
