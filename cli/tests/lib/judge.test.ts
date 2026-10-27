@@ -312,6 +312,20 @@ describe("judge report", () => {
     expect(semanticFailure.findings.some((item) => item.category === "judge")).toBe(
       true,
     );
+
+    const inconsistentPass = buildJudgeReport({
+      check: checkReport(),
+      diff: diffReport(),
+      semantic: {
+        status: "pass",
+        summary: "pass, but with an error",
+        findings: [{ severity: "error", message: "contradiction" }],
+        command: "reviewer",
+        duration_ms: 1,
+        output_file: "/tmp/out.json",
+      },
+    });
+    expect(inconsistentPass.status).toBe("needs_human");
   });
 
   it("gates contract criteria that are mapped to checks", () => {

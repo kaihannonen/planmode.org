@@ -115,6 +115,12 @@ export function buildJudgeReport(options: BuildJudgeOptions): JudgeReport {
     } else if (options.semantic.status === "inconclusive") {
       status = "inconclusive";
       reason = `The semantic reviewer was inconclusive: ${options.semantic.summary}`;
+    } else if (
+      options.semantic.findings.some((finding) => finding.severity === "error")
+    ) {
+      status = "needs_human";
+      reason =
+        "The semantic reviewer returned pass with error findings. Human review required.";
     } else {
       reason =
         "All deterministic checks, the diff audit, and the semantic review passed.";
