@@ -255,7 +255,8 @@ The semantic reviewer writes JSON to `$PLANMODE_JUDGE_OUTPUT`:
 ```
 
 The judge snapshots the workspace before and after the reviewer. If the reviewer
-edits files, the result is `needs_human`, not pass.
+edits files, the result is `needs_human`, not pass. The old output file is
+deleted first, and a `pass` verdict from a nonzero exit is inconclusive.
 
 `--rerun-failures` reruns failed command checks once. A pass on the rerun is
 recorded in `flaky` and the proof bundle, so a flaky green is visible rather than
@@ -466,7 +467,7 @@ in the builder's context, but the guard is what prevents recurrence.
 - Diff audit for protected files, allowed scope, existing test edits, dependency
   manifests, secrets, binary changes, stubs, deleted files, and size budgets.
 - Deterministic guard suggestions from failed checks.
-- 195 CLI tests, including temp-directory tests with no git repository and
+- 197 CLI tests, including temp-directory tests with no git repository and
   semantic-reviewer/loop integration.
 - The prototype fixtures reproduce the earlier scores exactly: `go-api` 20/100
   on bad and 100/100 on good; command fixtures pass/fail correctly.

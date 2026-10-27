@@ -280,7 +280,8 @@ Verdicts are `pass`, `fail`, or `needs_human`. The semantic reviewer is never
 the enforcement path: a deterministic failure cannot be overridden, and a
 semantic rejection stops the loop at `needs_human` for a developer decision.
 The judge snapshots the workspace around the reviewer and fails closed if the
-reviewer edits files.
+reviewer edits files, exits nonzero while claiming `pass`, or leaves a stale
+verdict from a previous run.
 
 ## Run the loop without git
 
