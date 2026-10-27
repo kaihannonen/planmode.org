@@ -211,6 +211,8 @@ describe("diff audit", () => {
     writeFile(target, ".planmode/guards.yaml", "version: 1\nguards: [{}]\n");
     writeFile(target, "tests/a.test.ts", "test('weakened', () => {});\n");
     writeFile(target, "package.json", '{"changed":true}\n');
+    writeFile(base, "packages/foo/package.json", "{}\n");
+    writeFile(target, "packages/foo/package.json", '{"changed":true}\n');
     writeFile(target, "docs/readme.md", "changed\n");
 
     const report = auditDiff({
@@ -222,6 +224,21 @@ describe("diff audit", () => {
     expect(report.findings.map((item) => item.category)).toEqual(
       expect.arrayContaining(["protected", "tests", "dependencies", "scope"]),
     );
+  });
+
+  it("detects dependency changes in nested workspace packages", () => {
+    const { base, target } = makeProject();
+    writeFile(base, "packages/foo/package.json", "{}\n");
+    writeFile(target, "packages/foo/package.json", '{"changed":true}\n');
+    const report = auditDiff({ baseDir: base, targetDir: target });
+    expect(report.status).toBe("fail");
+    expect(
+      report.findings.some(
+        (item) =>
+          item.category === "dependencies" &&
+          item.file === "packages/foo/package.json",
+      ),
+    ).toBe(true);
   });
 
   it("allows test and dependency changes when the contract permits them", () => {

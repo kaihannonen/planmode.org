@@ -311,6 +311,7 @@ describe("runLoop", () => {
       reportDir: reports,
       agentCommand: commandFor(agent),
       maxIterations: 2,
+      protectedPaths: ["config/secret.txt"],
     });
 
     expect(result.status).toBe("stopped");

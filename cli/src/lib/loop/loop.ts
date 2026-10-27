@@ -82,7 +82,12 @@ function copyProject(source: string, destination: string): void {
       if (!relative) return true;
       const segments = relative.split(path.sep);
       if (segments.some((segment) => COPY_EXCLUDES.has(segment))) return false;
-      if (segments[0] === ".planmode" && (segments[1] === "loop" || segments[1] === "runs")) {
+      if (
+        segments[0] === ".planmode" &&
+        (segments[1] === "loop" ||
+          segments[1] === "runs" ||
+          segments[1] === "judge")
+      ) {
         return false;
       }
       return true;
@@ -424,9 +429,8 @@ export function runLoop(options: LoopOptions): LoopResult {
       ? formatPath(path.relative(sourceDir, planPath))
       : undefined;
   const protectedPaths = [
-    ...(options.protectedPaths?.length
-      ? options.protectedPaths
-      : DEFAULT_PROTECTED),
+    ...DEFAULT_PROTECTED,
+    ...(options.protectedPaths ?? []),
     ...(contract?.contract.protected_paths ?? []),
     ...(planRelative ? [planRelative] : []),
   ];
