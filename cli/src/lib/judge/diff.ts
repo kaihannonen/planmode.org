@@ -262,6 +262,21 @@ export function auditDiff(options: AuditDiffOptions): DiffReport {
   if (!fs.existsSync(targetDir) || !fs.statSync(targetDir).isDirectory()) {
     throw new Error(`Diff target must be a directory: ${targetDir}`);
   }
+  if (baseDir === targetDir) {
+    throw new Error("Diff base and target must be different directories.");
+  }
+  const baseInsideTarget = path.relative(targetDir, baseDir);
+  const targetInsideBase = path.relative(baseDir, targetDir);
+  if (
+    (baseInsideTarget &&
+      !baseInsideTarget.startsWith("..") &&
+      !path.isAbsolute(baseInsideTarget)) ||
+    (targetInsideBase &&
+      !targetInsideBase.startsWith("..") &&
+      !path.isAbsolute(targetInsideBase))
+  ) {
+    throw new Error("Diff base and target must not contain each other.");
+  }
 
   const contract = options.contract;
   const excludes = (options.excludePaths ?? []).map((entry) =>
